@@ -1,0 +1,24 @@
+.footer {
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+  padding: 0.8rem;
+
+  &-container {
+    max-width: 64rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &-undertext {
+    font-size: 0.8rem;
+    margin: 1rem auto;
+    text-align: center;
+    border: 0.1rem dashed var(--clr-white);
+    width: 100%;
+    max-width: max-content;
+    padding: 0.2rem 2rem;
+
+    @include breakpoint-up("medium") {
+      flex-direction: row;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+html:root {
+  --clr-accent: rebeccapurple;
+  --clr-black: #fff;
+  --clr-white: #000;
+
+  .themes {
+    background-color: #ffc107;
+    color: #7e620e;
+  }
+
+  [data-moon] {
+    display: none;
+  }
+
+  [data-sun] {
+    display: block;
+  }
+
+  &.dark {
+    --clr-white: #fff;
+    --clr-black: #000;
+
+    .themes {
+      background-color: #8512f8;
+      color: #37105f;
+    }
+
+    [data-sun] {
+      display: none;
+    }
+
+    [data-moon] {
+      display: block;
+    }
+  }
+}

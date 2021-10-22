@@ -1,0 +1,125 @@
+.main {
+  flex: 1 0 auto;
+  &-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 64rem;
+    margin: 0 auto;
+    gap: 2rem;
+    padding: 3rem 2rem;
+  }
+
+  .work-header,
+  .prototype-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.2rem;
+    @include breakpoint-down("large") {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+
+      span {
+        &::before {
+          display: none;
+        }
+      }
+    }
+    span {
+      display: block;
+      position: relative;
+      font-size: 0.9rem;
+      opacity: 70%;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        border: 3px solid var(--clr-white);
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: -1rem;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.project {
+  margin-left: 0.2rem;
+  border-left: 0.3rem solid var(--clr-accent);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 1.53rem;
+    left: 0;
+    border: 0.5rem solid var(--clr-accent);
+    border-radius: 50%;
+    margin-left: -0.6rem;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.315);
+  }
+  &:first-of-type {
+    margin-top: 0.7rem;
+  }
+  padding: 1rem;
+  header {
+    background-image: linear-gradient(90deg, var(--clr-accent), #381c55) ;
+    color: #fff;
+    border-top-right-radius: 0.6rem;
+    width: max-content;
+    max-width: 100%;
+    padding-left: 1.2rem;
+    padding-right: 0.8rem;
+    margin-left: -1.1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    small {
+      opacity: 50%;
+      font-size: 0.9rem;
+    }
+  }
+
+  figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    .description-area {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-top: 0.7rem;
+      margin-left: -1px;
+      svg {
+        flex: 0 0 auto;
+        height: 1rem;
+        margin-right: 0.2rem;
+        margin-top: 0.2rem;
+      }
+    }
+
+    .more-links {
+      display: flex;
+      gap: 0.2rem;
+      margin-left: 1.1rem;
+
+      a {
+        display: block;
+        width: max-content;
+        background-color: var(--clr-white);
+        color: var(--clr-black);
+        padding: 0.2rem 0.4rem;
+        user-select: none;
+
+        &[disabled] {
+          cursor: not-allowed;
+          opacity: 60%;
+        }
+      }
+    }
+  }
+}

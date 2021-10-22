@@ -1,0 +1,38 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--clr-black);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--clr-white);
+    line-height: 1.5;
+}
+
+a, a:active, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--clr-accent);
+}
+
+::selection {
+    background-color: var(--clr-accent);
+}
+
+.t-all {
+    transition: all 300ms ease-in;
+}
+
+.no-scroll {
+    @include breakpoint-down('small') {
+        overflow-y: hidden !important;
+    }
+}
