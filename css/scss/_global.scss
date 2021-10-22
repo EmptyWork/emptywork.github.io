@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 *, *::after, *::before {
     box-sizing: border-box;
     margin: 0;
@@ -19,7 +23,7 @@ a, a:active, a:hover, a:focus {
     text-decoration: none;
 }
 
-a:hover {
+a:hover, a:focus {
     color: var(--clr-accent);
 }
 
@@ -35,4 +39,13 @@ a:hover {
     @include breakpoint-down('small') {
         overflow-y: hidden !important;
     }
+}
+
+ul,li {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
 }

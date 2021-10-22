@@ -1,6 +1,11 @@
-# eazbi-website
-### `work_id: stv_w0210_77-01`
-```
-Source Code untuk website pribadi.
-tujuan website ini dibuat adalah sebagai showcase dan archive dari semua project yang akan dijalani atau dibuat.
-```
+<center>
+
+# EmptyWork's Personal Website
+<img width="200px" height="200px" src="images/emptywork.png" />
+
+[Emptywork](https://emptywork.github.io)
+
+Source code for my personal website.
+The purpose of this repository is to showcase the code that I wrote and as a proof of my ability to work with Javascript, HTML5 and CSS3.
+</center>
+

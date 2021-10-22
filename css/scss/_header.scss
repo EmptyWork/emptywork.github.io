@@ -94,13 +94,16 @@
     display: flex;
     flex-direction: row;
     margin-top: 0.8rem;
-    border: 2px dashed var(--clr-accent);
-    color: var(--clr-accent);
-    background: none;
+    color: var(--clr-white);
+    background: var(--clr-accent);
     padding: 0.3rem 1rem;
     align-items: center;
     gap: 0.4rem;
     cursor: pointer;
+
+    &:hover,&:focus {
+      color: var(--clr-white);
+    }
 
     svg {
       height: 1rem;
@@ -156,9 +159,15 @@
   }
 
   .brand {
+    display: flex;
+    gap: 0.5rem;
     &-title {
       font-size: 1.3rem;
       font-weight: 700;
+    }
+    &-logo {
+      display: flex;
+      align-items: center;
     }
   }
   .themes {
