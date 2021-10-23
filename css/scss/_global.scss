@@ -12,10 +12,10 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: var(--clr-black);
+    background-color: var(--clr-background);
     font-family: 'Montserrat', sans-serif;
-    color: var(--clr-white);
-    line-height: 1.5;
+    color: var(--clr-foreground);
+    line-height: 1.6;
 }
 
 a, a:active, a:hover, a:focus {

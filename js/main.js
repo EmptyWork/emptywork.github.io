@@ -48,34 +48,41 @@ const schedulerLoader = (schedules) => {
 }
 
 const projectsLoader = (projects) => {
-  let worksSection = document.querySelector('.work')
+  let worksSection = document.querySelector('.projects')
   projects.forEach(project => {
     createNewProject(project, worksSection)
   })
 }
 
-const createNewProject = ({name, started_at, finished_at, details, links}, workSection) => {
+const createNewProject = ({name, started_at, finished_at, details, links, image}, workSection) => {
+  let projectLink = document.createElement('a');
+  projectLink.href = "#projects";
+  projectLink.setAttribute('arial-label', `Project: ${name}`)
   let projectContainer = document.createElement('figure')
   projectContainer.classList.add('project')
+  if(image)projectContainer.style.backgroundImage = `linear-gradient(transparent, var(--clr-accent-dark)), url(${image})`;
   projectContainer.innerHTML = `
-  <header>${name} <small>${(finished_at != null) ? `${finished_at} `: `${started_at} — Present` }</small></header>
   <figcaption>
-    <div class="description-area">
-      <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+    <header>
+      <h2>${name}</h2> 
+      <small>${(finished_at != null) ? `${finished_at} `: `${started_at} — Present` }</small>
+    </header>
+    <article class="description-area">
       <p>${details}</p>
-    </div>
-    <div class="more-links">
-      ${(links) ? `
-      <a href="${links[0]}" target="_blank" class="sourcecode">sourcecode</a>
-      <a href="${links[1]}" target="_blank" class="sourcecode">live-demo</a>
+    </article>
+    <ul class="more-links">
+    ${(links) ? `
+      <li><a href="${links[0]}" target="_blank" class="sourcecode">sourcecode</a></li>
+      <li><a href="${links[1]}" target="_blank" class="sourcecode">live-demo</a></li>
       ` : `
-      <a href="#" disabled class="sourcecode">sourcecode</a>
-      <a href="#" disabled class="sourcecode">live-demo</a>
+      <li><a href="#projects" disabled class="sourcecode">sourcecode</a></li>
+      <li><a href="#projects" disabled class="sourcecode">live-demo</a></li>
       `}
-    </div>
-  </figcaption>
-  `
-  workSection.appendChild(projectContainer)
+    </ul>
+    </figcaption>
+    `
+  projectLink.appendChild(projectContainer)
+  workSection.appendChild(projectLink)
 }
 
 let months = [
@@ -106,7 +113,7 @@ console.log(
   "%cdot one %c com",
   "background-color:rebeccapurple; margin:2px; color:transparent; font-size:0.7rem"
 )
-console.log("%cemptywork dot github dot io", "font-size:1rem")
+console.log("%cemptywork dot github dot io", "font-size:0.88rem")
 console.log(
   "%cEmptywork Console %c testing",
   "background-color:#cecece; margin:2px; color:transparent; font-size:0.7rem"

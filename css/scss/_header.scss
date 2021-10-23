@@ -55,7 +55,7 @@
       margin-left: 0.4rem;
       font-weight: 300;
       user-select: none;
-      opacity: 90%;
+      color: var(--clr-foreground-900);
 
       #month {
         font-weight: 600;
@@ -102,7 +102,7 @@
     cursor: pointer;
 
     &:hover,&:focus {
-      color: var(--clr-white);
+      color: hsl(0, 0%, 80%);
     }
 
     svg {
@@ -123,7 +123,7 @@
     margin-left: 0.4rem;
     align-items: center;
     gap: 0.3rem;
-    opacity: 80%;
+    color: var(--clr-foreground-800);
     user-select: none;
     z-index: 0;
 
@@ -135,13 +135,13 @@
 }
 
 .nav {
-  background-color: var(--clr-black);
+  background-color: var(--clr-background-900);
   flex-grow: 0;
   flex-shrink: 0;
   position: sticky;
   top: 0;
   padding: 0.8rem;
-  z-index: 10;
+  z-index: 20;
 
   &-container {
     width: 100%;
@@ -218,8 +218,8 @@
       top: 0;
       left: 0;
       height: calc(100% - 57.69px);
-      background-color: var(--clr-black);
-      color: var(--clr-white);
+      background-color: var(--clr-background);
+      color: var(--clr-foreground);
       z-index: 20;
       display: flex;
       flex-direction: column;
@@ -251,7 +251,7 @@
 
         &:hover,
         &:focus {
-          color: var(--clr-black);
+          color: var(--clr-foreground);
           z-index: 1;
           &::before {
             width: 100%;
@@ -262,7 +262,6 @@
           content: "";
           position: absolute;
           width: 0%;
-          // border-radius: 0.2rem;
           background-color: var(--clr-accent);
           height: 110%;
           transition: all 150ms ease-in;
