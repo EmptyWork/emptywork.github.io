@@ -5,10 +5,11 @@
 
 <div align="center">
   
+ [![CodeQL](https://github.com/EmptyWork/emptywork.github.io/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/EmptyWork/emptywork.github.io/actions/workflows/codeql-analysis.yml)
+  
 [Emptywork](https://emptywork.github.io)
 
 Source code for my personal website.<br/>
 The purpose of this repository is to showcase the code that I wrote<br/> and as a proof of my ability to work with Javascript, HTML5 and CSS3.
 
-  </div>
-
+</div>
