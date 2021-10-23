@@ -5,6 +5,7 @@
             "id": 1,
             "name": "Jobfair",
             "details": "Make Jobsearching is Easy and reliable for <a href=\"https://en.wikipedia.org/wiki/Ambonese\" target=\"_blank\" rel=\"noopener noreferrer\">Ambonese</a>",
+            "image": "../../images/jobfair.png",
             "started_at": 2021,
             "finished_at": null
         },
@@ -12,6 +13,7 @@
             "id": 2,
             "name": "SMU (University Student Body)",
             "details": "Full-responsive and Elegant design",
+            "image": "../../images/smu.png",
             "started_at": 2020,
             "finished_at": null,
             "links": ["https://github.com/EmptyWork/smu-desain", "https://emptywork.github.io/smu-desain/index.html"]
@@ -20,6 +22,7 @@
             "id": 3,
             "name": "UKIMExpo'19 Website",
             "details": "Full-screen website",
+            "image": "../../images/expo.png",
             "started_at": 2019,
             "finished_at": 2019,
             "links": ["https://github.com/EmptyWork/UKIMexpo", "https://emptywork.github.io/UKIMexpo/"]
