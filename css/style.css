@@ -5,7 +5,8 @@ html:root {
   --clr-background: hsl(0, 0%, 100%);
   --clr-background-900: hsl(0, 0%, 88%);
   --clr-background-800: hsl(0, 0%, 75%);
-  --clr-foreground: hsl(0, 0%, 0%);
+  --clr-background-700: hsl(0, 0%, 63%);
+  --clr-foreground: hsl(0, 0%, 10%);
   --clr-foreground-900: hsl(0, 0%, 13%);
   --clr-foreground-800: hsl(0, 0%, 25%);
   --clr-foreground-700: hsl(0, 0%, 38%);
@@ -28,9 +29,10 @@ html:root [data-sun] {
 }
 
 html:root.dark {
-  --clr-background: hsl(0, 0%, 0%);
+  --clr-background: hsl(0, 0%, 10%);
   --clr-background-900: hsl(0, 0%, 13%);
   --clr-background-800: hsl(0, 0%, 25%);
+  --clr-background-700: hsl(0, 0%, 38%);
   --clr-foreground: hsl(0, 0%, 100%);
   --clr-foreground-900: hsl(0, 0%, 88%);
   --clr-foreground-800: hsl(0, 0%, 75%);
@@ -70,7 +72,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 100vh;
-  background-color: var(--clr-background);
+  background-color: var(--clr-background-900);
   font-family: 'Montserrat', sans-serif;
   color: var(--clr-foreground);
   line-height: 1.6;
@@ -128,6 +130,10 @@ li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: var(--clr-background);
+  -webkit-box-shadow: 0 10px 20px rgba(56, 16, 96, 0.2);
+          box-shadow: 0 10px 20px rgba(56, 16, 96, 0.2);
+  z-index: 3;
 }
 
 @media screen and (min-width: 64em) {
@@ -264,6 +270,7 @@ li {
   margin-top: 0.8rem;
   color: var(--clr-white);
   background: var(--clr-accent);
+  border-radius: 0.3rem;
   padding: 0.3rem 1rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -314,7 +321,7 @@ li {
 }
 
 .nav {
-  background-color: var(--clr-background-900);
+  background-color: var(--clr-background);
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
@@ -492,6 +499,7 @@ li {
 }
 
 .main {
+  background-color: var(--clr-background-900);
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
@@ -550,7 +558,7 @@ li {
   display: block;
   position: relative;
   font-size: 0.9rem;
-  color: var(--clr-foreground-800);
+  color: var(--clr-foreground-700);
 }
 
 .main .work-header span::before,
@@ -566,6 +574,11 @@ li {
   border-radius: 50%;
 }
 
+a.projectlink:hover figure, a.projectlink:focus figure {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .project {
   background-color: #333333;
   background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(var(--clr-accent-dark)));
@@ -573,8 +586,9 @@ li {
   background-position: center;
   background-size: cover;
   background-clip: border-box;
-  -webkit-box-shadow: 0 2px 10px rgba(84, 84, 84, 0.5);
-          box-shadow: 0 2px 10px rgba(84, 84, 84, 0.5);
+  -webkit-box-shadow: 0 2px 20px var(--clr-accent-dark);
+          box-shadow: 0 2px 20px var(--clr-accent-dark);
+  border-radius: 0.3rem;
   padding: 10rem 0 0;
   position: relative;
   width: 28ch;
@@ -612,7 +626,8 @@ li {
           flex-direction: column;
 }
 
-.project figcaption header, .project figcaption article {
+.project figcaption header,
+.project figcaption article {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
@@ -737,7 +752,9 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid var(--clr-disabled-text);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--clr-background);
+  border-radius: 0.3rem;
 }
 
 @media screen and (max-width: 63.9375em) {
@@ -797,13 +814,36 @@ li {
   display: flex;
 }
 
+.prototype-more i {
+  display: inline-block;
+  font-style: normal;
+  padding: 0.2rem 0.7rem;
+  background-color: var(--clr-background-900);
+  border-radius: 0.3rem;
+}
+
+.prototype-more i.error {
+  background-color: red;
+  color: var(--clr-white);
+}
+
+.prototype-more i:not(:first-of-type) {
+  margin-left: 0.3rem;
+}
+
 .prototype-more .status {
   background-image: -webkit-gradient(linear, right top, left top, from(var(--clr-accent)), to(#381c55));
   background-image: linear-gradient(-90deg, var(--clr-accent), #381c55);
-  padding: 0 0.4rem 0 0.7rem;
-  border-radius: 0.2rem;
+  padding: 0 0.7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0.3rem;
   color: white;
-  margin-right: 0.7rem;
+  margin-right: 0.3rem;
 }
 
 .prototype-image {
