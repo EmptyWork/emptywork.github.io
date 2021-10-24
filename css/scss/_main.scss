@@ -1,4 +1,5 @@
 .main {
+  background-color: var(--clr-background-900);
   flex: 1 0 auto;
   &-container {
     display: flex;
@@ -31,7 +32,7 @@
       display: block;
       position: relative;
       font-size: 0.9rem;
-      color: var(--clr-foreground-800);
+      color: var(--clr-foreground-700);
 
       &::before {
         content: "";
@@ -47,13 +48,23 @@
   }
 }
 
+a.projectlink {
+  &:hover,
+  &:focus {
+    figure {
+      transform: scale(1.1);
+    }
+  }
+}
+
 .project {
   background-color: #333333;
   background-image: linear-gradient(transparent, var(--clr-accent-dark));
   background-position: center;
   background-size: cover;
   background-clip: border-box;
-  box-shadow: 0 2px 10px hsla(0, 0%, 33%, 0.5);
+  box-shadow: 0 2px 20px var(--clr-accent-dark);
+  border-radius: 0.3rem;
   padding: 10rem 0 0;
   position: relative;
   width: 28ch;
@@ -71,15 +82,19 @@
   }
 
   figcaption {
-    background-image: linear-gradient(hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.4) 10%, hsla(0, 0%, 0%, 1));
+    background-image: linear-gradient(
+      hsla(0, 0%, 0%, 0),
+      hsla(0, 0%, 0%, 0.4) 10%,
+      hsla(0, 0%, 0%, 1)
+    );
     height: 100%;
     display: flex;
     flex-direction: column;
-    
-    header,article {
+
+    header,
+    article {
       flex: 0 0 auto;
       padding: 0 1.5rem;
-
     }
 
     article {
@@ -117,7 +132,8 @@
         position: relative;
         z-index: 10;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           color: var(--clr-white);
           &::before {
             width: 100%;
@@ -141,7 +157,8 @@
           cursor: not-allowed;
           pointer-events: none;
 
-          &:hover, &:focus {
+          &:hover,
+          &:focus {
             &::before {
               display: none;
             }
@@ -161,7 +178,7 @@
     justify-content: center;
 
     gap: 1.5rem;
-    @include breakpoint-down('medium') {
+    @include breakpoint-down("medium") {
       flex-direction: row;
     }
   }
@@ -173,12 +190,14 @@
   &-card {
     align-items: flex-end;
     display: flex;
-    border: 1px solid var(--clr-disabled-text);
+    border: 1px solid hsla(0, 0%, 0%, 0.1);
+    background-color: var(--clr-background);
+    border-radius: 0.3rem;
 
-    @include breakpoint-down('medium') {
+    @include breakpoint-down("medium") {
       flex-direction: column;
       align-items: flex-start;
-      
+
       & {
         width: 28ch;
       }
@@ -218,12 +237,31 @@
   &-more {
     display: flex;
 
+    i {
+      display: inline-block;
+      font-style: normal;
+      padding: 0.2rem 0.7rem;
+      background-color: var(--clr-background-900);
+      border-radius: 0.3rem;
+
+      &.error {
+        background-color: hsl(0, 100%, 50%);
+        color: var(--clr-white);
+      }
+
+      &:not(:first-of-type) {
+        margin-left: 0.3rem;
+      }
+    }
+
     .status {
-      background-image: linear-gradient(-90deg, var(--clr-accent), #381c55) ;
-      padding: 0 0.4rem 0 0.7rem;
-      border-radius: 0.2rem;
+      background-image: linear-gradient(-90deg, var(--clr-accent), #381c55);
+      padding: 0 0.7rem;
+      display: flex;
+      align-items: center;
+      border-radius: 0.3rem;
       color: white;
-      margin-right: 0.7rem;
+      margin-right: 0.3rem;
     }
   }
 
@@ -233,7 +271,7 @@
     display: flex;
     align-items: flex-end;
 
-    @include breakpoint-down('small') {
+    @include breakpoint-down("small") {
       width: 100%;
       height: 100%;
     }

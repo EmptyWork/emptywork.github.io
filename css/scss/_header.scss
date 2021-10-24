@@ -4,6 +4,10 @@
   justify-content: center;
   height: 100vh;
   flex-direction: column;
+  background-color: var(--clr-background);
+  box-shadow: 0 10px 20px hsla(270, 71%, 22%, 0.2);
+  z-index: 3;
+
   @include breakpoint-up("large") {
     height: 30rem;
   }
@@ -96,6 +100,7 @@
     margin-top: 0.8rem;
     color: var(--clr-white);
     background: var(--clr-accent);
+    border-radius: 0.3rem;
     padding: 0.3rem 1rem;
     align-items: center;
     gap: 0.4rem;
@@ -135,7 +140,7 @@
 }
 
 .nav {
-  background-color: var(--clr-background-900);
+  background-color: var(--clr-background);
   flex-grow: 0;
   flex-shrink: 0;
   position: sticky;

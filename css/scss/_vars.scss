@@ -6,7 +6,8 @@ html:root {
   --clr-background: hsl(0, 0%, 100%);
   --clr-background-900: hsl(0, 0%, 88%);
   --clr-background-800: hsl(0, 0%, 75%);
-  --clr-foreground: hsl(0, 0%, 0%);
+  --clr-background-700: hsl(0, 0%, 63%);
+  --clr-foreground: hsl(0, 0%, 10%);
   --clr-foreground-900: hsl(0, 0%, 13%);
   --clr-foreground-800: hsl(0, 0%, 25%);
   --clr-foreground-700: hsl(0, 0%, 38%);
@@ -30,9 +31,10 @@ html:root {
   }
 
   &.dark {
-    --clr-background: hsl(0, 0%, 0%);
+    --clr-background: hsl(0, 0%, 10%);
     --clr-background-900: hsl(0, 0%, 13%); 
     --clr-background-800: hsl(0, 0%, 25%); 
+    --clr-background-700: hsl(0, 0%, 38%); 
     --clr-foreground: hsl(0, 0%, 100%);
     --clr-foreground-900: hsl(0, 0%, 88%);
     --clr-foreground-800: hsl(0, 0%, 75%);
