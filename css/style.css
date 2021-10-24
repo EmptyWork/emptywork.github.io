@@ -577,6 +577,7 @@ li {
 a.projectlink:hover figure, a.projectlink:focus figure {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+  z-index: 10;
 }
 
 .project {

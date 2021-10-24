@@ -53,6 +53,7 @@ a.projectlink {
   &:focus {
     figure {
       transform: scale(1.1);
+      z-index: 10;
     }
   }
 }
