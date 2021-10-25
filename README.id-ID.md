@@ -12,6 +12,6 @@
 Kode untuk website pribadi saya.<br/>
 Tujuan pembuatan repository ini adalah untuk menunjukan kode yang telah ditulis oleh saya dan juga berfungsi sebagai bukti kemampuan saya dalam menggunakan Javascript, HTML5 dan CSS3
 
-Baca akang pake: <a href="README.md">Bahasa Inggris</a>, <a href="README.abs-ID.md">Bahasa Ambon</a>
+Bahasa Lain: <a href="README.md">Bahasa Inggris</a>, <a href="README.abs-ID.md">Bahasa Ambon</a>
 
 </div>
