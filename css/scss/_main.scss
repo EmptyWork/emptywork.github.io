@@ -425,12 +425,17 @@ a.projectlink {
   padding-top: 4rem;
 }
 
-.important {
+.aboutme {
   background-color: var(--clr-accent);
   color: var(--clr-white);
 
   ::selection {
     background-color: #333333;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
   }
 
   .main-container {

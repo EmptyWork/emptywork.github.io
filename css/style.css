@@ -348,6 +348,19 @@ li {
   width: 1.3rem;
 }
 
+.title-action[disabled] {
+  cursor: not-allowed;
+}
+
+.title-action[disabled]:hover {
+  -webkit-transform: scale(0.96);
+          transform: scale(0.96);
+  -webkit-box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.4);
+  -webkit-filter: grayscale(100);
+          filter: grayscale(100);
+}
+
 .title-action.secondary {
   background-color: var(--clr-background-800);
   background-image: none;
@@ -1103,20 +1116,25 @@ a.projectlink:hover figure, a.projectlink:focus figure {
   padding-top: 4rem;
 }
 
-.important {
+.aboutme {
   background-color: var(--clr-accent);
   color: var(--clr-white);
 }
 
-.important ::-moz-selection {
+.aboutme ::-moz-selection {
   background-color: #333333;
 }
 
-.important ::selection {
+.aboutme ::selection {
   background-color: #333333;
 }
 
-.important .main-container {
+.aboutme h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.aboutme .main-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1126,7 +1144,7 @@ a.projectlink:hover figure, a.projectlink:focus figure {
           flex-direction: column;
 }
 
-.important .flex {
+.aboutme .flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1138,7 +1156,7 @@ a.projectlink:hover figure, a.projectlink:focus figure {
 }
 
 @media screen and (max-width: 63.9375em) {
-  .important .flex {
+  .aboutme .flex {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1149,25 +1167,25 @@ a.projectlink:hover figure, a.projectlink:focus figure {
   }
 }
 
-.important .data {
+.aboutme .data {
   position: relative;
   width: 400px;
   height: 320px;
 }
 
 @media screen and (max-width: 63.9375em) {
-  .important .data {
+  .aboutme .data {
     width: 100%;
     max-width: 400px;
   }
 }
 
-.important .data:hover .note {
+.aboutme .data:hover .note {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.important .data::before {
+.aboutme .data::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -1177,22 +1195,22 @@ a.projectlink:hover figure, a.projectlink:focus figure {
   border-radius: 40% 20% / 10%;
 }
 
-.important article {
+.aboutme article {
   padding: 1rem;
   height: 100%;
   overflow-y: auto;
   scrollbar-width: none;
 }
 
-.important article::-webkit-scrollbar {
+.aboutme article::-webkit-scrollbar {
   width: 0;
 }
 
-.important article li {
+.aboutme article li {
   padding-left: 0.6rem;
 }
 
-.important .explain {
+.aboutme .explain {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1205,12 +1223,12 @@ a.projectlink:hover figure, a.projectlink:focus figure {
 }
 
 @media screen and (min-width: 64em) {
-  .important .explain {
+  .aboutme .explain {
     padding-left: 3rem;
   }
 }
 
-.important .note {
+.aboutme .note {
   -webkit-transform: rotate(-3deg);
           transform: rotate(-3deg);
   display: -webkit-box;
@@ -1233,7 +1251,7 @@ a.projectlink:hover figure, a.projectlink:focus figure {
   transition: all 300ms ease-in-out;
 }
 
-.important .note > svg {
+.aboutme .note > svg {
   position: absolute;
   right: 0.1rem;
   bottom: 0.1rem;
@@ -1241,7 +1259,7 @@ a.projectlink:hover figure, a.projectlink:focus figure {
   z-index: -1;
 }
 
-.important .note-header {
+.aboutme .note-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1258,7 +1276,7 @@ a.projectlink:hover figure, a.projectlink:focus figure {
           flex: 0 0 auto;
 }
 
-.important .note-header div {
+.aboutme .note-header div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1269,18 +1287,18 @@ a.projectlink:hover figure, a.projectlink:focus figure {
   gap: 0.2rem;
 }
 
-.important .note-header div .dot {
+.aboutme .note-header div .dot {
   height: 15px;
   width: 15px;
   background-color: #db0000;
   border-radius: 50%;
 }
 
-.important .note-header div .dot:first-of-type {
+.aboutme .note-header div .dot:first-of-type {
   background-color: green;
 }
 
-.important .note-header div .dot:nth-of-type(2) {
+.aboutme .note-header div .dot:nth-of-type(2) {
   background-color: yellow;
 }
 
