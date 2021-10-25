@@ -138,8 +138,8 @@ const createNewProject = (
     ${
       links
         ? `
-        ${links[0] ? `<li><a href="${links[0]}" target="_blank" class="sourcecode">sourcecode</a></li>` : `<li><a href="#projects" disabled class="sourcecode">sourcecode</a></li>`}
-        ${links[1] ? `<li><a href="${links[1]}" target="_blank" class="sourcecode">demo</a></li>` : `<li><a href="#projects" disabled class="sourcecode">demo</a></li>`}
+        ${links[0] ? `<li><a href="${links[0]}" target="_blank" class="sourcecode">sourcecode <span class="new-tab-warning"> Open a new tab </span></a></li>` : `<li><a href="#projects" disabled class="sourcecode">sourcecode</a></li>`}
+        ${links[1] ? `<li><a href="${links[1]}" target="_blank" class="sourcecode">demo <span class="new-tab-warning"> Open a new tab </span></a></li>` : `<li><a href="#projects" disabled class="sourcecode">demo</a></li>`}
       `
         : `
       <li><a href="#projects" disabled class="sourcecode">sourcecode</a></li>

@@ -33,6 +33,38 @@ a:focus {
   color: var(--clr-accent);
 }
 
+a[href] {
+  position: relative;
+
+  .new-tab-warning {
+    position: absolute;
+    width: max-content;
+    background-color: hsl(0, 0%, 13%);
+    color: var(--clr-white);
+    padding: 0.3rem;
+    font-size: 0.7rem;
+    border-radius: 0.3rem;
+    margin-top: 0.5rem;
+    top: 100%;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none;
+    text-transform: capitalize;
+    z-index: 20;
+    transition: all 300ms ease-out;
+    transform: translateY(-0.3rem);
+    z-index: 90;
+  }
+
+  &:focus {
+    .new-tab-warning {
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: unset;
+    }
+  }
+}
+
 ::selection {
   background-color: var(--clr-accent);
   color: var(--clr-white);
@@ -57,7 +89,6 @@ li {
 li {
   list-style: none;
 }
-
 
 *:focus {
   outline: 2px solid var(--clr-accent);

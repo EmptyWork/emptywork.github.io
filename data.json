@@ -4,7 +4,7 @@
     {
       "id": 1,
       "name": "Jobfair",
-      "details": "Make Jobsearching is Easy and reliable for <a href=\"https://en.wikipedia.org/wiki/Ambonese\" target=\"_blank\" rel=\"noopener noreferrer\">Ambonese</a>",
+      "details": "Make Jobsearching is Easy and reliable for <a href=\"https://en.wikipedia.org/wiki/Ambonese\" target=\"_blank\" rel=\"noopener noreferrer\">Ambonese <span class=\"new-tab-warning\"> Open a new tab </span></a>",
       "image": "../../images/jobfair.png",
       "started_at": 2021,
       "finished_at": null,

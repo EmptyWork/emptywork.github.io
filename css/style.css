@@ -93,6 +93,41 @@ a:focus {
   color: var(--clr-accent);
 }
 
+a[href] {
+  position: relative;
+}
+
+a[href] .new-tab-warning {
+  position: absolute;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: #212121;
+  color: var(--clr-white);
+  padding: 0.3rem;
+  font-size: 0.7rem;
+  border-radius: 0.3rem;
+  margin-top: 0.5rem;
+  top: 100%;
+  left: 0;
+  visibility: hidden;
+  pointer-events: none;
+  text-transform: capitalize;
+  z-index: 20;
+  -webkit-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  -webkit-transform: translateY(-0.3rem);
+          transform: translateY(-0.3rem);
+  z-index: 90;
+}
+
+a[href]:focus .new-tab-warning {
+  visibility: visible;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  pointer-events: unset;
+}
+
 ::-moz-selection {
   background-color: var(--clr-accent);
   color: var(--clr-white);
@@ -147,6 +182,22 @@ li {
   -webkit-box-shadow: 0 10px 20px rgba(56, 16, 96, 0.2);
           box-shadow: 0 10px 20px rgba(56, 16, 96, 0.2);
   z-index: 3;
+  position: relative;
+}
+
+.header .decoration {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.header .decoration .relative {
+  position: relative;
 }
 
 .title-container {
@@ -302,6 +353,11 @@ li {
   background-image: none;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.title-action.secondary:hover, .title-action.secondary:focus {
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
 }
 
 .title-action__group {
@@ -874,7 +930,7 @@ a.projectlink:hover figure, a.projectlink:focus figure {
 .prototype-description .links a {
   background-color: var(--clr-accent);
   color: var(--clr-white);
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 0.3rem;
   -webkit-transition: all 300ms ease-out;
   transition: all 300ms ease-out;
@@ -1044,7 +1100,7 @@ a.projectlink:hover figure, a.projectlink:focus figure {
 }
 
 .work {
-  margin-top: 4rem;
+  padding-top: 4rem;
 }
 
 .important {
@@ -1137,6 +1193,13 @@ a.projectlink:hover figure, a.projectlink:focus figure {
 }
 
 .important .explain {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
   padding: 1rem;
   font-size: 1.2rem;
 }

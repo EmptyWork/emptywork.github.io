@@ -18,6 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      title="external link for the font"
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
@@ -58,7 +59,7 @@
           </div>
           <p class="brand-title">Ew.</p>
         </a>
-        <ul role="menu">
+        <ul role="menubar" onkeypress="">
           <li role="menuitem"><a href="#">Home</a></li>
           <li role="menuitem"><a href="#projects">Projects</a></li>
           <li role="menuitem"><a href="#">Blog</a></li>
@@ -129,9 +130,15 @@
     </ul>
     <!-- 
       ? Header Section 
-      ! TODO: Colorize the view
     -->
     <header class="header">
+      <!-- 
+        ? For Decorations
+        * TODO: Animate and add more decoration to the header area
+      -->
+      <div class="decoration">
+        <div class="relative"></div>
+      </div>
       <section class="title-container">
         <div class="title-leftside">
           <div class="title-activity">
@@ -178,7 +185,7 @@
             <strong> Web Developer</strong>
           </h2>
           <p>
-            that just started his journey — as full-stack developer, there's a
+            that just started my journey — as a full-stack developer, there's a
             lot of things that I need to learn.
           </p>
           <div class="title-action__group">
@@ -195,6 +202,7 @@
                 ></path>
               </svg>
               C.V.
+              <span class="new-tab-warning"> Open a new tab </span>
             </a>
             <a
               href="https://github.com/EmptyWork/emptywork.github.io"
@@ -213,6 +221,7 @@
                 ></path>
               </svg>
               Code
+              <span class="new-tab-warning"> Open a new tab </span>
             </a>
           </div>
         </div>
@@ -303,8 +312,10 @@
               </div>
             </div>
             <div class="explain">
-              I am based in Indonesia.<br />
-              A student on one of local university in Indonesia,<br />
+              <div class="text-area">
+                <h4>I am based in Indonesia.</h4>
+                An active member of 7Mu<br />
+              </div>
             </div>
           </div>
         </div>
@@ -349,10 +360,10 @@
                   </div>
                   <article>
                     <code>
-                      function creditsIm() {<br/>
-                        let credit = document.querySelector('.ew-credits');<br/>
-                        credit.classList.toggle('show');<br/>
-                    }
+                      function creditsIm() {<br />
+                      let credit = document.querySelector('.ew-credits');<br />
+                      credit.classList.toggle('show');<br />
+                      }
                     </code>
                   </article>
                   <svg
@@ -378,7 +389,10 @@
                 <section class="text">
                   <h3>Eazbi - Website</h3>
                   <p>
-                    Source Code untuk website pribadi. tujuan website ini dibuat adalah sebagai showcase dan archive dari semua project yang akan dijalani atau dibuat. <span class="language">[id]</span>
+                    Source Code untuk website pribadi. tujuan website ini dibuat
+                    adalah sebagai showcase dan archive dari semua project yang
+                    akan dijalani atau dibuat.
+                    <span class="language">[id]</span>
                   </p>
                   <ul>
                     <li class="prototype-more">
@@ -394,13 +408,12 @@
                   </ul>
                 </section>
                 <div class="links">
-                  <a
-                    href="https://eazbi.rf.gd"
-                    target="_blank"
-                    >demo</a
-                  >
+                  <a href="https://eazbi.rf.gd" target="_blank"
+                    >demo
+                    <span class="new-tab-warning"> Open a new tab </span>
+                  </a>
                 </div>
-              </>
+              </article>
             </li>
             <li class="prototype-card">
               <div class="prototype-header">
@@ -434,14 +447,12 @@
                   </div>
                   <article>
                     <code>
-                      const preLoad = () => {<br/>
-                        let preload = document.querySelector('.preload');
-                        let content = document.querySelector('.inside');
-                        setTimeout(() => { preload.style.marginTop = 'calc(-100vh + -300px)';}, 2000)
-                        setTimeout(() => {
-                          content.style.display = "grid";
-                        }, 2100);
-                      }
+                      const preLoad = () => {<br />
+                      let preload = document.querySelector('.preload'); let
+                      content = document.querySelector('.inside'); setTimeout(()
+                      => { preload.style.marginTop = 'calc(-100vh + -300px)';},
+                      2000) setTimeout(() => { content.style.display = "grid";
+                      }, 2100); }
                     </code>
                   </article>
                   <svg
@@ -467,7 +478,9 @@
                 <section class="text">
                   <h3>Ew-Javascript</h3>
                   <p>
-                    Kumpulan proyek Javascript (native), kode-kode ini akan dikembangkan lagi untuk di gunakan sebagai front-end development. <span class="language">[id]</span>
+                    Kumpulan proyek Javascript (native), kode-kode ini akan
+                    dikembangkan lagi untuk di gunakan sebagai front-end
+                    development. <span class="language">[id]</span>
                   </p>
                   <ul>
                     <li class="prototype-more">
@@ -486,8 +499,9 @@
                   <a
                     href="https://emptywork.github.io/ew-javascript/"
                     target="_blank"
-                    >demo</a
-                  >
+                    >demo
+                    <span class="new-tab-warning"> Open a new tab </span>
+                  </a>
                 </div>
               </article>
             </li>
@@ -498,12 +512,13 @@
 
     <footer class="footer t-all">
       <div class="footer-container">
-        <q>"Belajar untuk menikmati sesuatu yang membuat diri-mu bosan"</q>
-        <div class="copyright">
+        <q>Belajar untuk menikmati sesuatu yang membuat diri-mu bosan</q>
+        <div aria-label="the copyright section" class="copyright">
           &copy; Copyright - All Right Reserved <br />
           Made and Design by
           <a href="https://github.com/EmptyWork" target="_blank">
             <strong>EmptyWork</strong>
+            <span class="new-tab-warning"> Open a new tab </span>
           </a>
           using Web Technology
         </div>

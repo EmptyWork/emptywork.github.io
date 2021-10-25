@@ -7,6 +7,19 @@
   background-color: var(--clr-background);
   box-shadow: 0 10px 20px hsla(270, 71%, 22%, 0.2);
   z-index: 3;
+  position: relative;
+
+  .decoration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    pointer-events: none;
+
+    .relative {
+      position: relative;
+    }
+  }
 }
 
 .title {
@@ -121,6 +134,10 @@
       background-color: var(--clr-background-800);
       background-image: none;
       box-shadow: none;
+
+      &:hover,&:focus {
+        filter: brightness(100%);
+      }
     }
 
     &__group {
