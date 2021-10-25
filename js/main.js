@@ -29,11 +29,13 @@ mobileButton.addEventListener("click", () => {
 })
 
 const setShowing = () => {
+  mobileButton.setAttribute('aria-label','Close the mobile menu')
   mobileMenuSection.classList.remove("not-showing")
   setTimeout(() => document.body.classList.add("no-scroll"), 300)
 }
 
 const setHidden = () => {
+  mobileButton.setAttribute('aria-label','Open the mobile menu')
   mobileMenuSection.classList.add("not-showing")
   document.body.classList.remove("no-scroll")
 }
@@ -118,6 +120,7 @@ const createNewProject = (
   projectLink.setAttribute("arial-label", `Project: ${name}`)
   let projectContainer = document.createElement("figure")
   projectContainer.classList.add("project", "t-all")
+  projectContainer.setAttribute('title', `Image of ${name}`)
   if (image)
     projectContainer.style.backgroundImage = `linear-gradient(transparent, var(--clr-accent-dark)), url(${image})`
   projectContainer.innerHTML = `
@@ -135,8 +138,8 @@ const createNewProject = (
     ${
       links
         ? `
-      <li><a href="${links[0]}" target="_blank" class="sourcecode">sourcecode</a></li>
-      <li><a href="${links[1]}" target="_blank" class="sourcecode">demo</a></li>
+        ${links[0] ? `<li><a href="${links[0]}" target="_blank" class="sourcecode">sourcecode</a></li>` : `<li><a href="#projects" disabled class="sourcecode">sourcecode</a></li>`}
+        ${links[1] ? `<li><a href="${links[1]}" target="_blank" class="sourcecode">demo</a></li>` : `<li><a href="#projects" disabled class="sourcecode">demo</a></li>`}
       `
         : `
       <li><a href="#projects" disabled class="sourcecode">sourcecode</a></li>
@@ -167,11 +170,13 @@ themesButton.addEventListener("click", themeHandler)
 
 const setLight = () => {
   document.documentElement.classList.remove("dark")
+  themesButton.setAttribute('aria-label', 'Switch to dark mode')
   localStorage.theme = "light"
 }
 
 const setDark = () => {
   document.documentElement.classList.add("dark")
+  themesButton.setAttribute('aria-label', 'Switch to light mode')
   localStorage.theme = "dark"
 }
 
