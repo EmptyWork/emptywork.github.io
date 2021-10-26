@@ -118,6 +118,7 @@ const createNewProject = (
   projectLink.href = "#projects"
   projectLink.classList.add('projectlink')
   projectLink.setAttribute("arial-label", `Project: ${name}`)
+  projectLink.innerHTML = "<span class=\"new-tab-warning\"> Open a new tab </span>";
   let projectContainer = document.createElement("figure")
   projectContainer.classList.add("project", "t-all")
   projectContainer.setAttribute('title', `Image of ${name}`)
@@ -138,12 +139,12 @@ const createNewProject = (
     ${
       links
         ? `
-        ${links[0] ? `<li><a href="${links[0]}" target="_blank" class="sourcecode">sourcecode <span class="new-tab-warning"> Open a new tab </span></a></li>` : `<li><a href="#projects" disabled class="sourcecode">sourcecode</a></li>`}
-        ${links[1] ? `<li><a href="${links[1]}" target="_blank" class="sourcecode">demo <span class="new-tab-warning"> Open a new tab </span></a></li>` : `<li><a href="#projects" disabled class="sourcecode">demo</a></li>`}
+        ${links[0] ? `<li><a href="${links[0]}" target="_blank" class="sourcecode">sourcecode <span class="new-tab-warning"> Open a new tab </span></a></li>` : `<li><a aria-disabled="true" disabled class="sourcecode">sourcecode</a></li>`}
+        ${links[1] ? `<li><a href="${links[1]}" target="_blank" class="sourcecode">demo <span class="new-tab-warning"> Open a new tab </span></a></li>` : `<li><a aria-disabled="true" disabled class="sourcecode">demo</a></li>`}
       `
         : `
-      <li><a href="#projects" disabled class="sourcecode">sourcecode</a></li>
-      <li><a href="#projects" disabled class="sourcecode">demo</a></li>
+      <li><a aria-disabled="true" disabled class="sourcecode">sourcecode</a></li>
+      <li><a aria-disabled="true" disabled class="sourcecode">demo</a></li>
       `
     }
     </ul>
