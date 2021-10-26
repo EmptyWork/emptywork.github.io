@@ -29,13 +29,13 @@ mobileButton.addEventListener("click", () => {
 })
 
 const setShowing = () => {
-  mobileButton.setAttribute('aria-label','Close the mobile menu')
+  mobileButton.setAttribute("aria-label", "Close the mobile menu")
   mobileMenuSection.classList.remove("not-showing")
   setTimeout(() => document.body.classList.add("no-scroll"), 300)
 }
 
 const setHidden = () => {
-  mobileButton.setAttribute('aria-label','Open the mobile menu')
+  mobileButton.setAttribute("aria-label", "Open the mobile menu")
   mobileMenuSection.classList.add("not-showing")
   document.body.classList.remove("no-scroll")
 }
@@ -43,15 +43,7 @@ const setHidden = () => {
 /**
  * Global Variables for Date related functions
  */
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-]
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
 let months = [
   "January",
@@ -116,21 +108,19 @@ const createNewProject = (
 ) => {
   let projectLink = document.createElement("a")
   projectLink.href = "#projects"
-  projectLink.classList.add('projectlink')
+  projectLink.classList.add("projectlink")
   projectLink.setAttribute("arial-label", `Project: ${name}`)
-  projectLink.innerHTML = "<span class=\"new-tab-warning\"> Open a new tab </span>";
+  projectLink.innerHTML = '<span class="new-tab-warning"> Open a new tab </span>'
   let projectContainer = document.createElement("figure")
   projectContainer.classList.add("project", "t-all")
-  projectContainer.setAttribute('title', `Image of ${name}`)
+  projectContainer.setAttribute("title", `Image of ${name}`)
   if (image)
     projectContainer.style.backgroundImage = `linear-gradient(transparent, var(--clr-accent-dark)), url(${image})`
   projectContainer.innerHTML = `
   <figcaption>
     <header>
-      <h2 title="${name}">${name.length >= 21 ? `${name.substring(0,20)}...` : name}</h2> 
-      <small>${
-        finished_at != null ? `${finished_at} ` : `${started_at} — Present`
-      }</small>
+      <h2 title="${name}">${name.length >= 21 ? `${name.substring(0, 20)}...` : name}</h2> 
+      <small>${finished_at != null ? `${finished_at} ` : `${started_at} — Present`}</small>
     </header>
     <article class="description-area">
       <p>${details}</p>
@@ -139,12 +129,20 @@ const createNewProject = (
     ${
       links
         ? `
-        ${links[0] ? `<li><a href="${links[0]}" target="_blank" class="sourcecode">sourcecode <span class="new-tab-warning"> Open a new tab </span></a></li>` : `<li><a aria-disabled="true" disabled class="sourcecode">sourcecode</a></li>`}
-        ${links[1] ? `<li><a href="${links[1]}" target="_blank" class="sourcecode">demo <span class="new-tab-warning"> Open a new tab </span></a></li>` : `<li><a aria-disabled="true" disabled class="sourcecode">demo</a></li>`}
+        ${
+          links[0]
+            ? `<li><a href="${links[0]}" target="_blank" class="sourcecode">sourcecode <span class="new-tab-warning"> Open a new tab </span></a></li>`
+            : `<li><span class="sourcecode">sourcecode</span></li>`
+        }
+        ${
+          links[1]
+            ? `<li><a href="${links[1]}" target="_blank" class="sourcecode">demo <span class="new-tab-warning"> Open a new tab </span></a></li>`
+            : `<li><a aria-disabled="true" disabled class="sourcecode">demo</a></li>`
+        }
       `
         : `
-      <li><a aria-disabled="true" disabled class="sourcecode">sourcecode</a></li>
-      <li><a aria-disabled="true" disabled class="sourcecode">demo</a></li>
+      <li><span class="sourcecode">sourcecode</span></li>
+      <li><span class="sourcecode">demo</span></li>
       `
     }
     </ul>
@@ -171,13 +169,13 @@ themesButton.addEventListener("click", themeHandler)
 
 const setLight = () => {
   document.documentElement.classList.remove("dark")
-  themesButton.setAttribute('aria-label', 'Switch to dark mode')
+  themesButton.setAttribute("aria-label", "Switch to dark mode")
   localStorage.theme = "light"
 }
 
 const setDark = () => {
   document.documentElement.classList.add("dark")
-  themesButton.setAttribute('aria-label', 'Switch to light mode')
+  themesButton.setAttribute("aria-label", "Switch to light mode")
   localStorage.theme = "dark"
 }
 

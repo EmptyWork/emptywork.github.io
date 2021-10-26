@@ -40,7 +40,7 @@
         content: "";
         position: absolute;
         left: 0;
-        border: 3px solid var(--clr-foreground);
+        border: 0.1875rem solid var(--clr-foreground);
         top: 50%;
         transform: translateY(-50%);
         margin-left: -1rem;
@@ -66,7 +66,7 @@ a.projectlink {
   background-position: center;
   background-size: cover;
   background-clip: border-box;
-  box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.4);
+  box-shadow: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
   border-radius: 0.3rem;
   padding: 10rem 0 0;
   width: 28ch;
@@ -126,6 +126,15 @@ a.projectlink {
       width: 100%;
       justify-content: space-between;
 
+      span {
+        display: block;
+        margin-top: 1rem;
+        padding: 1rem 1.5rem;
+        color: var(--clr-disabled-text);
+        cursor: not-allowed;
+        user-select: none;
+      }
+
       a {
         display: block;
         margin-top: 1rem;
@@ -152,19 +161,6 @@ a.projectlink {
           height: 100%;
           transition: all 150ms ease-in;
           z-index: -1;
-        }
-
-        &[disabled] {
-          color: var(--clr-disabled-text);
-          cursor: not-allowed;
-          pointer-events: none;
-
-          &:hover,
-          &:focus {
-            &::before {
-              display: none;
-            }
-          }
         }
       }
     }
@@ -330,13 +326,13 @@ a.projectlink {
   &-header {
     flex: 0 0 auto;
     position: relative;
-    width: 400px;
-    height: 320px;
+    width: 25rem;
+    height: 20rem;
     color: var(--clr-white);
 
     @include breakpoint-down("medium") {
       width: 100%;
-      max-width: 400px;
+      max-width: 25rem;
     }
 
     &:hover {
@@ -363,7 +359,7 @@ a.projectlink {
     flex-direction: column;
     background-color: hsl(0, 0%, 13%);
     border-radius: 0.6rem;
-    box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.4);
+    box-shadow: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
     height: 100%;
     transition: all 300ms ease-in-out;
     z-index: 0;
@@ -390,11 +386,11 @@ a.projectlink {
 
     &-header {
       display: flex;
-      height: 40px;
+      height: 2.5rem;
       padding: 0 1rem;
       width: 100%;
       justify-content: space-between;
-      box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.4);
+      box-shadow: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
       flex: 0 0 auto;
 
       div {
@@ -404,8 +400,8 @@ a.projectlink {
         gap: 0.2rem;
 
         .dot {
-          height: 15px;
-          width: 15px;
+          height: 0.9375rem;
+          width: 0.9375rem;
           background-color: hsl(0, 100%, 43%);
           border-radius: 50%;
 
@@ -440,17 +436,13 @@ a.projectlink {
     text-underline-offset: 0.4rem;
   }
 
-  a:hover,a:focus {
+  a:hover,
+  a:focus {
     color: #d0d0d0;
   }
 
   ::selection {
     background-color: #333333;
-  }
-
-  .highlight {
-    background-color: var(--clr-black);
-    padding: 0.2rem 0.6rem;
   }
 
   h4 {
@@ -474,7 +466,7 @@ a.projectlink {
       padding: 0 1rem;
       width: 100%;
       justify-content: space-between;
-      box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.4);
+      box-shadow: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
       flex: 0 0 auto;
 
       div {
@@ -484,8 +476,8 @@ a.projectlink {
         gap: 0.2rem;
 
         .dot {
-          height: 15px;
-          width: 15px;
+          height: 0.9375rem;
+          width: 0.9375rem;
           background-color: hsl(0, 100%, 43%);
           border-radius: 50%;
 
@@ -503,11 +495,12 @@ a.projectlink {
     .lists {
       display: flex;
       justify-content: space-around;
+      width: 100%;
     }
 
     &.tools {
       background-color: hsl(0, 0%, 13%);
-      box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.4);
+      box-shadow: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
       margin-bottom: -9rem;
 
       .lists {
@@ -519,7 +512,7 @@ a.projectlink {
 
     &.languages {
       filter: brightness(110%);
-      box-shadow: inset 0 5px 10px hsla(0, 0%, 0%, 0.4);
+      box-shadow: inset 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
       background-color: var(--clr-accent-dark);
       padding: 2rem;
 
@@ -540,6 +533,7 @@ a.projectlink {
         li {
           font-weight: 500;
           font-size: 1rem;
+          margin-top: 0.5rem;
           &:first-of-type {
             margin-top: 0.8rem;
           }
@@ -555,6 +549,7 @@ a.projectlink {
 
         ul > li {
           display: inline-block;
+          margin-top: 0;
         }
       }
     }
@@ -567,12 +562,12 @@ a.projectlink {
 
   .data {
     position: relative;
-    min-width: 400px;
-    height: 320px;
+    min-width: 25rem;
+    height: 20rem;
 
     @include breakpoint-down("medium") {
       width: 100%;
-      max-width: 400px;
+      max-width: 25rem;
       min-width: unset;
     }
 
@@ -629,7 +624,7 @@ a.projectlink {
     flex-direction: column;
     background-color: hsl(0, 0%, 13%);
     border-radius: 0.6rem;
-    box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.4);
+    box-shadow: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
     height: 100%;
     transition: all 300ms ease-in-out;
 
@@ -643,11 +638,11 @@ a.projectlink {
 
     &-header {
       display: flex;
-      height: 40px;
+      height: 2.5rem;
       padding: 0 1rem;
       width: 100%;
       justify-content: space-between;
-      box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.4);
+      box-shadow: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
       flex: 0 0 auto;
 
       div {
@@ -657,8 +652,8 @@ a.projectlink {
         gap: 0.2rem;
 
         .dot {
-          height: 15px;
-          width: 15px;
+          height: 0.9375rem;
+          width: 0.9375rem;
           background-color: hsl(0, 100%, 43%);
           border-radius: 50%;
 

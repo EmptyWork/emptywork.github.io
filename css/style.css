@@ -2,7 +2,7 @@ html:root {
   --clr-accent: hsl(270, 50%, 40%);
   --clr-accent-light: hsl(270, 84%, 72%);
   --clr-accent-dark: hsl(270, 71%, 22%);
-  --clr-background: hsl(0, 0%, 100%);
+  --clr-background: hsl(0, 0%, 95%);
   --clr-background-900: hsl(0, 0%, 88%);
   --clr-background-800: hsl(0, 0%, 75%);
   --clr-background-700: hsl(0, 0%, 63%);
@@ -33,7 +33,7 @@ html:root.dark {
   --clr-background-900: hsl(0, 0%, 13%);
   --clr-background-800: hsl(0, 0%, 25%);
   --clr-background-700: hsl(0, 0%, 38%);
-  --clr-foreground: hsl(0, 0%, 100%);
+  --clr-foreground: hsl(0, 0%, 95%);
   --clr-foreground-900: hsl(0, 0%, 88%);
   --clr-foreground-800: hsl(0, 0%, 75%);
   --clr-foreground-700: hsl(0, 0%, 63%);
@@ -78,6 +78,7 @@ body {
   font-family: "Montserrat", sans-serif;
   color: var(--clr-foreground);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a,
@@ -103,6 +104,8 @@ a[href] .new-tab-warning {
   width: -moz-max-content;
   width: max-content;
   background-color: #212121;
+  font-weight: normal;
+  letter-spacing: normal;
   color: var(--clr-white);
   padding: 0.3rem;
   font-size: 0.7rem;
@@ -113,7 +116,6 @@ a[href] .new-tab-warning {
   visibility: hidden;
   pointer-events: none;
   text-transform: capitalize;
-  z-index: 20;
   -webkit-transition: all 300ms ease-out;
   transition: all 300ms ease-out;
   -webkit-transform: translateY(-0.3rem);
@@ -145,7 +147,7 @@ a[href]:focus .new-tab-warning {
 
 @media screen and (max-width: 39.9375em) {
   .no-scroll {
-    overflow-y: hidden !important;
+    overflow: hidden !important;
   }
 }
 
@@ -160,7 +162,20 @@ li {
 }
 
 *:focus {
-  outline: 2px solid var(--clr-accent);
+  outline: 0.125rem solid var(--clr-accent-dark);
+}
+
+.highlight {
+  background-color: var(--clr-black);
+  padding: 0.2rem 0.6rem;
+  color: var(--clr-white);
+}
+
+@media (prefers-reduced-motion) {
+  .prototype-reader, .data {
+    -webkit-transform: unset;
+            transform: unset;
+  }
 }
 
 .header {
@@ -179,8 +194,8 @@ li {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: var(--clr-background);
-  -webkit-box-shadow: 0 10px 20px rgba(56, 16, 96, 0.2);
-          box-shadow: 0 10px 20px rgba(56, 16, 96, 0.2);
+  -webkit-box-shadow: 0 0.625rem 1.25rem rgba(56, 16, 96, 0.2);
+          box-shadow: 0 0.625rem 1.25rem rgba(56, 16, 96, 0.2);
   z-index: 3;
   position: relative;
 }
@@ -235,11 +250,13 @@ li {
 
 .title-rightside {
   width: 100%;
+  font-size: 1.2rem;
 }
 
-.title-rightside h2 {
-  font-weight: normal;
+.title-rightside h3 {
   margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
 
 @media screen and (min-width: 64em) {
@@ -249,6 +266,13 @@ li {
             flex: 1 0 auto;
     width: 70%;
   }
+}
+
+.title-link {
+  display: block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .title-activity {
@@ -337,8 +361,8 @@ li {
   background-color: var(--clr-accent);
   -webkit-filter: brightness(140%);
           filter: brightness(140%);
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
   -webkit-transform: scale(1.04);
           transform: scale(1.04);
 }
@@ -355,14 +379,15 @@ li {
 .title-action[disabled]:hover {
   -webkit-transform: scale(0.96);
           transform: scale(0.96);
-  -webkit-box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.4);
-          box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: inset 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
+          box-shadow: inset 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
   -webkit-filter: grayscale(100);
           filter: grayscale(100);
 }
 
 .title-action.secondary {
   background-color: var(--clr-background-800);
+  color: var(--clr-foreground-800);
   background-image: none;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -487,12 +512,12 @@ li {
 }
 
 .nav .themes__section, .nav-mobile__section {
-  margin-top: 57.69px;
-  width: 100%;
+  margin-top: 3.605625rem;
+  right: 0;
   position: fixed;
   top: 0;
   left: 0;
-  height: calc(100% - 57.69px);
+  height: calc(100% - 3.605625rem);
   background-color: var(--clr-background);
   color: var(--clr-foreground);
   z-index: 20;
@@ -646,7 +671,7 @@ li {
   content: "";
   position: absolute;
   left: 0;
-  border: 3px solid var(--clr-foreground);
+  border: 0.1875rem solid var(--clr-foreground);
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -667,8 +692,8 @@ a.projectlink:hover figure, a.projectlink:focus figure {
   background-position: center;
   background-size: cover;
   background-clip: border-box;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
   border-radius: 0.3rem;
   padding: 10rem 0 0;
   width: 28ch;
@@ -750,6 +775,18 @@ a.projectlink:hover figure, a.projectlink:focus figure {
           justify-content: space-between;
 }
 
+.project figcaption .more-links span {
+  display: block;
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  color: var(--clr-disabled-text);
+  cursor: not-allowed;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 .project figcaption .more-links a {
   display: block;
   margin-top: 1rem;
@@ -781,16 +818,6 @@ a.projectlink:hover figure, a.projectlink:focus figure {
   -webkit-transition: all 150ms ease-in;
   transition: all 150ms ease-in;
   z-index: -1;
-}
-
-.project figcaption .more-links a[disabled] {
-  color: var(--clr-disabled-text);
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.project figcaption .more-links a[disabled]:hover::before, .project figcaption .more-links a[disabled]:focus::before {
-  display: none;
 }
 
 .prototype {
@@ -1007,15 +1034,15 @@ a.projectlink:hover figure, a.projectlink:focus figure {
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
   position: relative;
-  width: 400px;
-  height: 320px;
+  width: 25rem;
+  height: 20rem;
   color: var(--clr-white);
 }
 
 @media screen and (max-width: 63.9375em) {
   .prototype-header {
     width: 100%;
-    max-width: 400px;
+    max-width: 25rem;
   }
 }
 
@@ -1047,8 +1074,8 @@ a.projectlink:hover figure, a.projectlink:focus figure {
           flex-direction: column;
   background-color: #212121;
   border-radius: 0.6rem;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
   height: 100%;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
@@ -1079,14 +1106,14 @@ a.projectlink:hover figure, a.projectlink:focus figure {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 40px;
+  height: 2.5rem;
   padding: 0 1rem;
   width: 100%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
@@ -1104,8 +1131,8 @@ a.projectlink:hover figure, a.projectlink:focus figure {
 }
 
 .prototype .note-header div .dot {
-  height: 15px;
-  width: 15px;
+  height: 0.9375rem;
+  width: 0.9375rem;
   background-color: #db0000;
   border-radius: 50%;
 }
@@ -1137,7 +1164,8 @@ a.projectlink:hover figure, a.projectlink:focus figure {
   text-underline-offset: 0.4rem;
 }
 
-.aboutme a:hover, .aboutme a:focus {
+.aboutme a:hover,
+.aboutme a:focus {
   color: #d0d0d0;
 }
 
@@ -1147,11 +1175,6 @@ a.projectlink:hover figure, a.projectlink:focus figure {
 
 .aboutme ::selection {
   background-color: #333333;
-}
-
-.aboutme .highlight {
-  background-color: var(--clr-black);
-  padding: 0.2rem 0.6rem;
 }
 
 .aboutme h4 {
@@ -1190,8 +1213,8 @@ a.projectlink:hover figure, a.projectlink:focus figure {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
@@ -1209,8 +1232,8 @@ a.projectlink:hover figure, a.projectlink:focus figure {
 }
 
 .aboutme .flex-header div .dot {
-  height: 15px;
-  width: 15px;
+  height: 0.9375rem;
+  width: 0.9375rem;
   background-color: #db0000;
   border-radius: 50%;
 }
@@ -1229,12 +1252,13 @@ a.projectlink:hover figure, a.projectlink:focus figure {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  width: 100%;
 }
 
 .aboutme .flex.tools {
   background-color: #212121;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
   margin-bottom: -9rem;
 }
 
@@ -1247,8 +1271,8 @@ a.projectlink:hover figure, a.projectlink:focus figure {
 .aboutme .flex.languages {
   -webkit-filter: brightness(110%);
           filter: brightness(110%);
-  -webkit-box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.4);
-          box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: inset 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
+          box-shadow: inset 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
   background-color: var(--clr-accent-dark);
   padding: 2rem;
 }
@@ -1275,6 +1299,7 @@ a.projectlink:hover figure, a.projectlink:focus figure {
 .aboutme .flex:not(:first-of-type) ul li {
   font-weight: 500;
   font-size: 1rem;
+  margin-top: 0.5rem;
 }
 
 .aboutme .flex:not(:first-of-type) ul li:first-of-type {
@@ -1295,6 +1320,7 @@ a.projectlink:hover figure, a.projectlink:focus figure {
   }
   .aboutme .flex:not(:first-of-type) ul > li {
     display: inline-block;
+    margin-top: 0;
   }
 }
 
@@ -1312,14 +1338,14 @@ a.projectlink:hover figure, a.projectlink:focus figure {
 
 .aboutme .data {
   position: relative;
-  min-width: 400px;
-  height: 320px;
+  min-width: 25rem;
+  height: 20rem;
 }
 
 @media screen and (max-width: 63.9375em) {
   .aboutme .data {
     width: 100%;
-    max-width: 400px;
+    max-width: 25rem;
     min-width: unset;
   }
 }
@@ -1388,8 +1414,8 @@ a.projectlink:hover figure, a.projectlink:focus figure {
           flex-direction: column;
   background-color: #212121;
   border-radius: 0.6rem;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
   height: 100%;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
@@ -1407,14 +1433,14 @@ a.projectlink:hover figure, a.projectlink:focus figure {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 40px;
+  height: 2.5rem;
   padding: 0 1rem;
   width: 100%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
@@ -1432,8 +1458,8 @@ a.projectlink:hover figure, a.projectlink:focus figure {
 }
 
 .aboutme .note-header div .dot {
-  height: 15px;
-  width: 15px;
+  height: 0.9375rem;
+  width: 0.9375rem;
   background-color: #db0000;
   border-radius: 50%;
 }
@@ -1459,10 +1485,10 @@ a.projectlink:hover figure, a.projectlink:focus figure {
 }
 
 .footer .copyright {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   margin: 1rem auto;
   text-align: center;
-  border: 0.1rem dashed var(--clr-foreground);
+  border: 0.0625rem solid var(--clr-foreground);
   width: 100%;
   max-width: -webkit-max-content;
   max-width: -moz-max-content;

@@ -5,7 +5,7 @@
   height: 100vh;
   flex-direction: column;
   background-color: var(--clr-background);
-  box-shadow: 0 10px 20px hsla(270, 71%, 22%, 0.2);
+  box-shadow: 0 0.625rem 1.25rem hsla(270, 71%, 22%, 0.2);
   z-index: 3;
   position: relative;
 
@@ -44,16 +44,23 @@
 
   &-rightside {
     width: 100%;
+    font-size: 1.2rem;
 
-    h2 {
-      font-weight: normal;
+    h3 {
       margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
     }
 
     @include breakpoint-up("large") {
       flex: 1 0 auto;
       width: 70%;
     }
+  }
+
+  &-link {
+    display: block;
+    width: max-content;
   }
 
   &-activity {
@@ -121,7 +128,7 @@
       color: hsl(0, 0%, 80%);
       background-color: var(--clr-accent);
       filter: brightness(140%);
-      box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.4);
+      box-shadow: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
       transform: scale(1.04);
     }
 
@@ -134,17 +141,19 @@
       cursor: not-allowed;
       &:hover {
         transform: scale(0.96);
-        box-shadow: inset 0 5px 10px hsla(0, 0%, 0%, 0.4);
+        box-shadow: inset 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
         filter: grayscale(100);
       }
     }
 
     &.secondary {
       background-color: var(--clr-background-800);
+      color: var(--clr-foreground-800);
       background-image: none;
       box-shadow: none;
 
-      &:hover,&:focus {
+      &:hover,
+      &:focus {
         filter: brightness(100%);
       }
     }
@@ -231,6 +240,21 @@
     }
 
     &__section {
+      margin-top: 3.605625rem;
+      right: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: calc(100% - 3.605625rem);
+      background-color: var(--clr-background);
+      color: var(--clr-foreground);
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      justify-content: center;
+
       &.not-showing {
         height: 0%;
         overflow-y: hidden;
@@ -243,20 +267,6 @@
         visibility: hidden;
       }
 
-      margin-top: 57.69px;
-      width: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: calc(100% - 57.69px);
-      background-color: var(--clr-background);
-      color: var(--clr-foreground);
-      z-index: 20;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-      justify-content: center;
       li {
         list-style: none;
       }

@@ -8,10 +8,7 @@
       "image": "../../images/jobfair.png",
       "started_at": 2021,
       "finished_at": null,
-      "links": [
-        null,
-        "https://jobfairgpmsyaloom.skom.id"
-      ]
+      "links": [null, "https://jobfairgpmsyaloom.skom.id"]
     },
     {
       "id": 2,
@@ -32,10 +29,7 @@
       "image": "../../images/expo.png",
       "started_at": 2019,
       "finished_at": 2019,
-      "links": [
-        "https://github.com/EmptyWork/UKIMexpo",
-        "https://emptywork.github.io/UKIMexpo/"
-      ]
+      "links": ["https://github.com/EmptyWork/UKIMexpo", "https://emptywork.github.io/UKIMexpo/"]
     }
   ]
 }
