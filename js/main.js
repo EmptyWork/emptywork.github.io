@@ -126,7 +126,7 @@ const createNewProject = (
   projectContainer.innerHTML = `
   <figcaption>
     <header>
-      <h2>${name}</h2> 
+      <h2 title="${name}">${name.length >= 21 ? `${name.substring(0,20)}...` : name}</h2> 
       <small>${
         finished_at != null ? `${finished_at} ` : `${started_at} — Present`
       }</small>

@@ -173,6 +173,7 @@ a.projectlink {
 
 .prototype {
   margin-bottom: 4rem;
+  margin-top: 4rem;
 
   &s {
     display: flex;
@@ -205,7 +206,6 @@ a.projectlink {
     }
 
     &:nth-of-type(odd) {
-
       .prototype-header {
         order: 2;
 
@@ -218,7 +218,6 @@ a.projectlink {
           order: 0;
         }
       }
-      
 
       .prototype-description {
         .text {
@@ -254,10 +253,12 @@ a.projectlink {
 
       .language {
         display: inline-block;
-        padding: 0.1rem 0.3rem;
+        padding: 0 0.1rem;
         background-color: var(--clr-accent-dark);
         color: var(--clr-white);
         border-radius: 0.3rem;
+        user-select: none;
+        font-size: 0.8rem;
       }
 
       @include breakpoint-down("medium") {
@@ -429,8 +430,27 @@ a.projectlink {
   background-color: var(--clr-accent);
   color: var(--clr-white);
 
+  .adds {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+  }
+
+  a:hover,a:focus {
+    color: #d0d0d0;
+  }
+
   ::selection {
     background-color: #333333;
+  }
+
+  .highlight {
+    background-color: var(--clr-black);
+    padding: 0.2rem 0.6rem;
   }
 
   h4 {
@@ -446,7 +466,98 @@ a.projectlink {
   .flex {
     display: flex;
     flex-direction: row;
+    border-radius: 0.3rem;
     margin-top: 1rem;
+
+    &-header {
+      display: flex;
+      padding: 0 1rem;
+      width: 100%;
+      justify-content: space-between;
+      box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.4);
+      flex: 0 0 auto;
+
+      div {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        gap: 0.2rem;
+
+        .dot {
+          height: 15px;
+          width: 15px;
+          background-color: hsl(0, 100%, 43%);
+          border-radius: 50%;
+
+          &:first-of-type {
+            background-color: green;
+          }
+
+          &:nth-of-type(2) {
+            background-color: yellow;
+          }
+        }
+      }
+    }
+
+    .lists {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    &.tools {
+      background-color: hsl(0, 0%, 13%);
+      box-shadow: 0 5px 10px hsla(0, 0%, 0%, 0.4);
+      margin-bottom: -9rem;
+
+      .lists {
+        background-color: hsl(0, 0%, 11%);
+        border-radius: 0.3rem;
+        padding: 2rem;
+      }
+    }
+
+    &.languages {
+      filter: brightness(110%);
+      box-shadow: inset 0 5px 10px hsla(0, 0%, 0%, 0.4);
+      background-color: var(--clr-accent-dark);
+      padding: 2rem;
+
+      ul {
+        margin-top: 0.2rem;
+      }
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 5rem;
+      justify-content: space-around;
+      flex-direction: column;
+
+      ul {
+        font-size: 1.1rem;
+        font-weight: 600;
+
+        li {
+          font-weight: 500;
+          font-size: 1rem;
+          &:first-of-type {
+            margin-top: 0.8rem;
+          }
+        }
+      }
+
+      @include breakpoint-down("medium") {
+        align-items: flex-start;
+
+        .lists {
+          flex-direction: column;
+        }
+
+        ul > li {
+          display: inline-block;
+        }
+      }
+    }
 
     @include breakpoint-down("medium") {
       flex-direction: column;
@@ -456,12 +567,13 @@ a.projectlink {
 
   .data {
     position: relative;
-    width: 400px;
+    min-width: 400px;
     height: 320px;
 
     @include breakpoint-down("medium") {
       width: 100%;
       max-width: 400px;
+      min-width: unset;
     }
 
     &:hover {

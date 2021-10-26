@@ -795,6 +795,7 @@ a.projectlink:hover figure, a.projectlink:focus figure {
 
 .prototype {
   margin-bottom: 4rem;
+  margin-top: 4rem;
 }
 
 .prototypes {
@@ -908,10 +909,15 @@ a.projectlink:hover figure, a.projectlink:focus figure {
 
 .prototype-description .text .language {
   display: inline-block;
-  padding: 0.1rem 0.3rem;
+  padding: 0 0.1rem;
   background-color: var(--clr-accent-dark);
   color: var(--clr-white);
   border-radius: 0.3rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 0.8rem;
 }
 
 @media screen and (max-width: 63.9375em) {
@@ -1121,12 +1127,31 @@ a.projectlink:hover figure, a.projectlink:focus figure {
   color: var(--clr-white);
 }
 
+.aboutme .adds {
+  font-size: 0.9rem;
+  padding: 1rem;
+}
+
+.aboutme a {
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+}
+
+.aboutme a:hover, .aboutme a:focus {
+  color: #d0d0d0;
+}
+
 .aboutme ::-moz-selection {
   background-color: #333333;
 }
 
 .aboutme ::selection {
   background-color: #333333;
+}
+
+.aboutme .highlight {
+  background-color: var(--clr-black);
+  padding: 0.2rem 0.6rem;
 }
 
 .aboutme h4 {
@@ -1152,7 +1177,125 @@ a.projectlink:hover figure, a.projectlink:focus figure {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  border-radius: 0.3rem;
   margin-top: 1rem;
+}
+
+.aboutme .flex-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 1rem;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+.aboutme .flex-header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+  gap: 0.2rem;
+}
+
+.aboutme .flex-header div .dot {
+  height: 15px;
+  width: 15px;
+  background-color: #db0000;
+  border-radius: 50%;
+}
+
+.aboutme .flex-header div .dot:first-of-type {
+  background-color: green;
+}
+
+.aboutme .flex-header div .dot:nth-of-type(2) {
+  background-color: yellow;
+}
+
+.aboutme .flex .lists {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.aboutme .flex.tools {
+  background-color: #212121;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  margin-bottom: -9rem;
+}
+
+.aboutme .flex.tools .lists {
+  background-color: #1c1c1c;
+  border-radius: 0.3rem;
+  padding: 2rem;
+}
+
+.aboutme .flex.languages {
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+  -webkit-box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.4);
+  background-color: var(--clr-accent-dark);
+  padding: 2rem;
+}
+
+.aboutme .flex.languages ul {
+  margin-top: 0.2rem;
+}
+
+.aboutme .flex:not(:first-of-type) {
+  margin-top: 5rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.aboutme .flex:not(:first-of-type) ul {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.aboutme .flex:not(:first-of-type) ul li {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.aboutme .flex:not(:first-of-type) ul li:first-of-type {
+  margin-top: 0.8rem;
+}
+
+@media screen and (max-width: 63.9375em) {
+  .aboutme .flex:not(:first-of-type) {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .aboutme .flex:not(:first-of-type) .lists {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .aboutme .flex:not(:first-of-type) ul > li {
+    display: inline-block;
+  }
 }
 
 @media screen and (max-width: 63.9375em) {
@@ -1169,7 +1312,7 @@ a.projectlink:hover figure, a.projectlink:focus figure {
 
 .aboutme .data {
   position: relative;
-  width: 400px;
+  min-width: 400px;
   height: 320px;
 }
 
@@ -1177,6 +1320,7 @@ a.projectlink:hover figure, a.projectlink:focus figure {
   .aboutme .data {
     width: 100%;
     max-width: 400px;
+    min-width: unset;
   }
 }
 
