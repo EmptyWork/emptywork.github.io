@@ -1479,6 +1479,47 @@ a.projectlink:hover figure, a.projectlink:focus figure {
   background-color: yellow;
 }
 
+.featured {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0;
+  margin-bottom: -5rem;
+}
+
+.featured-card {
+  width: 30rem;
+  padding: 2rem;
+  height: 25rem;
+  margin-top: -8rem;
+  -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.4);
+  background-color: #333333;
+  border-radius: 0.3rem;
+  z-index: 10;
+}
+
+@media screen and (max-width: 63.9375em) {
+  .featured {
+    padding: 2rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    max-width: 30rem;
+  }
+  .featured-card {
+    width: 100%;
+  }
+}
+
 .footer {
   background-color: var(--clr-background);
   color: var(--clr-foreground);
