@@ -61,26 +61,6 @@
           <li role="menuitem"><a href="#">Blog</a></li>
         </ul>
         <div class="rightside">
-          <button
-            aria-label="Open the mobile menu"
-            class="nav-mobile nav-mobile__tick"
-            data-mobile-menu-button
-          >
-            <svg
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-label="Icon for menu hamburger"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </button>
           <button class="themes" aria-label="Switch the theme" data-theme-button>
             <svg
               data-sun
@@ -108,6 +88,26 @@
               <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
             </svg>
           </button>
+          <button
+            aria-label="Open the mobile menu"
+            class="nav-mobile nav-mobile__tick"
+            data-mobile-menu-button
+          >
+            <svg
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-label="Icon for menu hamburger"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
         </div>
       </div>
     </nav>
@@ -117,9 +117,9 @@
       aria-label="List of mobile menu"
       role="menu"
     >
-      <li role="menuitem"><a href="#">Home</a></li>
-      <li role="menuitem"><a href="#projects">Projects</a></li>
-      <li role="menuitem"><a href="#">Blog</a></li>
+      <li data-mobile-menu-button role="menuitem"><a href="#">Home</a></li>
+      <li data-mobile-menu-button role="menuitem"><a href="#projects">Projects</a></li>
+      <li data-mobile-menu-button role="menuitem"><a href="#">Blog</a></li>
     </ul>
     <!-- 
       ? Header Section 

@@ -16,26 +16,29 @@ dataLoader("../data.json")
 /**
  * Mobile hamburger menu logic
  */
-let mobileButton = document.querySelector("[data-mobile-menu-button]")
+let mobileButtons = document.querySelectorAll("[data-mobile-menu-button]")
 let mobileMenuSection = document.querySelector("[data-mobile-menu-section]")
+let mobileMenuLinks = document.querySelectorAll("body>ul>li")
 
-mobileButton.addEventListener("click", () => {
-  if (mobileMenuSection.classList.contains("not-showing")) {
-    setShowing()
+mobileButtons.forEach( button => {
+  button.addEventListener("click", () => {
+    if (mobileMenuSection.classList.contains("not-showing")) {
+      setShowing()
+      return
+    }
+    setHidden()
     return
-  }
-  setHidden()
-  return
+  })
 })
 
 const setShowing = () => {
-  mobileButton.setAttribute("aria-label", "Close the mobile menu")
+  mobileButtons[0].setAttribute("aria-label", "Close the mobile menu")
   mobileMenuSection.classList.remove("not-showing")
   setTimeout(() => document.body.classList.add("no-scroll"), 300)
 }
 
 const setHidden = () => {
-  mobileButton.setAttribute("aria-label", "Open the mobile menu")
+  mobileButtons[0].setAttribute("aria-label", "Open the mobile menu")
   mobileMenuSection.classList.add("not-showing")
   document.body.classList.remove("no-scroll")
 }

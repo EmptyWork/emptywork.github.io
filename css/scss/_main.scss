@@ -17,6 +17,13 @@
     align-items: center;
     gap: 2rem;
     font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    
+    span {
+      text-transform: none;
+      letter-spacing: 0;
+    }
 
     @include breakpoint-down("large") {
       flex-direction: column;

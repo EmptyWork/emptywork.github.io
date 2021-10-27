@@ -642,6 +642,13 @@ li {
           align-items: center;
   gap: 2rem;
   font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.main .section-header span {
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 @media screen and (max-width: 87.4375em) {
