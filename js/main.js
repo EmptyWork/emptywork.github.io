@@ -110,13 +110,11 @@ const createNewProject = (
   workSection
 ) => {
   let projectLink = document.createElement("a")
-  projectLink.href = "#projects"
   projectLink.classList.add("projectlink")
   projectLink.setAttribute("arial-label", `Project: ${name}`)
-  projectLink.innerHTML = '<span class="new-tab-warning"> Open a new tab </span>'
   let projectContainer = document.createElement("figure")
   projectContainer.classList.add("project", "t-all")
-  projectContainer.setAttribute("title", `Image of ${name}`)
+  projectContainer.setAttribute("title", `Cover Image of ${name}`)
   if (image)
     projectContainer.style.backgroundImage = `linear-gradient(transparent, var(--clr-accent-dark)), url(${image})`
   projectContainer.innerHTML = `
