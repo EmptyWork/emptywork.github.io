@@ -510,6 +510,10 @@ a.projectlink {
       box-shadow: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
       margin-bottom: -9rem;
 
+      h2 {
+        padding: 1rem;
+      }
+
       .lists {
         background-color: hsl(0, 0%, 11%);
         border-radius: 0.3rem;
@@ -522,6 +526,10 @@ a.projectlink {
       box-shadow: inset 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
       background-color: var(--clr-accent-dark);
       padding: 2rem;
+
+      h2 {
+        padding: 1rem 0;
+      }
 
       ul {
         margin-top: 0.2rem;
