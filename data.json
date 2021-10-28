@@ -3,8 +3,8 @@
   "works": [
     {
       "id": 1,
-      "name": "Jobfair",
-      "details": "Make Jobsearching is Easy and reliable for <a href=\"https://en.wikipedia.org/wiki/Ambonese\" target=\"_blank\" rel=\"noopener noreferrer\">Ambonese <span class=\"new-tab-warning\"> Open a new tab </span></a>",
+      "name": "Jobfair's Website",
+      "details": "An website that aim to help <a href=\"https://en.wikipedia.org/wiki/Ambonese\" target=\"_blank\" rel=\"noopener noreferrer\">Ambonese <span class=\"new-tab-warning\"> Open a new tab </span></a> looking for their new opportunties",
       "image": "../../images/jobfair.png",
       "started_at": 2021,
       "finished_at": null,
@@ -12,8 +12,8 @@
     },
     {
       "id": 2,
-      "name": "SMU (University Student Body)",
-      "details": "Full-responsive and Elegant design",
+      "name": "University Student Body's Website",
+      "details": "a wireframe for the future of SMU's website",
       "image": "../../images/smu.png",
       "started_at": 2020,
       "finished_at": null,
@@ -25,7 +25,7 @@
     {
       "id": 3,
       "name": "UKIMExpo'19 Website",
-      "details": "Full-screen website",
+      "details": "a showcase website for promoting Informatics Faculty",
       "image": "../../images/expo.png",
       "started_at": 2019,
       "finished_at": 2019,

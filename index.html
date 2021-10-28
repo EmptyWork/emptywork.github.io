@@ -10,7 +10,11 @@
       content="Portofolio dari seorang web developer yang masih baru di dunia pemrograman"
     />
     <title>EmptyWork</title>
-    <link rel="shortcut icon" href="./images/emptywork.png" type="image/x-png" />
+    <link
+      rel="shortcut icon"
+      href="./images/emptywork.png"
+      type="image/x-png"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -58,10 +62,13 @@
         <ul role="menubar" onkeypress="">
           <li role="menuitem"><a href="#">Home</a></li>
           <li role="menuitem"><a href="#projects">Projects</a></li>
-          <li role="menuitem"><a href="#">Blog</a></li>
         </ul>
         <div class="rightside">
-          <button class="themes" aria-label="Switch the theme" data-theme-button>
+          <button
+            class="themes"
+            aria-label="Switch the theme"
+            data-theme-button
+          >
             <svg
               data-sun
               fill="none"
@@ -85,7 +92,9 @@
               xmlns="http://www.w3.org/2000/svg"
               aria-label="Icon of moon"
             >
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
             </svg>
           </button>
           <button
@@ -118,8 +127,9 @@
       role="menu"
     >
       <li data-mobile-menu-button role="menuitem"><a href="#">Home</a></li>
-      <li data-mobile-menu-button role="menuitem"><a href="#projects">Projects</a></li>
-      <li data-mobile-menu-button role="menuitem"><a href="#">Blog</a></li>
+      <li data-mobile-menu-button role="menuitem">
+        <a href="#projects">Projects</a>
+      </li>
     </ul>
     <!-- 
       ? Header Section 
@@ -133,8 +143,8 @@
         <div class="relative"></div>
       </div>
       <section class="title-container">
-        <div class="title-leftside">
-          <div class="title-activity">
+        <section class="title-leftside">
+          <p class="title-activity">
             <svg
               fill="currentColor"
               viewBox="0 0 20 20"
@@ -147,19 +157,22 @@
                 clip-rule="evenodd"
               ></path>
             </svg>
-            <div class="title-activity__details">
+            <span class="title-activity__details">
               <span id="month">Month</span> 2021 -
               <a aria-label="Activity status" id="activity">Activity</a>
-            </div>
-          </div>
+            </span>
+          </p>
           <div>
-            <a href="https://github.com/EmptyWork" class="title-link" target="_blank">
+            <a
+              href="https://github.com/EmptyWork"
+              class="title-link"
+              target="_blank"
+            >
               <h1 class="title-text">/EmptyWork</h1>
               <span class="new-tab-warning"> Open a new tab </span>
             </a>
-            <div class="title-submenu">
+            <span class="title-submenu">
               <svg
-                class="w-6 h-6"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -172,57 +185,65 @@
                 ></path>
               </svg>
               <span class="title-submenu__text">/homepage</span>
-            </div>
+            </span>
           </div>
-        </div>
-        <div class="title-rightside">
+        </section>
+        <section class="title-rightside">
           <h3>
             Hello, I am a
             <strong class="highlight">Jr. Developer</strong>
           </h3>
           <p>
-            that just started my journey — as a full-stack developer, there's a lot of things that I
-            need to learn.
+            that just started my journey — as a full-stack developer, there's a
+            lot of things that I need to learn.
           </p>
-          <div class="title-action__group">
-            <a href="./assets/Resume.pdf" target="_blank" class="title-action">
-              <svg
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-label="Icon for C.V."
+          <ul class="title-action__group">
+            <li>
+              <a
+                href="./assets/Resume.pdf"
+                target="_blank"
+                class="title-action"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-              C.V.
-              <span class="new-tab-warning"> Open a new tab </span>
-            </a>
-            <a
-              href="https://github.com/EmptyWork/emptywork.github.io"
-              target="_blank"
-              class="title-action secondary"
-            >
-              <svg
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-label="Icon for code"
+                <svg
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-label="Icon for C.V."
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                C.V.
+                <span class="new-tab-warning"> Open a new tab </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/EmptyWork/emptywork.github.io"
+                target="_blank"
+                class="title-action secondary"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-              Code
-              <span class="new-tab-warning"> Open a new tab </span>
-            </a>
-          </div>
-        </div>
+                <svg
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-label="Icon for code"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                Code
+                <span class="new-tab-warning"> Open a new tab </span>
+              </a>
+            </li>
+          </ul>
+        </section>
       </section>
     </header>
 
@@ -245,10 +266,10 @@
           <header class="section-header">
             <h2 class="header-title">About me.</h2>
           </header>
-          <div class="flex">
-            <div class="data">
+          <section class="flex">
+            <section class="data">
               <div class="note">
-                <div class="note-header">
+                <header class="note-header">
                   <div>
                     <svg
                       width="24"
@@ -274,7 +295,7 @@
                     <span class="dot"></span>
                     <span class="dot"></span>
                   </div>
-                </div>
+                </header>
                 <article>
                   <h4>Todo list:</h4>
                   <ul>
@@ -306,35 +327,47 @@
                   />
                 </svg>
               </div>
-            </div>
-            <div class="explain">
+            </section>
+            <section class="explain">
               <div class="text-area">
-                <h4>
-                  I am
-                  <span class="highlight">
-                    based in
-                    <a href="https://en.wikipedia.org/wiki/indonesia" target="_blank">
-                      Indonesia
-                      <span class="new-tab-warning"> Open a new tab </span>.
-                    </a>
-                  </span>
-                </h4>
+                <header>
+                  <h4>
+                    I am
+                    <span class="highlight">
+                      based in
+                      <a
+                        href="https://en.wikipedia.org/wiki/indonesia"
+                        target="_blank"
+                      >
+                        Indonesia
+                        <span class="new-tab-warning"> Open a new tab </span>.
+                      </a>
+                    </span>
+                  </h4>
+                </header>
                 I am currently Majoring in Informatics Engineering on
                 <a href="https://ukim.ac.id" target="_blank" class="highlight">
                   Christian University of Indonesia, Moluccas.
                   <span class="new-tab-warning"> Open a new tab </span> </a
                 ><br />
-                I am also a <i>Certified Fiber Optic Technician</i> since 2017 by
-                <a href="http://apjatel.or.id/" class="highlight" target="_blank">
+                I am also a <i>Certified Fiber Optic Technician</i> since 2017
+                by
+                <a
+                  href="http://apjatel.or.id/"
+                  class="highlight"
+                  target="_blank"
+                >
                   APJTEL.
                   <span class="new-tab-warning"> Open a new tab </span>
                 </a>
               </div>
-            </div>
-          </div>
-          <div class="flex languages">
-            <h2>Languages</h2>
-            <div class="lists">
+            </section>
+          </section>
+          <section class="flex languages">
+            <header>
+              <h2>Languages</h2>
+            </header>
+            <article class="lists">
               <ul>
                 Advanced
                 <li>HTML5</li>
@@ -368,7 +401,10 @@
                 Misc
                 <sup>[1]</sup>
                 <li>
-                  <a href="https://github.com/IBMa/equal-access" target="_blank">
+                  <a
+                    href="https://github.com/IBMa/equal-access"
+                    target="_blank"
+                  >
                     IBM Equal Access
                     <span class="new-tab-warning"> Open a new tab </span>
                   </a>
@@ -380,18 +416,26 @@
                   </a>
                 </li>
               </ul>
-            </div>
-          </div>
-          <div class="adds">
-            [1] As of now, I think the knowledge about
-            <a href="https://en.wikipedia.org/wiki/WAI-ARIA" target="_blank" class="highlight">
-              ARIA (Accessibility — Rich Internet Application)
-              <span class="new-tab-warning"> Open a new tab </span>
-            </a>
-            is essential; so I spend my free time researching, watching, and reading articles related to it.
-          </div>
-          <div class="flex tools">
-            <div class="flex-header">
+            </article>
+          </section>
+          <ul class="adds">
+            <li>
+              [1] As of now, I think the knowledge about
+              <a
+                href="https://en.wikipedia.org/wiki/WAI-ARIA"
+                target="_blank"
+                class="highlight"
+              >
+                ARIA (Accessibility — Rich Internet Application)
+                <span class="new-tab-warning"> Open a new tab </span>
+              </a>
+              is essential; so I spend my free time researching, watching, and
+              reading articles related to it.
+            </li>
+            <li></li>
+          </ul>
+          <section class="flex tools">
+            <header class="flex-header">
               <div>
                 <svg
                   width="24"
@@ -417,8 +461,8 @@
                 <span class="dot"></span>
                 <span class="dot"></span>
               </div>
-            </div>
-            <div class="lists">
+            </header>
+            <article class="lists">
               <ul>
                 Advanced
                 <li>Adobe Photoshop</li>
@@ -444,8 +488,8 @@
                 Misc
                 <li>Hyper</li>
               </ul>
-            </div>
-          </div>
+            </article>
+          </section>
         </div>
       </section>
 
@@ -458,8 +502,8 @@
           <ul class="prototypes">
             <li class="prototype-card">
               <div class="prototype-header">
-                <div class="note">
-                  <div class="note-header">
+                <section class="note">
+                  <header class="note-header">
                     <div>
                       <svg
                         width="24"
@@ -485,9 +529,9 @@
                       <span class="dot"></span>
                       <span class="dot"></span>
                     </div>
-                  </div>
+                  </header>
                   <article>
-                    <code>
+                    <code aria-hidden="true">
                       function creditsIm() {<br />
                       let credit = document.querySelector('.ew-credits');<br />
                       credit.classList.toggle('show');<br />
@@ -511,14 +555,15 @@
                       d="M14.472 0L21 6.52801V11.3362L18.1667 8.50284V5.18501H14.8913L14.8715 5.20484L12.0665 2.40267L14.472 0Z"
                     />
                   </svg>
-                </div>
+                </section>
               </div>
               <article class="prototype-description">
                 <section class="text">
                   <h3>Eazbi - Website</h3>
                   <p>
-                    Source Code untuk website pribadi. tujuan website ini dibuat adalah sebagai
-                    showcase dan archive dari semua project yang akan dijalani atau dibuat.
+                    Source Code untuk website pribadi. tujuan website ini dibuat
+                    adalah sebagai showcase dan archive dari semua project yang
+                    akan dijalani atau dibuat.
                     <sup class="language">[id]</sup>
                   </p>
                   <ul>
@@ -536,6 +581,19 @@
                 </section>
                 <div class="links">
                   <a href="http://eazbi.rf.gd" target="_blank">
+                    <svg
+                      aria-label="Icon for demo link"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"
+                      ></path>
+                      <path
+                        d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"
+                      ></path>
+                    </svg>
                     demo
                     <span class="new-tab-warning"> Open a new tab </span>
                   </a>
@@ -544,8 +602,8 @@
             </li>
             <li class="prototype-card">
               <div class="prototype-header">
-                <div class="note">
-                  <div class="note-header">
+                <section class="note">
+                  <header class="note-header">
                     <div>
                       <svg
                         width="24"
@@ -571,14 +629,15 @@
                       <span class="dot"></span>
                       <span class="dot"></span>
                     </div>
-                  </div>
+                  </header>
                   <article>
                     <code aria-hidden="true">
                       const preLoad = () => {<br />
-                      let preload = document.querySelector('.preload'); let content =
-                      document.querySelector('.inside'); setTimeout(() => { preload.style.marginTop
-                      = 'calc(-100vh + -300px)';}, 2000) setTimeout(() => { content.style.display =
-                      "grid"; }, 2100); }
+                      let preload = document.querySelector('.preload'); let
+                      content = document.querySelector('.inside'); setTimeout(()
+                      => { preload.style.marginTop = 'calc(-100vh + -300px)';},
+                      2000) setTimeout(() => { content.style.display = "grid";
+                      }, 2100); }
                     </code>
                   </article>
                   <svg
@@ -598,14 +657,15 @@
                       d="M14.472 0L21 6.52801V11.3362L18.1667 8.50284V5.18501H14.8913L14.8715 5.20484L12.0665 2.40267L14.472 0Z"
                     />
                   </svg>
-                </div>
+                </section>
               </div>
               <article class="prototype-description">
                 <section class="text">
                   <h3>Ew-Javascript</h3>
                   <p>
-                    Kumpulan proyek Javascript (native), kode-kode ini akan dikembangkan lagi untuk
-                    di gunakan sebagai front-end development. <sup class="language">[id]</sup>
+                    Kumpulan proyek Javascript (native), kode-kode ini akan
+                    dikembangkan lagi untuk di gunakan sebagai front-end
+                    development. <sup class="language">[id]</sup>
                   </p>
                   <ul>
                     <li class="prototype-more">
@@ -621,8 +681,24 @@
                   </ul>
                 </section>
                 <div class="links">
-                  <a href="https://emptywork.github.io/ew-javascript/" target="_blank"
-                    >demo
+                  <a
+                    href="https://emptywork.github.io/ew-javascript/"
+                    target="_blank"
+                  >
+                    <svg
+                      aria-label="Icon for demo link"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"
+                      ></path>
+                      <path
+                        d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"
+                      ></path>
+                    </svg>
+                    demo
                     <span class="new-tab-warning"> Open a new tab </span>
                   </a>
                 </div>
@@ -636,7 +712,7 @@
     <footer class="footer t-all">
       <div class="footer-container">
         <q>Belajar untuk menikmati sesuatu yang membuat diri-mu bosan</q>
-        <div aria-label="the copyright section" class="copyright">
+        <p aria-label="the copyright section" class="copyright">
           &copy; Copyright - All Rights Reserved <br />
           Made and Design by
           <a href="https://github.com/EmptyWork" target="_blank">
@@ -644,7 +720,7 @@
             <span class="new-tab-warning"> Open a new tab </span>
           </a>
           using Web Technology
-        </div>
+        </p>
       </div>
     </footer>
     <script src="js/main.js"></script>
