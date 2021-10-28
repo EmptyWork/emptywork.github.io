@@ -341,7 +341,7 @@ a.projectlink {
     }
 
     .status {
-      background-image: linear-gradient(-90deg, var(--clr-accent), #381c55);
+      background-image: linear-gradient(-90deg, var(--clr-accent), var(--clr-accent-dark));
       padding: 0 0.7rem;
       display: flex;
       align-items: center;

@@ -16,17 +16,19 @@ html:root {
   --clr-white: hsl(0, 0%, 100%);
   --clr-black: hsl(0, 0%, 0%);
 
-  .themes {
-    background-color: #ffc107;
-    color: #7e620e;
-  }
+  &.sunglow {
+    --clr-accent: hsl(40, 56%, 40%);
+    --clr-accent-light: hsl(40, 56%, 72%);
+    --clr-accent-dark: hsl(40, 56%, 22%);
 
-  [data-moon] {
-    display: none;
-  }
-
-  [data-sun] {
-    display: block;
+    --clr-background: hsl(40, 56%, 95%);
+    --clr-background-900: hsl(40, 56%, 88%);
+    --clr-background-800: hsl(40, 56%, 75%);
+    --clr-background-700: hsl(40, 56%, 63%);
+    --clr-foreground: hsl(40, 56%, 10%);
+    --clr-foreground-900: hsl(40, 56%, 13%);
+    --clr-foreground-800: hsl(40, 56%, 25%);
+    --clr-foreground-700: hsl(40, 56%, 38%);
   }
 
   &.dark {
@@ -38,18 +40,5 @@ html:root {
     --clr-foreground-900: hsl(0, 0%, 88%);
     --clr-foreground-800: hsl(0, 0%, 75%);
     --clr-foreground-700: hsl(0, 0%, 63%);
-
-    .themes {
-      background-color: var(--clr-accent);
-      color: var(--clr-accent-dark);
-    }
-
-    [data-sun] {
-      display: none;
-    }
-
-    [data-moon] {
-      display: block;
-    }
   }
 }

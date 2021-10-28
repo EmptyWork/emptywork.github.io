@@ -15,17 +15,18 @@ html:root {
   --clr-black: hsl(0, 0%, 0%);
 }
 
-html:root .themes {
-  background-color: #ffc107;
-  color: #7e620e;
-}
-
-html:root [data-moon] {
-  display: none;
-}
-
-html:root [data-sun] {
-  display: block;
+html:root.sunglow {
+  --clr-accent: hsl(40, 56%, 40%);
+  --clr-accent-light: hsl(40, 56%, 72%);
+  --clr-accent-dark: hsl(40, 56%, 22%);
+  --clr-background: hsl(40, 56%, 95%);
+  --clr-background-900: hsl(40, 56%, 88%);
+  --clr-background-800: hsl(40, 56%, 75%);
+  --clr-background-700: hsl(40, 56%, 63%);
+  --clr-foreground: hsl(40, 56%, 10%);
+  --clr-foreground-900: hsl(40, 56%, 13%);
+  --clr-foreground-800: hsl(40, 56%, 25%);
+  --clr-foreground-700: hsl(40, 56%, 38%);
 }
 
 html:root.dark {
@@ -39,6 +40,25 @@ html:root.dark {
   --clr-foreground-700: hsl(0, 0%, 63%);
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 10rem;
+  scroll-padding-bottom: 10rem;
+}
+
+html:root .themes {
+  background-color: #ffc107;
+  color: #7e620e;
+}
+
+html:root [data-moon] {
+  display: none;
+}
+
+html:root [data-sun] {
+  display: block;
+}
+
 html:root.dark .themes {
   background-color: var(--clr-accent);
   color: var(--clr-accent-dark);
@@ -50,11 +70,6 @@ html:root.dark [data-sun] {
 
 html:root.dark [data-moon] {
   display: block;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 10rem;
 }
 
 *,
@@ -359,8 +374,8 @@ li {
   margin-top: 1.2rem;
   color: var(--clr-white);
   background: var(--clr-accent-dark);
-  background-image: -webkit-gradient(linear, right top, left top, from(var(--clr-accent-dark)), to(#381c55));
-  background-image: linear-gradient(-90deg, var(--clr-accent-dark), #381c55);
+  background-image: -webkit-gradient(linear, right top, left top, from(var(--clr-accent)), to(var(--clr-accent-dark)));
+  background-image: linear-gradient(-90deg, var(--clr-accent), var(--clr-accent-dark));
   border-radius: 0.3rem;
   padding: 0.5rem 1.5rem;
   -webkit-box-align: center;
@@ -1072,8 +1087,8 @@ a.projectlink:hover figure, a.projectlink:focus figure {
 }
 
 .prototype-more .status {
-  background-image: -webkit-gradient(linear, right top, left top, from(var(--clr-accent)), to(#381c55));
-  background-image: linear-gradient(-90deg, var(--clr-accent), #381c55);
+  background-image: -webkit-gradient(linear, right top, left top, from(var(--clr-accent)), to(var(--clr-accent-dark)));
+  background-image: linear-gradient(-90deg, var(--clr-accent), var(--clr-accent-dark));
   padding: 0 0.7rem;
   display: -webkit-box;
   display: -ms-flexbox;

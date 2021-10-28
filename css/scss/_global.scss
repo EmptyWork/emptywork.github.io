@@ -1,7 +1,41 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 10rem;
+  scroll-padding-bottom: 10rem;
 }
+
+html:root {
+
+  .themes {
+    background-color: #ffc107;
+    color: #7e620e;
+  }
+
+  [data-moon] {
+    display: none;
+  }
+
+  [data-sun] {
+    display: block;
+  }
+
+  &.dark {
+
+    .themes {
+      background-color: var(--clr-accent);
+      color: var(--clr-accent-dark);
+    }
+
+    [data-sun] {
+      display: none;
+    }
+
+    [data-moon] {
+      display: block;
+    }
+  }
+}
+
 
 *,
 *::after,
