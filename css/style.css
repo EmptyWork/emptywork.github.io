@@ -54,7 +54,7 @@ html:root.dark [data-moon] {
 
 html {
   scroll-behavior: smooth;
-  scroll-margin-top: 2rem;
+  scroll-padding-top: 10rem;
 }
 
 *,
@@ -172,8 +172,24 @@ li {
   color: var(--clr-white);
 }
 
+.header-link__access {
+  text-decoration: none !important;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 0.0625rem;
+  margin: -0.0625rem;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 0.0625rem;
+}
+
 @media (prefers-reduced-motion) {
-  .prototype-reader, .data {
+  .prototype-reader,
+  .data {
     -webkit-transform: unset;
             transform: unset;
   }
@@ -647,6 +663,19 @@ li {
   letter-spacing: 0.1rem;
 }
 
+.main .section-header .header-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.main .section-header .header-title a {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
 .main .section-header span {
   text-transform: none;
   letter-spacing: 0;
@@ -668,14 +697,14 @@ li {
   }
 }
 
-.main .section-header span {
+.main .section-header .header-desc {
   display: block;
   position: relative;
   font-size: 0.9rem;
   color: var(--clr-foreground-700);
 }
 
-.main .section-header span::before {
+.main .section-header .header-desc::before {
   content: "";
   position: absolute;
   left: 0;

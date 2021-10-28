@@ -1,6 +1,6 @@
 html {
   scroll-behavior: smooth;
-  scroll-margin-top: 2rem;
+  scroll-padding-top: 10rem;
 }
 
 *,
@@ -103,9 +103,24 @@ li {
   color: var(--clr-white);
 }
 
+.header-link__access {
+  text-decoration: none !important;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 0.0625rem;
+  margin: -0.0625rem;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 0.0625rem;
+}
 
 @media (prefers-reduced-motion) {
-  .prototype-reader,.data {
+  .prototype-reader,
+  .data {
     transform: unset;
   }
 }

@@ -61,7 +61,9 @@
         </a>
         <ul role="menubar" onkeypress="">
           <li role="menuitem"><a href="#">Home</a></li>
-          <li role="menuitem"><a href="#projects">Projects</a></li>
+          <li role="menuitem"><a href="#about">About</a></li>
+          <li role="menuitem"><a href="#work">Works</a></li>
+          <li role="menuitem"><a href="#prototypes">Prototypes</a></li>
         </ul>
         <div class="rightside">
           <button
@@ -128,7 +130,13 @@
     >
       <li data-mobile-menu-button role="menuitem"><a href="#">Home</a></li>
       <li data-mobile-menu-button role="menuitem">
-        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+      </li>
+      <li data-mobile-menu-button role="menuitem">
+        <a href="#work">Works</a>
+      </li>
+      <li data-mobile-menu-button role="menuitem">
+        <a href="#prototypes">Prototypes</a>
       </li>
     </ul>
     <!-- 
@@ -251,11 +259,19 @@
       ? Main Section 
     -->
     <main class="main">
-      <section aria-labelledby="WorkHeader" id="projects" class="work">
+      <section aria-labelledby="work" class="work">
         <div class="main-container">
           <header class="section-header">
-            <h2 id="WorkHeader" class="header-title">Work</h2>
-            <span>projects that I participated on or worked on.</span>
+            <h2 id="work" class="header-title">
+              <a class="header-link__access" href="#work">
+                <span aria-hidden="true">#</span>
+                <span class="sr-only">Link to heading "work"</span>
+              </a>
+              Work
+            </h2>
+            <span class="header-desc"
+              >projects that I participated on or worked on.</span
+            >
           </header>
           <div class="projects"></div>
         </div>
@@ -264,7 +280,13 @@
       <section class="aboutme">
         <div class="main-container">
           <header class="section-header">
-            <h2 class="header-title">About me.</h2>
+            <h2 id="about" class="header-title">
+              <a class="header-link__access" href="#about">
+                <span aria-hidden="true">#</span>
+                <span class="sr-only">Link to heading "about"</span>
+              </a>
+              About me.
+            </h2>
           </header>
           <section class="flex">
             <section class="data">
@@ -365,7 +387,13 @@
           </section>
           <section class="flex languages">
             <header>
-              <h2>Languages</h2>
+              <h2 id="languages" class="header-title">
+                <a class="header-link__access" href="#languages">
+                  <span aria-hidden="true">#</span>
+                  <span class="sr-only">Link to heading "languages"</span>
+                </a>
+                Languages
+              </h2>
             </header>
             <article class="lists">
               <ul>
@@ -432,30 +460,47 @@
               is essential; so I spend my free time researching, watching, and
               reading articles related to it.
             </li>
-            <li></li>
+            <li>
+              — If you also want to learn how to make the web accessable for
+              everyone, visit
+              <a
+                target="_blank"
+                class="highlight"
+                href="https://www.accessibility-developer-guide.com/"
+                >https://www.accessibility-developer-guide.com/
+                <span class="new-tab-warning"> Open a new tab </span></a
+              >
+              they provided amazing list on things you can do to improve your
+              website accessibility.
+            </li>
           </ul>
           <section class="flex tools">
             <header class="flex-header">
-              <div>
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11.65 8.42634L14.8715 5.20767L18.1667 8.50567V14.2517L14.7667 17.6517V10.1178L11.65 13.2345V15.1017L8.24998 18.5017V16.6345L7.39998 17.4845V12.6763L8.24998 11.8263V7.00117L11.65 3.60117V8.42634Z"
-                  />
-                  <path
-                    d="M7.23 17.6573L7.4 17.4845V19.3517L4 22.7517V5.18501H7.4V12.6763L4.82733 15.2518L7.23 17.6573Z"
-                  />
-                  <path
-                    d="M14.472 0L21 6.52801V11.3362L18.1667 8.50284V5.18501H14.8913L14.8715 5.20484L12.0665 2.40267L14.472 0Z"
-                  />
-                </svg>
-                <h2>Tools</h2>
-              </div>
+              <h2 id="tools" class="header-title">
+                <a class="header-link__access" href="#tools">
+                  <span aria-hidden="true">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.65 8.42634L14.8715 5.20767L18.1667 8.50567V14.2517L14.7667 17.6517V10.1178L11.65 13.2345V15.1017L8.24998 18.5017V16.6345L7.39998 17.4845V12.6763L8.24998 11.8263V7.00117L11.65 3.60117V8.42634Z"
+                      />
+                      <path
+                        d="M7.23 17.6573L7.4 17.4845V19.3517L4 22.7517V5.18501H7.4V12.6763L4.82733 15.2518L7.23 17.6573Z"
+                      />
+                      <path
+                        d="M14.472 0L21 6.52801V11.3362L18.1667 8.50284V5.18501H14.8913L14.8715 5.20484L12.0665 2.40267L14.472 0Z"
+                      />
+                    </svg>
+                  </span>
+                  <span class="sr-only">Link to heading "tools"</span>
+                </a>
+                Tools
+              </h2>
               <div>
                 <span class="dot"></span>
                 <span class="dot"></span>
@@ -496,8 +541,16 @@
       <section class="prototype">
         <div class="main-container">
           <header class="section-header">
-            <h2 class="header-title">Prototype</h2>
-            <span>all prototype I do while learning new thing.</span>
+            <h2 id="prototypes" class="header-title">
+              <a class="header-link__access" href="#prototypes">
+                <span aria-hidden="true">#</span>
+                <span class="sr-only">Link to heading "prototypes"</span>
+              </a>
+              Prototype
+            </h2>
+            <span class="header-desc"
+              >all prototype I do while learning new thing.</span
+            >
           </header>
           <ul class="prototypes">
             <li class="prototype-card">

@@ -19,6 +19,15 @@
     font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+
+    .header-title {
+      display: flex;
+      gap: 0.6rem;
+
+      a {
+        height: max-content;
+      }
+    }
     
     span {
       text-transform: none;
@@ -37,7 +46,7 @@
       }
     }
 
-    span {
+    .header-desc {
       display: block;
       position: relative;
       font-size: 0.9rem;
