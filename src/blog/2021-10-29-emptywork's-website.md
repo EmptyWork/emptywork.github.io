@@ -14,12 +14,12 @@ image: /images/emptywork.github.io-header.jpg
 
 <div align="center">
 
-\[![CodeQL](https://github.com/EmptyWork/emptywork.github.io/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/EmptyWork/emptywork.github.io/actions/workflows/codeql-analysis.yml)
-\[![Netlify Status](https://api.netlify.com/api/v1/badges/08d2d578-7470-4e65-8067-93ab5e09f671/deploy-status)](https://app.netlify.com/sites/emptywork/deploys)
+[![CodeQL](https://github.com/EmptyWork/emptywork.github.io/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/EmptyWork/emptywork.github.io/actions/workflows/codeql-analysis.yml)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/08d2d578-7470-4e65-8067-93ab5e09f671/deploy-status)](https://app.netlify.com/sites/emptywork/deploys)
 
 </div>
 
-\[[toc]]
+[[toc]]
 
 ## About <a href="#about"></a>
 
