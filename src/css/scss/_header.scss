@@ -195,11 +195,18 @@
     width: 100%;
     max-width: 64rem;
     margin: 0 auto;
+    gap: 1rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    
+    .menubar {
+      flex: 1;
+      justify-content: flex-end;
+    }
   }
+
 
   .rightside {
     display: flex;

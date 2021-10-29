@@ -66,17 +66,7 @@
   }
 }
 
-a.projectlink {
-  &:hover,
-  &:focus {
-    figure {
-      transform: scale(1.1);
-      z-index: 10;
-    }
-  }
-}
-
-.project {
+.card {
   background-color: #333333;
   background-image: linear-gradient(transparent, var(--clr-accent-dark));
   background-position: center;
@@ -99,7 +89,7 @@ a.projectlink {
     margin-top: 2rem;
   }
 
-  figcaption {
+  &-body {
     background-image: linear-gradient(
       hsla(0, 0%, 0%, 0),
       hsla(0, 0%, 0%, 0.4) 10%,
@@ -110,12 +100,12 @@ a.projectlink {
     flex-direction: column;
 
     header,
-    article {
+    .description-area {
       flex: 0 0 auto;
       padding: 0 1.5rem;
     }
 
-    article {
+    .description-area {
       height: 3.2rem;
       overflow: hidden;
     }
@@ -446,7 +436,7 @@ a.projectlink {
   }
 }
 
-.work {
+.work, .articles {
   padding-top: 4rem;
 }
 
