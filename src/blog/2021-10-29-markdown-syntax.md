@@ -1,6 +1,8 @@
 ---
 title: Markdown Syntax
+author: EmptyWork
 date: 2021-10-29
+tags: post
 description: A file contains all the syntax for markdown testing
 ---
 
