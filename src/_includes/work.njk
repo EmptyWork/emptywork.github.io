@@ -14,7 +14,7 @@
           </header>
           <ul class="cards">
             {%- for project in collections.project | reverse -%}
-              {% include 'card_work.njk' %}
+              {% include 'project-snippet.njk' %}
 					  {%- endfor -%}
           </ul>
         </div>
