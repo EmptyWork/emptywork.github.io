@@ -1,9 +1,14 @@
 ---
-layout: 'secondary_base.njk'
+layout: 'secondary-base.njk'
 ---
 <main class="main">
-  <article class="main-container">
+  <div class="main-container">
+  <article class="post">
+    <span>
+      <a href="/blog">Blog</a> / {{ title }}
+    </span>
     <h1>{{ title }}</h1>
     {{ content | safe }}
   </article>
+  </div>
 </main>

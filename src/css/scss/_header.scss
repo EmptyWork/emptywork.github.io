@@ -155,6 +155,7 @@
       &:hover,
       &:focus {
         filter: brightness(100%);
+        transform: scale(0.98);
       }
     }
 
@@ -202,6 +203,7 @@
     justify-content: space-between;
     
     .menubar {
+      font-weight: 600;
       flex: 1;
       justify-content: flex-end;
     }

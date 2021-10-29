@@ -1,3 +1,28 @@
+---
+title: EmptyWork's First Blog
+image: /images/emptywork.github.io-header.jpg
+description: A preview for the blog section
+---
+<p align="center">
+<img src="/images/emptywork.github.io-header.jpg" />
+</p>
+
+<div align="center">
+  
+ [![CodeQL](https://github.com/EmptyWork/emptywork.github.io/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/EmptyWork/emptywork.github.io/actions/workflows/codeql-analysis.yml)
+  
+</div>
+
+[[toc]]
+
+## About <a href="#about"></a>
+Read this in: <a href="#">Ambonese Malay</a>, <a href="#">Indonesian</a>
+
+Source code for my personal website.<br/>
+The purpose of this repository is to showcase the code that I wrote<br/> and as a proof of my ability to work with Javascript, HTML5 and CSS3.
+
+
+```js
 /**
  * Fetching data from the said url
  * @param {string} url
@@ -9,8 +34,6 @@ const dataLoader = async (url) => {
     schedulerLoader(data.schedules)
   }
 }
-
-dataLoader("/settings.json")
 
 /**
  * Mobile hamburger menu logic
@@ -122,7 +145,7 @@ console.groupEnd()
   * @param {array} schedules
   */
  
- const schedulerLoader = (schedules = {}) => {
+ const schedulerLoader = (schedules) => {
    for (let i = 0; i < schedules.length; i++) {
      if (!replaceStatus) return
      if (days[currentDay] === schedules[i]) {
@@ -132,3 +155,5 @@ console.groupEnd()
      replaceStatus.textContent = "Bebas"
    }
  }
+```
+
