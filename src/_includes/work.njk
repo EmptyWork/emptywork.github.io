@@ -13,9 +13,13 @@
             >
           </header>
           <ul class="cards">
-            {%- for project in collections.project | reverse -%}
-              {% include 'project-snippet.njk' %}
-					  {%- endfor -%}
+            {% if collections.project %}
+              {%- for project in collections.project | reverse -%}
+                  {% include 'project-snippet.njk' %}
+              {%- endfor -%}
+            {% else %}
+              No post
+            {% endif %}
           </ul>
         </div>
       </section>
