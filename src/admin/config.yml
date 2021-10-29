@@ -17,3 +17,17 @@ collections:
       - {label: "Tags", name: "tags", widget: "list", default: ["post"]}
       - {label: "Cover Images", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "project"
+    label: "Project"
+    folder: "src/project"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Tags", name: "tags", widget: "list", default: ["project"]}
+      - {label: "Cover Images", name: "image", widget: "image"}
+      - {label: "Link Demo", name: "linkDemo", widget: "string"}
+      - {label: "Link Code", name: "linkCode", widget: "string"}
