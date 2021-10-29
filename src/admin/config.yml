@@ -25,9 +25,9 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "string"}
-      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Author", name: "author", widget: "string", required: false}
       - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "End Date", name: "endDate", widget: "datetime"}
+      - {label: "End Date", name: "endDate", widget: "datetime", required: false}
       - {label: "Tags", name: "tags", widget: "list", default: ["project"]}
       - {label: "Cover Images", name: "image", widget: "image"}
       - {label: "Link Demo", name: "linkDemo", widget: "string", required: false}
