@@ -4,17 +4,17 @@
     {
       "id": 1,
       "name": "Jobfair's Website",
-      "details": "An website that aim to help <a href=\"https://en.wikipedia.org/wiki/Ambonese\" target=\"_blank\" rel=\"noopener noreferrer\">Ambonese <span class=\"new-tab-warning\"> Open a new tab </span></a> looking for their new opportunties",
-      "image": "../../images/jobfair.png",
+      "details": "An website that aim to help Ambonese looking for their new opportunties",
+      "image": "../../images/jobfair.jpg",
       "started_at": 2021,
       "finished_at": null,
-      "links": [null, "https://jobfairgpmsyaloom.skom.id"]
+      "links": [null, "https://jobfair-gpmsyaloom.herokuapp.com/"]
     },
     {
       "id": 2,
       "name": "University Student Body's Website",
-      "details": "a wireframe for the future of SMU's website",
-      "image": "../../images/smu.png",
+      "details": "A Wireframe for the future of SMU's website",
+      "image": "../../images/smu.jpg",
       "started_at": 2020,
       "finished_at": null,
       "links": [
@@ -25,8 +25,8 @@
     {
       "id": 3,
       "name": "UKIMExpo'19 Website",
-      "details": "a showcase website for promoting Informatics Faculty",
-      "image": "../../images/expo.png",
+      "details": "A showcase website for promoting Informatics Faculty of Christian University of Indonesia, Moluccas",
+      "image": "../../images/expo.jpg",
       "started_at": 2019,
       "finished_at": 2019,
       "links": ["https://github.com/EmptyWork/UKIMexpo", "https://emptywork.github.io/UKIMexpo/"]
