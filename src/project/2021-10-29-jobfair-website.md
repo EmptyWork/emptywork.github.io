@@ -6,6 +6,6 @@ endDate: false
 tags: ["project"]
 image: /images/jobfair.jpg
 description: An website that aim to help Ambonese looking for their new opportunties
-linkDemo: https://jobfairgpmsyaloom.skom.id
+linkDemo: https://jobfair-gpmsyaloom.herokuapp.com/
 linkCode: false
 ---
