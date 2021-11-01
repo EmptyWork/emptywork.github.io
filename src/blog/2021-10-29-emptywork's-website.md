@@ -1,5 +1,5 @@
 ---
-title: EmptyWork's First Blog
+title: EmptyWork's First Post
 description: A preview for the blog section
 author: EmptyWork
 date: 2021-10-29T13:30:50.861Z
