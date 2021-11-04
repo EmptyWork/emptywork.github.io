@@ -155,6 +155,7 @@
       &:hover,
       &:focus {
         filter: brightness(100%);
+        transform: scale(0.98);
       }
     }
 
@@ -195,11 +196,19 @@
     width: 100%;
     max-width: 64rem;
     margin: 0 auto;
+    gap: 1rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    
+    .menubar {
+      font-weight: 600;
+      flex: 1;
+      justify-content: flex-end;
+    }
   }
+
 
   .rightside {
     display: flex;

@@ -1,0 +1,28 @@
+---
+title : 'Recent Articles - Blog | EmptyWork'
+layout: 'secondary-base.njk'
+---
+    <main class="main">
+        <section aria-labelledby="articles" class="articles">
+        <div class="main-container">
+          <header class="section-header">
+            <h2 id="article" class="header-title">
+              <a class="header-link__access" href="#article">
+                <span aria-hidden="true">#</span>
+                <span class="sr-only">Link to heading "Recent Articles"</span>
+              </a>
+              Recent Articles
+            </h2>
+          </header>
+          <ul class="cards">
+            {%- for post in collections.post | reverse -%}
+              {% include 'article-snippet.njk' %}
+            {% else %}
+              <li class="card card-empty">
+              It seems like there is no article right now...
+              </li>
+					  {%- endfor -%}
+          </ul>
+        </div>
+      </section>
+    </main>

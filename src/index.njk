@@ -1,3 +1,4 @@
+<<<<<<< HEAD:index.html
 <!DOCTYPE html>
 <html lang="en" class="dark">
   <head>
@@ -254,28 +255,18 @@
         </section>
       </section>
     </header>
+=======
+---
+title: EmptyWork
+layout: 'base.njk'
+---
+>>>>>>> jamstack-imple:src/index.njk
 
     <!-- 
       ? Main Section 
     -->
     <main class="main">
-      <section aria-labelledby="work" class="work">
-        <div class="main-container">
-          <header class="section-header">
-            <h2 id="work" class="header-title">
-              <a class="header-link__access" href="#work">
-                <span aria-hidden="true">#</span>
-                <span class="sr-only">Link to heading "work"</span>
-              </a>
-              Work
-            </h2>
-            <span class="header-desc"
-              >projects that I participated on or worked on.</span
-            >
-          </header>
-          <div class="projects"></div>
-        </div>
-      </section>
+      {% include 'work.njk' %}
 
       <section class="aboutme">
         <div class="main-container">
@@ -761,21 +752,3 @@
         </div>
       </section>
     </main>
-
-    <footer class="footer t-all">
-      <div class="footer-container">
-        <q>Belajar untuk menikmati sesuatu yang membuat diri-mu bosan</q>
-        <p aria-label="the copyright section" class="copyright">
-          &copy; Copyright - All Rights Reserved <br />
-          Made and Design by
-          <a href="https://github.com/EmptyWork" target="_blank">
-            <strong class="highlight">EmptyWork</strong>
-            <span class="new-tab-warning"> Open a new tab </span>
-          </a>
-          using Web Technology
-        </p>
-      </div>
-    </footer>
-    <script src="js/main.js"></script>
-  </body>
-</html>
