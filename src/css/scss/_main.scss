@@ -95,7 +95,7 @@
     color: var(--clr-foreground-700);
 
     &:hover,
-    &:focus {
+    &:focus-visible {
       transform: scale(1);
     }
   }
@@ -175,7 +175,7 @@
         }
 
         &:hover,
-        &:focus {
+        &:focus-visible {
           color: var(--clr-white);
           &::before {
             width: 100%;
@@ -479,7 +479,7 @@
   }
 
   a:hover,
-  a:focus {
+  a:focus-visible {
     color: #d0d0d0;
   }
 
@@ -742,7 +742,7 @@
       color: var(--clr-href-visited);
     }
   
-    &:focus {
+    &:focus-visible {
       outline: thin dotted;
     }
     &:hover,
@@ -752,7 +752,7 @@
   }
   
   span {
-    a:hover,a:visited,a:active,a:focus {
+    a:hover,a:visited,a:active,a:focus-visible {
       color: var(--clr-href);
     }
   }

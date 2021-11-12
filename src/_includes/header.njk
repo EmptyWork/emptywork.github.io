@@ -1,118 +1,109 @@
+  <!-- 
+    ? Header Section 
+  -->
+  <header class="header">
     <!-- 
-      ? Header Section 
+      ? For Decorations
+      * TODO: Animate and add more decoration to the header area
     -->
-    <header class="header">
-      <!-- 
-        ? For Decorations
-        * TODO: Animate and add more decoration to the header area
-      -->
-      <div class="decoration">
-        <div class="relative"></div>
-      </div>
-      <section class="title-container">
-        <section class="title-leftside">
-          <p class="title-activity">
+    <div class="decoration">
+      <div class="relative"></div>
+    </div>
+    <section class="title-container">
+      <section class="title-leftside">
+        <p class="title-activity">
+          <svg
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-label="Icon of Calender">
+            <path
+              fill-rule="evenodd"
+              d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="title-activity__details">
+            <span id="month">Month</span> 2021 -
+            <a aria-label="Activity status" id="activity">Activity</a>
+          </span>
+        </p>
+        <div>
+          <a
+            href="https://github.com/EmptyWork"
+            class="title-link"
+            target="_blank"
+            rel="noopener noreferrer">
+            <h1 class="title-text">/EmptyWork</h1>
+            <span class="new-tab-warning"> Open a new tab </span>
+          </a>
+          <span class="title-submenu">
             <svg
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
-              aria-label="Icon of Calender"
-            >
+              aria-label="Icon of an arrow pointing to homepage">
               <path
                 fill-rule="evenodd"
-                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                clip-rule="evenodd"
-              ></path>
+                d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                clip-rule="evenodd"></path>
             </svg>
-            <span class="title-activity__details">
-              <span id="month">Month</span> 2021 -
-              <a aria-label="Activity status" id="activity">Activity</a>
-            </span>
-          </p>
-          <div>
+            <span class="title-submenu__text">/homepage</span>
+          </span>
+        </div>
+      </section>
+      <section class="title-rightside">
+        <h2>
+          Hello, I am a
+          <strong class="highlight">Jr. Developer</strong>
+        </h2>
+        <p>
+          that just started my journey — as a full-stack developer, there's a
+          lot of things that I need to learn.
+        </p>
+        <ul class="title-action__group">
+          <li>
             <a
-              href="https://github.com/EmptyWork"
-              class="title-link"
+              href="./assets/Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              <h1 class="title-text">/EmptyWork</h1>
-              <span class="new-tab-warning"> Open a new tab </span>
-            </a>
-            <span class="title-submenu">
+              class="title-action">
               <svg
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
-                aria-label="Icon of an arrow pointing to homepage"
-              >
+                aria-label="Icon for C.V.">
                 <path
                   fill-rule="evenodd"
-                  d="M7.707 3.293a1 1 0 010 1.414L5.414 7H11a7 7 0 017 7v2a1 1 0 11-2 0v-2a5 5 0 00-5-5H5.414l2.293 2.293a1 1 0 11-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                  d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
                   clip-rule="evenodd"
                 ></path>
               </svg>
-              <span class="title-submenu__text">/homepage</span>
-            </span>
-          </div>
-        </section>
-        <section class="title-rightside">
-          <h3>
-            Hello, I am a
-            <strong class="highlight">Jr. Developer</strong>
-          </h3>
-          <p>
-            that just started my journey — as a full-stack developer, there's a
-            lot of things that I need to learn.
-          </p>
-          <ul class="title-action__group">
-            <li>
-              <a
-                href="./assets/Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="title-action"
-              >
-                <svg
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-label="Icon for C.V."
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                C.V.
-                <span class="new-tab-warning"> Open a new tab </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/EmptyWork/emptywork.github.io"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="title-action secondary"
-              >
-                <svg
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-label="Icon for code"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                Code
-                <span class="new-tab-warning"> Open a new tab </span>
-              </a>
-            </li>
-          </ul>
-        </section>
+              C.V.
+              <span class="new-tab-warning"> Open a new tab </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/EmptyWork/emptywork.github.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="title-action secondary">
+              <svg
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-label="Icon for code">
+                <path
+                  fill-rule="evenodd"
+                  d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Code
+              <span class="new-tab-warning"> Open a new tab </span>
+            </a>
+          </li>
+        </ul>
       </section>
-    </header>
+    </section>
+  </header>
