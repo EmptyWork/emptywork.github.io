@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+node_modules
+public
+=======
 # dependencies
 /node_modules
 
 # public files
 /public
+>>>>>>> jamstack-imple
