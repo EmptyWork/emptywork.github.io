@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="{{ excerpt }}"
+      content="{{ description }}"
     />
     {% if author %}
     <meta name="author" content="{{ author }}"/>
@@ -18,8 +18,8 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ title }}" />
-    {% if excerpt %}
-    <meta property="og:description" content="{{excerpt}}" />
+    {% if description %}
+    <meta property="og:description" content="{{ description }}" />
     {% else %}
     <meta property="og:description" content="Portofolio dari seorang web developer yang masih baru di dunia pemrograman" />
     {% endif %}

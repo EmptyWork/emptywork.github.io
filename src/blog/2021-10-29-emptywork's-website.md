@@ -3,7 +3,6 @@ title: EmptyWork's First Post
 description: A preview for the blog section
 author: EmptyWork
 date: 2021-10-29T13:30:50.861Z
-excerpt: Source code for my personal website. The purpose of this repository is to showcase the code that I wrote
 tags:
   - post
 image: /images/emptywork.github.io-header.jpg
