@@ -19,7 +19,7 @@ image: /images/emptywork.github.io-header.jpg
 
 </div>
 
-\[[toc]]
+[[toc]]
 
 ## About <a href="#about"></a>
 
