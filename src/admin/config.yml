@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: jamstack-imple
+  branch: master
 media_folder: "public/images/"
 public_folder: "images/"
 collections:
