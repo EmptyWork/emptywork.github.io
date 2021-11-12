@@ -23,7 +23,7 @@ image: /images/emptywork.github.io-header.jpg
 
 ## About <a href="#about"></a>
 
-![Another Image](images/banner_01-gallery.jpg "Another Image")
+![Another Image](/images/banner_01-gallery.jpg "Another Image")
 
 Read this in: <a href="#">Ambonese Malay</a>, <a href="#">Indonesian</a>
 
