@@ -1,9 +1,26 @@
 ---
 title: Ew-Javascript
+status: 2
+description: Source Code untuk website pribadi. tujuan website ini dibuat adalah
+  sebagai showcase dan archive dari semua project yang akan dijalani atau
+  dibuat.
 date: 2021-01-26
-status: 0
-code: "const preLoad = () => {\n  let preload = document.querySelector('.preload');\n  let content = document.querySelector('.inside');\n  setTimeout(() => {\n    preload.style.marginTop =\n    'calc(-100vh + -300px)';\n  }, 2000)\n  setTimeout(() => {\n    content.style.display = 'grid'; \n  }, 2100); \n}"
-tags: ["prototype", "html5", "css3", "javascript"]
-description: Source Code untuk website pribadi. tujuan website ini dibuat adalah sebagai showcase dan archive dari semua project yang akan dijalani atau dibuat. 
+tags:
+  - prototype
+  - html5
+  - css3
+  - javascript
 linkDemo: https://emptywork.github.io/smu-desain/index.html
+code: |-
+  const preLoad = () => {
+    let preload = document.querySelector('.preload');
+    let content = document.querySelector('.inside');
+    setTimeout(() => {
+      preload.style.marginTop =
+      'calc(-100vh + -300px)';
+    }, 2000)
+    setTimeout(() => {
+      content.style.display = 'grid'; 
+    }, 2100); 
+  }
 ---
