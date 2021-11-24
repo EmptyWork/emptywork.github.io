@@ -39,7 +39,7 @@ collections:
     slug: "{{year}}-{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Status", name: "status", widget: "select", option: [{label: "Deployed", value: 1}, {label: "Buggy", value: 0}], default: [label: "Deployed", value: 0]}
+      - {label: "Status", name: "status", widget: "select", options: [{label: "Deployed", value: 1}, {label: "Buggy", value: 0}], default: [label: "Deployed", value: 0]}
       - {label: "Description", name: "description", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Tags", name: "tags", widget: "list", default: ["prototype"]}
