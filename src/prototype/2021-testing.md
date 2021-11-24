@@ -6,5 +6,8 @@ date: 2021-11-24T01:13:32.330Z
 tags:
   - prototype
 linkDemo: https://youtube.com
-code: function data() => {\n  console.log('Hello');\n}
+code: |-
+  function data() => {
+      console.log('Hello');
+  }
 ---
