@@ -32,3 +32,16 @@ collections:
       - {label: "Cover Images", name: "image", widget: "image"}
       - {label: "Link Demo", name: "linkDemo", widget: "string", required: false}
       - {label: "Link Code", name: "linkCode", widget: "string", required: false}
+  - name: "prototype"
+    label: "Prototype"
+    folder: "src/prototype"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Status", name: "status", widget: "select", options: [{label: "Deployed", value: 1}, {label: "Buggy", value: 2}], default: [label: "Deployed", value: 1]}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Tags", name: "tags", widget: "list", default: ["prototype"]}
+      - {label: "Link Demo", name: "linkDemo", widget: "string", required: false}
+      - {label: "Code Snippet", name: "code", widget: "text"}
