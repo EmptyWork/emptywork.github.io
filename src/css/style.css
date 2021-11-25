@@ -802,6 +802,12 @@ li {
   margin-top: 2rem;
 }
 
+.cards.nocentered {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
 .card-body {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(10%, rgba(0, 0, 0, 0.4)), to(black));
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4) 10%, black);

@@ -14,7 +14,7 @@ layout: 'secondary-base.njk'
               Recent Articles
             </h2>
           </header>
-          <ul class="cards">
+          <ul class="cards nocentered">
             {%- for post in collections.post | reverse -%}
               {% include 'article-snippet.njk' %}
             {% else %}
