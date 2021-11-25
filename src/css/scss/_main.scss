@@ -686,6 +686,13 @@
       z-index: -1;
     }
 
+    &-heading {
+      font-weight: 600;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
     &-header {
       display: flex;
       height: 2.5rem;

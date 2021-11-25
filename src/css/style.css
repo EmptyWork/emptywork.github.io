@@ -1542,6 +1542,13 @@ li {
   z-index: -1;
 }
 
+.aboutme .note-heading {
+  font-weight: 600;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
 .aboutme .note-header {
   display: -webkit-box;
   display: -ms-flexbox;
