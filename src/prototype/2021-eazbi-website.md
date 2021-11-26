@@ -9,7 +9,7 @@ tags:
   - html5
   - css3
   - javascript
-linkDemo: https://eazbi.rf.gd
+linkDemo: http://eazbi.rf.gd
 code: |-
   const creditsIm = () => {
     let credit = document.querySelector
