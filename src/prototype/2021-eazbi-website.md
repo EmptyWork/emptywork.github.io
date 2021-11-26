@@ -9,7 +9,7 @@ tags:
   - html5
   - css3
   - javascript
-linkDemo: https://emptywork.github.io/smu-desain/index.html
+linkDemo: https://eazbi.rf.gd
 code: |-
   const creditsIm = () => {
     let credit = document.querySelector
