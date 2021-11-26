@@ -1,6 +1,6 @@
 <h1 align="center"> EmptyWork Website</h1>
 <p align="center">
-<img src="src/images/emptywork.github.io-header.jpg" />
+<img src="assets/emptywork.github.io-header.jpg" />
 </p>
 
 <div align="center">
