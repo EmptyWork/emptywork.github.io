@@ -10,7 +10,7 @@ tags:
   - html5
   - css3
   - javascript
-linkDemo: https://emptywork.github.io/smu-desain/index.html
+linkDemo: https://emptywork.github.io/ew-javascript
 code: |-
   const preLoad = () => {
     let preload = document.querySelector('.preload');
