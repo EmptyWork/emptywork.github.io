@@ -1260,6 +1260,35 @@ li {
   padding-top: 4rem;
 }
 
+.contact .form-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact .form-input label {
+  margin: 2em 0 .5em 0;
+}
+
+.contact .form-input input, .contact .form-input textarea {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  background-color: var(--clr-background);
+  color: var(--clr-foreground-900);
+  resize: none;
+}
+
+.contact .form-input input[type=submit] {
+  border: none;
+  color: var(--clr-white);
+  background-color: var(--clr-accent);
+}
+
 .aboutme {
   background-color: var(--clr-accent);
   color: var(--clr-white);

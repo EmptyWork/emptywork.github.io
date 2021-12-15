@@ -1,5 +1,36 @@
-<form data-netlify="true" method="post">
-  <input type="text" name="name" id="name" placeholder="name">
-  <textarea name="message" id="message" cols="30" rows="10"></textarea>
-  <input type="submit" value="Submit">
-</form>
+---
+title : 'Get in touch with me - Contact | EmptyWork'
+layout: 'secondary-base.njk'
+---
+<main class="main">
+  <section aria-labelledby="contact" class="contact">
+    <div class="main-container">
+      <header class="section-header">
+            <h2 id="contact" class="header-title">
+              <a class="header-link__access" href="#contact">
+                <span aria-hidden="true">#</span>
+                <span class="sr-only">Link to heading "Contact"</span>
+              </a>
+              Get in touch with me.
+            </h2>
+          </header>
+      <form data-netlify="true" method="post">
+        <div class="form-input">
+          <label for="text">Name</label>
+          <input type="text" name="name" id="name" placeholder="name" required>
+        </div>
+        <div class="form-input">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="your email" required>
+        </div>
+        <div class="form-input">
+          <label for="message">Message</label>
+          <textarea name="message" id="message" cols="30" rows="10" placeholder="your message" required></textarea>
+        </div>
+        <div class="form-input form-button">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+  </section>
+</main>

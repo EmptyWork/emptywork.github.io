@@ -468,6 +468,34 @@
   padding-top: 4rem;
 }
 
+.contact {
+  // background-color: var(--clr-background);
+
+  .form-input {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin:2em 0 .5em 0;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      background-color: var(--clr-background);
+      color: var(--clr-foreground-900);
+      resize: none;
+    }
+
+    input[type=submit] {
+      border: none;
+      color: var(--clr-white);
+      background-color: var(--clr-accent);
+    }
+  }
+}
+
 .aboutme {
   background-color: var(--clr-accent);
   color: var(--clr-white);
