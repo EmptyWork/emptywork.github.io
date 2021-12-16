@@ -469,11 +469,14 @@
 }
 
 .contact {
-  // background-color: var(--clr-background);
-
   .form-input {
     display: flex;
     flex-direction: column;
+
+    &__captcha {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
 
     label {
       margin:2em 0 .5em 0;

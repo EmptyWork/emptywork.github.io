@@ -1270,6 +1270,11 @@ li {
           flex-direction: column;
 }
 
+.contact .form-input__captcha {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .contact .form-input label {
   margin: 2em 0 .5em 0;
 }
