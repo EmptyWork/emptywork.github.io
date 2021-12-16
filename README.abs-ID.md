@@ -8,7 +8,7 @@
 
 [**⚠Laporkan Bug**](https://github.com/EmptyWork/emptywork.github.io/issues/new) — [**📧Minta Fitur**](https://github.com/EmptyWork/emptywork.github.io/issues/new)
 
-**Bahasa Lain: [🆔Ambonese Malay](README.abs-ID.md), [🅰English](README.md)**
+**Baca akang pake: [🆔Bahasa Indonesia](README.id-ID.md), [🅰Bahasa Inggris](README.md)**
 ## Sumber kode par beta pung website pribadi
 
 [EmptyWork](https://emptywork.github.io) tu website yang responsive, akang punya design multi-page par website blog beta biking akang pake [11ty](https://www.11ty.dev/) jadi Static Site Generator, sedangkan [Nunjuck](https://mozilla.github.io/nunjucks/templating.html) jadi akang pung bahasa templatingnya, deng [NetlifyCMS](https://www.netlifycms.org/) par jadi Content Management
