@@ -29,6 +29,6 @@ Setelah itu ikuti langkah-langkah berikut:
 - Kemudian lakukan `npm install`
 - Jalankan `npm run build` atau `npm start` jika kamu mau menggubah filenya.ile.
 
-### Dukungan.
+### Dukungan
 
 Berikan ⭐ jika kamu mau! dan ikuti [EmptyWork](https://github.com/EmptyWork).
