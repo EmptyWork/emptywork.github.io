@@ -8,7 +8,7 @@
 
 [**⚠Laporkan Bug**](https://github.com/EmptyWork/emptywork.github.io/issues/new) — [**📧Minta Fitur**](https://github.com/EmptyWork/emptywork.github.io/issues/new)
 
-**Bahasa Lain: [🆔Ambonese Malay](README.abs-ID.md), [🅰English](README.md)**
+**Bahasa Lain: [🆔Bahasa Ambon](README.abs-ID.md), [🅰Bahasa Inggris](README.md)**
 ## Sumber kode untuk website pribadi EmptyWork
 
 [EmptyWork](https://emptywork.github.io) adalah website yang responsive, memiliki design multi-page untuk website blog dengan menggunakan [11ty](https://www.11ty.dev/) sebagai Static Site Generator, [Nunjuck](https://mozilla.github.io/nunjucks/templating.html) sebagai bahasa templatingnya, dan [NetlifyCMS](https://www.netlifycms.org/) untuk Content Management
