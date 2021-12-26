@@ -6,6 +6,8 @@ description: Contoh implementasi dari CodeIgniter, adapun prototype ini
 date: 2021-12-26T11:30:51.516Z
 tags:
   - prototype
+  - php
+  - codeigniter3
 linkDemo: http://pbp2stevarth.rf.gd/
 code: |-
   <?php
