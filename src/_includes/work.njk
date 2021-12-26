@@ -1,0 +1,21 @@
+<section aria-labelledby="work" class="work">
+  <div class="main-container">
+    <header class="section-header">
+      <h2 id="work" class="header-title">
+        <a class="header-link__access" href="#work">
+          <span aria-hidden="true">#</span>
+          <span class="sr-only">Link to heading "work"</span>
+        </a>
+        Work
+      </h2>
+      <span class="header-desc">
+      projects that I participated on or worked on.
+      </span>
+    </header>
+    <ul class="cards">
+      {%- for project in collections.project | reverse -%}
+          {% include 'project-snippet.njk' %}
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>

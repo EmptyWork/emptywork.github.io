@@ -1,0 +1,49 @@
+html:root {
+  --clr-accent: hsl(270, 50%, 40%);
+  --clr-accent-light: hsl(270, 84%, 72%);
+  --clr-accent-dark: hsl(270, 71%, 22%);
+
+  --clr-href: hsl(270, 80%, 50%);
+  --clr-href-visited: hsl(270, 70%, 22%);
+
+  --clr-background: hsl(0, 0%, 95%);
+  --clr-background-900: hsl(0, 0%, 88%);
+  --clr-background-800: hsl(0, 0%, 75%);
+  --clr-background-700: hsl(0, 0%, 63%);
+  --clr-foreground: hsl(0, 0%, 10%);
+  --clr-foreground-900: hsl(0, 0%, 13%);
+  --clr-foreground-800: hsl(0, 0%, 25%);
+  --clr-foreground-700: hsl(0, 0%, 38%);
+
+  --clr-disabled-text: hsl(0, 0%, 50%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-black: hsl(0, 0%, 0%);
+
+  &.sunglow {
+    --clr-accent: hsl(40, 56%, 40%);
+    --clr-accent-light: hsl(40, 56%, 72%);
+    --clr-accent-dark: hsl(40, 56%, 22%);
+
+    --clr-background: hsl(40, 56%, 95%);
+    --clr-background-900: hsl(40, 56%, 88%);
+    --clr-background-800: hsl(40, 56%, 75%);
+    --clr-background-700: hsl(40, 56%, 63%);
+    --clr-foreground: hsl(40, 56%, 10%);
+    --clr-foreground-900: hsl(40, 56%, 13%);
+    --clr-foreground-800: hsl(40, 56%, 25%);
+    --clr-foreground-700: hsl(40, 56%, 38%);
+  }
+
+  &.dark {
+    --clr-href: hsl(270, 84%, 72%);
+    --clr-href-visited: hsl(270, 50%, 40%);
+    --clr-background: hsl(0, 0%, 10%);
+    --clr-background-900: hsl(0, 0%, 13%);
+    --clr-background-800: hsl(0, 0%, 25%);
+    --clr-background-700: hsl(0, 0%, 38%);
+    --clr-foreground: hsl(0, 0%, 95%);
+    --clr-foreground-900: hsl(0, 0%, 88%);
+    --clr-foreground-800: hsl(0, 0%, 75%);
+    --clr-foreground-700: hsl(0, 0%, 63%);
+  }
+}

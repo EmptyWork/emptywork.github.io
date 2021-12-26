@@ -1,0 +1,329 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+  background-color: var(--clr-background);
+  box-shadow: 0 0.625rem 1.25rem hsla(270, 71%, 22%, 0.2);
+  z-index: 3;
+  position: relative;
+
+  .decoration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    pointer-events: none;
+
+    .relative {
+      position: relative;
+    }
+  }
+}
+
+.title {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    align-items: flex-start;
+    z-index: 0;
+  }
+
+  &-leftside {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 100%;
+  }
+
+  &-rightside {
+    width: 100%;
+    font-size: 1.2rem;
+
+    h2 {
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+    }
+
+    @include breakpoint-up("large") {
+      flex: 1 0 auto;
+      width: 70%;
+    }
+  }
+
+  &-link {
+    display: block;
+    width: max-content;
+  }
+
+  &-activity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: -0.4rem;
+
+    &__details {
+      margin-left: 0.4rem;
+      font-weight: 300;
+      user-select: none;
+      color: var(--clr-foreground-900);
+
+      #month {
+        font-weight: 600;
+      }
+
+      #activity {
+        display: inline-block;
+        position: relative;
+        font-weight: 400;
+        z-index: 0;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 70%;
+          height: 0.2rem;
+          bottom: 0;
+          border-bottom: 0.1rem dashed var(--clr-accent);
+        }
+      }
+    }
+
+    svg {
+      width: 1.2rem;
+    }
+  }
+
+  &-text {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-left: -0.1rem;
+    transition: font-size 300ms ease-in;
+  }
+
+  &-action {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.2rem;
+    color: var(--clr-white);
+    background: var(--clr-accent-dark);
+    background-image: linear-gradient(-90deg, var(--clr-accent), var(--clr-accent-dark));
+    border-radius: 0.3rem;
+    padding: 0.5rem 1.5rem;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: all 300ms ease-out;
+
+    &:hover,
+    &:focus-visible {
+      color: hsl(0, 0%, 80%);
+      background-color: var(--clr-accent);
+      filter: brightness(140%);
+      box-shadow: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
+      transform: scale(1.04);
+    }
+
+    svg {
+      height: 1.3rem;
+      width: 1.3rem;
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
+      &:hover {
+        transform: scale(0.96);
+        box-shadow: inset 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
+        filter: grayscale(100);
+      }
+    }
+
+    &.secondary {
+      background-color: var(--clr-background-800);
+      color: var(--clr-foreground-800);
+      background-image: none;
+      box-shadow: none;
+
+      &:hover,
+      &:focus-visible {
+        filter: brightness(100%);
+        transform: scale(0.98);
+      }
+    }
+
+    &__group {
+      display: flex;
+      gap: 0.6rem;
+    }
+  }
+
+  &-submenu {
+    display: flex;
+    position: relative;
+    margin-top: -0.4rem;
+    margin-left: 0.4rem;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--clr-foreground-800);
+    user-select: none;
+    z-index: 0;
+
+    svg {
+      height: 1rem;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.nav {
+  background-color: var(--clr-background);
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  padding: 0.8rem;
+  z-index: 20;
+
+  &-container {
+    width: 100%;
+    max-width: 64rem;
+    margin: 0 auto;
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    
+    .menubar {
+      font-weight: 600;
+      flex: 1;
+      justify-content: flex-end;
+    }
+  }
+
+
+  .rightside {
+    display: flex;
+    gap: 0.2rem;
+  }
+
+  .brand {
+    display: flex;
+    gap: 0.5rem;
+    &-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    &-logo {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .themes {
+    transition: background-color 200ms ease-in;
+    border-radius: 50%;
+  }
+
+  .themes,
+  &-mobile {
+    cursor: pointer;
+    background: none;
+    border: none;
+    display: block;
+    height: 2rem;
+    width: 2rem;
+    padding: 0.4rem;
+    color: inherit;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    &__section {
+      margin-top: 3.605625rem;
+      right: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: calc(100% - 3.605625rem);
+      background-color: var(--clr-background);
+      color: var(--clr-foreground);
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      justify-content: center;
+
+      &.not-showing {
+        height: 0%;
+        overflow-y: hidden;
+        visibility: hidden;
+      }
+
+      @include breakpoint-up("medium") {
+        height: 0%;
+        overflow-y: hidden;
+        visibility: hidden;
+      }
+
+      li {
+        list-style: none;
+      }
+    }
+  }
+
+  &-mobile {
+    @include breakpoint-up("medium") {
+      display: none;
+    }
+  }
+
+  ul {
+    display: none;
+    gap: 1rem;
+    align-items: center;
+
+    @include breakpoint-up("medium") {
+      display: flex;
+    }
+
+    li {
+      list-style: none;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      a {
+        position: relative;
+        z-index: 1;
+
+        &:hover,
+        &:focus-visible {
+          color: var(--clr-foreground);
+          z-index: 1;
+          &::before {
+            width: 100%;
+          }
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 0%;
+          background-color: var(--clr-accent);
+          height: 110%;
+          transition: all 150ms ease-in;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}

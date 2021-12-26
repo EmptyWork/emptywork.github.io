@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="google-site-verification" content="QdJZEMLWFpqAkaOxsDd2zR4mzmtW7VN07LemJCDZuD0" />
+
+    {% if author %}
+    <meta name="author" content="{{ author }}"/>
+    {% else %}
+    <meta name="author" content="EmptyWork"/>
+    {% endif %}
+    <meta name="keywords" content="EmptyWork, Portofolio, Seorang Web Developer, Web Developer, HTML5, CSS3, Javascript, Stevarth, Ambon"/>
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    
+    {% if description %}
+    <meta name="description" content="{{ description }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta itemprop="description" content="{{description}}">
+    <meta name="twitter:description" content="{{ description }}">
+    {% else %}
+    <meta name="description" content="Portofolio dari seorang web developer yang masih baru di dunia pemrograman" />
+    <meta property="og:description" content="Portofolio dari seorang web developer yang masih baru di dunia pemrograman" />
+    <meta itemprop="description" content="Portofolio dari seorang web developer yang masih baru di dunia pemrograman">
+    <meta name="twitter:description" content="Portofolio dari seorang web developer yang masih baru di dunia pemrograman">
+    {% endif %}
+    
+    <meta property="og:url" content="https://emptywork.netlify.app" />
+    <meta property="og:site_name" content="EmptyWork" />
+    
+    {% if image %}
+    <meta property="og:image" content="https://emptywork.netlify.app{{image}}" />
+    <meta itemprop="image" content="https://emptywork.netlify.app{{image}}">
+    <meta name="twitter:image" content="https://emptywork.netlify.app{{image}}">
+    {% else %}
+    <meta itemprop="image" content="https://emptywork.netlify.app/images/emptywork.png">
+    <meta property="og:image" content="https://emptywork.netlify.app/images/emptywork.png" />
+    <meta name="twitter:image" content="https://emptywork.netlify.app/images/emptywork.png">
+    {% endif %}
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta name="twitter:title" content="{{ title }}">
+    <meta itemprop="name" content="{{ title }}">
+    <title>{{ title }}</title>
+    <link
+      rel="shortcut icon"
+      href="/images/emptywork.png"
+      type="image/x-png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+
+    <!-- ? Load the user prefer theme -->
+    <script src="/js/loadTheme.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+<body class="t-all">
+  {% include 'nav.njk' %}
+
+  {{ content | safe}}
+  
+  {% include 'footer.njk' %}
+  <script src="/js/main.js"></script>
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+</body>
+</html>

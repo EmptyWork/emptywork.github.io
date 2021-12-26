@@ -1,0 +1,24 @@
+.footer {
+  background-color: var(--clr-background);
+  color: var(--clr-foreground);
+  padding: 0.8rem;
+
+  &-container {
+    max-width: 64rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .copyright {
+    font-size: 0.9rem;
+    margin: 1rem auto;
+    text-align: center;
+    border: 0.0625rem solid var(--clr-foreground);
+    width: 100%;
+    max-width: max-content;
+    padding: 0.2rem 2rem;
+
+    @include breakpoint-up("medium") {
+      flex-direction: row;
+    }
+  }
+}

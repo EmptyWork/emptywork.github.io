@@ -1,0 +1,160 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 10rem;
+  scroll-padding-bottom: 10rem;
+}
+
+html:root {
+
+  .themes {
+    background-color: #ffc107;
+    color: #7e620e;
+  }
+
+  [data-moon] {
+    display: none;
+  }
+
+  [data-sun] {
+    display: block;
+  }
+
+  &.dark {
+
+    .themes {
+      background-color: var(--clr-accent);
+      color: var(--clr-accent-dark);
+    }
+
+    [data-sun] {
+      display: none;
+    }
+
+    [data-moon] {
+      display: block;
+    }
+  }
+}
+
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--clr-background-900);
+  font-family: "Montserrat", sans-serif;
+  color: var(--clr-foreground);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a,
+a:active,
+a:hover,
+a:focus-visible {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--clr-accent);
+}
+
+a[href] {
+  position: relative;
+
+  .new-tab-warning {
+    position: absolute;
+    width: max-content;
+    background-color: hsl(0, 0%, 13%);
+    font-weight: normal;
+    letter-spacing: normal;
+    color: var(--clr-white);
+    padding: 0.3rem;
+    font-size: 0.7rem;
+    border-radius: 0.3rem;
+    margin-top: 0.5rem;
+    top: 100%;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none;
+    text-transform: capitalize;
+    transition: all 300ms ease-out;
+    transform: translateY(-0.3rem);
+    z-index: 90;
+  }
+
+  &:focus-visible {
+    .new-tab-warning {
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: unset;
+    }
+  }
+}
+
+::selection {
+  background-color: var(--clr-accent);
+  color: var(--clr-white);
+}
+
+.t-all {
+  transition: all 300ms ease-in;
+}
+
+.no-scroll {
+  @include breakpoint-down("small") {
+    overflow: hidden !important;
+  }
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+*:focus-visible {
+  outline: 0.125rem solid var(--clr-accent-dark);
+}
+
+.highlight {
+  background-color: var(--clr-black);
+  padding: 0.2rem 0.6rem;
+  color: var(--clr-white);
+}
+
+.header-link__access {
+  text-decoration: none !important;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 0.0625rem;
+  margin: -0.0625rem;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 0.0625rem;
+}
+
+@media (prefers-reduced-motion) {
+  .prototype-reader,
+  .data {
+    transform: unset;
+  }
+}
