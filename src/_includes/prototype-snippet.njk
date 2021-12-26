@@ -20,7 +20,7 @@
                 d="M14.472 0L21 6.52801V11.3362L18.1667 8.50284V5.18501H14.8913L14.8715 5.20484L12.0665 2.40267L14.472 0Z"
               />
             </svg>
-            <p>{{ post.fileSlug }}.dev</p>
+            <p>{{ post.fileSlug | truncate(12) }}.dev</p>
           </div>
           <div>
             <span class="dot"></span>
@@ -60,20 +60,13 @@
         </p>
         <ul>
           <li class="prototype-more">
-            <span class="status">Status</span>
-            {% if post.data.status == 1 %}
-            <i class="active">Deploy</i>
-            {% else %}
-            <i class="error">Buggy</i>
-            {% endif %}
+            <span class="status">Status</span>{% if post.data.status == 1 %}
+            <i class="active">Deploy</i>{% else %}
+            <i class="error">Buggy</i>{% endif %}
           </li>
           <li class="prototype-more">
-            <span class="status">Tags</span>
-            {% for tag in post.data.tags %}
-              {% if tag != "prototype" %}
-              <i>{{ tag }}</i>
-              {% endif %}
-            {% endfor %}
+            <span class="status">Tags</span>{% for tag in post.data.tags %}{% if tag != "prototype" %}
+              <i>{{ tag }}</i>{% endif %}{% endfor %}
           </li>
         </ul>
       </section>
