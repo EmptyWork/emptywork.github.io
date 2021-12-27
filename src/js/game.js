@@ -231,15 +231,7 @@ window.addEventListener("keypress", (e) => {
   e.preventDefault()
   if (e.shiftKey) {
     if (e.key.toLocaleLowerCase() == "p") {
-      if (animationId && !isPause) {
-        isPause = true
-        cancelAnimationFrame(animationId)
-        displayEl.style.display = "flex"
-      } else {
-        isPause = false
-        requestAnimationFrame(animate)
-        displayEl.style.display = "none"
-      }
+      pauseGame()
     }
   }
 })
@@ -248,4 +240,16 @@ const updateScore = () => {
   currentScoreEl.forEach(score => {
     score.innerHTML = currentScore
   })
+}
+
+const pauseGame = () => {
+  if (animationId && !isPause) {
+    isPause = true
+    cancelAnimationFrame(animationId)
+    displayEl.style.display = "flex"
+  } else {
+    isPause = false
+    requestAnimationFrame(animate)
+    displayEl.style.display = "none"
+  }
 }
