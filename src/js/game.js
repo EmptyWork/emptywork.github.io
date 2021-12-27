@@ -9,6 +9,7 @@ const displayEl = document.querySelector(".pause")
 let currentScore = 0
 let animationId
 let isPause = false
+let isPlay = false
 
 const userColor = 'white';
 
@@ -99,30 +100,33 @@ const init = () => {
   enemies = []
   particles = []
   currentScore = 0
+  isPlay = true
 }
 
 const spawnEnemies = () => {
-  setInterval(() => {
-    const radius = Math.random() * (30 - 7) + 7
-
-    let x
-    let y
-    if (Math.random() < 0.5) {
-      x = Math.random() < 0.5 ? 0 - radius : canvas.width + radius
-      y = Math.random() * canvas.height
-    } else {
-      x = Math.random() * canvas.width
-      y = Math.random() < 0.5 ? 0 - radius : canvas.height + radius
-    }
-
-    const color = `hsl(${Math.random() * 360}, 50%, 50%)`
-    const angle = Math.atan2(halfHeight - y, halfWidth - x)
-    const velocity = {
-      x: Math.cos(angle),
-      y: Math.sin(angle),
-    }
-    enemies.push(new Enemy(x, y, radius, color, velocity))
-  }, 1000)
+  if(enemies.length < 10) {
+    setInterval(() => {
+      const radius = Math.random() * (30 - 7) + 7
+  
+      let x
+      let y
+      if (Math.random() < 0.5) {
+        x = Math.random() < 0.5 ? 0 - radius : canvas.width + radius
+        y = Math.random() * canvas.height
+      } else {
+        x = Math.random() * canvas.width
+        y = Math.random() < 0.5 ? 0 - radius : canvas.height + radius
+      }
+  
+      const color = `hsl(${Math.random() * 360}, 50%, 50%)`
+      const angle = Math.atan2(halfHeight - y, halfWidth - x)
+      const velocity = {
+        x: Math.cos(angle),
+        y: Math.sin(angle),
+      }
+      enemies.push(new Enemy(x, y, radius, color, velocity))
+    }, 1000)
+  }
 }
 
 const animate = () => {
@@ -243,6 +247,7 @@ const updateScore = () => {
 }
 
 const pauseGame = () => {
+  if(!isPlay) return
   if (animationId && !isPause) {
     isPause = true
     cancelAnimationFrame(animationId)
