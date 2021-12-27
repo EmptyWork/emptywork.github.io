@@ -7,7 +7,10 @@ const playEl = document.querySelector(".play")
 const displayEl = document.querySelector(".pause")
 
 let currentScore = 0
+let animationId
 let isPause = false
+
+const userColor = 'white';
 
 canvas.width = innerWidth
 canvas.height = innerHeight
@@ -85,13 +88,13 @@ class Enemy extends Circle {
 const halfWidth = canvas.width / 2
 const halfHeight = canvas.height / 2
 
-let player = new Player(halfWidth, halfHeight, 30, "white")
+let player = new Player(halfWidth, halfHeight, 30, userColor)
 let projectiles = []
 let enemies = []
 let particles = []
 
 const init = () => {
-  player = new Player(halfWidth, halfHeight, 30, "white")
+  player = new Player(halfWidth, halfHeight, 30, userColor)
   projectiles = []
   enemies = []
   particles = []
@@ -122,7 +125,6 @@ const spawnEnemies = () => {
   }, 1000)
 }
 
-let animationId
 const animate = () => {
   animationId = requestAnimationFrame(animate)
   ctx.fillStyle = "rgba(0, 0, 0, 0.1)"
@@ -181,9 +183,7 @@ const animate = () => {
 
         if (enemy.radius - 10 > 10) {
           currentScore += 50
-          currentScoreEl.forEach((score) => {
-            score.innerHTML = currentScore
-          })
+          updateScore()
 
           gsap.to(enemy, {
             radius: enemy.radius - 10,
@@ -193,9 +193,7 @@ const animate = () => {
           }, 0)
         } else {
           currentScore += 150
-          currentScoreEl.forEach((score) => {
-            score.innerHTML = currentScore
-          })
+          updateScore()
 
           setTimeout(() => {
             enemies.splice(index, 1)
@@ -217,7 +215,7 @@ canvas.addEventListener("click", (e) => {
     y: Math.sin(angle) * 6,
   }
   projectiles.push(
-    new Projectile(halfWidth, halfHeight, 5, "white", velocity)
+    new Projectile(halfWidth, halfHeight, 5, userColor, velocity)
   )
 })
 
@@ -225,9 +223,7 @@ playButton.addEventListener("click", () => {
   init()
   animate()
   spawnEnemies()
-  currentScoreEl.forEach((score) => {
-    score.innerHTML = currentScore
-  })
+  updateScore()
   playEl.style.display = "none"
 })
 
@@ -247,3 +243,9 @@ window.addEventListener("keypress", (e) => {
     }
   }
 })
+
+const updateScore = () => {
+  currentScoreEl.forEach(score => {
+    score.innerHTML = currentScore
+  })
+}
