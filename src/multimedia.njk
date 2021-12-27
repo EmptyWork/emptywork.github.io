@@ -43,6 +43,7 @@
         top: 0;
         left: 0;
         padding: 1rem;
+        user-select: none;
       }
 
       .play {
@@ -64,21 +65,39 @@
         padding: .2rem .5rem;
         border: none;
       }
+
+      .pause {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.8);
+        display: none;
+        z-index: 2;
+        align-items: center;
+        justify-content: center;
+      }
     </style>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
 <body class="t-all">
-    <main class="main">
-      <div class="score">
-        <span>Score:</span> <span class="currentScore">0</span>
-      </div>
-      <div class="play">
-        <h1 class="currentScore">0</h1>
-        <p class="endScore">Score</p>
-        <button class="playButton">Start Game</button>
-      </div>  
-      <canvas></canvas>
-    </main>
+  <main class="main">
+    <div class="pause">
+      <p>PAUSE</p>
+    </div>
+    <div class="score">
+      <span>Score:</span> <span class="currentScore">0</span>
+    </div>
+    <div class="play">
+      <h1 class="currentScore">0</h1>
+      <p class="endScore">Score</p>
+      <button class="playButton">Start Game</button>
+    </div>  
+    <canvas></canvas>
+  </main>
   <script src="/js/gsap.min.js"></script>
   <script src="/js/game.js"></script>
   <script>
@@ -91,6 +110,6 @@
       }
     });
   }
-</script>
+  </script>
 </body>
 </html>

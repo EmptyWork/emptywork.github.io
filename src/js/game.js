@@ -2,9 +2,12 @@ const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d')
 
 const currentScoreEl = document.querySelectorAll('.currentScore')
-let currentScore = 0;
 const playButton = document.querySelector('.playButton')
 const playEl = document.querySelector('.play')
+const displayEl = document.querySelector('.pause')
+
+let currentScore = 0
+let isPause = false
 
 canvas.width = innerWidth
 canvas.height = innerHeight
@@ -262,5 +265,22 @@ playButton.addEventListener('click', () => {
   currentScoreEl.forEach(score => {
     score.innerHTML = currentScore
   })
-  playEl.style.display = "none";
+  playEl.style.display = "none"
+})
+
+window.addEventListener('keypress', e => {
+  e.preventDefault()
+  if(e.shiftKey) {
+    if(e.key.toLocaleLowerCase() == 'p') {
+      if(animationId && !isPause) {
+        isPause = true
+        cancelAnimationFrame(animationId) 
+        displayEl.style.display = 'flex'
+      } else {
+        isPause = false
+        requestAnimationFrame(animate)
+        displayEl.style.display = 'none'
+      }
+    }
+  } 
 })
