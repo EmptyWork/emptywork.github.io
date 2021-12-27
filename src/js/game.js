@@ -12,7 +12,7 @@ let isPause = false
 canvas.width = innerWidth
 canvas.height = innerHeight
 
-class Player {
+class Circle {
   constructor(_x, _y, _radius, _color) {
     this.x = _x
     this.y = _y
@@ -26,76 +26,54 @@ class Player {
     ctx.fillStyle = this.color
     ctx.fill()
   }
-}
-
-class Projectile {
-  constructor(_x, _y, _radius, _color, _velocity) {
-    this.x = _x
-    this.y = _y
-    this.radius = _radius
-    this.color = _color
-    this.velocity = _velocity
-  }
-
-  draw() {
-    ctx.beginPath()
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
-    ctx.fillStyle = this.color
-    ctx.fill()
-  }
 
   update() {
     this.draw()
+  }
+}
+
+class Player extends Circle {
+}
+
+class Projectile extends Circle {
+  constructor(_x, _y, _radius, _color, _velocity) {
+    super(_x, _y, _radius, _color)
+    this.velocity = _velocity
+  }
+
+  update() {
+    super.update()
     this.x = this.x + this.velocity.x
     this.y = this.y + this.velocity.y
   }
 }
 
-const friction = 0.99
-class Particle {
+class Particle extends Projectile {
   constructor(_x, _y, _radius, _color, _velocity) {
-    this.x = _x
-    this.y = _y
-    this.radius = _radius
-    this.color = _color
-    this.velocity = _velocity
+    super(_x, _y, _radius, _color, _velocity)
+    this.friction = 0.99
     this.alpha = 1
   }
 
   draw() {
     ctx.save()
     ctx.globalAlpha = this.alpha
-    ctx.beginPath()
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
-    ctx.fillStyle = this.color
-    ctx.fill()
+    super.draw()
     ctx.restore()
   }
 
   update() {
-    this.draw()
-    this.velocity.x *= friction
-    this.velocity.y *= friction
-    this.x = this.x + this.velocity.x
-    this.y = this.y + this.velocity.y
+    this.velocity.x *= this.friction
+    this.velocity.y *= this.friction
+    super.update()
     this.alpha -= 0.01
   }
 }
 
-class Enemy {
+class Enemy extends Circle {
   constructor(_x, _y, _radius, _color, _velocity) {
-    this.x = _x
-    this.y = _y
-    this.radius = _radius
-    this.color = _color
+    super(_x, _y, _radius, _color)
     this.velocity = _velocity
-  }
-
-  draw() {
-    ctx.beginPath()
-    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
-    ctx.fillStyle = this.color
-    ctx.fill()
   }
 
   update() {
