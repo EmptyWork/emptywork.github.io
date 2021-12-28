@@ -104,11 +104,10 @@ const init = () => {
 }
 
 const spawnEnemies = () => {
-  if(enemies.length < 10) {
-    setInterval(() => {
-      const radius = Math.random() * (30 - 7) + 7
-  
-      let x
+  setInterval(() => {
+    const radius = Math.random() * (30 - 7) + 7
+    
+    let x
       let y
       if (Math.random() < 0.5) {
         x = Math.random() < 0.5 ? 0 - radius : canvas.width + radius
@@ -124,9 +123,11 @@ const spawnEnemies = () => {
         x: Math.cos(angle),
         y: Math.sin(angle),
       }
-      enemies.push(new Enemy(x, y, radius, color, velocity))
+
+      if(enemies.length < 10) {
+        enemies.push(new Enemy(x, y, radius, color, velocity))
+      }
     }, 1000)
-  }
 }
 
 const animate = () => {
