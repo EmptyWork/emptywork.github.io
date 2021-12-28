@@ -762,6 +762,25 @@
   }
 }
 
+.posts {
+  margin-top: 2.5rem;
+  &:not(:first-of-type) {
+    margin-top: 1.5rem;
+  }
+
+  &-detail {
+    margin-top: 1rem;
+    margin-left: 2rem;
+    color: var(--clr-foreground-700);
+
+    &_header {
+      font-weight: 600;
+      margin-left: -1rem;
+      color: var(--clr-foreground);
+    }
+  }
+}
+
 .post {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;

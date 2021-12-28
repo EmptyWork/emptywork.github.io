@@ -2,6 +2,7 @@
 title : 'Recent Articles - Blog | EmptyWork'
 layout: 'secondary-base.njk'
 ---
+{% set posts = [] %} {% for post in collections.post | reverse %}{% set postDate = {year: post.data.date | postYear, fullDate: post.data.date } %}{% set posts = (posts.push({title: post.data.title, url: post.url, date: postDate, desc: post.data.description }),posts) %} {% endfor %}{% set recentPosts = [] %} {% for post in collections.post | reverse %} {% set recentPosts = (recentPosts.push({title: post.data.title, description: post.data.description, url: post.url, author: post.data.author, date: post.data.date, image: post.data.image}), recentPosts) %} {% endfor %}{% set lengthRecentPosts = recentPosts | length %}{% if lengthRecentPosts > 3 %}{% set recentPosts = recentPosts | sliceRecent %}{% endif %}
     <main class="main">
       <section aria-labelledby="articles" class="articles">
         <div class="main-container">
@@ -11,18 +12,23 @@ layout: 'secondary-base.njk'
                 <span aria-hidden="true">#</span>
                 <span class="sr-only">Link to heading "Recent Articles"</span>
               </a>
-              Recent Articles
+              Recent Articles 
             </h2>
           </header>
-          <ul class="cards nocentered">
-            {%- for post in collections.post | reverse -%}
-              {% include 'article-snippet.njk' %}
-            {% else %}
+          <ul class="cards">{%- for post in recentPosts -%}
+              {% include 'article-snippet.njk' %}{% else %}
               <li class="card card-empty">
               It seems like there is no article right now...
-              </li>
-					  {%- endfor -%}
+              </li>{%- endfor -%}
           </ul>
+          {% for year, posts in posts | groupby("date.year") %}
+          <div class="posts">
+            <h3>{{ year }}</h3>
+            <ul class="posts-list">{% for post in posts %}
+                <li class="posts-detail"> <a class="posts-detail_header" href={{ post.url}}>{{ post.title }} | {{ post.date.fullDate | postDate }}</a> <br> {{ post.desc | trimText }}
+                </li>{% endfor %}
+            </ul>
+          </div>{% endfor %}
         </div>
       </section>
     </main>

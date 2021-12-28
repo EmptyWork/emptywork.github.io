@@ -1632,6 +1632,26 @@ li {
   background-color: yellow;
 }
 
+.posts {
+  margin-top: 2.5rem;
+}
+
+.posts:not(:first-of-type) {
+  margin-top: 1.5rem;
+}
+
+.posts-detail {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  color: var(--clr-foreground-700);
+}
+
+.posts-detail_header {
+  font-weight: 600;
+  margin-left: -1rem;
+  color: var(--clr-foreground);
+}
+
 .post {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
