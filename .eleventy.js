@@ -38,6 +38,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("postYear", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString({year: 'numeric'})
   })
+
+  eleventyConfig.addFilter("sliceRecent", (array) => {
+    return array.slice(0, 3)
+  })
+
+  eleventyConfig.addFilter("trimText", (string) => {
+    return string.split(" ").splice(0, 12).join(" ")
+  })
   
   return {
     dir: {
