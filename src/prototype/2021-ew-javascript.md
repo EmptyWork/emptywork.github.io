@@ -1,9 +1,8 @@
 ---
 title: Ew-Javascript
 status: 2
-description: Source Code untuk website pribadi. tujuan website ini dibuat adalah
-  sebagai showcase dan archive dari semua project yang akan dijalani atau
-  dibuat.
+description: Kumpulan proyek Javascript (native), kode-kode ini akan
+  dikembangkan lagi untuk di gunakan sebagai front-end development.
 date: 2021-01-26
 tags:
   - prototype
