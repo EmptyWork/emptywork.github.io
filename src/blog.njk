@@ -2,6 +2,7 @@
 title : 'Recent Articles - Blog | EmptyWork'
 layout: 'secondary-base.njk'
 ---
+{% set posts = [] %} {% for post in collections.post | reverse %}{% set postDate = {year: post.data.date | postYear } %}{% set posts = (posts.push({title: post.data.title, url: post.url, date: postDate}),posts) %} {% endfor %}
     <main class="main">
       <section aria-labelledby="articles" class="articles">
         <div class="main-container">
@@ -11,18 +12,23 @@ layout: 'secondary-base.njk'
                 <span aria-hidden="true">#</span>
                 <span class="sr-only">Link to heading "Recent Articles"</span>
               </a>
-              Recent Articles
+              Recent Articles 
             </h2>
           </header>
-          <ul class="cards nocentered">
-            {%- for post in collections.post | reverse -%}
-              {% include 'article-snippet.njk' %}
-            {% else %}
+          <ul class="cards">{%- for post in collections.post -%}
+              {% include 'article-snippet.njk' %}{% else %}
               <li class="card card-empty">
               It seems like there is no article right now...
-              </li>
-					  {%- endfor -%}
+              </li>{%- endfor -%}
           </ul>
+          {% for year, posts in posts | groupby("date.year") %}
+          <div class="posts">
+            <h3>{{ year }}</h3>
+            <ul class="posts-list">{% for post in posts %}
+                <li class="post-detail"> <a href={{ post.url}}>{{ post.title }}</a>
+                </li>{% endfor %}
+            </ul>
+          </div>{% endfor %}
         </div>
       </section>
     </main>
