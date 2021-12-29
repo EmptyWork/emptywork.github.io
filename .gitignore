@@ -3,3 +3,5 @@
 
 # public files
 /public
+
+/src/blog/example/*
