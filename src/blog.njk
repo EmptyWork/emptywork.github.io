@@ -25,7 +25,8 @@ layout: 'secondary-base.njk'
           <div class="posts">
             <h3>{{ year }}</h3>
             <ul class="posts-list">{% for post in posts %}
-                <li class="posts-detail"> <a class="posts-detail_header" href={{ post.url}}>{{ post.title }} | {{ post.date.fullDate | postDate }}</a> <br> {{ post.desc | truncate(60) }}
+                <li class="posts-detail"> 
+                  <a class="posts-detail_header" href={{ post.url}}>{{ post.title }} | {{ post.date.fullDate | postDate }}</a> <br> {{ post.desc | truncate(60) }}
                 </li>{% endfor %}
             </ul>
           </div>{% endfor %}

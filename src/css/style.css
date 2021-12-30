@@ -1640,15 +1640,22 @@ li {
   margin-top: 1.5rem;
 }
 
+.posts:is(:last-of-type) {
+  margin-bottom: 1.5rem;
+}
+
 .posts-detail {
   margin-top: 1rem;
   margin-left: 2rem;
   color: var(--clr-foreground-700);
+  padding: 1rem;
+  border-radius: 0.3rem;
+  -webkit-box-shadow: inset 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
 }
 
 .posts-detail_header {
   font-weight: 600;
-  margin-left: -1rem;
   color: var(--clr-foreground);
 }
 
