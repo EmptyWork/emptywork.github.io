@@ -123,12 +123,20 @@ console.groupEnd()
   */
  
  const schedulerLoader = (schedules = {}) => {
-   for (let i = 0; i < schedules.length; i++) {
-     if (!replaceStatus) return
-     if (days[currentDay] === schedules[i]) {
-       replaceStatus.textContent = "Kuliah"
-       break
+   let time = new Date()
+   let currentTime = time.getUTCHours + 9
+   if(currentDate > 23) currentTime -= 23
+
+   replaceStatus.textContent = "Bebas"
+   setTimeout(() => {
+     for (let i = 0; i < schedules.length; i++) {
+       if (!replaceStatus) return
+       let theDay = schedules[i][0].toUpperCase() + schedules[i].substring(1)
+       if (days[currentDay] === theDay) {
+         if(currentTime > 7 && currentTime < 19) {replaceStatus.textContent = "Kuliah"}
+         break
+       }
+       replaceStatus.textContent = "Bebas"
      }
-     replaceStatus.textContent = "Bebas"
-   }
+   }, 0)
  }
