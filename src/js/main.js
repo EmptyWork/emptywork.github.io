@@ -130,7 +130,7 @@ console.groupEnd()
   * @param {array} schedules
   */
  
- const schedulerLoader = ({schedules = {}, startHour = 0, endHour = 12}) => {
+ const schedulerLoader = ({schedules = {}, startHour = 0, endHour = 12} = {}) => {
    let time = new Date()
    let currentTime = time.getUTCHours() + 9
    if(currentTime > 23) currentTime -= 23
