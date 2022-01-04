@@ -6,7 +6,7 @@ const dataLoader = async (url) => {
   const response = await fetch(url)
   const data = await response.json()
   if (response) {
-    schedulerLoader(data.schedules)
+    schedulerLoader({schedules : data.schedules, startHour: data.startHour, endHour: data.endHour})
   }
 }
 
@@ -40,6 +40,14 @@ const setHidden = () => {
   mobileButtons[0].setAttribute("aria-label", "Open the mobile menu")
   mobileMenuSection.classList.add("not-showing")
   document.body.classList.remove("no-scroll")
+}
+
+/**
+ * Capitalize the word
+ */
+
+const toCapitalizeWord = (string) => {
+  return string[0].toUpperCase() + string.substring(1)
 }
 
 /**
@@ -122,18 +130,18 @@ console.groupEnd()
   * @param {array} schedules
   */
  
- const schedulerLoader = (schedules = {}) => {
+ const schedulerLoader = ({schedules = {}, startHour = 0, endHour = 12}) => {
    let time = new Date()
-   let currentTime = time.getUTCHours + 9
-   if(currentDate > 23) currentTime -= 23
+   let currentTime = time.getUTCHours() + 9
+   if(currentTime > 23) currentTime -= 23
 
    replaceStatus.textContent = "Bebas"
    setTimeout(() => {
      for (let i = 0; i < schedules.length; i++) {
        if (!replaceStatus) return
-       let theDay = schedules[i][0].toUpperCase() + schedules[i].substring(1)
-       if (days[currentDay] === theDay) {
-         if(currentTime > 7 && currentTime < 19) {replaceStatus.textContent = "Kuliah"}
+       
+       if (days[currentDay] === toCapitalizeWord(schedules[i])) {
+         if(currentTime > startHour  && currentTime < endHour) {replaceStatus.textContent = "Kuliah"}
          break
        }
        replaceStatus.textContent = "Bebas"
