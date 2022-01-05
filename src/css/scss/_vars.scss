@@ -24,6 +24,9 @@ html:root {
     --clr-accent-light: hsl(40, 56%, 72%);
     --clr-accent-dark: hsl(40, 56%, 22%);
 
+    --clr-href: hsl(40, 56%, 72%);
+    --clr-href-visited: hsl(40, 56%, 22%);
+
     --clr-background: hsl(40, 56%, 95%);
     --clr-background-900: hsl(40, 56%, 88%);
     --clr-background-800: hsl(40, 56%, 75%);
@@ -32,6 +35,11 @@ html:root {
     --clr-foreground-900: hsl(40, 56%, 13%);
     --clr-foreground-800: hsl(40, 56%, 25%);
     --clr-foreground-700: hsl(40, 56%, 38%);
+
+    &.dark {
+      --clr-href: hsl(40, 56%, 72%);
+      --clr-href-visited: hsl(40, 56%, 40%);  
+    }
   }
 
   &.dark {
