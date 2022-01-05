@@ -6,3 +6,7 @@ if (
 } else {
   document.documentElement.classList.remove("dark")
 }
+
+if (localStorage.scheme) {
+  document.documentElement.classList.add(localStorage.scheme)
+}
