@@ -6,11 +6,16 @@ const dataLoader = async (url) => {
   const response = await fetch(url)
   const data = await response.json()
   if (response) {
-    schedulerLoader({schedules : data.schedules, startHour: data.startHour, endHour: data.endHour})
+    schedulerLoader(data.schedules)
+    schemeLoader(data.colorScheme)
   }
 }
 
 dataLoader("/settings.json")
+
+const schemeLoader = (scheme) => {
+  localStorage.scheme = scheme
+}
 
 /**
  * Mobile hamburger menu logic
@@ -44,6 +49,7 @@ const setHidden = () => {
 
 /**
  * Capitalize the word
+ * @param {string} string
  */
 
 const toCapitalizeWord = (string) => {
@@ -63,6 +69,7 @@ const themeHandler = () => {
   setDark()
   return
 }
+
 themesButton.addEventListener("click", themeHandler)
 
 const setLight = () => {
@@ -130,17 +137,19 @@ console.groupEnd()
   * @param {array} schedules
   */
  
- const schedulerLoader = ({schedules = {}, startHour = 0, endHour = 12} = {}) => {
+ const schedulerLoader = (schedules = {}) => {
    let time = new Date()
    let currentTime = time.getUTCHours() + 9
    if(currentTime > 23) currentTime -= 23
-
+   
    replaceStatus.textContent = "Bebas"
+
    setTimeout(() => {
      for (let i = 0; i < schedules.length; i++) {
+       let {day, endHour, startHour} = schedules[i]
        if (!replaceStatus) return
        
-       if (days[currentDay] === toCapitalizeWord(schedules[i])) {
+       if (days[currentDay] === toCapitalizeWord(day)) {
          if(currentTime > startHour  && currentTime < endHour) {replaceStatus.textContent = "Kuliah"}
          break
        }
