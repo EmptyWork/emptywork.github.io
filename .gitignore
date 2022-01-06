@@ -4,4 +4,4 @@
 # public files
 /public
 
-/src/blog/example/*
+# /src/blog/example/*
