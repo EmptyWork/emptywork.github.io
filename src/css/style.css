@@ -1368,7 +1368,7 @@ li {
   background-color: #333333;
 }
 
-.aboutme h4 {
+.aboutme .extra {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
 }

@@ -9,7 +9,7 @@ layout: 'base.njk'
     <main id="main" class="main">
       {% include 'work.njk' %}
 
-      <section class="aboutme">
+      <section aria-labelledby="about" class="aboutme">
         <div class="main-container">
           <header class="section-header">
             <h2 id="about" class="header-title">
@@ -85,7 +85,7 @@ layout: 'base.njk'
             <section class="explain">
               <div class="text-area">
                 <header>
-                  <h4>
+                  <h3 class="extra">
                     I am
                     <span class="highlight">
                       based in
@@ -98,7 +98,7 @@ layout: 'base.njk'
                         <span class="new-tab-warning"> Open a new tab </span>.
                       </a>
                     </span>
-                  </h4>
+                  </h3>
                 </header>
                 I am currently Majoring in Informatics Engineering on
                 <a href="https://ukim.ac.id" target="_blank" rel="noopener noreferrer" class="highlight">
@@ -121,13 +121,13 @@ layout: 'base.njk'
           </section>
           <section class="flex languages">
             <header>
-              <h2 id="languages" class="header-title">
+              <h3 id="languages" class="header-title">
                 <a class="header-link__access" href="#languages">
                   <span aria-hidden="true">#</span>
                   <span class="sr-only">Link to heading "languages"</span>
                 </a>
                 Languages
-              </h2>
+              </h3>
             </header>
             <article class="lists">
               <ul>
@@ -213,7 +213,7 @@ layout: 'base.njk'
           </ul>
           <section class="flex tools">
             <header class="flex-header">
-              <h2 id="tools" class="header-title">
+              <h3 id="tools" class="header-title">
                 <a class="header-link__access" href="#tools">
                   <span aria-hidden="true">
                     <svg
@@ -237,7 +237,7 @@ layout: 'base.njk'
                   <span class="sr-only">Link to heading "tools"</span>
                 </a>
                 Tools
-              </h2>
+              </h3>
               <div>
                 <span class="dot"></span>
                 <span class="dot"></span>
@@ -275,7 +275,7 @@ layout: 'base.njk'
         </div>
       </section>
 
-      <section class="prototype">
+      <section aria-labelledby="prototypes" class="prototype">
         <div class="main-container">
           <header class="section-header">
             <h2 id="prototypes" class="header-title">
