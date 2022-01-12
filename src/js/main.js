@@ -157,3 +157,8 @@ console.groupEnd()
      }
    }, 0)
  }
+
+// Injecting #main to main that doesn't have #main
+let mainElem = document.querySelector('#main')
+if(!mainElem) mainElem = document.querySelector('.main')
+mainElem.id = 'main'

@@ -114,7 +114,11 @@
     margin-top: 1.2rem;
     color: var(--clr-white);
     background: var(--clr-accent-dark);
-    background-image: linear-gradient(-90deg, var(--clr-accent), var(--clr-accent-dark));
+    background-image: linear-gradient(
+      -90deg,
+      var(--clr-accent),
+      var(--clr-accent-dark)
+    );
     border-radius: 0.3rem;
     padding: 0.5rem 1.5rem;
     align-items: center;
@@ -201,7 +205,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    
+
     .menubar {
       font-weight: 600;
       flex: 1;
@@ -209,6 +213,26 @@
     }
   }
 
+  &-skipto {
+    background-color: var(--clr-accent);
+    display: flex;
+    padding: 0 0.3rem;
+    align-self: center;
+    transform: scaleX(0);
+    order: 2;
+    transform-origin: left;
+    transition: transform 200ms ease;
+
+    &:focus {
+      color: var(--clr-white);
+      transform: scaleX(1);
+    }
+  }
+
+  .leftside {
+    display: flex;
+    gap: 1rem;
+  }
 
   .rightside {
     display: flex;
@@ -218,10 +242,14 @@
   .brand {
     display: flex;
     gap: 0.5rem;
+    flex: 1 0 auto;
+    order: 1;
+
     &-title {
       font-size: 1.3rem;
       font-weight: 700;
     }
+
     &-logo {
       display: flex;
       align-items: center;
