@@ -3,15 +3,30 @@
   color: var(--clr-foreground);
   padding: 0.8rem;
 
+  &-top {
+    padding: 0.8rem;
+    padding-top: 3rem;
+    font-size: 2rem;
+    max-width: 35ch;
+  }
+
+  &-bottom {
+    padding: 0.8rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+  }
+
   &-container {
     max-width: 64rem;
     margin: 0 auto;
-    text-align: center;
   }
+
   .copyright {
     font-size: 0.9rem;
     margin: 1rem auto;
-    text-align: center;
+    text-align: left;
     border: 0.0625rem solid var(--clr-foreground);
     width: 100%;
     max-width: max-content;

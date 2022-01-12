@@ -203,7 +203,6 @@
 }
 
 .prototype {
-  margin-bottom: 4rem;
   margin-top: 4rem;
 
   &s {
@@ -212,8 +211,7 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 3rem;
-    margin-bottom: 8rem;
+    margin: 3rem;
 
     gap: 7rem;
     @include breakpoint-down("medium") {
@@ -479,10 +477,11 @@
     }
 
     label {
-      margin:2em 0 .5em 0;
+      margin: 2em 0 0.5em 0;
     }
 
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
       padding: 1rem;
       border: none;
@@ -491,7 +490,7 @@
       resize: none;
     }
 
-    input[type=submit] {
+    input[type="submit"] {
       border: none;
       color: var(--clr-white);
       background-color: var(--clr-accent);
@@ -725,7 +724,7 @@
       font-weight: 600;
       display: block;
       text-transform: uppercase;
-      letter-spacing: .1em;
+      letter-spacing: 0.1em;
     }
 
     &-header {
@@ -801,14 +800,13 @@
     text-decoration: none;
     color: var(--clr-href);
     &:visited {
-  
       color: var(--clr-href-visited);
     }
-  
+
     &:hover {
       color: var(--clr-href-visited);
     }
-  
+
     &:focus-visible {
       outline: thin dotted;
     }
@@ -817,9 +815,12 @@
       outline: 0;
     }
   }
-  
+
   span {
-    a:hover,a:visited,a:active,a:focus-visible {
+    a:hover,
+    a:visited,
+    a:active,
+    a:focus-visible {
       color: var(--clr-href);
     }
   }
@@ -906,7 +907,7 @@
     font-size: 0.98rem;
     box-shadow: inset 0 0.0625rem 0.625rem hsla(0, 0%, 0%, 0.2);
   }
-  
+
   pre {
     background-color: var(--clr-background);
     padding: 1rem;
@@ -987,18 +988,19 @@
     border: 0.0625rem solid var(--clr-accent-dark);
     box-shadow: inset 0 0.0625rem 0.625rem hsla(0, 0%, 0%, 0.2);
 
-    td,th {
+    td,
+    th {
       padding: 1rem;
     }
 
     tr {
       border: 0.0625rem solid var(--clr-background-800);
     }
-  
+
     th {
       border-bottom: 0.25rem solid var(--clr-accent);
     }
-  
+
     td {
       vertical-align: top;
     }
@@ -1018,7 +1020,7 @@
 
     ul {
       margin: 0;
-      
+
       ul {
         li {
           list-style: circle;

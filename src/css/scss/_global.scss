@@ -5,7 +5,6 @@ html {
 }
 
 html:root {
-
   .themes {
     background-color: #ffc107;
     color: #7e620e;
@@ -20,7 +19,6 @@ html:root {
   }
 
   &.dark {
-
     .themes {
       background-color: var(--clr-accent);
       color: var(--clr-accent-dark);
@@ -35,7 +33,6 @@ html:root {
     }
   }
 }
-
 
 *,
 *::after,
