@@ -24,7 +24,7 @@ Kamong bisa `fork` kalo seng `clone` repository ini par _ganti_ deng biking akan
 
 `clone` kalo seng `fork` akang repository ni, kalo kamong `fork` tinggal ubah akang pung nama repository baiko kamong pung nama akun saja, sedangkan kalo memang pake `clone` berarti musti biking repository baru la kasih maso file ka akang. Inga jang lupa instal [node.js](https://nodejs.org) deng `npm` di kamong pung komputer lai.
 
-Kalo sudah iko langkah-langkah ni:
+Kalo su, ba iko langkah-langkah ni:
 - Buka direktori yang kamong taro file dari `fork` kalo seng `fork` 
 - Lalu ketik `npm install`
 - `npm run build` kalo seng `npm start` kalo kamong mau baganti akang.
