@@ -11,7 +11,7 @@ tags:
 linkDemo: http://pbp2stevarth.rf.gd/
 code: |-
   <?php
-  $happy = true;
-  if(!$happy) echo "-.-";
+      $happy = true;
+      if(!$happy) echo "-.-";
   ?>
 ---
