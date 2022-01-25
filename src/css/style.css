@@ -2042,6 +2042,30 @@ li {
   padding: 0.8rem;
 }
 
+.footer .brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.footer .brand-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.footer .brand-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .footer-top {
   padding: 0.8rem;
   padding-top: 3rem;

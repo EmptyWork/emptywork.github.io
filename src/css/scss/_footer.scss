@@ -3,6 +3,22 @@
   color: var(--clr-foreground);
   padding: 0.8rem;
 
+  .brand {
+    display: flex;
+    gap: 0.5rem;
+    width: max-content;
+
+    &-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    &-logo {
+      display: flex;
+      align-items: center;
+    }
+  }
+
   &-top {
     padding: 0.8rem;
     padding-top: 3rem;
