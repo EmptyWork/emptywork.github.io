@@ -44,4 +44,5 @@ collections:
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Tags", name: "tags", widget: "list", default: ["prototype"]}
       - {label: "Link Demo", name: "linkDemo", widget: "string", required: false}
+      - {label: "Language", name: "language", widget: "string", default: "id"}
       - {label: "Code Snippet", name: "code", widget: "text"}
