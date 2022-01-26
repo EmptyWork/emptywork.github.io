@@ -4,6 +4,7 @@ status: 1
 description: Contoh implementasi dari CodeIgniter, adapun prototype ini
   merupakan latihan yang dilakukan pada saat mengikuti kelas PBP.
 date: 2021-12-26T11:30:51.516Z
+language: id
 tags:
   - prototype
   - php
