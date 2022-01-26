@@ -13,7 +13,7 @@
 
 [EmptyWork](https://emptywork.github.io) tu website yang responsive, akang punya design multi-page par website blog beta biking akang pake [11ty](https://www.11ty.dev/) jadi Static Site Generator, sedangkan [Nunjuck](https://mozilla.github.io/nunjucks/templating.html) jadi akang pung bahasa templatingnya, deng [NetlifyCMS](https://www.netlifycms.org/) par jadi Content Management
 
-Kamong bisa `fork` kalo seng `clone` repository ini par _ganti_ deng biking akang jadi iko kamong pung mau, akang jua [**sebg wajib**](https://github.com/EmptyWork/emptywork.github.io/blob/master/LICENSE) par kamong taro beta di kredit, tapi kalo memang kamong mau tolong kase tambah [EmptyWork](https://github.com/EmptyWork) jua.
+Kamong bisa `fork` kalo seng `clone` repository ini par _ganti_ deng biking akang jadi iko kamong pung mau, akang jua [**seng wajib**](https://github.com/EmptyWork/emptywork.github.io/blob/master/LICENSE) par kamong taro beta di kredit, tapi kalo memang kamong mau tolong kase tambah [EmptyWork](https://github.com/EmptyWork) jua.
 
 
 ## Table Kontent
