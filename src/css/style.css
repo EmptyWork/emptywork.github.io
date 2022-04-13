@@ -148,6 +148,10 @@ a[href] .new-tab-warning {
   -webkit-transform: translateY(-0.3rem);
           transform: translateY(-0.3rem);
   z-index: 90;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 a[href]:focus-visible .new-tab-warning {

@@ -88,6 +88,7 @@ a[href] {
     transition: all 300ms ease-out;
     transform: translateY(-0.3rem);
     z-index: 90;
+    user-select: none;
   }
 
   &:focus-visible {
