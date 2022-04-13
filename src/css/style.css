@@ -302,6 +302,139 @@ li {
   letter-spacing: 0.1rem;
 }
 
+.title-rightside .status-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 0.5em;
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+}
+
+.title-rightside .status-area > .status-icon {
+  width: 0.75em;
+  height: 0.75em;
+  background-color: var(--clr-accent);
+  border-radius: 50%;
+}
+
+.title-rightside .status-area .status-hoverable {
+  position: relative;
+  cursor: pointer;
+}
+
+.title-rightside .status-area .status-hoverable:is(:hover, :focus) .status-card {
+  visibility: visible;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+  pointer-events: unset;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+}
+
+.title-rightside .status-area .status-hoverable .status-card {
+  visibility: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  background-color: var(--clr-background);
+  -webkit-box-shadow: 0 0.625rem 1.25rem rgba(56, 16, 96, 0.7);
+          box-shadow: 0 0.625rem 1.25rem rgba(56, 16, 96, 0.7);
+  padding: 1em;
+  left: 50%;
+  border-radius: 0.2em;
+  width: 25ch;
+  position: absolute;
+  z-index: 70;
+  margin-top: 0.2em;
+  -webkit-transform: translate(-50%, 20%);
+          transform: translate(-50%, 20%);
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.title-rightside .status-area .status-hoverable .status-card-header {
+  font-size: 0.9em;
+  letter-spacing: normal;
+  margin-bottom: unset;
+}
+
+.title-rightside .status-area .status-hoverable .status-card-body {
+  margin-top: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+}
+
+.title-rightside .status-area .status-hoverable .status-card-body .status-card-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--clr-foreground-900);
+  border-radius: 0.4em;
+  width: 6ch;
+  height: 6ch;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+.title-rightside .status-area .status-hoverable .status-card-body .status-card-left svg {
+  width: 75%;
+  height: 75%;
+}
+
+.title-rightside .status-area .status-hoverable .status-card-body .status-card-right {
+  font-size: 0.7em;
+  font-weight: normal;
+}
+
+.title-rightside .status-area .status-hoverable .status-card-button {
+  text-align: center;
+  font-weight: normal;
+  display: block;
+  width: 100%;
+  margin-top: 1em;
+  font-size: 0.9em;
+  background-color: var(--clr-accent);
+  padding: 0.4em;
+  border-radius: 0.2em;
+  color: var(--clr-white);
+}
+
+.title-rightside .status-area .status-hoverable .status-card-button:is(:hover, :focus) {
+  background-color: var(--clr-accent-dark);
+  color: var(--clr-white);
+}
+
+.title-rightside .status-area .status-hoverable .status-card:is(:hover, :focus) {
+  visibility: visible;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+  pointer-events: unset;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+}
+
 @media screen and (min-width: 64em) {
   .title-rightside {
     -webkit-box-flex: 1;

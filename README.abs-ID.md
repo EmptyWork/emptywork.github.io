@@ -16,7 +16,7 @@
 Kamong bisa `fork` kalo seng `clone` repository ini par _ganti_ deng biking akang jadi iko kamong pung mau, akang jua [**seng wajib**](https://github.com/EmptyWork/emptywork.github.io/blob/master/LICENSE) par kamong taro beta di kredit, tapi kalo memang kamong mau tolong kase tambah [EmptyWork](https://github.com/EmptyWork) jua.
 
 
-## Table Kontent
+## Table Konten
 - [Instalasi](#instalasi)
 - [Dukungan](#dukungan)
 
