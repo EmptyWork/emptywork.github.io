@@ -52,6 +52,111 @@
       letter-spacing: 0.1rem;
     }
 
+    .status-area {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.5em;
+      font-size: 1rem;
+      margin-bottom: 0.5em;
+
+      > .status-icon {
+        width: 0.75em;
+        height: 0.75em;
+        background-color: var(--clr-accent);
+        border-radius: 50%;
+      }
+
+      .status-hoverable {
+        position: relative;
+        cursor: pointer;
+
+        &:is(:hover, :focus) {
+          .status-card {
+            visibility: visible;
+            user-select: text;
+            pointer-events: unset;
+            transform: translate(-50%, 0%);
+          }
+        }
+
+        .status-card {
+          visibility: hidden;
+          user-select: none;
+          pointer-events: none;
+          background-color: var(--clr-background);
+          box-shadow: 0 0.625rem 1.25rem hsla(270, 71%, 22%, 0.7);
+          padding: 1em;
+          left: 50%;
+          border-radius: 0.2em;
+          width: 25ch;
+          position: absolute;
+          z-index: 70;
+          margin-top: 0.2em;
+          transform: translate(-50%, 20%);
+          transition: all 200ms ease-in-out;
+
+          &-header {
+            font-size: 0.9em;
+            letter-spacing: normal;
+            margin-bottom: unset;
+          }
+
+          &-body {
+            margin-top: 1em;
+            display: flex;
+            gap: 1em;
+
+            .status-card-left {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: var(--clr-foreground-900);
+              border-radius: 0.4em;
+              width: 6ch;
+              height: 6ch;
+              flex: 0 0 auto;
+
+              svg {
+                width: 75%;
+                height: 75%;
+              }
+            }
+
+            .status-card-right {
+              font-size: 0.7em;
+              font-weight: normal;
+            }
+          }
+
+          &-button {
+            text-align: center;
+            font-weight: normal;
+            display: block;
+            width: 100%;
+            margin-top: 1em;
+            font-size: 0.9em;
+            background-color: var(--clr-accent);
+            padding: 0.4em;
+            border-radius: 0.2em;
+            color: var(--clr-white);
+
+            &:is(:hover, :focus) {
+              background-color: var(--clr-accent-dark);
+              color: var(--clr-white);
+            }
+          }
+
+          &:is(:hover, :focus) {
+            visibility: visible;
+            user-select: text;
+            pointer-events: unset;
+            transform: translate(-50%, 0%);
+          }
+        }
+      }
+    }
+
     @include breakpoint-up("large") {
       flex: 1 0 auto;
       width: 70%;
@@ -255,7 +360,7 @@
       align-items: center;
     }
   }
-  
+
   .themes {
     transition: background-color 200ms ease-in;
     border-radius: 50%;

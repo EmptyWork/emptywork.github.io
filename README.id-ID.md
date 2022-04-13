@@ -16,7 +16,7 @@
 Kamu bisa `fork` atau `clone` repository ini untuk _mengubah_ dan membuat perubahan sesuai keinginan kamu, dan kamu [**tidak diwajibkan**](https://github.com/EmptyWork/emptywork.github.io/blob/master/LICENSE) untuk memberikan kredit ke saya, tapi jika kamu mau memberi kredit tolong berikan kepada [EmptyWork](https://github.com/EmptyWork).
 
 
-## Table Kontent
+## Table Konten
 - [Instalasi](#instalasi)
 - [Dukungan](#dukungan)
 
