@@ -125,12 +125,15 @@ console.groupEnd()
  
  let replaceStatus = document.querySelector("#activity")
  let replaceMonth = document.querySelector("#month")
+ let replaceYear = document.querySelector('#year')
  
  let currentDate = new Date()
  let currentDay = currentDate.getDay()
  let currentMonth = currentDate.getMonth()
+ let currentYear = currentDate.getFullYear()
  
  if(replaceMonth) replaceMonth.textContent = months[currentMonth]
+ if(replaceYear) replaceYear.textContent = currentYear
  
  /**
   * Updating activity status based on array of schedule
@@ -142,7 +145,7 @@ console.groupEnd()
    let currentTime = time.getUTCHours() + 9
    if(currentTime > 23) currentTime -= 23
    
-   replaceStatus.textContent = "Bebas"
+   replaceStatus.textContent = "Idle"
 
    setTimeout(() => {
      for (let i = 0; i < schedules.length; i++) {
@@ -150,10 +153,10 @@ console.groupEnd()
        if (!replaceStatus) return
        
        if (days[currentDay] === toCapitalizeWord(day)) {
-         if(currentTime > startHour  && currentTime < endHour) {replaceStatus.textContent = "Kuliah"}
+         if(currentTime > startHour  && currentTime < endHour) {replaceStatus.textContent = "Studying"}
          break
        }
-       replaceStatus.textContent = "Bebas"
+       replaceStatus.textContent = "Idle"
      }
    }, 0)
  }
