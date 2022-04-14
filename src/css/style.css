@@ -235,7 +235,7 @@ li {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1583,6 +1583,52 @@ li {
   -webkit-transition: all 150ms ease-in;
   transition: all 150ms ease-in;
   z-index: -1;
+}
+
+.part-of {
+  background-color: var(--clr-background);
+  width: 100%;
+  text-align: center;
+}
+
+.part-of-container {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem 2rem;
+  width: 100%;
+}
+
+.part-of-container h2 {
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.part-of-container .svg-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.part-of-container .svg-container svg {
+  max-height: 8em;
+}
+
+@media screen and (max-width: 63.9375em) {
+  .part-of-container .svg-container svg {
+    max-width: 100%;
+  }
 }
 
 .aboutme {

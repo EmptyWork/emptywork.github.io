@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   flex-direction: column;
   background-color: var(--clr-background);
   box-shadow: 0 0.625rem 1.25rem hsla(270, 71%, 22%, 0.2);
