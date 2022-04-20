@@ -1588,6 +1588,7 @@ li {
 .part-of {
   background-color: var(--clr-background);
   width: 100%;
+  margin-bottom: -6rem;
   text-align: center;
 }
 
