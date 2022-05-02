@@ -1592,6 +1592,10 @@ li {
   text-align: center;
 }
 
+.part-of .description {
+  font-size: 0.9rem;
+}
+
 .part-of-container {
   max-width: 64rem;
   margin: 0 auto;
