@@ -438,11 +438,13 @@
       a {
         position: relative;
         z-index: 1;
+        transition: color 300ms 150ms ease-in;
 
         &:hover,
         &:focus-visible {
-          color: var(--clr-foreground);
+          color: var(--clr-white);
           z-index: 1;
+
           &::before {
             width: 100%;
           }

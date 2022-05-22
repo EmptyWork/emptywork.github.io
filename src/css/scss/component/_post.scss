@@ -302,4 +302,28 @@
       page-break-after: avoid;
     }
   }
+
+  &s {
+    &-detail {
+      &_header {
+        font-size: 1.6rem;
+      }
+
+      &_accent {
+        color: var(--clr-accent-light);
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        margin: 0.4em 0;
+        padding: 0.2em 0;
+        width: fit-content;
+        border-bottom: 0.15em solid var(--clr-foreground-700);
+      }
+
+      &_svg {
+        width: 1.5em;
+        height: fit-content;
+      }
+    }
+  }
 }
