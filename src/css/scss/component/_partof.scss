@@ -1,22 +1,32 @@
 .part-of {
   background-color: var(--clr-background);
   width: 100%;
-  margin-bottom: -6rem;
+  margin-bottom: -6em;
+  padding-bottom: 4em;
 
   .description {
     font-size: 0.9rem;
+  }
+  
+  &-more {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    border: 0.0625em solid var(--clr-background-900);
+    margin-top: 1em;
+    border-radius: 0.3em;
   }
 
   &-container {
     max-width: 64rem;
     margin: 0 auto;
-    padding: 3rem 2rem 2rem 2rem;
+    padding: 3em 2em 2em 2em;
     width: 100%;
 
     h2 {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.5em;
       text-transform: uppercase;
-      letter-spacing: 0.1rem;
+      letter-spacing: 0.1em;
     }
 
     .organization {
@@ -54,8 +64,8 @@
         gap: 0.5em;
 
         span {
-          border-radius: 0.3rem;
-          padding: 0.5rem 1.5rem;
+          border-radius: 0.3em;
+          padding: 0.5em 1.5em;
           color: var(--clr-foreground);
           border: 0.0625em solid var(--clr-foreground);
           align-items: center;
