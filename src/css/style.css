@@ -1382,6 +1382,10 @@ li {
   background-color: var(--clr-accent-dark);
   padding: 2rem;
 }
+.aboutme .flex.languages .header-title {
+  gap: 1em;
+  display: flex;
+}
 .aboutme .flex.languages h2 {
   padding: 1rem 0;
 }
@@ -1403,6 +1407,9 @@ li {
   margin-top: 0.5rem;
 }
 .aboutme .flex:not(:first-of-type) ul li:first-of-type {
+  font-weight: 600;
+}
+.aboutme .flex:not(:first-of-type) ul li:nth-child(2) {
   margin-top: 0.8rem;
 }
 @media screen and (max-width: 63.9375em) {
