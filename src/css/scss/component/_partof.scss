@@ -2,7 +2,6 @@
   background-color: var(--clr-background);
   width: 100%;
   margin-bottom: -6rem;
-  text-align: center;
 
   .description {
     font-size: 0.9rem;
@@ -20,20 +19,90 @@
       letter-spacing: 0.1rem;
     }
 
-    .svg-container {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      justify-content: center;
-      flex-wrap: wrap;
+    .organization {
+      &-container {
+        margin-top: 1em;
+        display: grid;
+        gap: 1em;
+        grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
 
-      svg {
-        max-height: 8em;
+        svg {
+          max-height: 8em;
 
-        @include breakpoint-down("medium") {
-          max-width: 100%;
+          @include breakpoint-down("medium") {
+            max-width: 100%;
+            margin-top: 2em;
+          }
         }
       }
+
+      &-item {
+        border: 0.0625em solid var(--clr-background-900);
+        border-radius: 0.3em;
+        padding: 1em;
+        position: relative;
+      }
+
+      &-desc {
+        margin-bottom: 1em;
+      }
+
+      &-position {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5em;
+
+        span {
+          background-size: 400%;
+          border-radius: 0.3rem;
+          padding: 0.5rem 1.5rem;
+          color: var(--clr-foreground);
+          border: 0.0625em solid var(--clr-foreground);
+          align-items: center;
+          gap: 0.4rem;
+          user-select: none;
+          pointer-events: none;
+
+          &:first-of-type {
+            border: none;
+            color: var(--clr-white);
+            background: var(--clr-accent-dark);
+            background-image: linear-gradient(
+              -90deg,
+              var(--clr-accent),
+              var(--clr-accent-dark)
+            );
+            animation: positionanimate 1s infinite alternate;
+          }
+        }
+      }
+
+      &-join {
+        display: flex;
+        flex-direction: row;
+        color: var(--clr-foreground);
+        border: 0.0625em solid var(--clr-foreground);
+        border-radius: 0.3em;
+        padding: 0.5em 1.5em;
+        align-items: center;
+        width: fit-content;
+        position: absolute;
+        right: 1em;
+        font-size: 0.8rem;
+        top: 1em;
+        user-select: none;
+        pointer-events: none;
+      }
     }
+  }
+}
+
+@keyframes positionanimate {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
   }
 }

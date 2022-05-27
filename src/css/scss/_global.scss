@@ -133,6 +133,10 @@ li {
   background-color: var(--clr-black);
   padding: 0.2rem 0.6rem;
   color: var(--clr-white);
+
+  &:is(:hover,:focus) {
+    color: var(--clr-white);
+  }
 }
 
 .header-link__access {

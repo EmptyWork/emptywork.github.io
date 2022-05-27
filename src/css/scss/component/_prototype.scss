@@ -29,6 +29,12 @@
     border-radius: 0.3rem;
     width: 100%;
 
+    &:first-of-type {
+      @include breakpoint-down("medium") {
+        margin-top: 2em;
+      }
+    }
+
     @include breakpoint-down("medium") {
       flex-direction: column;
     }
