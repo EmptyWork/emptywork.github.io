@@ -15,6 +15,12 @@
     border: 0.0625em solid var(--clr-background-900);
     margin-top: 1em;
     border-radius: 0.3em;
+
+    &:is(:hover, :focus) {
+      background-color: var(--clr-accent);
+      border-color: var(--clr-accent-light);
+      color: var(--clr-white);
+    }
   }
 
   &-container {

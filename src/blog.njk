@@ -6,7 +6,7 @@ layout: 'secondary-base.njk'
 {% for post in collections.post | reverse %}{% set postDate = {
     year: post.data.date | postYear,
     fullDate: post.data.date
-  } %}{% set posts = (posts.push({title: post.data.title, url: post.url, date: postDate, desc: post.data.description}), posts) %}
+  } %}{% set posts = (posts.push({title: post.data.title, url: post.url, date: postDate, desc: post.data.description, author: post.data.author}), posts) %}
 {% endfor %}{% set recentPosts = [] %}
 {% for post in collections.post | reverse %}
   {% set recentPosts = (recentPosts.push({
@@ -47,14 +47,17 @@ layout: 'secondary-base.njk'
           <ul class="posts-list">
             {% for post in posts %}
               <li class="posts-detail">
+                <p class="posts-detail_accent">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="posts-detail_svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    {{ post.date.fullDate | postDate }}
+                  </span>
+                  <span>{{ post.author }}</span>
+                </p>
                 <a class="posts-detail_header" href={{ post.url}}># {{ post.title }}
                 </a>
-                <p class="posts-detail_accent">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="posts-detail_svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                  </svg>
-                  {{ post.date.fullDate | postDate }}
-                </p>
                 <p>
                   {{ post.desc | truncate(60) }}
                 </p>

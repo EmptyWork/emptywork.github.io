@@ -12,56 +12,73 @@
     width: 100%;
   }
 
-  .section-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 2rem;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
+  .section {
+    &-more {
+      display: block;
+      width: 100%;
+      padding: 1em;
+      border: 0.0625em solid var(--clr-foreground);
+      margin-top: 1em;
+      border-radius: 0.3em;
 
-    .header-title {
-      display: flex;
-      gap: 0.6rem;
-
-      a {
-        height: max-content;
+      &:is(:hover, :focus) {
+        background-color: var(--clr-accent);
+        border-color: var(--clr-accent-light);
+        color: var(--clr-white);
       }
     }
 
-    span {
-      text-transform: none;
-      letter-spacing: 0;
-    }
+    &-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2em;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
 
-    @include breakpoint-down("large") {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0;
+      .header-title {
+        display: flex;
+        gap: 0.6em;
 
-      span {
-        &::before {
-          display: none;
+        a {
+          height: max-content;
         }
       }
-    }
 
-    .header-desc {
-      display: block;
-      position: relative;
-      font-size: 0.9rem;
-      color: var(--clr-foreground-700);
+      span {
+        text-transform: none;
+        letter-spacing: 0;
+      }
 
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        border: 0.1875rem solid var(--clr-foreground);
-        top: 50%;
-        transform: translateY(-50%);
-        margin-left: -1rem;
-        border-radius: 50%;
+      @include breakpoint-down("large") {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+
+        span {
+          &::before {
+            display: none;
+          }
+        }
+      }
+
+      .header-desc {
+        display: block;
+        position: relative;
+        font-size: 0.9rem;
+        color: var(--clr-foreground-700);
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          border: 0.1875em solid var(--clr-foreground);
+          top: 50%;
+          transform: translateY(-50%);
+          margin-left: -1em;
+          border-radius: 50%;
+        }
       }
     }
   }

@@ -649,18 +649,31 @@ li {
   padding: 3rem 2rem;
   width: 100%;
 }
+.main .section-more {
+  display: block;
+  width: 100%;
+  padding: 1em;
+  border: 0.0625em solid var(--clr-foreground);
+  margin-top: 1em;
+  border-radius: 0.3em;
+}
+.main .section-more:is(:hover, :focus) {
+  background-color: var(--clr-accent);
+  border-color: var(--clr-accent-light);
+  color: var(--clr-white);
+}
 .main .section-header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 2rem;
+  gap: 2em;
   font-size: 1.2rem;
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.1em;
 }
 .main .section-header .header-title {
   display: flex;
-  gap: 0.6rem;
+  gap: 0.6em;
 }
 .main .section-header .header-title a {
   height: -webkit-max-content;
@@ -691,10 +704,10 @@ li {
   content: "";
   position: absolute;
   left: 0;
-  border: 0.1875rem solid var(--clr-foreground);
+  border: 0.1875em solid var(--clr-foreground);
   top: 50%;
   transform: translateY(-50%);
-  margin-left: -1rem;
+  margin-left: -1em;
   border-radius: 50%;
 }
 
@@ -1069,6 +1082,7 @@ li {
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2rem;
+  justify-content: space-between;
 }
 .cards.nocentered {
   justify-content: flex-start;
@@ -1174,6 +1188,11 @@ li {
   border: 0.0625em solid var(--clr-background-900);
   margin-top: 1em;
   border-radius: 0.3em;
+}
+.part-of-more:is(:hover, :focus) {
+  background-color: var(--clr-accent);
+  border-color: var(--clr-accent-light);
+  color: var(--clr-white);
 }
 .part-of-container {
   max-width: 64rem;

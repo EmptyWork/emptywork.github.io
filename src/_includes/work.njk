@@ -13,9 +13,20 @@
       </span>
     </header>
     <ul class="cards">
-      {%- for project in collections.project | reverse -%}
-          {% include 'project-snippet.njk' %}
+      {% set lengthProjects = collections.project | length %}
+      {% if lengthProjects > 3 %}
+        {% set reverseProjects = collections.project | reverse %}
+        {% set projects = reverseProjects | sliceRecent %}
+      {% endif %}
+      {%- for project in projects -%}
+        {% include 'project-snippet.njk' %}
       {%- endfor -%}
+      {% if lengthProjects > 3 %}
+        <a href="https://github.com/EmptyWork" target="_blank" rel="noopener noreferrer" class="section-more">
+          See more in Github...
+          <span class="new-tab-warning"> Open a new tab </span>
+        </a>
+      {% endif %}
     </ul>
   </div>
 </section>
