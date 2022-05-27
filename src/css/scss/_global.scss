@@ -112,6 +112,11 @@ a[href] {
 .no-scroll {
   @include breakpoint-down("small") {
     overflow: hidden !important;
+    
+    :is(header, main, footer) {
+      visibility: hidden;
+      user-select: none;
+    }
   }
 }
 

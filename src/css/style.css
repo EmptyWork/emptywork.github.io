@@ -160,6 +160,13 @@ a[href]:focus-visible .new-tab-warning {
   .no-scroll {
     overflow: hidden !important;
   }
+  .no-scroll :is(header, main, footer) {
+    visibility: hidden;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
 }
 
 ul,
