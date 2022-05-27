@@ -1201,7 +1201,6 @@ li {
   gap: 0.5em;
 }
 .part-of-container .organization-position span {
-  background-size: 400%;
   border-radius: 0.3rem;
   padding: 0.5rem 1.5rem;
   color: var(--clr-foreground);
@@ -1219,6 +1218,7 @@ li {
   color: var(--clr-white);
   background: var(--clr-accent-dark);
   background-image: linear-gradient(-90deg, var(--clr-accent), var(--clr-accent-dark));
+  background-size: 400%;
   -webkit-animation: positionanimate 1s infinite alternate;
           animation: positionanimate 1s infinite alternate;
 }
