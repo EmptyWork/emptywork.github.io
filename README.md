@@ -6,7 +6,7 @@
 [![Netlify Status](https://img.shields.io/netlify/08d2d578-7470-4e65-8067-93ab5e09f671?style=for-the-badge)](https://app.netlify.com/sites/emptywork/deploys)
 [![CodeQL](https://img.shields.io/github/workflow/status/EmptyWork/emptywork.github.io/CodeQL?event=push&style=for-the-badge)](https://github.com/EmptyWork/emptywork.github.io/actions/workflows/codeql-analysis.yml)
 
-[**⚠Report Bug**](https://github.com/EmptyWork/emptywork.github.io/issues/new) — [**📧Report Feature**](https://github.com/EmptyWork/emptywork.github.io/issues/new)
+[**⚠Report Bug**](https://github.com/EmptyWork/emptywork.github.io/issues/new) — [**📧Request Feature**](https://github.com/EmptyWork/emptywork.github.io/issues/new)
 
 **Read this in: [🆔Ambonese Malay](README.abs-ID.md), [🆔Indonesian](README.id-ID.md)**
 ## EmptyWork's personal website sourcecode
