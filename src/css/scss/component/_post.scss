@@ -318,10 +318,11 @@
     &-detail {
       margin-top: 1rem;
       margin-left: 2rem;
+      background-color: var(--clr-background);
       color: var(--clr-foreground-700);
+      border: 0.0625em solid var(--clr-background-900);
       padding: 1rem;
       border-radius: 0.3rem;
-      box-shadow: inset 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.2);
 
       @include breakpoint-down("small") {
         margin: 0;
