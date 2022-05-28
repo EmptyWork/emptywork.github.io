@@ -34,7 +34,7 @@
     flex: 1 1 auto;
 
     @include breakpoint-down("small") {
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
   }
 

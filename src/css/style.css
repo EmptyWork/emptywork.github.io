@@ -1558,7 +1558,7 @@ li {
 }
 @media screen and (max-width: 39.9375em) {
   .feature-body {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 .feature-footer {
