@@ -96,6 +96,11 @@
       background-color: var(--clr-accent-dark);
       padding: 2rem;
 
+      .header-title {
+        gap: 1em;
+        display: flex;
+      }
+
       h2 {
         padding: 1rem 0;
       }
@@ -118,7 +123,12 @@
           font-weight: 500;
           font-size: 1rem;
           margin-top: 0.5rem;
+
           &:first-of-type {
+            font-weight: 600;
+          }
+
+          &:nth-child(2) {
             margin-top: 0.8rem;
           }
         }

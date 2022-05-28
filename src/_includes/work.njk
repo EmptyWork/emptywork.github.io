@@ -17,6 +17,8 @@
       {% if lengthProjects > 3 %}
         {% set reverseProjects = collections.project | reverse %}
         {% set projects = reverseProjects | sliceRecent %}
+      {% else %}
+        {% set projects = collections.project | reverse %}
       {% endif %}
       {%- for project in projects -%}
         {% include 'project-snippet.njk' %}

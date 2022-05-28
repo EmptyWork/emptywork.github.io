@@ -11,7 +11,9 @@ image: /images/accessibility.png
 ---
 ![A picture with "Accessibility: The future of Web Development" in left side and the logo of A11y movement in the right side](/images/accessibility.png)
 
-Accessibility is not a new concept in programming worlds, its been around ever since people start to code or have access to internet, while back then the internet itself not widely used by the masses, some still think about how to make it more accessible for everyone, especially to people with that need more extra attention.
+[[toc]]
+
+`Accessibility` is not a new concept in **programming world**, its been around ever since people start to code or have access to internet, while back then the internet itself not widely used by the masses, some still think about how to make it more accessible for everyone, especially to people that have special needs to make sure they can easily navigate the site.
 
 ## The future of Website Development
 
