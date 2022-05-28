@@ -43,7 +43,7 @@ layout: 'secondary-base.njk'
       </ul>
       {% for year, posts in posts | groupby("date.year") %}
         <div class="posts">
-          <h3>{{ year }}</h3>
+          <h3 class="posts-yeargroup">{{ year }}</h3>
           <ul class="posts-list">
             {% for post in posts %}
               <li class="posts-detail">

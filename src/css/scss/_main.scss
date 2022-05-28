@@ -120,28 +120,3 @@
     }
   }
 }
-
-.posts {
-  margin-top: 2.5rem;
-  &:not(:first-of-type) {
-    margin-top: 1.5rem;
-  }
-
-  &:is(:last-of-type) {
-    margin-bottom: 1.5rem;
-  }
-
-  &-detail {
-    margin-top: 1rem;
-    margin-left: 2rem;
-    color: var(--clr-foreground-700);
-    padding: 1rem;
-    border-radius: 0.3rem;
-    box-shadow: inset 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.2);
-
-    &_header {
-      font-weight: 600;
-      color: var(--clr-foreground);
-    }
-  }
-}
