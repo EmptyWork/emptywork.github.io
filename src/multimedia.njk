@@ -1,41 +1,38 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
-    <meta name="theme-color" content="#000000" />
-    <meta name="google-site-verification" content="QdJZEMLWFpqAkaOxsDd2zR4mzmtW7VN07LemJCDZuD0" />
-    <meta name="description" content="Ini merupakan contoh implementasi sebuah game pada web browser" />
-    <meta name="author" content="EmptyWork" />
-    <meta name="keywords" content="EmptyWork, Portofolio, Seorang Web Developer, Web Developer, HTML5, CSS3, Javascript, Stevarth, Ambon" />
+    <meta name="theme-color" content="#000000"/>
+    <meta name="google-site-verification" content="QdJZEMLWFpqAkaOxsDd2zR4mzmtW7VN07LemJCDZuD0"/>
+    <meta name="description" content="Ini merupakan contoh implementasi sebuah game pada web browser"/>
+    <meta name="author" content="EmptyWork"/>
+    <meta name="keywords" content="EmptyWork, Portofolio, Seorang Web Developer, Web Developer, HTML5, CSS3, Javascript, Stevarth, Ambon"/>
 
     <meta itemprop="name" content="EmptyWork | Portfolio">
     <meta itemprop="description" content="Ini merupakan contoh implementasi sebuah game pada web browser">
     <meta itemprop="image" content="https://emptywork.netlify.app/images/emptywork.png">
-    
-    <meta property="og:url" content="https://emptywork.netlify.app" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Multimedia | EmptyWork" />
-    <meta property="og:description" content="Ini merupakan contoh implementasi sebuah game pada web browser" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="EmptyWork" />
-    <meta property="og:image" content="https://emptywork.netlify.app/images/emptywork.png" />
-    
+
+    <meta property="og:url" content="https://emptywork.netlify.app"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Multimedia | EmptyWork"/>
+    <meta property="og:description" content="Ini merupakan contoh implementasi sebuah game pada web browser"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:site_name" content="EmptyWork"/>
+    <meta property="og:image" content="https://emptywork.netlify.app/images/emptywork.png"/>
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Multimedia | EmptyWork">
     <meta name="twitter:description" content="Ini merupakan contoh implementasi sebuah game pada web browser">
     <meta name="twitter:image" content="https://emptywork.netlify.app/images/emptywork.png">
     <title>Multimedia | EmptyWork</title>
-    <link rel="shortcut icon" href="/images/emptywork.png" type="image/x-png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="shortcut icon" href="/images/emptywork.png" type="image/x-png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="/css/style.css"/>
 
     <style>
       .score {
@@ -63,9 +60,9 @@
 
       .playButton {
         margin-top: 1rem;
-        padding: .52rem .75rem;
+        padding: 0.52rem 0.75rem;
         border: none;
-	      background-color: rebeccapurple;
+        background-color: rebeccapurple;
         color: #fff;
       }
 
@@ -89,45 +86,50 @@
         top: 1rem;
         right: 1rem;
         cursor: pointer;
-        padding: .52rem .75rem;
+        padding: 0.52rem 0.75rem;
         border: none;
-	      background-color: rebeccapurple;
+        background-color: rebeccapurple;
         color: #fff;
         z-index: 10;
       }
     </style>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
-<body class="t-all">
-  <main class="main">
-    <div class="overlay pause">
-      <p>PAUSE</p>
-    </div>
-    <div class="pause" onClick="pauseGame()">
+  <body class="t-all">
+    <main class="main">
+      <div class="overlay pause">
+        <p>PAUSE</p>
+      </div>
+      <div class="pause" onClick="pauseGame()">
       Pause
     </div>
-    <div class="score">
-      <span>Score:</span> <span class="currentScore">0</span>
-    </div>
-    <div class="play">
-      <h1 class="currentScore">0</h1>
-      <p class="endScore">Score</p>
-      <button class="playButton">Start Game</button>
-    </div>  
-    <canvas></canvas>
-  </main>
-  <script src="/js/gsap.min.js"></script>
-  <script src="/js/game.js"></script>
-  <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
+      <div class="score">
+        <span>Score:</span>
+        <span class="currentScore">0</span>
+      </div>
+      <div class="play">
+        <h1 class="currentScore">0</h1>
+        <p class="endScore">Score</p>
+        <button class="playButton">Start Game</button>
+      </div>
+      <canvas></canvas>
+    </main>
+    <script src="/js/gsap.min.js"></script>
+    <script src="/js/game.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window
+          .netlifyIdentity
+          .on("init", user => {
+            if (!user) {
+              window
+                .netlifyIdentity
+                .on("login", () => {
+                  document.location.href = "/admin/";
+                });
+            }
+          });
       }
-    });
-  }
-  </script>
-</body>
+    </script>
+  </body>
 </html>

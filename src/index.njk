@@ -3,34 +3,34 @@ title: EmptyWork
 layout: 'base.njk'
 ---
 
-    <!-- 
+<!-- 
       ? Main Section 
     -->
-    <main id="main" class="main">
-      {% include 'feature.njk' %}
-      {% include 'work.njk' %}
-      {% include 'partof.njk' %}
-      {% include 'about.njk' %}
+<main id="main" class="main">
+  {% include 'feature.njk' %}
+  {% include 'work.njk' %}
+  {% include 'partof.njk' %}
+  {% include 'about.njk' %}
 
-      <section aria-labelledby="prototypes" class="prototype">
-        <div class="main-container">
-          <header class="section-header">
-            <h2 id="prototypes" class="header-title">
-              <a class="header-link__access" href="#prototypes">
-                <span aria-hidden="true">#</span>
-                <span class="sr-only">Link to heading "prototypes"</span>
-              </a>
+  <section aria-labelledby="prototypes" class="prototype">
+    <div class="main-container">
+      <header class="section-header">
+        <h2 id="prototypes" class="header-title">
+          <a class="header-link__access" href="#prototypes">
+            <span aria-hidden="true">#</span>
+            <span class="sr-only">Link to heading "prototypes"</span>
+          </a>
               Prototype
             </h2>
-            <span class="header-desc">
+        <span class="header-desc">
               all prototype I do while learning new thing.
             </span>
-          </header>
-          <ul class="prototypes">
-            {%- for post in collections.prototype | reverse -%}
-              {% include 'prototype-snippet.njk' %}
-            {%- endfor -%}
-          </ul>
-        </div>
-      </section>
-    </main>
+      </header>
+      <ul class="prototypes">
+        {%- for post in collections.prototype | reverse -%}
+          {% include 'prototype-snippet.njk' %}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </section>
+</main>
