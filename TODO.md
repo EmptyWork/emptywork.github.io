@@ -6,5 +6,5 @@ Need to rework the [scss](./src/css/scss) and add scss package to [package.json]
 
 Also need to implement these features:
 
-* Featured Section [#13](https://github.com/EmptyWork/emptywork.github.io/issues/13)
-* Action Image or Art [#21](https://github.com/EmptyWork/emptywork.github.io/issues/21)
+- Featured Section [#13](https://github.com/EmptyWork/emptywork.github.io/issues/13)
+- Action Image or Art [#21](https://github.com/EmptyWork/emptywork.github.io/issues/21)

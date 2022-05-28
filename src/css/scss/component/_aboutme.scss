@@ -119,6 +119,10 @@
         font-size: 1.1rem;
         font-weight: 600;
 
+        &:not(:first-of-type) {
+          margin-top: 1rem;
+        }
+
         li {
           font-weight: 500;
           font-size: 1rem;
@@ -129,7 +133,7 @@
           }
 
           &:nth-child(2) {
-            margin-top: 0.8rem;
+            margin-top: 0.5rem;
           }
         }
       }

@@ -6,12 +6,12 @@
   >
   <article class="card-body">
     <header>
-      <h3 title="{{project.data.title}}">{{project.data.title}}</h3> 
+      <h3 title="{{project.data.title}}">{{project.data.title}}</h3>
       <small>
-      {% if project.data.endDate %}
-      {{project.data.endDate | postYear}}
-      {% else %}
-      {{project.data.date | postYear}} - Present
+        {% if project.data.endDate %}
+          {{project.data.endDate | postYear}}
+        {% else %}
+          {{project.data.date | postYear}} - Present
       {% endif %}
       </small>
     </header>
@@ -19,33 +19,39 @@
       <p>{{project.data.description}}</p>
     </span>
     <ul class="more-links">
-    {% if project.data.linkCode %}
-      <li>
-        <a href="{{project.data.linkCode}}" rel="noopener noreferrer" target="_blank" class="sourcecode">
-        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-label="Icon for code"><path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+      {% if project.data.linkCode %}
+        <li>
+          <a href="{{project.data.linkCode}}" rel="noopener noreferrer" target="_blank" class="sourcecode">
+            <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-label="Icon for code">
+              <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
         sourcecode 
           <span class="new-tab-warning"> Open a new tab </span>
-        </a>
-      </li>
-    {% else %}
-      <li>
-      <span aria-disabled="true" disabled class="sourcecode">
+          </a>
+        </li>
+      {% else %}
+        <li>
+          <span aria-disabled="true" disabled class="sourcecode">
       sourcecode
       </span>
-      </li>
-    {% endif %}
+        </li>
+      {% endif %}
 
-    {% if project.data.linkDemo %}
-      <li>
-        <a href="{{project.data.linkDemo}}" rel="noopener noreferrer" target="_blank" class="sourcecode">
-        <svg fill="currentColor" aria-label="Icon for demo link" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path></svg>
+      {% if project.data.linkDemo %}
+        <li>
+          <a href="{{project.data.linkDemo}}" rel="noopener noreferrer" target="_blank" class="sourcecode">
+            <svg fill="currentColor" aria-label="Icon for demo link" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+              <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
+            </svg>
         demo 
           <span class="new-tab-warning"> Open a new tab </span>
-        </a>
-      </li>
-    {% else %}
-      <li><span aria-disabled="true" disabled class="sourcecode">demo</span></li>
-    {% endif %}
+          </a>
+        </li>
+      {% else %}
+        <li>
+          <span aria-disabled="true" disabled class="sourcecode">demo</span></li>
+      {% endif %}
     </ul>
   </article>
 </li>
