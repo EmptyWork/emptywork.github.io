@@ -1379,6 +1379,9 @@ li {
   font-size: 1.1rem;
   font-weight: 600;
 }
+.aboutme .flex:not(:first-of-type) ul:not(:first-of-type) {
+  margin-top: 1rem;
+}
 .aboutme .flex:not(:first-of-type) ul li {
   font-weight: 500;
   font-size: 1rem;
@@ -1388,7 +1391,7 @@ li {
   font-weight: 600;
 }
 .aboutme .flex:not(:first-of-type) ul li:nth-child(2) {
-  margin-top: 0.8rem;
+  margin-top: 0.5rem;
 }
 @media screen and (max-width: 63.9375em) {
   .aboutme .flex:not(:first-of-type) {
