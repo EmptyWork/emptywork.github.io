@@ -1524,6 +1524,92 @@ li {
   background-color: yellow;
 }
 
+.feature-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-between;
+  overflow: hidden;
+  margin: 2em auto;
+  border-radius: 0.3em;
+  padding: 0;
+  background-color: var(--clr-white);
+  min-height: 20rem;
+  margin-bottom: -5rem;
+  box-shadow: 0 0.625rem 1.25rem hsla(270deg, 71%, 22%, 0.2);
+}
+@media screen and (max-width: 63.9375em) {
+  .feature-container {
+    width: calc(100% - 2em);
+  }
+}
+.feature-right {
+  padding: 2em;
+  background-color: var(--clr-accent-light);
+}
+.feature-left {
+  color: var(--clr-white);
+  padding: 2em;
+  background-color: var(--clr-accent-dark);
+}
+.feature-body {
+  display: flex;
+  flex: 1 1 auto;
+}
+@media screen and (max-width: 39.9375em) {
+  .feature-body {
+    flex-direction: column;
+  }
+}
+.feature-footer {
+  padding: 1em 2em;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.feature-footer p {
+  border-radius: 0.3em;
+  padding: 0.5em 1.5em;
+  color: var(--clr-foreground-700);
+  border: 0.0625em solid var(--clr-foreground-700);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 0.9rem;
+}
+.feature-footer p:first-of-type {
+  border: none;
+  color: var(--clr-white);
+  background: var(--clr-accent-dark);
+  background-image: linear-gradient(-90deg, var(--clr-accent), var(--clr-accent-dark));
+  background-size: 400%;
+  -webkit-animation: positionanimate 1s infinite alternate;
+          animation: positionanimate 1s infinite alternate;
+}
+@media screen and (max-width: 39.9375em) {
+  .feature-footer p {
+    width: 100%;
+  }
+}
+.feature-background {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
 .post {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
