@@ -1519,6 +1519,7 @@ li {
   justify-content: space-between;
   overflow: hidden;
   margin: 2em auto;
+  margin-top: 5em;
   border-radius: 0.3em;
   padding: 0;
   background-color: var(--clr-white);
@@ -1546,6 +1547,7 @@ li {
   flex-direction: column;
   margin-bottom: 1em;
   gap: 0.5em;
+  align-items: flex-start;
 }
 .feature-main > * {
   max-width: 45ch;
