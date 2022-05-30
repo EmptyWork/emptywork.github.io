@@ -1,27 +1,36 @@
-
-module.exports = function(eleventyConfig) {
-  const {DateTime} = require('luxon')
-  const hljs = require('highlight.js')
-  const markdownIt = require('markdown-it')({
-      html: true,
-      linkify: true,
-      typographer: true,
-      highlight: function (str, lang) {
-        if (lang && hljs.getLanguage(lang)) {
-          try {
-            return hljs.highlight(str, { language: lang }).value
-          } catch (__) {}
-        }
-  
-        return ''
+module.exports = function (eleventyConfig) {
+  const { DateTime } = require("luxon")
+  const hljs = require("highlight.js")
+  const anchor = require("markdown-it-anchor")
+  const markdownItAttrs = require("markdown-it-attrs")
+  const markdownIt = require("markdown-it")({
+    html: true,
+    linkify: true,
+    typographer: true,
+    highlight: function (str, lang) {
+      if (lang && hljs.getLanguage(lang)) {
+        try {
+          return hljs.highlight(str, { language: lang }).value
+        } catch (__) {}
       }
-    }
-  )
-  .use(require('markdown-it-anchor').default)
-  .use(require('markdown-it-table-of-contents'), {
-    includeLevel: [1,2,3,4,5,6],
-    containerHeaderHtml: `<div class="toc-container-header">Table of Contents</div>`
-  });
+
+      return ""
+    },
+  })
+    .use(anchor, {
+      permalink: anchor.permalink.ariaHidden({
+        placement: "before",
+      }),
+    })
+    .use(markdownItAttrs, {
+      leftDelimiter: "{",
+      rightDelimiter: "}",
+      allowedAttributes: [],
+    })
+    .use(require("markdown-it-table-of-contents"), {
+      includeLevel: [1, 2, 3, 4, 5, 6],
+      containerHeaderHtml: `<div class="toc-container-header">Table of Contents</div>`,
+    })
 
   eleventyConfig.setLibrary("md", markdownIt)
   eleventyConfig.addPassthroughCopy("./src/assets/*")
@@ -30,13 +39,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/css/style.css")
   eleventyConfig.addPassthroughCopy("./src/images/*")
   eleventyConfig.addPassthroughCopy("./settings.json")
-  
+
   eleventyConfig.addFilter("postDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED)
   })
 
   eleventyConfig.addFilter("postYear", (dateObj) => {
-    return DateTime.fromJSDate(dateObj).toLocaleString({year: 'numeric'})
+    return DateTime.fromJSDate(dateObj).toLocaleString({ year: "numeric" })
   })
 
   eleventyConfig.addFilter("sliceRecent", (array) => {
@@ -46,11 +55,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("trimText", (string) => {
     return string.split(" ").splice(0, 12).join(" ")
   })
-  
+
   return {
     dir: {
       input: "src",
       output: "public",
-    }
+    },
   }
 }
