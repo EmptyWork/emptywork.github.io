@@ -4,11 +4,27 @@ layout: 'secondary-base.njk'
 <main class="main">
   <div class="main-container">
     <article class="post">
-      <span>
-        <a href="/blog">Blog</a> / {{ title }}
-      </span>
-      <h1>{{ title }}</h1>
-      {{ content | safe }}
+      <header>
+        <span>
+          <a href="/blog">Blog</a> / {{ title }}
+        </span>
+        <h1>{{ title }}</h1>
+        <ul class="post-detail_list">
+          <li class="post-detail_item">
+            {{ author }}
+          </li>
+          <li class="post-detail_item">
+            {{ date | postDate }}
+          </li>
+        </ul>
+      </header>
+      <main>
+        {{ content | safe }}
+      </main>
+      {% if previousPost %}Previous Blog Post: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+      {% endif %}
+      {% if nextPost %}Next Blog Post: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+      {% endif %}
     </article>
   </div>
 </main>
