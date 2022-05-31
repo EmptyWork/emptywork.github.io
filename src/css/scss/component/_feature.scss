@@ -21,8 +21,19 @@
 
   &-right {
     padding: 2em;
-    background-color: var(--clr-accent-light);
+    background-color: var(--clr-accent);
     flex: 1 auto;
+    position: relative;
+
+    @include breakpoint-down("small") {
+      min-height: 10em;
+    }
+
+    #svg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
   }
 
   &-left {
@@ -36,6 +47,23 @@
       margin-bottom: 1em;
       gap: 0.5em;
       align-items: flex-start;
+    }
+  }
+
+  &-header {
+    &_project-name {
+      background-color: var(--clr-accent);
+      background-image: linear-gradient(
+        90deg,
+        var(--clr-accent-dark),
+        var(--clr-accent)
+      );
+      padding: 1em;
+      width: 100%;
+
+      p:last-of-type {
+        font-size: 0.8em;
+      }
     }
   }
 
@@ -76,14 +104,15 @@
     padding: 1em 2em;
     display: flex;
     justify-content: flex-end;
+    background-color: var(--clr-background);
     gap: 0.4rem;
     flex-wrap: wrap;
 
     p {
       border-radius: 0.3em;
       padding: 0.5em 1.5em;
-      color: var(--clr-foreground-700);
-      border: 0.0625em solid var(--clr-foreground-700);
+      color: var(--clr-foreground);
+      border: 0.0625em solid var(--clr-foreground);
       user-select: none;
       pointer-events: none;
       width: fit-content;
@@ -98,8 +127,6 @@
           var(--clr-accent),
           var(--clr-accent-dark)
         );
-        background-size: 400%;
-        animation: positionanimate 1s infinite alternate;
       }
 
       @include breakpoint-down("small") {
@@ -116,5 +143,38 @@
     width: 100%;
     user-select: none;
     pointer-events: none;
+  }
+
+  &-external {
+    &_link {
+      border-radius: 0.3em;
+      display: flex;
+      font-size: 1.2rem;
+      color: var(--clr-foreground);
+      border: none;
+      color: var(--clr-white);
+      background: var(--clr-accent-dark);
+      background-image: linear-gradient(
+        -90deg,
+        var(--clr-accent),
+        var(--clr-accent-dark)
+      );
+      background-size: 400%;
+      animation: positionanimate 1s infinite alternate;
+      align-items: center;
+      padding: 0.5em;
+      margin-top: 1em;
+      gap: 0.5em;
+
+      svg {
+        width: 1.2em;
+        height: 1.2em;
+      }
+
+      &:is(:hover, :focus) {
+        color: var(--clr-white);
+        outline: 0.0625em solid var(--clr-foreground);
+      }
+    }
   }
 }
