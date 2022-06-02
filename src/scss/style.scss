@@ -1,0 +1,15 @@
+@import "./modules/vars";
+@import "./modules/mixin";
+@import "./modules/global";
+
+@import "./modules/header";
+@import "./modules/main";
+@import "./modules/footer";
+
+@import "./modules/component/prototype";
+@import "./modules/component/card";
+@import "./modules/component/partof";
+
+@import "./modules/component/aboutme";
+@import "./modules/component/feature";
+@import "./modules/component/post";
