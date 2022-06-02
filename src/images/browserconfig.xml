@@ -2,8 +2,8 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square70x70logo src="https://emptywork.netlify.app/images/mstile-70x70.png"/>
-            <square150x150logo src="https://emptywork.netlify.app/images/mstile-150x150.png"/>
+            <square70x70logo src="https://emptywork.my.id/images/mstile-70x70.png"/>
+            <square150x150logo src="https://emptywork.my.id/images/mstile-150x150.png"/>
             <TileColor>#242424</TileColor>
         </tile>
     </msapplication>
