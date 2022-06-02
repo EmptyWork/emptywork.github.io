@@ -4,8 +4,12 @@
   "description": "These are the template used by [Emptywork](https://emptywork.github.io)",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy"
+    "sass": "sass --style=compressed  --no-source-map src/scss/style.scss public/css/style.css",
+    "watch": "npm-run-all --parallel watch:*",
+    "watch:eleventy": "eleventy --serve",
+    "watch:sass": "npm run sass -- --watch",
+    "build": "npm run sass && eleventy",
+    "start": "npm-run-all sass --parallel watch:*"
   },
   "repository": {
     "type": "git",
@@ -25,6 +29,8 @@
     "highlight.js": "^11.5.1",
     "markdown-it-anchor": "^8.6.2",
     "markdown-it-attrs": "^4.1.4",
-    "markdown-it-table-of-contents": "^0.5.2"
+    "markdown-it-table-of-contents": "^0.5.2",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.49.8"
   }
 }
