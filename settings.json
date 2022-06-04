@@ -1,29 +1,30 @@
 {
-  "schedules": [{ 
-    "day": "monday",
-    "startHour": 15,
-    "endHour": 18
-  },
-  {
-    "day": "tuesday",
-    "startHour": 8,
-    "endHour": 11
-  },
-  {
-    "day": "tuesday",
-    "startHour": 15,
-    "endHour": 18
-  },
-  {
-    "day": "friday",
-    "startHour": 8,
-    "endHour": 11
-  },
-  {
-    "day": "friday",
-    "startHour": 15,
-    "endHour": 18
-  }
-],
+  "schedules": [
+    {
+      "day": "monday",
+      "startHour": 15,
+      "endHour": 18
+    },
+    {
+      "day": "tuesday",
+      "startHour": 8,
+      "endHour": 11
+    },
+    {
+      "day": "tuesday",
+      "startHour": 15,
+      "endHour": 18
+    },
+    {
+      "day": "friday",
+      "startHour": 8,
+      "endHour": 11
+    },
+    {
+      "day": "friday",
+      "startHour": 15,
+      "endHour": 18
+    }
+  ],
   "colorScheme": "default"
 }
