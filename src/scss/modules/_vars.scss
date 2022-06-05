@@ -19,6 +19,9 @@ html:root {
   --clr-white: hsl(0, 0%, 100%);
   --clr-black: hsl(0, 0%, 0%);
 
+  --bx-shadow-two-side: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.2),
+    -0.3125rem -0.3125rem 0.625rem hsla(0, 0%, 100%, 0.8);
+
   &.sunglow {
     --clr-accent: hsl(40, 56%, 40%);
     --clr-accent-light: hsl(40, 56%, 72%);
@@ -53,5 +56,8 @@ html:root {
     --clr-foreground-900: hsl(0, 0%, 88%);
     --clr-foreground-800: hsl(0, 0%, 75%);
     --clr-foreground-700: hsl(0, 0%, 63%);
+
+    --bx-shadow-two-side: 0 0.3125rem 0.625rem rgb(0 0 0 / 20%),
+      -0.3125rem -0.3125rem 0.625rem rgb(58 58 58 / 63%);
   }
 }

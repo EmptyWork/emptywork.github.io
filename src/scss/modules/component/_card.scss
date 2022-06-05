@@ -19,9 +19,9 @@
   }
 
   &-empty {
-    width: 100%;
+    width: calc(100% - 4rem);
     padding: 2rem;
-    box-shadow: inset 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.2);
+    box-shadow: var(--bx-shadow-two-side);
     background: var(--clr-background-900);
     color: var(--clr-foreground-700);
 
@@ -37,12 +37,12 @@
     gap: 1rem;
     margin-top: 2rem;
     justify-content: space-between;
-    
+
     &.nocentered {
       justify-content: flex-start;
     }
-    
-    @include breakpoint-down('medium') {
+
+    @include breakpoint-down("medium") {
       justify-content: center;
     }
   }

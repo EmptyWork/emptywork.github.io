@@ -37,8 +37,9 @@ layout: 'secondary-base.njk'
           {% include 'article-snippet.njk' %}
         {% else %}
           <li class="card card-empty">
+              <h2>You haven't post anything yet.</h2>
               It seems like there is no article right now...
-              </li>
+          </li>
         {%- endfor -%}
       </ul>
       {% for year, posts in posts | groupby("date.year") %}

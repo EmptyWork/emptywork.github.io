@@ -1,7 +1,7 @@
 <li class="card t-all"{% if post.image %} style="background-image: linear-gradient(transparent, var(--clr-accent-dark)), url({{post.image}})" title="Image of {{post.title}}"{% endif %}>
   <article class="card-body">
     <header>
-      <h2 title="{{post.title}}">{{post.title}}</h2>
+      <h2>{{post.title}}</h2>
       <small>{{post.date | postDate }}</small>
     </header>
     <span class="description-area">
