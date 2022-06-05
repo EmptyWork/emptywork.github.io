@@ -1,6 +1,6 @@
 <li class="prototype-card">
   <div class="prototype-header">
-    <section class="note">
+    <section aria-labelledby="{{ post.fileSlug }}-code" class="note">
       <header class="note-header">
         <div>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -8,7 +8,7 @@
             <path d="M7.23 17.6573L7.4 17.4845V19.3517L4 22.7517V5.18501H7.4V12.6763L4.82733 15.2518L7.23 17.6573Z"/>
             <path d="M14.472 0L21 6.52801V11.3362L18.1667 8.50284V5.18501H14.8913L14.8715 5.20484L12.0665 2.40267L14.472 0Z"/>
           </svg>
-          <p>{{ post.fileSlug | truncate(12) }}.dev</p>
+          <h3 id="{{ post.fileSlug }}-code">{{ post.fileSlug | truncate(12) }}.dev</h3>
         </div>
         <div>
           <span class="dot"></span>
@@ -28,9 +28,9 @@
     </section>
   </div>
   <article class="prototype-description">
-    <section class="text">
-      <h3>{{ post.data.title }}</h3>
-      <p>
+    <section aria-labelledby="{{ post.fileSlug }}-header" class="text">
+      <h3 id="{{ post.fileSlug }}-header">{{ post.data.title }}</h3>
+      <p lang="{{ post.data.language }}">
         {{  post.data.description }}
         <sup class="language">[{{ post.data.language }}]</sup>
       </p>
