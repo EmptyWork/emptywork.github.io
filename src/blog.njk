@@ -56,7 +56,7 @@ layout: 'secondary-base.njk'
                   </span>
                   <span>{{ post.author }}</span>
                 </p>
-                <a class="posts-detail_header" href={{ post.url}}># {{ post.title }}
+                <a class="posts-detail_header" href="{{ post.url }}"># {{ post.title }}
                 </a>
                 <p>
                   {{ post.desc | truncate(60) }}
