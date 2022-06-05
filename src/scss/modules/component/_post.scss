@@ -308,6 +308,14 @@
     }
   }
 
+  &-flex_list {
+    flex-wrap: wrap;
+    gap: 0.5em;
+    display: flex;
+    margin: unset !important;
+    padding: unset !important;
+  }
+
   &-detail {
     &_list {
       flex-wrap: wrap;
