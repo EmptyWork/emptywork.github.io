@@ -166,7 +166,7 @@
       }
 
       &:is(:hover, :focus) {
-        color: var(--clr-white);
+        color: var(--clr-foreground);
         outline: 0.0625em solid var(--clr-foreground);
       }
     }
