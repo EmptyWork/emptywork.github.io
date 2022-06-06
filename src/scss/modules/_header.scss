@@ -29,142 +29,143 @@
     flex-direction: column;
     gap: 2rem;
     max-width: 64rem;
-    margin: 0 auto;
     padding: 3rem 2rem;
     align-items: flex-start;
     z-index: 0;
   }
 
-  &-leftside {
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 0.4rem;
-    width: 100%;
-  }
-
-  &-rightside {
-    width: 100%;
-    font-size: 1.2rem;
-
-    h2 {
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1rem;
-
-      @include breakpoint-down("small") {
-        font-size: 1.2rem;
-      }
+  &-side {
+    &_top {
+      display: flex;
+      flex: 0 0 auto;
+      flex-direction: column;
+      gap: 0.4rem;
+      width: 100%;
     }
 
-    .status-area {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 0.5em;
-      font-size: 1rem;
-      margin-bottom: 0.5em;
-
-      > .status-icon {
-        width: 0.75em;
-        height: 0.75em;
-        background-color: var(--clr-accent);
-        border-radius: 50%;
-      }
-
-      .status-hoverable {
-        position: relative;
-        cursor: pointer;
-
-        &:is(:hover, :focus) {
-          .status-card {
-            visibility: visible;
-            user-select: text;
-            pointer-events: unset;
-            transform: translate(-50%, 0%);
-          }
+    &_bottom {
+      width: 100%;
+      font-size: 1.2rem;
+  
+      h2 {
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+  
+        @include breakpoint-down("small") {
+          font-size: 1.2rem;
         }
-
-        .status-card {
-          visibility: hidden;
-          user-select: none;
-          pointer-events: none;
-          background-color: var(--clr-background);
-          box-shadow: 0 0.625rem 1.25rem hsla(270, 71%, 22%, 0.7);
-          padding: 1em;
-          left: 50%;
-          border-radius: 0.2em;
-          width: 25ch;
-          position: absolute;
-          z-index: 70;
-          margin-top: 0.2em;
-          transform: translate(-50%, 20%);
-          transition: all 200ms ease-in-out;
-
-          &-header {
-            font-size: 0.9em;
-            letter-spacing: normal;
-            margin-bottom: unset;
+      }
+  
+      .status-area {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.5em;
+        font-size: 1rem;
+        margin-bottom: 0.5em;
+  
+        > .status-icon {
+          width: 0.75em;
+          height: 0.75em;
+          background-color: var(--clr-accent);
+          border-radius: 50%;
+        }
+  
+        .status-hoverable {
+          position: relative;
+          cursor: pointer;
+  
+          &:is(:hover, :focus) {
+            .status-card {
+              visibility: visible;
+              user-select: text;
+              pointer-events: unset;
+              transform: translate(-50%, 0%);
+            }
           }
-
-          &-body {
-            margin-top: 1em;
-            display: flex;
-            gap: 1em;
-
-            .status-card-left {
+  
+          .status-card {
+            visibility: hidden;
+            user-select: none;
+            pointer-events: none;
+            background-color: var(--clr-background);
+            box-shadow: 0 0.625rem 1.25rem hsla(270, 71%, 22%, 0.7);
+            padding: 1em;
+            left: 50%;
+            border-radius: 0.2em;
+            width: 25ch;
+            position: absolute;
+            z-index: 70;
+            margin-top: 0.2em;
+            transform: translate(-50%, 20%);
+            transition: all 200ms ease-in-out;
+  
+            &-header {
+              font-size: 0.9em;
+              letter-spacing: normal;
+              margin-bottom: unset;
+            }
+  
+            &-body {
+              margin-top: 1em;
               display: flex;
-              align-items: center;
-              justify-content: center;
-              background-color: var(--clr-foreground-900);
-              border-radius: 0.4em;
-              width: 6ch;
-              height: 6ch;
-              flex: 0 0 auto;
-
-              svg {
-                width: 75%;
-                height: 75%;
+              gap: 1em;
+  
+              .status-card-left {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: var(--clr-foreground-900);
+                border-radius: 0.4em;
+                width: 6ch;
+                height: 6ch;
+                flex: 0 0 auto;
+  
+                svg {
+                  width: 75%;
+                  height: 75%;
+                }
+              }
+  
+              .status-card-right {
+                font-size: 0.7em;
+                font-weight: normal;
               }
             }
-
-            .status-card-right {
-              font-size: 0.7em;
+  
+            &-button {
+              text-align: center;
               font-weight: normal;
-            }
-          }
-
-          &-button {
-            text-align: center;
-            font-weight: normal;
-            display: block;
-            width: 100%;
-            margin-top: 1em;
-            font-size: 0.9em;
-            background-color: var(--clr-accent);
-            padding: 0.4em;
-            border-radius: 0.2em;
-            color: var(--clr-white);
-
-            &:is(:hover, :focus) {
-              background-color: var(--clr-accent-dark);
+              display: block;
+              width: 100%;
+              margin-top: 1em;
+              font-size: 0.9em;
+              background-color: var(--clr-accent);
+              padding: 0.4em;
+              border-radius: 0.2em;
               color: var(--clr-white);
+  
+              &:is(:hover, :focus) {
+                background-color: var(--clr-accent-dark);
+                color: var(--clr-white);
+              }
             }
-          }
-
-          &:is(:hover, :focus) {
-            visibility: visible;
-            user-select: text;
-            pointer-events: unset;
-            transform: translate(-50%, 0%);
+  
+            &:is(:hover, :focus) {
+              visibility: visible;
+              user-select: text;
+              pointer-events: unset;
+              transform: translate(-50%, 0%);
+            }
           }
         }
       }
-    }
-
-    @include breakpoint-up("large") {
-      flex: 1 0 auto;
-      width: 70%;
+  
+      @include breakpoint-up("large") {
+        flex: 1 0 auto;
+        width: 70%;
+      }
     }
   }
 
