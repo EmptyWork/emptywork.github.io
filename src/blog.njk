@@ -1,18 +1,27 @@
 ---
 title : 'Recent Articles - Blog | EmptyWork'
+description : "List of all articles that was written by me, its mostly contain topics about Accessibility, PHP, HTML, CSS and Fullstack development"
 layout: 'secondary-base.njk'
 ---
 {% set posts = [] %}
 {% for post in collections.post | reverse %}{% set postDate = {
     year: post.data.date | postYear,
     fullDate: post.data.date
-  } %}{% set posts = (posts.push({title: post.data.title, url: post.url, date: postDate, desc: post.data.description, author: post.data.author}), posts) %}
+  } %}{% set posts = (posts.push({
+    title: post.data.title,
+    url: post.url,
+    date: postDate,
+    desc: post.data.description,
+    author: post.data.author,
+    slug: post.fileSlug
+  }), posts) %}
 {% endfor %}{% set recentPosts = [] %}
 {% for post in collections.post | reverse %}
   {% set recentPosts = (recentPosts.push({
     title: post.data.title,
     description: post.data.description,
     url: post.url,
+    slug: post.fileSlug,
     author: post.data.author,
     date: post.data.date,
     image: post.data.image
@@ -37,7 +46,7 @@ layout: 'secondary-base.njk'
           {% include 'article-snippet.njk' %}
         {% else %}
           <li class="card card-empty">
-              <h2>You haven't post anything yet.</h2>
+            <h2>You haven't post anything yet.</h2>
               It seems like there is no article right now...
           </li>
         {%- endfor -%}
@@ -57,8 +66,13 @@ layout: 'secondary-base.njk'
                   </span>
                   <span>{{ post.author }}</span>
                 </p>
-                <a class="posts-detail_header" href="{{ post.url }}"># {{ post.title }}
-                </a>
+                <p class="posts-detail_header">
+                  <a href="{{ post.url }}">
+                    <span aria-labelledby="{{ post.slug }}" aria-hidden="true">#</span>
+                    <span class="sr-only" id="{{ post.slug }}">{{ post.title }}</span>
+                  </a>
+                  <span id="{{ post.slug }}">{{ post.title }}</span>
+                </p>
                 <p>
                   {{ post.desc | truncate(60) }}
                 </p>
