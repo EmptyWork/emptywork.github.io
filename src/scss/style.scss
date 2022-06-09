@@ -3,6 +3,8 @@
 @import "./modules/global";
 
 @import "./modules/header";
+@import "./modules/component/nav";
+@import "./modules/component/title";
 @import "./modules/main";
 @import "./modules/footer";
 
@@ -13,3 +15,4 @@
 @import "./modules/component/aboutme";
 @import "./modules/component/feature";
 @import "./modules/component/post";
+@import "./modules/component/article";
