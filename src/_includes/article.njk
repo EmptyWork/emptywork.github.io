@@ -1,20 +1,23 @@
 ---
 layout: 'secondary-base.njk'
 ---
+<header class="header header_article">
+    <img src="{{ image }}" alt="{{ title }}">
+</header>
 <main class="main">
   <div class="main-container">
-    <article class="post">
+    <article class="article">
       <header>
         <span>
-          <a href="/blog">Blog</a> / {{ title }}
+          <a class="breadcrumb" href="/blog">Blog</a> › {{ title }}
         </span>
         <h1>{{ title }}</h1>
-        <ul class="post-detail_list post-flex_list">
-          <li class="post-detail_item">
+        <ul class="article-detail_list article-flex_list">
+          <li class="article-detail_item">
             {{ author }}
           </li>
-          <li class="post-detail_item">
-            {{ date | postDate }}
+          <li class="article-detail_item">
+            <time datetime="{{ date | htmlDateString }}">{{ date | postDate }}</time>
           </li>
         </ul>
       </header>

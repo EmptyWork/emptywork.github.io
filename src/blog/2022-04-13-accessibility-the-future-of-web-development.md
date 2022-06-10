@@ -9,7 +9,6 @@ tags:
   - post
 image: /images/accessibility.png
 ---
-![A picture with "Accessibility: The future of Web Development" in left side and the logo of A11y movement in the right side](/images/accessibility.png)
 
 [[toc]]
 

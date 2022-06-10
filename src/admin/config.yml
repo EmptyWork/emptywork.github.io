@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   branch: main
-media_folder: "public/images/"
+media_folder: "src/images/"
 public_folder: "/images/"
 collections:
   - name: "blog"
@@ -10,39 +10,66 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Author", name: "author", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Tags", name: "tags", widget: "list", default: ["post"]}
-      - {label: "Cover Images", name: "image", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
+      - { label: "Cover Images", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
   - name: "project"
     label: "Project"
     folder: "src/project"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Author", name: "author", widget: "string", required: false}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "End Date", name: "endDate", widget: "datetime", required: false}
-      - {label: "Tags", name: "tags", widget: "list", default: ["project"]}
-      - {label: "Cover Images", name: "image", widget: "image"}
-      - {label: "Link Demo", name: "linkDemo", widget: "string", required: false}
-      - {label: "Link Code", name: "linkCode", widget: "string", required: false}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Author", name: "author", widget: "string", required: false }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - {
+          label: "End Date",
+          name: "endDate",
+          widget: "datetime",
+          required: false,
+        }
+      - { label: "Tags", name: "tags", widget: "list", default: ["project"] }
+      - { label: "Cover Images", name: "image", widget: "image" }
+      - {
+          label: "Link Demo",
+          name: "linkDemo",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Link Code",
+          name: "linkCode",
+          widget: "string",
+          required: false,
+        }
   - name: "prototype"
     label: "Prototype"
     folder: "src/prototype"
     create: true
     slug: "{{year}}-{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Status", name: "status", widget: "select", options: [{label: "Deployed", value: 1}, {label: "Buggy", value: 2}], default: [label: "Deployed", value: 1]}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Tags", name: "tags", widget: "list", default: ["prototype"]}
-      - {label: "Link Demo", name: "linkDemo", widget: "string", required: false}
-      - {label: "Language", name: "language", widget: "string", default: "id"}
-      - {label: "Code Snippet", name: "code", widget: "text"}
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Status",
+          name: "status",
+          widget: "select",
+          options:
+            [{ label: "Deployed", value: 1 }, { label: "Buggy", value: 2 }],
+          default: [label: "Deployed", value: 1],
+        }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["prototype"] }
+      - {
+          label: "Link Demo",
+          name: "linkDemo",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Language", name: "language", widget: "string", default: "id" }
+      - { label: "Code Snippet", name: "code", widget: "text" }
