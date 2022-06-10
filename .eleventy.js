@@ -43,6 +43,15 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED)
   })
 
+  eleventyConfig.addFilter("reverseGroupedPosts", (object) => {
+    console.log(Object.entries(object).sort((a, b) => b[0] - a[0]))
+    return Object.entries(object).sort((a, b) => b[0] - a[0])
+  })
+
+  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+		return dateObj.toISOString();
+	});
+
   eleventyConfig.addFilter("postYear", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString({ year: "numeric" })
   })
@@ -56,6 +65,11 @@ module.exports = function (eleventyConfig) {
   })
 
   return {
+    templateFormats: ["md", "njk", "html", "liquid"],
+
+    markdownTemplateEngine: "liquid",
+    htmlTemplateEngine: "njk",
+    dataTemplateEngine: "njk",
     dir: {
       input: "src",
       output: "public",
