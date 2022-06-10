@@ -41,7 +41,7 @@ layout: 'secondary-base.njk'
           Recent Articles 
         </h1>
       </header>
-      <ul class="cards">
+      <ul class="cards {% if lengthRecentPosts == 3 %}cards-3-item{% endif %}">
         {%- for post in recentPosts -%}
           {% include 'article-snippet.njk' %}
         {% else %}
@@ -51,7 +51,8 @@ layout: 'secondary-base.njk'
           </li>
         {%- endfor -%}
       </ul>
-      {% for year, posts in posts | groupby("date.year") %}
+      {% set groupedPosts = posts | groupby("date.year") %}
+      {% for year, posts in groupedPosts | reverseGroupedPosts %}
         <div class="posts">
           <h2 class="posts-yeargroup">{{ year }}</h2>
           <ul class="posts-list">
