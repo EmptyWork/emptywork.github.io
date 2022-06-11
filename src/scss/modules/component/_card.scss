@@ -74,12 +74,22 @@
       overflow: hidden;
     }
 
-    small {
+    .card-time {
       display: block;
       color: var(--clr-accent-light);
       font-weight: 600;
       margin-bottom: 1rem;
       margin-top: 0.3rem;
+      font-size: 0.8rem;
+      padding: 0.2rem 1rem 0.2rem 0;
+      width: fit-content;
+      border-radius: 0.3em;
+      background-color: transparent;
+      background-image: linear-gradient(
+        90deg,
+        hsl(270deg 71% 22% / 0%),
+        var(--clr-accent)
+      );
     }
 
     .more-links {

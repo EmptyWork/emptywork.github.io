@@ -2,7 +2,7 @@
   <article class="card-body">
     <header>
       <h2>{{post.title}}</h2>
-      <small>{{post.date | postDate }}</small>
+      <time datetime="{{ post.date | htmlDateString }}" class="card-time">{{post.date | postDate }}</time>
     </header>
     <span class="description-area">
       <p>{{post.description}}</p>

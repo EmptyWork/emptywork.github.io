@@ -7,13 +7,13 @@
   <article class="card-body">
     <header>
       <h3>{{project.data.title}}</h3>
-      <small>
+      <time datetime="{{ project.data.date | htmlDateString }}" class="card-time">
         {% if project.data.endDate %}
           {{project.data.endDate | postYear}}
         {% else %}
           {{project.data.date | postYear}} - Present
       {% endif %}
-      </small>
+      </time>
     </header>
     <span class="description-area">
       <p>{{project.data.description}}</p>
