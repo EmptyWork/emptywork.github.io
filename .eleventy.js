@@ -44,7 +44,6 @@ module.exports = function (eleventyConfig) {
   })
 
   eleventyConfig.addFilter("reverseGroupedPosts", (object) => {
-    console.log(Object.entries(object).sort((a, b) => b[0] - a[0]))
     return Object.entries(object).sort((a, b) => b[0] - a[0])
   })
 
@@ -71,6 +70,7 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
     dir: {
+      data: "_data",
       input: "src",
       output: "public",
     },
