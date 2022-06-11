@@ -2,28 +2,18 @@
   "schedules": [
     {
       "day": "monday",
-      "startHour": 15,
-      "endHour": 18
+      "startHour": 11,
+      "endHour": 14
     },
     {
       "day": "tuesday",
-      "startHour": 8,
-      "endHour": 11
+      "startHour": 13,
+      "endHour": 16
     },
     {
-      "day": "tuesday",
-      "startHour": 15,
-      "endHour": 18
-    },
-    {
-      "day": "friday",
-      "startHour": 8,
-      "endHour": 11
-    },
-    {
-      "day": "friday",
-      "startHour": 15,
-      "endHour": 18
+      "day": "thursday",
+      "startHour": 11,
+      "endHour": 14
     }
   ],
   "colorScheme": "default"
