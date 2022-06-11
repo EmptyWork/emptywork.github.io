@@ -29,7 +29,7 @@ Setelah itu ikuti langkah-langkah berikut:
 
 - Pergi ke direktori lokal dimana kalian menyimpan file hasil `fork` atau `clone`
 - Kemudian lakukan `npm install`
-- Jalankan `npm run build` atau `npm start` jika kamu mau menggubah filenya.ile.
+- Jalankan `npm run build` atau `npm start` jika kamu mau menggubah filenya.
 
 ### Dukungan
 
