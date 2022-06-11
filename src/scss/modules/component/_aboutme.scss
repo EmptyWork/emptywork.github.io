@@ -112,6 +112,11 @@
       ul {
         margin-top: 0.2rem;
       }
+
+      .lists {
+        overflow: unset;
+        height: fit-content;
+      }
     }
 
     &:not(:first-of-type) {
