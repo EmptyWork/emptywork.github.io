@@ -8,7 +8,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 7rem;
-    
+
     @include breakpoint-up("large") {
       margin: 3rem;
     }

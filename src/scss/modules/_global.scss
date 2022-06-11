@@ -112,7 +112,7 @@ a[href] {
 .no-scroll {
   @include breakpoint-down("small") {
     overflow: hidden !important;
-    
+
     :is(header, main, footer) {
       visibility: hidden;
       user-select: none;
@@ -139,7 +139,7 @@ li {
   padding: 0.2rem 0.6rem;
   color: var(--clr-white);
 
-  &:is(:hover,:focus) {
+  &:is(:hover, :focus) {
     color: var(--clr-white);
   }
 }
