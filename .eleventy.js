@@ -48,8 +48,9 @@ module.exports = function (eleventyConfig) {
   })
 
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
-		return dateObj.toISOString();
-	});
+    let date = new Date(dateObj);
+    return date.toISOString()
+  })
 
   eleventyConfig.addFilter("postYear", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString({ year: "numeric" })
@@ -61,6 +62,16 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("trimText", (string) => {
     return string.split(" ").splice(0, 12).join(" ")
+  })
+
+  eleventyConfig.addFilter("markdownToHTML", (text) => {
+    return markdownIt.render(text)
+  })
+
+  eleventyConfig.addFilter("featuredDate", (string) => {
+    let date = new Date(string)
+    console.log(date.toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"}))
+    return date.toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"})
   })
 
   return {
