@@ -57,6 +57,26 @@
         border-radius: 0.3em;
         padding: 1em;
         position: relative;
+      
+        &.full {
+          grid-column: 1 / -1;
+          display: flex;
+          align-items: center;
+          gap: 1em;
+
+          svg {
+            flex: 0 0 auto;
+          }
+
+          .organization-content {
+            flex: 1 auto;
+            margin-top: 2em;
+          }
+
+          @include breakpoint-down("medium") {
+            flex-direction: column;
+          }
+        }
       }
 
       &-desc {
