@@ -1,4 +1,12 @@
 .featured {
+  --clr-variant: var(--clr-accent);
+  --clr-variant-dark: var(--clr-accent-dark);
+
+  &.red {
+    --clr-variant: var(--clr-red);
+    --clr-variant-dark: var(--clr-red-dark);
+  }
+
   &-container {
     display: flex;
     flex-direction: column;
@@ -12,7 +20,8 @@
     background-color: transparent;
     min-height: 20rem;
     margin-bottom: -5rem;
-    box-shadow: 0 0.625rem 1.25rem hsla(270, 71%, 22%, 0.2);
+    border: 0.0625em solid var(--clr-background);
+    // box-shadow: 0 0.625rem 1.25rem hsla(270, 71%, 22%, 0.2);
 
     @include breakpoint-down("medium") {
       width: calc(100% - 2em);
@@ -20,10 +29,13 @@
   }
 
   &-right {
+    display: flex;
     padding: 2em;
-    background-color: var(--clr-accent);
+    background-color: var(--clr-variant);
     flex: 1 auto;
     position: relative;
+    justify-content: center;
+    align-items: center;
 
     @include breakpoint-down("small") {
       min-height: 10em;
@@ -39,7 +51,7 @@
   &-left {
     color: var(--clr-white);
     padding: 2em;
-    background-color: var(--clr-accent-dark);
+    background-color: var(--clr-variant-dark);
 
     > .featured-header {
       display: flex;
@@ -53,11 +65,11 @@
   &-header {
     &_project-name {
       border-radius: 0.3em;
-      background-color: var(--clr-accent);
+      background-color: var(--clr-variant);
       background-image: linear-gradient(
         90deg,
-        var(--clr-accent-dark),
-        var(--clr-accent)
+        var(--clr-variant-dark),
+        var(--clr-variant)
       );
       padding: 1em;
       width: 100%;
@@ -106,15 +118,15 @@
     padding: 1em 2em;
     display: flex;
     justify-content: flex-end;
-    background-color: var(--clr-background);
+    background-color: var(--clr-black-light);
     gap: 0.4rem;
     flex-wrap: wrap;
 
     p {
       border-radius: 0.3em;
       padding: 0.5em 1.5em;
-      color: var(--clr-foreground);
-      border: 0.0625em solid var(--clr-foreground);
+      color: var(--clr-white);
+      border: 0.0625em solid var(--clr-white);
       user-select: none;
       pointer-events: none;
       width: fit-content;
@@ -123,11 +135,11 @@
       &:first-of-type {
         border: none;
         color: var(--clr-white);
-        background: var(--clr-accent-dark);
+        background: var(--clr-variant-dark);
         background-image: linear-gradient(
           -90deg,
-          var(--clr-accent),
-          var(--clr-accent-dark)
+          var(--clr-variant),
+          var(--clr-variant-dark)
         );
       }
 
@@ -156,9 +168,9 @@
       margin-top: 1em;
       border-radius: 0.3em;
       font-size: 1.2rem;
-      color: var(--clr-foreground);
+      color: var(--clr-white);
       border: none;
-      background: var(--clr-background);
+      background: var(--clr-black-light);
 
       svg {
         width: 1.2em;
@@ -166,8 +178,8 @@
       }
 
       &:is(:hover, :focus) {
-        color: var(--clr-foreground);
-        outline: 0.0625em solid var(--clr-foreground);
+        color: var(--clr-white);
+        outline: 0.0625em solid var(--clr-background);
       }
     }
   }
@@ -180,8 +192,8 @@
     padding: 0.2em 0.5em;
     z-index: 10;
     font-weight: 500;
-    background-color: var(--clr-black);
+    background-color: var(--clr-black-light);
     color: var(--clr-white);
-    box-shadow: 0 0.625rem 1.25rem hsla(270, 71%, 22%, 0.2);
+    // box-shadow: 0 0.625rem 1.25rem hsla(270, 71%, 22%, 0.2);
   }
 }
