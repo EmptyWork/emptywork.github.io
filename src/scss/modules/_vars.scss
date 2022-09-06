@@ -18,6 +18,10 @@ html:root {
   --clr-disabled-text: hsl(0, 0%, 50%);
   --clr-white: hsl(0, 0%, 100%);
   --clr-black: hsl(0, 0%, 0%);
+  --clr-black-light: hsl(0, 0%, 13%);;
+
+  --clr-red: hsl(357, 70%, 41%);
+  --clr-red-dark: hsl(357, 70%, 30%);
 
   --bx-shadow-two-side: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.2),
     -0.3125rem -0.3125rem 0.625rem hsla(0, 0%, 100%, 0.8);
