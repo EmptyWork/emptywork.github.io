@@ -120,3 +120,17 @@
     }
   }
 }
+
+.work {
+  position: relative;
+  isolation: isolate;
+
+  &-svg {
+    &_bottom {
+      position: absolute;
+      bottom: calc(-0.0625em - 6em);
+      z-index: -1;
+      color: var(--clr-background);
+    }
+  }
+}
