@@ -3,7 +3,6 @@
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   color: var(--clr-foreground-800);
-  font-weight: 600;
   background-color: var(--clr-background-900);
   line-height: 1.6;
   margin: auto;
@@ -14,6 +13,7 @@
 
     &:not(.header-anchor, .breadcrumb) {
       text-decoration: 0.0625em underline var(--clr-href);
+      text-underline-offset: 0.35em;
     }
 
     &:hover {

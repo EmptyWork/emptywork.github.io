@@ -29,9 +29,12 @@
     aspect-ratio: 16/9;
     height: fit-content;
     max-height: 60vh;
+    overflow: hidden;
     margin: 0 auto;
 
     img {
+      top: 100%;
+      transform: translateY(-100%);
       position: absolute;
       width: 100%;
     }
