@@ -1,10 +1,9 @@
 .article {
-  font-size: 1.2rem;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  color: var(--clr-foreground-800);
+  color: var(--clr-foreground-900);
   background-color: var(--clr-background-900);
-  line-height: 1.6;
+  line-height: 1.8;
   margin: auto;
 
   a {
@@ -49,6 +48,7 @@
   }
 
   p {
+    max-width: 60ch;
     margin: 1rem 0;
   }
 
@@ -69,6 +69,7 @@
     font-weight: 600;
     color: var(--clr-foreground-900);
     padding: 1rem 0;
+    line-height: 1.1em;
   }
   h4,
   h5,
@@ -103,10 +104,10 @@
 
   hr {
     display: block;
-    height: 2px;
+    height: 0.15em;
     border: 0;
-    border-top: 1px solid var(--clr-accent);
-    border-bottom: 1px solid var(--clr-accent-light);
+    border-top: 0.0625em solid var(--clr-accent);
+    border-bottom: 0.0625em solid var(--clr-accent-light);
     margin: 1em 0;
     padding: 0;
   }
@@ -115,11 +116,10 @@
   code,
   kbd,
   samp {
-    background-color: var(--clr-accent);
-    color: var(--clr-white);
-    font-size: 500;
-    font-family: monospace, "Trebuchet MS", "Lucida Sans Unicode",
-      "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    border: 0.15em solid var(--clr-background-800);
+    padding: 0 0.3em;
+    font-family: "Montserrat", sans-serif;
+    // font-family: monospace, "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   }
 
   pre {
@@ -259,9 +259,9 @@
       text-decoration: underline;
     }
     hr {
-      height: 1px;
+      height: 0.0625em;
       border: 0;
-      border-bottom: 1px solid var(--clr-accent-dark);
+      border-bottom: 0.0625em solid var(--clr-accent-dark);
     }
     a[href]:after {
       content: " (" attr(href) ")";
@@ -276,7 +276,7 @@
     }
     pre,
     blockquote {
-      border: 1px solid #999;
+      border: 0.0625em solid #999;
       padding-right: 1em;
       page-break-inside: avoid;
     }
