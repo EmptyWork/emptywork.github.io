@@ -7,6 +7,11 @@
     padding: 3rem 2rem;
     align-items: flex-start;
     z-index: 0;
+
+    @include breakpoint-up("large") {
+      background-color: var(--clr-background);
+      border-radius: 0.3em;
+    }
   }
 
   &-side {

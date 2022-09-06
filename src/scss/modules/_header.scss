@@ -1,12 +1,13 @@
 .header {
+  overflow: hidden;
   display: flex;
+  isolation: isolate;
   align-items: center;
   justify-content: center;
   height: 100vh;
   max-height: 50em;
   flex-direction: column;
   background-color: var(--clr-background);
-  box-shadow: 0 0.625rem 1.25rem hsla(270, 71%, 22%, 0.2);
   z-index: 3;
   position: relative;
 
@@ -37,6 +38,15 @@
       transform: translateY(-50%);
       position: absolute;
       width: 100%;
+    }
+  }
+
+  &-svg {
+    &_bottom {
+      position: absolute;
+      bottom: -0.0625em;
+      z-index: -1;
+      color: var(--clr-background-900);
     }
   }
 }
