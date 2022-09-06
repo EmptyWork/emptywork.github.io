@@ -1,20 +1,5 @@
 {
   "schedules": [
-    {
-      "day": "monday",
-      "startHour": 11,
-      "endHour": 14
-    },
-    {
-      "day": "tuesday",
-      "startHour": 13,
-      "endHour": 16
-    },
-    {
-      "day": "thursday",
-      "startHour": 11,
-      "endHour": 14
-    }
   ],
   "colorScheme": "default"
 }
