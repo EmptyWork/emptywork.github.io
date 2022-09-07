@@ -21,7 +21,7 @@
         {% set projects = collections.project | reverse %}
       {% endif %}
       {%- for project in projects -%}
-        {% include 'project-snippet.njk' %}
+        {% include 'components/snippets/project.njk' %}
       {%- endfor -%}
       {% if lengthProjects > 3 %}
         <a href="https://github.com/EmptyWork" target="_blank" rel="noopener noreferrer" class="section-more">
