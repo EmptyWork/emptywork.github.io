@@ -1,14 +1,15 @@
 ---
-layout: 'secondary-base.njk'
+layout: 'layouts/secondary.njk'
 ---
 <header class="header header_article">
-    <img load="lazy" src="{{ image }}" alt="{{ title }}">
+  <img load="lazy" src="{{ image }}" alt="{{ title }}">
 </header>
 <main class="main">
   <div class="main-container">
     <article class="article">
       <header>
         <span>
+          <a class="breadcrumb" href="/">Home</a> ›
           <a class="breadcrumb" href="/blog">Blog</a> › {{ title }}
         </span>
         <h1>{{ title }}</h1>
