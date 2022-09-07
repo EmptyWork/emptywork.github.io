@@ -4,7 +4,7 @@
   "description": "These are the template used by [Emptywork](https://emptywork.github.io)",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --style=compressed  --no-source-map src/scss/style.scss public/css/style.css",
+    "sass": "sass --style=compressed  --no-source-map src/assets/scss/style.scss public/css/style.css",
     "watch": "npm-run-all --parallel watch:*",
     "watch:eleventy": "eleventy --serve",
     "watch:sass": "npm run sass -- --watch",
