@@ -1,12 +1,12 @@
 ---
 title: 'EmptyWork'
-layout: 'base.njk'
+layout: 'layouts/primary.njk'
 ---
 <main id="main" class="main">
-  {% include 'featured.njk' %}
-  {% include 'work.njk' %}
-  {% include 'partof.njk' %}
-  {% include 'about.njk' %}
+  {% include 'sections/featured.njk' %}
+  {% include 'sections/work.njk' %}
+  {% include 'sections/partof.njk' %}
+  {% include 'sections/about.njk' %}
 
   <section aria-labelledby="prototypes" class="prototype">
     <div class="main-container">
@@ -24,7 +24,7 @@ layout: 'base.njk'
       </header>
       <ul class="prototypes">
         {%- for post in collections.prototype | reverse -%}
-          {% include 'prototype-snippet.njk' %}
+          {% include 'components/snippets/prototype.njk' %}
         {%- endfor -%}
       </ul>
     </div>
