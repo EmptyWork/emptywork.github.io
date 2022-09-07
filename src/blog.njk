@@ -1,7 +1,7 @@
 ---
 title : 'Recent Articles - Blog | EmptyWork'
 description : "List of all articles that was written by me, its mostly contain topics about Accessibility, PHP, HTML, CSS and Fullstack development"
-layout: 'secondary-base.njk'
+layout: 'layouts/secondary.njk'
 ---
 {% set posts = [] %}
 {% for post in collections.post | reverse %}{% set postDate = {
@@ -43,7 +43,7 @@ layout: 'secondary-base.njk'
       </header>
       <ul class="cards {% if lengthRecentPosts == 3 %}cards-3-item{% endif %}">
         {%- for post in recentPosts -%}
-          {% include 'article-snippet.njk' %}
+          {% include 'components/snippets/article.njk' %}
         {% else %}
           <li class="card card-empty">
             <h2>You haven't post anything yet.</h2>

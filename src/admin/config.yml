@@ -1,12 +1,12 @@
 backend:
   name: git-gateway
   branch: main
-media_folder: "src/images/"
+media_folder: "src/assets/images/"
 public_folder: "/images/"
 collections:
   - name: "blog"
     label: "Blog"
-    folder: "src/blog"
+    folder: "src/articles/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -19,7 +19,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "project"
     label: "Project"
-    folder: "src/project"
+    folder: "src/articles/project"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -49,7 +49,7 @@ collections:
         }
   - name: "prototype"
     label: "Prototype"
-    folder: "src/prototype"
+    folder: "src/articles/prototype"
     create: true
     slug: "{{year}}-{{slug}}"
     fields:

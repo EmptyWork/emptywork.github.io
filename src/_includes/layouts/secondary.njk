@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    {% include '../components/meta.njk' %}
+    
+    <title>{{ title }}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+
+    <script src="/js/loadTheme.js"></script>
+    <script src="/js/redirect.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body class="t-all">
+    {% include 'components/nav.njk' %}
+
+    {{ content | safe}}
+
+    {% include 'sections/footer.njk' %}
+    <script src="/js/main.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window
+          .netlifyIdentity
+          .on("init", user => {
+            if (!user) {
+              window
+                .netlifyIdentity
+                .on("login", () => {
+                  document.location.href = "/admin/";
+                });
+            }
+          });
+      }
+    </script>
+  </body>
+</html>

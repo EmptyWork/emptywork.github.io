@@ -33,11 +33,13 @@ module.exports = function (eleventyConfig) {
     })
 
   eleventyConfig.setLibrary("md", markdownIt)
-  eleventyConfig.addPassthroughCopy("./src/assets/*")
-  eleventyConfig.addPassthroughCopy("./src/js/*")
-  eleventyConfig.addPassthroughCopy("./src/admin/*")
-  eleventyConfig.addPassthroughCopy("./src/images/*")
-  eleventyConfig.addPassthroughCopy("./settings.json")
+
+  eleventyConfig.addPassthroughCopy("src/assets/*.pdf")
+  eleventyConfig.addPassthroughCopy({"src/assets/js/*": 'js'})
+  eleventyConfig.addPassthroughCopy({"src/assets/images/*": 'images'})
+  
+  eleventyConfig.addPassthroughCopy("src/admin/*")
+  eleventyConfig.addPassthroughCopy("settings.json")
 
   eleventyConfig.addFilter("postDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED)
