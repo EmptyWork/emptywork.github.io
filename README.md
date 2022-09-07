@@ -1,4 +1,4 @@
-![EmptyWork's Personal Website](src/images/emptywork.github.io-header.jpg)
+![EmptyWork's Personal Website](src/assets/images/emptywork.github.io-header.jpg)
 
 [![Repository Stars](https://img.shields.io/github/stars/EmptyWork/emptywork.github.io?style=for-the-badge)]()
 [![Repository Forks](https://img.shields.io/github/forks/EmptyWork/emptywork.github.io?style=for-the-badge)]()
