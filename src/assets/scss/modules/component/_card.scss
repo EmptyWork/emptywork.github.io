@@ -11,6 +11,7 @@
   position: relative;
   overflow: hidden;
   flex: 0 0 auto;
+  scroll-snap-align: center;
   color: var(--clr-white);
 
   &:hover {
@@ -41,8 +42,17 @@
       justify-content: flex-start;
     }
 
+    &.cards-horizontal {
+      padding: 1rem 2rem 3rem 2rem;
+      margin: 0 -2rem;
+      scroll-snap-type: x proximity;
+    }
+
     @include breakpoint-down("medium") {
-      justify-content: center;
+      &.cards-horizontal {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }  
     }
   }
 
