@@ -20,8 +20,9 @@
     background-color: transparent;
     min-height: 20rem;
     margin-bottom: -5rem;
-    border: 0.0625em solid var(--clr-background);
-    // box-shadow: 0 0.625rem 1.25rem hsla(270, 71%, 22%, 0.2);
+    // border: 0.0625em solid var(--clr-background);
+    // box-shadow: 0 0.3125rem 0.625rem rgb(0 0 0 / 40%)
+    box-shadow: 0 0.625rem 1.25rem hsla(0, 0%, 0%, 0.4);
 
     @include breakpoint-down("medium") {
       width: calc(100% - 2em);

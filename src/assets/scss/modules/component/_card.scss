@@ -46,6 +46,11 @@
       padding: 1rem 2rem 3rem 2rem;
       margin: 0 -2rem;
       scroll-snap-type: x proximity;
+      
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
     }
 
     @include breakpoint-down("medium") {

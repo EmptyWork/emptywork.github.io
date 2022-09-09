@@ -3,6 +3,8 @@
   width: 100%;
   margin-bottom: -6em;
   padding-bottom: 4em;
+  position: relative;
+  isolation: isolate;
 
   .description {
     font-size: 0.9rem;
@@ -12,6 +14,7 @@
     display: block;
     width: 100%;
     padding: 1em;
+    background-color: var(--clr-background);
     border: 0.0625em solid var(--clr-background-900);
     margin-top: 1em;
     border-radius: 0.3em;
@@ -57,7 +60,8 @@
         border-radius: 0.3em;
         padding: 1em;
         position: relative;
-      
+        background: var(--clr-background);
+
         &.full {
           grid-column: 1 / -1;
           display: flex;
@@ -129,6 +133,23 @@
         top: 1em;
         user-select: none;
         pointer-events: none;
+      }
+    }
+  }
+
+  &-svg {
+    &_bottom {
+      position: absolute;
+      bottom: -0.0625em;
+      z-index: -1;
+      color: var(--clr-accent);
+
+      @include breakpoint-up("medium") {
+        bottom: -4.0625em;
+      }
+
+      @include breakpoint-up("large") {
+        bottom: -8.0625em;
       }
     }
   }

@@ -47,6 +47,14 @@
       bottom: -0.0625em;
       z-index: -1;
       color: var(--clr-background-900);
+
+      @include breakpoint-up("medium") {
+        bottom: -4.0625em;
+      }
+
+      @include breakpoint-up("large") {
+        bottom: -8.0625em;
+      }
     }
   }
 }
