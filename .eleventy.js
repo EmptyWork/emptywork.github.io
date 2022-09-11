@@ -35,9 +35,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary("md", markdownIt)
 
   eleventyConfig.addPassthroughCopy("src/assets/*.pdf")
-  eleventyConfig.addPassthroughCopy({"src/assets/js/*": 'js'})
-  eleventyConfig.addPassthroughCopy({"src/assets/images/*": 'images'})
-  
+  eleventyConfig.addPassthroughCopy({ "src/assets/js/*": "js" })
+  eleventyConfig.addPassthroughCopy({ "src/assets/images/*": "images" })
+
   eleventyConfig.addPassthroughCopy("src/admin/*")
   eleventyConfig.addPassthroughCopy("settings.json")
 
@@ -50,7 +50,7 @@ module.exports = function (eleventyConfig) {
   })
 
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
-    let date = new Date(dateObj);
+    let date = new Date(dateObj)
     return date.toISOString()
   })
 
@@ -72,7 +72,11 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("featuredDate", (string) => {
     let date = new Date(string)
-    return date.toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"})
+    return date.toLocaleDateString("en-us", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    })
   })
 
   return {
