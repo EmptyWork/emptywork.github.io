@@ -20,18 +20,14 @@ const schemeLoader = (scheme) => {
 /**
  * Mobile hamburger menu logic
  */
-let mobileButtons = document.querySelectorAll("[data-mobile-menu-button]")
-let mobileMenuSection = document.querySelector("[data-mobile-menu-section]")
-let mobileMenuLinks = document.querySelectorAll("body>ul>li")
+const mobileButtons = document.querySelectorAll("[data-mobile-menu-button]")
+const mobileMenuSection = document.querySelector("[data-mobile-menu-section]")
+const mobileMenuLinks = document.querySelectorAll("body>ul>li")
 
 mobileButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    if (mobileMenuSection.classList.contains("not-showing")) {
-      setShowing()
-      return
-    }
-    setHidden()
-    return
+    if (!mobileMenuSection.classList.contains("not-showing")) return setHidden()
+    return setShowing()
   })
 })
 
@@ -59,15 +55,11 @@ const toCapitalizeWord = (string) => {
 /**
  * Changing the theme based on user toggle
  */
-let themesButton = document.querySelector("[data-theme-button]")
+const themesButton = document.querySelector("[data-theme-button]")
 
 const themeHandler = () => {
-  if (document.documentElement.classList.contains("dark")) {
-    setLight()
-    return
-  }
-  setDark()
-  return
+  if (!document.documentElement.classList.contains("dark")) return setDark()
+  return setLight()
 }
 
 themesButton.addEventListener("click", themeHandler)
@@ -101,7 +93,7 @@ console.log(
 /**
  * Global Variables for Date related functions
  */
-let days = [
+const days = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -111,7 +103,7 @@ let days = [
   "Saturday",
 ]
 
-let months = [
+const months = [
   "January",
   "Febuary",
   "March",
@@ -126,14 +118,14 @@ let months = [
   "December",
 ]
 
-let replaceStatus = document.querySelector("#activity")
-let replaceMonth = document.querySelector("#month")
-let replaceYear = document.querySelector("#year")
+const replaceStatus = document.querySelector("#activity")
+const replaceMonth = document.querySelector("#month")
+const replaceYear = document.querySelector("#year")
 
-let currentDate = new Date()
-let currentDay = currentDate.getDay()
-let currentMonth = currentDate.getMonth()
-let currentYear = currentDate.getFullYear()
+const currentDate = new Date()
+const currentDay = currentDate.getDay()
+const currentMonth = currentDate.getMonth()
+const currentYear = currentDate.getFullYear()
 
 if (replaceMonth) replaceMonth.textContent = months[currentMonth]
 if (replaceYear) replaceYear.textContent = currentYear
@@ -167,6 +159,6 @@ const schedulerLoader = (schedules = {}) => {
 }
 
 // Injecting #main to main that doesn't have #main
-let mainElem = document.querySelector("#main")
-if (!mainElem) mainElem = document.querySelector(".main")
+const mainElem =
+  document.querySelector("#main") ?? document.querySelector(".main")
 mainElem.id = "main"
