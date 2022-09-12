@@ -2,7 +2,7 @@
 <html lang="en" class="dark">
   <head>
     {% include '../components/meta.njk' %}
-    
+
     <title>{{ title }}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -16,12 +16,15 @@
     <script src="/js/redirect.js"></script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
-  <body class="t-all">
+  <body class="t-all not-loaded">
+    {% include 'sections/preload.njk' %}
+
     {% include 'components/nav.njk' %}
 
     {{ content | safe}}
 
     {% include 'sections/footer.njk' %}
+
     <script src="/js/main.js"></script>
     <script>
       if (window.netlifyIdentity) {
