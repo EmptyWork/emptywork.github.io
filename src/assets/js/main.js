@@ -23,6 +23,7 @@ const schemeLoader = (scheme) => {
 const mobileButtons = document.querySelectorAll("[data-mobile-menu-button]")
 const mobileMenuSection = document.querySelector("[data-mobile-menu-section]")
 const mobileMenuLinks = document.querySelectorAll("body>ul>li")
+const documentBody = document.body
 
 mobileButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -34,13 +35,13 @@ mobileButtons.forEach((button) => {
 const setShowing = () => {
   mobileButtons[0].setAttribute("aria-label", "Close the mobile menu")
   mobileMenuSection.classList.remove("not-showing")
-  setTimeout(() => document.body.classList.add("no-scroll"), 300)
+  setTimeout(() => documentBody.classList.add("no-scroll"), 300)
 }
 
 const setHidden = () => {
   mobileButtons[0].setAttribute("aria-label", "Open the mobile menu")
   mobileMenuSection.classList.add("not-showing")
-  document.body.classList.remove("no-scroll")
+  documentBody.classList.remove("no-scroll")
 }
 
 /**
@@ -159,6 +160,29 @@ const schedulerLoader = (schedules = {}) => {
 }
 
 // Injecting #main to main that doesn't have #main
-const mainElem =
+const mainElement =
   document.querySelector("#main") ?? document.querySelector(".main")
-mainElem.id = "main"
+mainElement.id = "main"
+
+/**
+ * Preload
+ */
+
+const preloadElement = document.querySelector(".preload")
+
+const removeElementAnimated = ({ timeout, targetElement }) => {
+  const timeoutDelay = timeout + timeout * 1.5
+  setTimeout(() => targetElement?.classList.add("hidden"), timeout)
+  setTimeout(() => targetElement?.classList.add("disabled"), timeoutDelay)
+}
+
+const loadedDocumentBody = () => {
+  if (!documentBody.classList.contains("not-loaded")) return
+  removeElementAnimated({
+    targetElement: preloadElement,
+    timeout: 1000,
+  })
+  documentBody.classList.remove("not-loaded")
+}
+
+window.addEventListener("load", loadedDocumentBody, false)
