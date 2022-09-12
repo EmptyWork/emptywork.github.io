@@ -1,0 +1,54 @@
+.preload {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-background);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  flex-direction: column;
+  translate: y 0;
+  opacity: 1;
+  transition: transform 1s ease-in-out;
+
+  svg {
+    rotate: 0deg;
+    max-width: 10em;
+    animation: preload 2s infinite;
+  }
+
+  &-text {
+    margin-top: 1em;
+    max-width: 30ch;
+    text-align: center;
+  }
+
+  &.hidden {
+    translate: y -100vh;
+  }
+
+  &.disabled {
+    display: none;
+  }
+}
+
+@keyframes preload {
+  25% {
+    rotate: 15deg;
+  }
+
+  50% {
+    rotate: 0deg;
+  }
+
+  75% {
+    rotate: -15deg;
+  }
+
+  100% {
+    rotate: 0deg;
+  }
+}
