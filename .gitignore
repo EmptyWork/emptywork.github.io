@@ -3,5 +3,6 @@
 
 # public files
 /public
+.vscode
 
 # /src/blog/example/*
