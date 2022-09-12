@@ -74,9 +74,9 @@ layout: 'layouts/secondary.njk'
                 <p class="posts-detail_header">
                   <a href="{{ post.url }}">
                     <span aria-labelledby="{{ post.slug }}" aria-hidden="true">#</span>
-                    <span class="sr-only" id="{{ post.slug }}">{{ post.title }}</span>
+                    {# <span class="sr-only" id="{{ post.slug }}-sr-only">{{ post.title }}</span> #}
+                    <span id="{{ post.slug }}">{{ post.title }}</span>
                   </a>
-                  <span id="{{ post.slug }}">{{ post.title }}</span>
                 </p>
                 <p>
                   {{ post.desc | truncate(60) }}
