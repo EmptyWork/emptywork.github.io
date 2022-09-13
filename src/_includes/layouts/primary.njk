@@ -15,7 +15,9 @@
     <script src="/js/redirect.js"></script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
-  <body class="t-all">
+  <body class="t-all not-loaded">
+    {% include 'sections/preload.njk' %}
+
     {% include 'components/nav.njk' %}
 
     {% include 'sections/header.njk' %}
@@ -23,6 +25,7 @@
     {{ content | safe }}
 
     {% include 'sections/footer.njk' %}
+
     <script src="/js/main.js"></script>
     <script>
       if (window.netlifyIdentity) {

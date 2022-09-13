@@ -1,4 +1,9 @@
-<li class="card t-all"{% if post.image %} style="background-image: linear-gradient(transparent, var(--clr-accent-dark)), url({{post.image}})" title="Image of {{post.title}}"{% endif %}>
+<li class="card t-all">
+  {% if post.image %}
+    <div class="card-image">
+      <img class="card-background" loading="lazy" src="{{post.image}}" alt="Image of {{post.title}}">
+    </div>
+  {% endif %}
   <article class="card-body">
     <header>
       <h2>{{post.title}}</h2>

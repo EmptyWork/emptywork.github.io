@@ -70,7 +70,8 @@
             user-select: none;
             pointer-events: none;
             background-color: var(--clr-background);
-            box-shadow: 0 0.625rem 1.25rem hsla(270, 71%, 22%, 0.7);
+            box-shadow: 0 0.625rem 1.25rem hsla(0, 0%, 0%, 0.4);
+            // box-shadow: 0 0.625rem 1.25rem hsla(270, 71%, 22%, 0.7);
             padding: 1em;
             left: 50%;
             border-radius: 0.2em;
