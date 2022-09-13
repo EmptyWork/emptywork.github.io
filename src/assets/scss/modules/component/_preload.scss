@@ -10,7 +10,7 @@
   bottom: 0;
   z-index: 999;
   flex-direction: column;
-  translate: y 0;
+  translate: 0 0;
   opacity: 1;
   transition: transform 1s ease-in-out;
 
@@ -27,7 +27,7 @@
   }
 
   &.hidden {
-    translate: y -100vh;
+    translate: 0 -100vh;
   }
 
   &.disabled {
