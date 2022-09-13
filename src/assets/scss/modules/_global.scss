@@ -86,7 +86,7 @@ a[href] {
     pointer-events: none;
     text-transform: capitalize;
     transition: all 300ms ease-out;
-    transform: translateY(-0.3rem);
+    translate: 0 -0.3rem;
     z-index: 90;
     user-select: none;
   }
@@ -94,7 +94,7 @@ a[href] {
   &:focus-visible {
     .new-tab-warning {
       visibility: visible;
-      transform: translateY(0);
+      translate: 0 0;
       pointer-events: unset;
     }
   }
@@ -117,6 +117,14 @@ a[href] {
       visibility: hidden;
       user-select: none;
     }
+  }
+}
+
+.not-loaded {
+  overflow: hidden;
+  :is(header, main, footer, nav) {
+    visibility: hidden;
+    user-select: none;
   }
 }
 

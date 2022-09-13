@@ -46,7 +46,7 @@
 
         &::before {
           background-color: var(--clr-accent-dark);
-          transform: rotate(-6deg);
+          rotate: -6deg;
         }
 
         @include breakpoint-down("medium") {
@@ -105,7 +105,7 @@
         border-radius: 0.3rem;
         background-color: hsl(0, 0%, 10%);
         padding: 1rem;
-        box-shadow: inset 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4)
+        box-shadow: inset 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
       }
     }
 
@@ -187,7 +187,7 @@
 
     &:hover {
       .note {
-        transform: scale(1.1);
+        scale: 1.1;
       }
     }
 
@@ -196,7 +196,7 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      transform: rotate(6deg);
+      rotate: 6deg;
       background: var(--clr-accent);
       left: -0.7rem;
       border-radius: 40% 20% / 10%;

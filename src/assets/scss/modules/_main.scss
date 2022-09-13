@@ -76,7 +76,7 @@
           left: 0;
           border: 0.1875em solid var(--clr-foreground);
           top: 50%;
-          transform: translateY(-50%);
+          translate: 0 -50%;
           margin-left: -1em;
           border-radius: 50%;
         }
@@ -85,8 +85,7 @@
   }
 }
 
-.work,
-.articles {
+.work {
   padding-top: 4rem;
 }
 

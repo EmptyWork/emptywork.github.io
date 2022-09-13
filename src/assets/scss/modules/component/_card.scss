@@ -15,7 +15,7 @@
   color: var(--clr-white);
 
   &:hover {
-    transform: scale(1.1);
+    scale: 1.1;
     z-index: 10;
   }
 
@@ -58,7 +58,7 @@
 
     &:hover,
     &:focus-visible {
-      transform: scale(1);
+      scale: 1;
     }
   }
 
@@ -173,6 +173,13 @@
           color: var(--clr-white);
           &::before {
             width: 100%;
+          }
+        }
+
+        &:focus {
+          .new-tab-warning {
+            box-shadow: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
+            visibility: visible;
           }
         }
 

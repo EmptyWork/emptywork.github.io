@@ -61,7 +61,7 @@
               visibility: visible;
               user-select: text;
               pointer-events: unset;
-              transform: translate(-50%, 0%);
+              translate: -50% 0%;
             }
           }
 
@@ -79,7 +79,7 @@
             position: absolute;
             z-index: 70;
             margin-top: 0.2em;
-            transform: translate(-50%, 20%);
+            translate: -50% 20%;
             transition: all 200ms ease-in-out;
 
             &-header {
@@ -137,7 +137,7 @@
               visibility: visible;
               user-select: text;
               pointer-events: unset;
-              transform: translate(-50%, 0%);
+              translate: -50% 0%;
             }
           }
         }
@@ -225,7 +225,7 @@
       background-color: var(--clr-accent);
       filter: brightness(140%);
       box-shadow: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
-      transform: scale(1.04);
+      scale: 1.04;
     }
 
     svg {
@@ -236,7 +236,7 @@
     &[disabled] {
       cursor: not-allowed;
       &:hover {
-        transform: scale(0.96);
+        scale: 0.96;
         box-shadow: inset 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
         filter: grayscale(100);
       }
@@ -251,7 +251,7 @@
       &:hover,
       &:focus-visible {
         filter: brightness(100%);
-        transform: scale(0.98);
+        scale: 0.98;
       }
     }
 
@@ -274,7 +274,7 @@
 
     svg {
       height: 1rem;
-      transform: rotate(180deg);
+      rotate: 180deg;
     }
   }
 }
