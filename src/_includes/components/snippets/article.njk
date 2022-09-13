@@ -1,20 +1,20 @@
 <li class="card t-all">
   {% if post.image %}
     <div class="card-image">
-      <img class="card-background" loading="lazy" src="{{post.image}}" alt="Image of {{post.title}}">
+      <img class="card-background" width="1920" height="1080" src="{{ post.image }}" alt="Image of {{ post.title }}">
     </div>
   {% endif %}
   <article class="card-body">
     <header>
-      <h2>{{post.title}}</h2>
+      <h2>{{ post.title }}</h2>
       <time datetime="{{ post.date | htmlDateString }}" class="card-time">{{post.date | postDate }}</time>
     </header>
     <span class="description-area">
-      <p>{{post.description}}</p>
+      <p>{{ post.description }}</p>
     </span>
     <ul class="more-links">
       <li>
-        <span>{{post.author}}</span>
+        <span>{{ post.author }}</span>
       </li>
       <li>
         <a href="{{ post.url }}" aria-label="Read more about {{ post.title }}" class="sourcecode">
