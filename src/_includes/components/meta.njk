@@ -29,27 +29,33 @@
 <meta property="og:site_name" content="EmptyWork"/>
 
 {% if image %}
-  <meta property="og:image" content="https://emptywork.my.id{{image}}"/>
-  <meta itemprop="image" content="https://emptywork.my.id{{image}}">
-  <meta name="twitter:image" content="https://emptywork.my.id{{image}}">
+  <meta property="og:image" content="{ {image }}"/>
+  <meta itemprop="image" content="{{ image }}">
+  <meta name="twitter:image" content="{{ image }}">
 {% else %}
-  <meta itemprop="image" content="https://emptywork.my.id/images/emptywork.my.id-secondary-banner.png">
-  <meta property="og:image" content="https://emptywork.my.id/images/emptywork.my.id-secondary-banner.png"/>
-  <meta name="twitter:image" content="https://emptywork.my.id/images/emptywork.my.id-secondary-banner.png">
+  <meta itemprop="image" content="/images/emptywork.my.id-secondary-banner.png">
+  <meta property="og:image" content="/images/emptywork.my.id-secondary-banner.png"/>
+  <meta name="twitter:image" content="/images/emptywork.my.id-secondary-banner.png">
 {% endif %}
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta property="og:title" content="{{ title }}"/>
-<meta name="twitter:title" content="{{ title }}">
-<meta itemprop="name" content="{{ title }}">
-<link rel="apple-touch-icon" sizes="180x180" href="https://emptywork.my.id/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://emptywork.my.id/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="194x194" href="https://emptywork.my.id/images/favicon-194x194.png">
-<link rel="icon" type="image/png" sizes="192x192" href="https://emptywork.my.id/images/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://emptywork.my.id/images/favicon-16x16.png">
-<link rel="manifest" href="https://emptywork.my.id/images/site.webmanifest">
-<link rel="mask-icon" href="https://emptywork.my.id/images/safari-pinned-tab.svg" color="#242424">
-<link rel="shortcut icon" href="https://emptywork.my.id/images/favicon.ico">
+{% if title %}
+  <meta property="og:title" content="{{ title }}"/>
+  <meta name="twitter:title" content="{{ title }}">
+  <meta itemprop="name" content="{{ title }}">
+{% else %}
+  <meta property="og:title" content="Emptywork"/>
+  <meta name="twitter:title" content="Emptywork">
+  <meta itemprop="name" content="Emptywork">
+{% endif %}
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="194x194" href="/images/favicon-194x194.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#242424">
+<link rel="shortcut icon" href="/images/favicon.ico">
 <meta name="msapplication-TileColor" content="#242424">
-<meta name="msapplication-TileImage" content="https://emptywork.my.id/images/mstile-144x144.png">
-<meta name="msapplication-config" content="https://emptywork.my.id/images/browserconfig.xml">
+<meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
+<meta name="msapplication-config" content="/images/browserconfig.xml">

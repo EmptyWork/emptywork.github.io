@@ -30,14 +30,14 @@
     display: flex;
     padding: 0 0.3rem;
     align-self: center;
-    transform: scaleX(0);
+    scale: 0;
     order: 2;
     transform-origin: left;
     transition: transform 200ms ease;
 
     &:focus {
       color: var(--clr-white);
-      transform: scaleX(1);
+      scale: 1;
     }
   }
 
