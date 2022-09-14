@@ -31,7 +31,7 @@
 {% if image %}
   <meta property="og:image" content="{ {image }}"/>
   <meta itemprop="image" content="{{ image }}">
-  <meta name="twitter:image" content="{{ image} }">
+  <meta name="twitter:image" content="{{ image }}">
 {% else %}
   <meta itemprop="image" content="/images/emptywork.my.id-secondary-banner.png">
   <meta property="og:image" content="/images/emptywork.my.id-secondary-banner.png"/>
@@ -39,9 +39,15 @@
 {% endif %}
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta property="og:title" content="{{ title }}"/>
-<meta name="twitter:title" content="{{ title }}">
-<meta itemprop="name" content="{{ title }}">
+{% if title %}
+  <meta property="og:title" content="{{ title }}"/>
+  <meta name="twitter:title" content="{{ title }}">
+  <meta itemprop="name" content="{{ title }}">
+{% else %}
+  <meta property="og:title" content="Emptywork"/>
+  <meta name="twitter:title" content="Emptywork">
+  <meta itemprop="name" content="Emptywork">
+{% endif %}
 <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="194x194" href="/images/favicon-194x194.png">
