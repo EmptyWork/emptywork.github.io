@@ -35,9 +35,11 @@
 
     img {
       top: 50%;
-      transform: translateY(-50%);
+      translate: 0 -50%;
       position: absolute;
+      aspect-ratio: 16 / 9;
       width: 100%;
+      height: auto;
     }
   }
 
