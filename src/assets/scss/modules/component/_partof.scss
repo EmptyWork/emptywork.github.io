@@ -33,9 +33,12 @@
     width: 100%;
 
     h2 {
-      margin-bottom: 0.5em;
       text-transform: uppercase;
       letter-spacing: 0.1em;
+
+      @include breakpoint-down("medium") {
+        margin-bottom: 0.5em;
+      }
     }
 
     .organization {
