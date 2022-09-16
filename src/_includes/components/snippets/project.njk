@@ -1,4 +1,4 @@
-<li class="card t-all">
+<li class="card t-all" data-animation="fade-in" data-delay="{{ loop.index }}">
   {% if project.data.image %}
     <div class="card-image">
       <img class="card-background" width="100" height="100" loading="lazy" src="{{ project.data.image }}" alt="Image of {{ project.data.title }}">
