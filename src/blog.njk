@@ -32,7 +32,7 @@ layout: 'layouts/secondary.njk'
 <main id="main" class="main">
   <section aria-labelledby="article" class="articles">
     <div class="main-container">
-      <header class="section-header">
+      <header class="section-header" data-animation="fade-in">
         <span>
           <a class="breadcrumb" href="/">Home</a> ›
           <a class="breadcrumb" href="/blog">Blog</a>
@@ -58,10 +58,10 @@ layout: 'layouts/secondary.njk'
       {% set groupedPosts = posts | groupby("date.year") %}
       {% for year, posts in groupedPosts | reverseGroupedPosts %}
         <div class="posts">
-          <h2 class="posts-yeargroup">{{ year }}</h2>
+          <h2 class="posts-yeargroup" data-animation="fade-in" data-delay="{{ loop.index }}">{{ year }}</h2>
           <ul class="posts-list">
             {% for post in posts %}
-              <li class="posts-detail">
+              <li class="posts-detail" data-animation="prototype-card" data-delay="{{ loop.index + 0.5 | float }}">
                 <p class="posts-detail_accent">
                   <time class="posts-detail_accent-item posts-detail_accent-item_filled" datetime="{{ post.date.fullDate | htmlDateString }}">
                     <svg xmlns="http://www.w3.org/2000/svg" class="posts-detail_svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

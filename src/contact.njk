@@ -6,7 +6,7 @@ layout: 'layouts/secondary.njk'
 <main id="main" class="main">
   <section aria-labelledby="contact" class="contact">
     <div class="main-container">
-      <header class="section-header">
+      <header class="section-header" data-animation="fade-in">
         <span>
           <a class="breadcrumb" href="/">Home</a> ›
           <a class="breadcrumb" href="/contact">Contact</a>
@@ -20,20 +20,20 @@ layout: 'layouts/secondary.njk'
         </h1>
       </header>
       <form data-netlify="true" data-netlify-recaptcha="true" method="post">
-        <div class="form-input">
+        <div class="form-input" data-animation="right-show" data-delay="2">
           <label for="name">Name</label>
           <input type="text" name="name" id="name" placeholder="Joe Doe" required>
         </div>
-        <div class="form-input">
+        <div class="form-input" data-animation="right-show" data-delay="3">
           <label for="email">Email</label>
           <input type="email" name="email" id="email" placeholder="username@emptywork.my.id" required>
         </div>
-        <div class="form-input">
+        <div class="form-input" data-animation="right-show" data-delay="4">
           <label for="message">Message</label>
           <textarea name="message" id="message" cols="30" rows="10" placeholder="Hi, I like to get in touch with you, I want to talk about #a11y movement" required></textarea>
         </div>
         <div data-netlify-recaptcha="true" class="form-input form-input__captcha"></div>
-        <div class="form-input form-button">
+        <div class="form-input form-button" data-animation="fade-in" data-delay="5">
           <input type="submit" value="Left me a message">
         </div>
       </form>

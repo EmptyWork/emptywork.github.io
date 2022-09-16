@@ -1,0 +1,41 @@
+
+[data-animation] {
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+[data-animation="fade-in"] {
+  translate: 0 4em;
+}
+
+[data-animation="right-show"] {
+  translate: -5em 0;
+}
+
+[data-animation="prototype-card"] {
+  translate: -5em 0;
+
+  &:nth-of-type(odd) {
+    translate: 5em 0;
+  }
+}
+
+[data-animation="left-show"] {
+  translate: 5em 0;
+}
+
+.has-been-animated {
+  opacity: 1;
+  translate: unset !important;
+}
+
+@media (prefers-reduced-motion) {
+  .prototype-reader,
+  .data {
+    transform: unset !important;
+  }
+
+  [data-animation] {
+    translate: unset !important;
+  }
+}
