@@ -3,7 +3,7 @@
     <div class="relative"></div>
   </div>
   <section aria-labelledby="titletext" class="title-container">
-    <section aria-labelledby="activity" class="title-side_top">
+    <section aria-labelledby="activity" class="title-side_top" data-animation="fade-in">
       <p class="title-activity">
         <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
@@ -16,7 +16,7 @@
         </span>
       </p>
       <div>
-        <a href="https://github.com/EmptyWork" class="title-link" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/EmptyWork" class="title-link" target="_blank" rel="noopener noreferrer ">
           <h1 id="titletext" class="title-text">/EmptyWork</h1>
           <span class="new-tab-warning"> Open a new tab </span>
         </a>
@@ -30,7 +30,7 @@
       </div>
     </section>
     <section aria-labelledby="passion" class="title-side_bottom">
-      <div class="status-area">
+      <div class="status-area" data-animation="fade-in">
         <div class="status-icon busy"></div>
         <span>
           Opening
@@ -103,16 +103,16 @@
           </strong>
         </span>
       </div>
-      <h2 id="passion">
+      <h2 id="passion" data-animation="fade-in">
         I am passionate <br/> about
         <mark class="highlight">@a11yprojects</mark>
       </h2>
-      <p>
+      <p data-animation="fade-in">
         or any movement to make website and tech more accessible for everyone in
         general
       </p>
       <ul class="title-action__group">
-        <li>
+        <li data-animation="left-show" data-delay="2">
           <a href="./assets/Curriculum Vitae.pdf" aria-label="Open PDF of my Curriculum Vitae" target="_blank" rel="noopener noreferrer" class="title-action">
             <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd"></path>
@@ -121,7 +121,7 @@
             <span class="new-tab-warning"> Open a new tab </span>
           </a>
         </li>
-        <li>
+        <li data-animation="left-show" data-delay="4">
           <a href="https://github.com/EmptyWork/emptywork.github.io" aria-label="Link to this website Github repo" target="_blank" rel="noopener noreferrer" class="title-action secondary">
             <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
@@ -134,7 +134,7 @@
       </ul>
     </section>
   </section>
-  <svg class="header-svg_bottom" id="svg-header" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150">
-    <path d="M 0,400 C 0,400 0,200 0,200 C 125.72248803827753,232.1244019138756 251.44497607655506,264.2488038277512 339,271 C 426.55502392344494,277.7511961722488 475.9425837320574,259.12918660287085 547,242 C 618.0574162679426,224.87081339712918 710.7846889952154,209.2344497607655 820,221 C 929.2153110047846,232.7655502392345 1054.9186602870811,271.93301435406704 1161,273 C 1267.0813397129189,274.06698564593296 1353.5406698564593,237.03349282296648 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="currentColor" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+  <svg class="header-svg_bottom" id="svg-header" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 0,400 C 0,400 0,200 0,200 C 125.72248803827753,232.1244019138756 251.44497607655506,264.2488038277512 339,271 C 426.55502392344494,277.7511961722488 475.9425837320574,259.12918660287085 547,242 C 618.0574162679426,224.87081339712918 710.7846889952154,209.2344497607655 820,221 C 929.2153110047846,232.7655502392345 1054.9186602870811,271.93301435406704 1161,273 C 1267.0813397129189,274.06698564593296 1353.5406698564593,237.03349282296648 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="currentColor" fill-opacity="1"></path>
   </svg>
 </header>
