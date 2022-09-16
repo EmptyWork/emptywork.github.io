@@ -1,0 +1,36 @@
+{
+  "title": "Clients",
+  "desc": "Trusted by these companies and organizations",
+  "clients": [
+    {
+      "name": "Bank Indonesia",
+      "svg": "bank-indonesia.njk",
+      "absolutePath": true
+    },
+    {
+      "name": "Student Coding Club",
+      "svg": "scc.njk",
+      "absolutePath": true
+    },
+    {
+      "name": "Generasi Baru Indonesia",
+      "svg": "genbi.njk",
+      "absolutePath": true
+    },
+    {
+      "name": "Sekolah Luar Biasa",
+      "svg": "slbnania.njk",
+      "absolutePath": true
+    },
+    {
+      "name": "Komite Olahraga National Indonesia Kota Ambon",
+      "svg": "koni.njk",
+      "absolutePath": true
+    },
+    {
+      "name": "7Mu - 7Mysteries",
+      "svg": "7mu.njk",
+      "absolutePath": true
+    }
+  ]
+}
