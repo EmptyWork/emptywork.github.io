@@ -1,0 +1,21 @@
+<section aria-labelledby="clients" class="clients">
+  <div class="main-container">
+    <header class="section-header" data-animation="right-show">
+      <h2 id="clients" class="header-title">
+        <a class="header-link__access" href="#clients">
+          <span aria-hidden="true">#</span>
+          <span class="sr-only">Link to heading "clients"</span>
+        </a>
+        {{ client.title }}
+      </h2>
+      <span class="header-desc">
+        {{ client.desc }}
+      </span>
+    </header>
+    <section class="clients-list">
+      {% for nameClient in client.clients %}
+          {% include 'components/svg/' + nameClient.svg %}
+      {% endfor %}
+    </section>
+  </div>
+</section>
