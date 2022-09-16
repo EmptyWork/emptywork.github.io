@@ -35,8 +35,7 @@ html:root {
 }
 
 *,
-*::after,
-*::before {
+*:is(::after, ::before) {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -54,15 +53,12 @@ body {
 }
 
 a,
-a:active,
-a:hover,
-a:focus-visible {
+a:is(:active, :hover, :focus-visible) {
   color: inherit;
   text-decoration: none;
 }
 
-a:hover,
-a:focus-visible {
+a:is(:hover, :focus-visible) {
   color: var(--clr-accent);
 }
 
@@ -128,8 +124,7 @@ a[href] {
   }
 }
 
-ul,
-li {
+:is(ul, li) {
   margin: 0;
   padding: 0;
 }
@@ -165,11 +160,4 @@ li {
   padding: 0;
   position: absolute;
   width: 0.0625rem;
-}
-
-@media (prefers-reduced-motion) {
-  .prototype-reader,
-  .data {
-    transform: unset;
-  }
 }

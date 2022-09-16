@@ -169,11 +169,30 @@ mainElement.id = "main"
  */
 
 const preloadElement = document.querySelector(".preload")
+const delayElements = document.querySelectorAll("[data-delay]")
+
+delayElements?.forEach(
+  (el) => (el.style.transitionDelay = `${parseInt(el.dataset.delay) * 100}ms`)
+)
+
+const observer = new IntersectionObserver((entires) =>
+  entires.forEach((entry) => {
+    if (entry.isIntersecting)
+      return entry.target.classList.add("has-been-animated")
+    return entry.target.classList.remove("has-been-animated")
+  })
+)
+
+const toBeAnimateElements = document.querySelectorAll("[data-animation]")
 
 const removeElementAnimated = ({ timeout, targetElement }) => {
   const timeoutDelay = timeout + timeout * 1.5
   setTimeout(() => targetElement?.classList.add("hidden"), timeout)
   setTimeout(() => targetElement?.classList.add("disabled"), timeoutDelay)
+  setTimeout(
+    () => toBeAnimateElements?.forEach((el) => observer.observe(el)),
+    timeout
+  )
 }
 
 const loadedDocumentBody = () => {
