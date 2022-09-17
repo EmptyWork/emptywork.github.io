@@ -14,7 +14,8 @@
   scroll-snap-align: center;
   color: var(--clr-white);
 
-  &:hover {
+  &:hover,
+  &:has(:focus) {
     scale: 1.1;
     z-index: 10;
   }
@@ -46,8 +47,8 @@
   }
 
   &-background {
-    height: 100%;
-    width: 100%;
+    height: inherit;
+    width: fit-content;
   }
 
   &-empty {
@@ -74,9 +75,10 @@
     }
 
     &.cards-horizontal {
-      padding: 1rem 2rem 3rem 2rem;
+      padding: 2rem 2rem 4.5rem 2rem;
       margin: 0 -2rem;
       scroll-snap-type: x proximity;
+      overflow-y: hidden;
 
       &::-webkit-scrollbar {
         width: 0;
@@ -146,10 +148,10 @@
       width: 100%;
       justify-content: space-between;
 
-      span {
+      .disabled {
         display: block;
         margin-top: 1rem;
-        padding: 1rem 1.5rem;
+        padding: 1rem 1.25rem;
         color: var(--clr-disabled-text);
         cursor: not-allowed;
         user-select: none;

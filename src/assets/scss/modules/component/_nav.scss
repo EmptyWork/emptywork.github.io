@@ -30,10 +30,10 @@
     display: flex;
     padding: 0 0.3rem;
     align-self: center;
-    scale: 0;
+    scale: 0 1;
     order: 2;
     transform-origin: left;
-    transition: transform 200ms ease;
+    transition: scale 200ms ease;
 
     &:focus {
       color: var(--clr-white);
