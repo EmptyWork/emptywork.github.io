@@ -46,16 +46,26 @@
   &-svg {
     &_bottom {
       position: absolute;
-      bottom: -0.0625em;
-      z-index: -1;
-      color: var(--clr-background-900);
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
 
-      @include breakpoint-up("medium") {
-        bottom: -4.0625em;
+      svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 0.08125rem);
+        height: 9.375rem;
+
+        @include breakpoint-down("small") {
+          height: 3.125rem;
+        }
       }
 
-      @include breakpoint-up("large") {
-        bottom: -8.0625em;
+      .shape-fill {
+        fill: var(--clr-background-900);
       }
     }
   }
