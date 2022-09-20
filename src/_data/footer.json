@@ -1,0 +1,21 @@
+{
+  "quote": "Belajar untuk menikmati sesuatu yang membuat diri-mu bosan",
+  "brand" : {
+    "title": "EmptyWork",
+    "svg" : "logo.njk"
+  },
+  "sublinks": [
+    {
+      "linkTo": "/blog",
+      "linkName": "Blog"
+    },
+    {
+      "linkTo": "/contact",
+      "linkName": "Contact"
+    },
+    {
+      "linkTo": "/multimedia",
+      "linkName": "Multimedia"
+    }
+  ]
+}
