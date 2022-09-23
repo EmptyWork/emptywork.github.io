@@ -47,174 +47,151 @@
         <div class="text-area">
           <header>
             <h3 class="extra">
-              I am
-              <mark class="highlight">
-                based in
-                <a href="https://en.wikipedia.org/wiki/indonesia" target="_blank" rel="noopener noreferrer">
-                  Indonesia
-                  <span class="new-tab-warning"> Open a new tab </span>.
-                </a>
-              </mark>
+              {{ about.bioHeader | safe }}
             </h3>
           </header>
-            I am currently Majoring in Computer Science at
-            <a href="https://ukim.ac.id" target="_blank" rel="noopener noreferrer">
-            <mark class="highlight">
-                Christian University of Indonesia, Moluccas.
-              </mark>
-            <span class="new-tab-warning"> Open a new tab </span>
-          </a>
-          <br/>
-            I am also a <i>Certified Fiber Optic Technician</i> since 2017
-            by
-            <a href="http://apjatel.id/" target="_blank" rel="noopener noreferrer">
-            <mark class="highlight">
-                APJTEL.
-              </mark>
-            <span class="new-tab-warning"> Open a new tab </span>
-          </a>
-        </div>
+          {{ about.bio | safe }}
+        </section>
       </section>
-    </section>
-    <section class="flex languages" data-animation="fade-in">
-      <header>
-        <h3 id="languages" class="header-title">
-          <a class="header-link__access" href="#languages">
-            <span aria-hidden="true">#</span>
-            <span class="sr-only">Link to heading "languages"</span>
-          </a>
-          <span>Languages</span>
-        </h3>
-      </header>
-      <article class="lists">
-        <ul>
-          <li>Advanced</li>
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>Javascript</li>
-          <li>PHP</li>
-          <li>SQL</li>
-          <li>JSON</li>
-          <li>TailwindCSS</li>
-        </ul>
-        <ul>
-          <li>Working Knowledge</li>
-          <li>React</li>
-          <li>Vue</li>
-          <li>SCSS</li>
-          <li>Laravel</li>
-          <li>MongoDB</li>
-          <li>NodeJs</li>
-          <li>Git</li>
-        </ul>
-        <ul>
-          <li>Previous Experience</li>
-          <li>C++</li>
-          <li>Python</li>
-          <li>Java</li>
-          <li>Dart</li>
-          <li>Powershell</li>
-          <li>RouterOS/Mikrotik</li>
-        </ul>
-        <ul>
-          <li>
+      <section class="flex languages" data-animation="fade-in">
+        <header>
+          <h3 id="languages" class="header-title">
+            <a class="header-link__access" href="#languages">
+              <span aria-hidden="true">#</span>
+              <span class="sr-only">Link to heading "languages"</span>
+            </a>
+            <span>Languages</span>
+          </h3>
+        </header>
+        <article class="lists">
+          <ul>
+            <li>Advanced</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Javascript</li>
+            <li>PHP</li>
+            <li>SQL</li>
+            <li>JSON</li>
+            <li>TailwindCSS</li>
+          </ul>
+          <ul>
+            <li>Working Knowledge</li>
+            <li>React</li>
+            <li>Vue</li>
+            <li>SCSS</li>
+            <li>Laravel</li>
+            <li>MongoDB</li>
+            <li>NodeJs</li>
+            <li>Git</li>
+          </ul>
+          <ul>
+            <li>Previous Experience</li>
+            <li>C++</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>Dart</li>
+            <li>Powershell</li>
+            <li>RouterOS/Mikrotik</li>
+          </ul>
+          <ul>
+            <li>
             Misc
             <sup>[1]</sup>
-          </li>
-          <li>
-            <a href="https://github.com/IBMa/equal-access" target="_blank" rel="noopener noreferrer">
+            </li>
+            <li>
+              <a href="https://github.com/IBMa/equal-access" target="_blank" rel="noopener noreferrer">
               IBM Equal Access
               <span class="new-tab-warning"> Open a new tab </span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.w3.org/TR/wai-aria/" rel="noopener noreferrer" target="_blank">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.w3.org/TR/wai-aria/" rel="noopener noreferrer" target="_blank">
               W3 Accessibility (WAI-ARIA) 1.1
               <span class="new-tab-warning"> Open a new tab </span>
-            </a>
-          </li>
-          <li>
-            <a href="https://wave.webaim.org/" rel="noopener noreferrer" target="_blank">
+              </a>
+            </li>
+            <li>
+              <a href="https://wave.webaim.org/" rel="noopener noreferrer" target="_blank">
               WAVE Web Accessibility Evaluation Tool
               <span class="new-tab-warning"> Open a new tab </span>
-            </a>
-            <sup>[2]</sup>
-          </li>
-        </ul>
-      </article>
-    </section>
-    <ul class="adds">
-      <li data-animation="right-show" data-delay="1">
+              </a>
+              <sup>[2]</sup>
+            </li>
+          </ul>
+        </article>
+      </section>
+      <ul class="adds">
+        <li data-animation="right-show" data-delay="1">
         [1] As of now, I think the knowledge about
         <a href="https://en.wikipedia.org/wiki/WAI-ARIA" target="_blank" rel="noopener noreferrer">
-          <mark class="highlight">
+            <mark class="highlight">
             ARIA (Accessibility — Rich Internet Application)
           </mark>
-          <span class="new-tab-warning"> Open a new tab </span>
-        </a>
+            <span class="new-tab-warning"> Open a new tab </span>
+          </a>
         is essential; so I spend my free time researching, watching, and
         reading articles related to it.
       </li>
-      <li data-animation="right-show" data-delay="2">
+        <li data-animation="right-show" data-delay="2">
         — If you also want to learn how to make the web accessable for
         everyone, visit
         <a target="_blank" rel="noopener noreferrer" href="https://www.accessibility-developer-guide.com/">
-          <mark class="highlight">
+            <mark class="highlight">
             https://www.accessibility-developer-guide.com/
           </mark>
-          <span class="new-tab-warning"> Open a new tab </span>
-        </a>
+            <span class="new-tab-warning"> Open a new tab </span>
+          </a>
         they provided amazing list on things you can do to improve your
         website accessibility.
       </li>
-      <li class="new-line"  data-animation="right-show" data-delay="3">
+        <li class="new-line"  data-animation="right-show" data-delay="3">
         [2] One of the best tools that <mark class="highlight">provided comprehensive checks and details information</mark> about how to fix accessibility problems with your website.
       </li>
-    </ul>
-    <section class="flex tools" data-animation="right-show">
-      <header class="flex-header">
-        <h3 id="tools" style="display: flex; align-items: center; gap: .2em;" class="header-title">
-          <a class="header-link__access" href="#tools">
-            <span aria-hidden="true">
-              {% include 'components/svg/logo.njk' %}
-            </span>
-            <span class="sr-only">Link to heading "tools"</span>
-          </a>
+      </ul>
+      <section class="flex tools" data-animation="right-show">
+        <header class="flex-header">
+          <h3 id="tools" style="display: flex; align-items: center; gap: .2em;" class="header-title">
+            <a class="header-link__access" href="#tools">
+              <span aria-hidden="true">
+                {% include 'components/svg/logo.njk' %}
+              </span>
+              <span class="sr-only">Link to heading "tools"</span>
+            </a>
           Tools
         </h3>
-        <div>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
-      </header>
-      <article class="lists">
-        <ul>
-          <li>Advanced</li>
-          <li>Adobe Photoshop</li>
-          <li>Visual Studio Code</li>
-        </ul>
-        <ul>
-          <li>Working Knowledge</li>
-          <li>Adobe After Effect</li>
-          <li>Resolve Davinci</li>
-          <li>Gimp</li>
-          <li>Figma</li>
-          <li>Atom</li>
-          <li>Github</li>
-        </ul>
-        <ul>
-          <li>Previous Experience</li>
-          <li>Blockbench</li>
-          <li>Adobe Premiere</li>
-          <li>Adobe Illustrator</li>
-          <li>GitLab</li>
-        </ul>
-        <ul>
-          <li>Misc</li>
-          <li>Hyper</li>
-        </ul>
-      </article>
-    </section>
-  </div>
-</section>
+          <div>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </header>
+        <article class="lists">
+          <ul>
+            <li>Advanced</li>
+            <li>Adobe Photoshop</li>
+            <li>Visual Studio Code</li>
+          </ul>
+          <ul>
+            <li>Working Knowledge</li>
+            <li>Adobe After Effect</li>
+            <li>Resolve Davinci</li>
+            <li>Gimp</li>
+            <li>Figma</li>
+            <li>Atom</li>
+            <li>Github</li>
+          </ul>
+          <ul>
+            <li>Previous Experience</li>
+            <li>Blockbench</li>
+            <li>Adobe Premiere</li>
+            <li>Adobe Illustrator</li>
+            <li>GitLab</li>
+          </ul>
+          <ul>
+            <li>Misc</li>
+            <li>Hyper</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+  </section>
