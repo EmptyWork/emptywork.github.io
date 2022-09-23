@@ -1,3 +1,34 @@
 {
-  "title": "About Me"
+  "title": "About Me",
+  "bioHeader": "I am <mark class='highlight'>based in<a href='https://en.wikipedia.org/wiki/indonesia' target='_blank' rel='noopener noreferrer'> Indonesia<span class='new-tab-warning'> Open a new tab </span>.</a></mark>",
+  "bio": "I am currently Majoring in Computer Science at<a href='https://ukim.ac.id' target='_blank' rel='noopener noreferrer'><mark class='highlight'>Christian University of Indonesia, Moluccas.</mark><span class='new-tab-warning'> Open a new tab </span></a><br/>I am also a <i>Certified Fiber Optic Technician</i> since 2017 by <a href='http://apjatel.id/' target='_blank' rel='noopener noreferrer'><mark class='highlight'>APJTEL.</mark><span class='new-tab-warning'> Open a new tab </span></a></div>",
+  "languanges": {
+    "advanced": {
+      "level": "advanced",
+      "lang": [
+        "HTML5",
+        "CSS3",
+        "Javascript",
+        "PHP",
+        "SQL",
+        "JSON",
+        "TailwindCSS"
+      ]
+    },
+    "working": {
+      "level": "advanced",
+      "lang": ["React", "Vue", "SCSS", "Laravel", "MongoDB", "NodeJs", "Git"]
+    },
+    "previous": {
+      "level": "advanced",
+      "lang": [
+        "C++",
+        "Python",
+        "Java",
+        "Dart",
+        "Powershell",
+        "RouterOS/Mikrotik"
+      ]
+    }
+  }
 }
