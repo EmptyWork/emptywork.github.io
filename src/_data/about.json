@@ -2,10 +2,10 @@
   "title": "About Me",
   "bioHeader": "I am <mark class='highlight'>based in<a href='https://en.wikipedia.org/wiki/indonesia' target='_blank' rel='noopener noreferrer'> Indonesia<span class='new-tab-warning'> Open a new tab </span>.</a></mark>",
   "bio": "I am currently Majoring in Computer Science at<a href='https://ukim.ac.id' target='_blank' rel='noopener noreferrer'><mark class='highlight'>Christian University of Indonesia, Moluccas.</mark><span class='new-tab-warning'> Open a new tab </span></a><br/>I am also a <i>Certified Fiber Optic Technician</i> since 2017 by <a href='http://apjatel.id/' target='_blank' rel='noopener noreferrer'><mark class='highlight'>APJTEL.</mark><span class='new-tab-warning'> Open a new tab </span></a></div>",
-  "languanges": {
-    "advanced": {
-      "level": "advanced",
-      "lang": [
+  "languagesProficient": [
+    {
+      "level": "Advanced",
+      "languages": [
         "HTML5",
         "CSS3",
         "Javascript",
@@ -15,13 +15,21 @@
         "TailwindCSS"
       ]
     },
-    "working": {
-      "level": "advanced",
-      "lang": ["React", "Vue", "SCSS", "Laravel", "MongoDB", "NodeJs", "Git"]
+    {
+      "level": "Working Knowledge",
+      "languages": [
+        "React",
+        "Vue",
+        "SCSS",
+        "Laravel",
+        "MongoDB",
+        "NodeJs",
+        "Git"
+      ]
     },
-    "previous": {
-      "level": "advanced",
-      "lang": [
+    {
+      "level": "Previous Experience",
+      "languages": [
         "C++",
         "Python",
         "Java",
@@ -29,6 +37,14 @@
         "Powershell",
         "RouterOS/Mikrotik"
       ]
+    },
+    {
+      "level": "Misc<sup>[1]</sup>",
+      "languages": [
+        "<a href='https://github.com/IBMa/equal-access' target='_blank' rel='noopener noreferrer'>IBM Equal Access<span class='new-tab-warning'> Open a new tab </span></a>",
+        "<a href='https://www.w3.org/TR/wai-aria/' target='_blank' rel='noopener noreferrer'>W3 Accessibility (WAI-ARIA) 1.1<span class='new-tab-warning'> Open a new tab </span></a>",
+        "<a href='https://wave.webaim.org/' target='_blank' rel='noopener noreferrer'>WAVE Web Accessibility Evaluation Tool<span class='new-tab-warning'> Open a new tab </span></a>"
+      ]
     }
-  }
+  ]
 }
