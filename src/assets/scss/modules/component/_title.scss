@@ -1,16 +1,34 @@
 .title {
   &-container {
     display: flex;
-    flex-direction: column;
     gap: 2rem;
-    max-width: 64rem;
+    max-width: 70rem;
     padding: 3rem 2rem;
     align-items: flex-start;
     z-index: 0;
 
     @include breakpoint-up("large") {
-      background-color: var(--clr-background);
+      // background-color: var(--clr-background);
       border-radius: 0.3em;
+    }
+
+    .title {
+      &-right {
+        flex: 1 0 auto;
+        max-width: 45ch;
+      }
+
+      &-left {
+        flex: 0 1 auto;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    @include breakpoint-down('medium') {
+      flex-direction: column-reverse;
     }
   }
 
@@ -141,11 +159,6 @@
             }
           }
         }
-      }
-
-      @include breakpoint-up("large") {
-        flex: 1 0 auto;
-        width: 70%;
       }
     }
   }
