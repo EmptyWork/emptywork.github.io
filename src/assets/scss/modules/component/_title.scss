@@ -13,12 +13,12 @@
     }
 
     .title {
-      &-right {
+      &-left {
         flex: 1 0 auto;
         max-width: 45ch;
       }
 
-      &-left {
+      &-right {
         flex: 0 1 auto;
 
         img {
