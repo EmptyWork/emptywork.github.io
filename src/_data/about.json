@@ -46,5 +46,40 @@
         "<a href='https://wave.webaim.org/' target='_blank' rel='noopener noreferrer'>WAVE Web Accessibility Evaluation Tool<span class='new-tab-warning'> Open a new tab </span></a>"
       ]
     }
+  ],
+  "toolsProficient": [
+    {
+      "level" : "Advanced",
+      "tools" : [
+        "Adobe Photoshop",
+        "Visual Studio Code"
+      ]
+    },
+    {
+      "level" : "Working Knowledge",
+      "tools" : [
+        "Adobe After Effect",
+        "Resolve Davinci",
+        "Gimp",
+        "Figma",
+        "Atom",
+        "Github"
+      ]
+    },
+    {
+      "level" : "Previous Experience",
+      "tools" : [
+        "Blockbench",
+        "Adobe Premiere",
+        "Adobe Illustrator",
+        "GitLab"
+      ]
+    },
+    {
+      "level" : "Misc",
+      "tools" : [
+        "Hyper"
+      ]
+    }
   ]
 }
