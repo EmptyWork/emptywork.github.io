@@ -124,31 +124,18 @@
           </div>
         </header>
         <article class="lists">
-          <ul>
-            <li>Advanced</li>
-            <li>Adobe Photoshop</li>
-            <li>Visual Studio Code</li>
-          </ul>
-          <ul>
-            <li>Working Knowledge</li>
-            <li>Adobe After Effect</li>
-            <li>Resolve Davinci</li>
-            <li>Gimp</li>
-            <li>Figma</li>
-            <li>Atom</li>
-            <li>Github</li>
-          </ul>
-          <ul>
-            <li>Previous Experience</li>
-            <li>Blockbench</li>
-            <li>Adobe Premiere</li>
-            <li>Adobe Illustrator</li>
-            <li>GitLab</li>
-          </ul>
-          <ul>
-            <li>Misc</li>
-            <li>Hyper</li>
-          </ul>
+          {% for proficient in about.toolsProficient %}
+            <ul>
+              <li>
+                {{ proficient.level | safe}}
+              </li>
+              {% for tool in proficient.tools %}
+                <li>
+                  {{ tool | safe}}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endfor %}
         </article>
       </section>
     </div>
