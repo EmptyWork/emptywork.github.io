@@ -47,17 +47,28 @@
       ]
     }
   ],
-  "toolsProficient": [
+  "languagesExtraInfo": [
     {
-      "level" : "Advanced",
-      "tools" : [
-        "Adobe Photoshop",
-        "Visual Studio Code"
-      ]
+      "type": "info",
+      "details": "[1] As of now, I think the knowledge about <a href='https://en.wikipedia.org/wiki/WAI-ARIA' target='_blank' rel='noopener noreferrer'><mark class='highlight'>ARIA (Accessibility — Rich Internet Application)</mark><span class='new-tab-warning'> Open a new tab </span></a> is essential; so I spend my free time researching, watching, and reading articles related to it."
     },
     {
-      "level" : "Working Knowledge",
-      "tools" : [
+      "type": "continious",
+      "details": "— If you also want to learn how to make the web accessable for everyone, visit <a target='_blank' rel='noopener noreferrer' href='https://www.accessibility-developer-guide.com/'><mark class='highlight'>https://www.accessibility-developer-guide.com/</mark><span class='new-tab-warning'> Open a new tab </span></a> they provided amazing list on things you can do to improve your website accessibility."
+    },
+    {
+      "type": "info",
+      "details": "[2] One of the best tools that <mark class='highlight'>provided comprehensive checks and details information</mark> about how to fix accessibility problems with your website."
+    }
+  ],
+  "toolsProficient": [
+    {
+      "level": "Advanced",
+      "tools": ["Adobe Photoshop", "Visual Studio Code"]
+    },
+    {
+      "level": "Working Knowledge",
+      "tools": [
         "Adobe After Effect",
         "Resolve Davinci",
         "Gimp",
@@ -67,19 +78,12 @@
       ]
     },
     {
-      "level" : "Previous Experience",
-      "tools" : [
-        "Blockbench",
-        "Adobe Premiere",
-        "Adobe Illustrator",
-        "GitLab"
-      ]
+      "level": "Previous Experience",
+      "tools": ["Blockbench", "Adobe Premiere", "Adobe Illustrator", "GitLab"]
     },
     {
-      "level" : "Misc",
-      "tools" : [
-        "Hyper"
-      ]
+      "level": "Misc",
+      "tools": ["Hyper"]
     }
   ]
 }
