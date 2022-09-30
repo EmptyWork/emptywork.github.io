@@ -2,17 +2,15 @@ module.exports = function (eleventyConfig) {
   const { DateTime } = require("luxon")
   const hljs = require("highlight.js")
   const anchor = require("markdown-it-anchor")
-  const markdownItAttrs = require("markdown-it-attrs")
   const markdownIt = require("markdown-it")({
     html: true,
     linkify: true,
     typographer: true,
     highlight: function (str, lang) {
-      if (lang && hljs.getLanguage(lang)) {
+      if (lang && hljs.getLanguage(lang))
         try {
           return hljs.highlight(str, { language: lang }).value
         } catch (__) {}
-      }
 
       return ""
     },
@@ -22,7 +20,8 @@ module.exports = function (eleventyConfig) {
         placement: "before",
       }),
     })
-    .use(markdownItAttrs, {
+    .use(require("markdown-it-bracketed-spans"))
+    .use(require("markdown-it-attrs"), {
       leftDelimiter: "{",
       rightDelimiter: "}",
       allowedAttributes: [],
@@ -31,6 +30,7 @@ module.exports = function (eleventyConfig) {
       includeLevel: [1, 2, 3, 4, 5, 6],
       containerHeaderHtml: `<div class="toc-container-header">Table of Contents</div>`,
     })
+    .use(require("markdown-it-mark"))
 
   eleventyConfig.setLibrary("md", markdownIt)
 
@@ -66,7 +66,7 @@ module.exports = function (eleventyConfig) {
     return string.split(" ").splice(0, 12).join(" ")
   })
 
-  eleventyConfig.addFilter("markdownToHTML", (text) => {
+  eleventyConfig.addFilter("renderMarkdown", (text) => {
     return markdownIt.render(text)
   })
 

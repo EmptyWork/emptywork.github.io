@@ -1,6 +1,6 @@
 {
   "title": "BikeForRupiah",
-  "subtitle": "Powered by <mark class=\"highlight\">BetaQRIS</mark>",
+  "subtitle": "Powered by ==BetaQRIS=={.highlight}",
   "tags": ["Laravel", "PHP", "Javascript", "HTML", "CSS"],
   "demoLink": "https://betaqris.com/bfr",
   "date": "2022-05-07T04:05:25.911Z",

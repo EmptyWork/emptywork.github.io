@@ -1,7 +1,10 @@
 {
   "title": "About Me",
-  "bioHeader": "I am <mark class='highlight'>based in<a href='https://en.wikipedia.org/wiki/indonesia' target='_blank' rel='noopener noreferrer'> Indonesia<span class='new-tab-warning'> Open a new tab </span>.</a></mark>",
-  "bio": "I am currently Majoring in Computer Science at<a href='https://ukim.ac.id' target='_blank' rel='noopener noreferrer'><mark class='highlight'>Christian University of Indonesia, Moluccas.</mark><span class='new-tab-warning'> Open a new tab </span></a><br/>I am also a <i>Certified Fiber Optic Technician</i> since 2017 by <a href='http://apjatel.id/' target='_blank' rel='noopener noreferrer'><mark class='highlight'>APJTEL.</mark><span class='new-tab-warning'> Open a new tab </span></a></div>",
+  "bioHeader": "I am ==based in [Indonesia.](https://en.wikipedia.org/wiki/indonesia){target=_blank rel=\"noopener noreferrer\"}=={.highlight}",
+  "bio": [
+    "I am currently Majoring in Computer Science at ==[Indonesian Christian University in the Moluccas](https://ukim.ac.id){target=_blank rel=\"noopener noreferrer\"}=={.highlight}",
+    " I am also a <i>Certified Fiber Optic Technician</i> since 2017 by ==[APJTEL](http://apjatel.id/){target=_blank rel=\"noopener noreferrer\"}=={.highlight}"
+  ],
   "languagesProficient": [
     {
       "level": "Advanced",
@@ -41,24 +44,24 @@
     {
       "level": "Misc<sup>[1]</sup>",
       "languages": [
-        "<a href='https://github.com/IBMa/equal-access' target='_blank' rel='noopener noreferrer'>IBM Equal Access<span class='new-tab-warning'> Open a new tab </span></a>",
-        "<a href='https://www.w3.org/TR/wai-aria/' target='_blank' rel='noopener noreferrer'>W3 Accessibility (WAI-ARIA) 1.1<span class='new-tab-warning'> Open a new tab </span></a>",
-        "<a href='https://wave.webaim.org/' target='_blank' rel='noopener noreferrer'>WAVE Web Accessibility Evaluation Tool<span class='new-tab-warning'> Open a new tab </span></a>"
+        "[IBM Equal Access](https://github.com/IBMa/equal-access){target=_blank rel=\"noopener noreferrer\"}",
+        "[W3 Accessibility (WAI-ARIA) 1.1](https://www.w3.org/TR/wai-aria/){target=_blank rel=\"noopener noreferrer\"}",
+        "[WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/){target=_blank rel=\"noopener noreferrer\"}"
       ]
     }
   ],
   "languagesExtraInfo": [
     {
       "type": "info",
-      "details": "[1] As of now, I think the knowledge about <a href='https://en.wikipedia.org/wiki/WAI-ARIA' target='_blank' rel='noopener noreferrer'><mark class='highlight'>ARIA (Accessibility — Rich Internet Application)</mark><span class='new-tab-warning'> Open a new tab </span></a> is essential; so I spend my free time researching, watching, and reading articles related to it."
+      "details": "[1] As of now, I think the knowledge about [==ARIA (Accessibility — Rich Internet Application)=={.highlight}](https://en.wikipedia.org/wiki/WAI-ARIA){target=_blank rel=\"noopener noreferrer\"} is essential; so I spend my free time researching, watching, and reading articles related to it."
     },
     {
       "type": "continious",
-      "details": "— If you also want to learn how to make the web accessable for everyone, visit <a target='_blank' rel='noopener noreferrer' href='https://www.accessibility-developer-guide.com/'><mark class='highlight'>https://www.accessibility-developer-guide.com/</mark><span class='new-tab-warning'> Open a new tab </span></a> they provided amazing list on things you can do to improve your website accessibility."
+      "details": "— If you also want to learn how to make the web accessable for everyone, visit [==https://www.accessibility-developer-guide.com/=={.highlight}](https://www.accessibility-developer-guide.com/){target=_blank rel=\"noopener noreferrer\"} they provided amazing list on things you can do to improve your website accessibility."
     },
     {
       "type": "info",
-      "details": "[2] One of the best tools that <mark class='highlight'>provided comprehensive checks and details information</mark> about how to fix accessibility problems with your website."
+      "details": "[2] One of the best tools that ==provided comprehensive checks and details information=={.highlight} about how to fix accessibility problems with your website."
     }
   ],
   "toolsProficient": [
