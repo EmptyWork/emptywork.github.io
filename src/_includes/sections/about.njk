@@ -47,75 +47,78 @@
         <div class="text-area">
           <header>
             <h3 class="extra">
-              {{ about.bioHeader | safe }}
+              {{ about.bioHeader | renderMarkdown | safe }}
             </h3>
           </header>
-          {{ about.bio | safe }}
-        </section>
-      </section>
-      <section class="flex languages" data-animation="fade-in">
-        <header>
-          <h3 id="languages" class="header-title">
-            <a class="header-link__access" href="#languages">
-              <span aria-hidden="true">#</span>
-              <span class="sr-only">Link to heading "languages"</span>
-            </a>
-            <span>Languages</span>
-          </h3>
-        </header>
-        <article class="lists">
-          {% for proficient in about.languagesProficient %}
-            <ul>
-              <li>
-                {{ proficient.level | safe}}
-              </li>
-              {% for language in proficient.languages %}
-                <li>
-                  {{ language | safe}}
-                </li>
-              {% endfor %}
-            </ul>
+          {% for bio in about.bio %}
+            {{ bio | renderMarkdown | safe }}
           {% endfor %}
-        </article>
+        </div>
       </section>
-      <ul class="adds">
-        {% for info in about.languagesExtraInfo %}
-          <li{% if info.type == "info" %} class="new-line" {% endif %} data-animation="right-show" data-delay="{{ loop.index }}">
-            {{ info.details | safe }}
-          </li>
+    </section>
+    <section class="flex languages" data-animation="fade-in">
+      <header>
+        <h3 id="languages" class="header-title">
+          <a class="header-link__access" href="#languages">
+            <span aria-hidden="true">#</span>
+            <span class="sr-only">Link to heading "languages"</span>
+          </a>
+          <span>Languages</span>
+        </h3>
+      </header>
+      <article class="lists">
+        {% for proficient in about.languagesProficient %}
+          <ul>
+            <li>
+              {{ proficient.level | safe}}
+            </li>
+            {% for language in proficient.languages %}
+              <li>
+                {{ language | renderMarkdown | safe}}
+              </li>
+            {% endfor %}
+          </ul>
         {% endfor %}
-      </ul>
-      <section class="flex tools" data-animation="right-show">
-        <header class="flex-header">
-          <h3 id="tools" style="display: flex; align-items: center; gap: .2em;" class="header-title">
-            <a class="header-link__access" href="#tools">
-              <span aria-hidden="true">
-                {% include 'components/svg/logo.njk' %}
-              </span>
-              <span class="sr-only">Link to heading "tools"</span>
-            </a>
+      </article>
+    </section>
+    <ul class="adds">
+      {% for info in about.languagesExtraInfo %}
+        <li{% if info.type == "info" %} class="new-line" {% endif %} data-animation="right-show" data-delay="{{ loop.index }}">
+          {{ info.details | renderMarkdown | safe }}
+        </li>
+      {% endfor %}
+    </ul>
+    <section class="flex tools" data-animation="right-show">
+      <header class="flex-header">
+        <h3 id="tools" style="display: flex; align-items: center; gap: .2em;" class="header-title">
+          <a class="header-link__access" href="#tools">
+            <span aria-hidden="true">
+              {% include 'components/svg/logo.njk' %}
+            </span>
+            <span class="sr-only">Link to heading "tools"</span>
+          </a>
           Tools
         </h3>
-          <div>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-        </header>
-        <article class="lists">
-          {% for proficient in about.toolsProficient %}
-            <ul>
+        <div>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </header>
+      <article class="lists">
+        {% for proficient in about.toolsProficient %}
+          <ul>
+            <li>
+              {{ proficient.level | safe}}
+            </li>
+            {% for tool in proficient.tools %}
               <li>
-                {{ proficient.level | safe}}
+                {{ tool | safe}}
               </li>
-              {% for tool in proficient.tools %}
-                <li>
-                  {{ tool | safe}}
-                </li>
-              {% endfor %}
-            </ul>
-          {% endfor %}
-        </article>
-      </section>
-    </div>
-  </section>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      </article>
+    </section>
+  </div>
+</section>
