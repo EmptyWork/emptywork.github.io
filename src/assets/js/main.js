@@ -205,3 +205,20 @@ const loadedDocumentBody = () => {
 }
 
 window.addEventListener("load", loadedDocumentBody, false)
+
+const makeExternalWarningForExternalLink = (parentElement) => {
+  const warningElement = document.createElement("span")
+  warningElement.classList.add("new-tab-warning")
+  warningElement.textContent = "Open a new tab"
+  parentElement.appendChild(warningElement)
+}
+
+const makeA11yExternalLink = (externalLink) => {
+  const linkWarning = externalLink.querySelector(".new-tab-warning")
+  if (linkWarning) return
+  return makeExternalWarningForExternalLink(externalLink)
+}
+
+for (const externalLink of document.querySelectorAll('[target=_blank]')) {
+  makeA11yExternalLink(externalLink)
+}
