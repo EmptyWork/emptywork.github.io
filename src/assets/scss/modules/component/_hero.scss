@@ -1,4 +1,15 @@
 .hero {
+  overflow: hidden;
+  display: flex;
+  isolation: isolate;
+  align-items: center;
+  justify-content: center;
+  max-height: 50em;
+  flex-direction: column;
+  background-color: var(--clr-background);
+  z-index: 3;
+  position: relative;
+
   .decoration {
     position: absolute;
     width: 100%;
@@ -10,7 +21,7 @@
       position: relative;
     }
   }
-  
+
   &-svg {
     &_bottom {
       z-index: -1;
