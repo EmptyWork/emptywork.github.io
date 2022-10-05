@@ -1,27 +1,4 @@
 .header {
-  overflow: hidden;
-  display: flex;
-  isolation: isolate;
-  align-items: center;
-  justify-content: center;
-  max-height: 50em;
-  flex-direction: column;
-  background-color: var(--clr-background);
-  z-index: 3;
-  position: relative;
-
-  .decoration {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    user-select: none;
-    pointer-events: none;
-
-    .relative {
-      position: relative;
-    }
-  }
-
   &_article {
     all: unset;
     position: relative;
