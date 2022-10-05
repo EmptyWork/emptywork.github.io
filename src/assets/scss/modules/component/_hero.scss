@@ -1,0 +1,41 @@
+.hero {
+  .decoration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    pointer-events: none;
+
+    .relative {
+      position: relative;
+    }
+  }
+  
+  &-svg {
+    &_bottom {
+      z-index: -1;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
+
+      svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 0.08125rem);
+        height: 9.375rem;
+
+        @include breakpoint-down("small") {
+          height: 3.125rem;
+        }
+      }
+
+      .shape-fill {
+        fill: var(--clr-background-900);
+      }
+    }
+  }
+}
