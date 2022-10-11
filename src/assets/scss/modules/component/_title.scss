@@ -27,7 +27,7 @@
       }
     }
 
-    @include breakpoint-down('medium') {
+    @include breakpoint-down("medium") {
       flex-direction: column-reverse;
     }
   }
