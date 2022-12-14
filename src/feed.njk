@@ -1,0 +1,41 @@
+---json
+{
+  "permalink": "feed.xml",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "Recent Articles - Blog | EmptyWork",
+    "subtitle": "List of all articles that was written by me, its mostly contain topics about Accessibility, PHP, HTML, CSS and Fullstack development",
+    "language": "en",
+    "author": {
+      "name": "EmptyWork",
+      "email": "contact@emptywork.my.id"
+    }
+  }
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ link.website }}">
+  <title>{{ metadata.title }}</title>
+  <subtitle>{{ metadata.subtitle }}</subtitle>
+  <link href="{{ permalink | absoluteUrl(link.website) }}" rel="self" type="application/atom+xml"/>
+  <link href="{{ link.website }}" rel="alternate" type="text/html"/>
+  <updated>{{ collections.post | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>{{ link.website }}</id>
+  <author>
+    <name>{{ metadata.author.name }}</name>
+    <email>{{ metadata.author.email }}</email>
+  </author>
+  {%- for post in collections.post | reverse %}
+  {%- set absolutePostUrl = post.url | absoluteUrl(link.website) %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content xml:lang="{{ metadata.language }}" type="html">
+        {%- set templateContent = post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) %}
+        {{ templateContent | safe }}
+    </content>
+  </entry>
+  {%- endfor %}
+</feed>

@@ -1,3 +1,5 @@
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+
 module.exports = function (eleventyConfig) {
   const { DateTime } = require("luxon")
   const hljs = require("highlight.js")
@@ -33,6 +35,12 @@ module.exports = function (eleventyConfig) {
     .use(require("markdown-it-mark"))
 
   eleventyConfig.setLibrary("md", markdownIt)
+
+  eleventyConfig.addPlugin(pluginRss, {
+    posthtmlRenderOptions: {
+      closingSingleTag: "default"
+    }
+  })
 
   eleventyConfig.addPassthroughCopy("src/assets/*.pdf")
   eleventyConfig.addPassthroughCopy({ "src/assets/js/*": "js" })
