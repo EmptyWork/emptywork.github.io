@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/EmptyWork/emptywork.github.io#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.1"
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0"
   },
   "dependencies": {
     "highlight.js": "^11.5.1",
