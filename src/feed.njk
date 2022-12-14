@@ -32,7 +32,10 @@
     <link href="{{ absolutePostUrl }}"/>
     <updated>{{ post.date | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>
-    <content xml:lang="{{ metadata.language }}" type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+    <content xml:lang="{{ metadata.language }}" type="html">
+        {%- set templateContent = post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) %}
+        {{ templateContent | safe }}
+    </content>
   </entry>
   {%- endfor %}
 </feed>
