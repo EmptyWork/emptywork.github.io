@@ -1,1 +1,28 @@
-Error testing
+---
+title : 'Page not Found | EmptyWork'
+description: "The page that you are looking for is not exist, please check for any miss typed words or make sure you are accessing the right url."
+layout: 'layouts/secondary.njk'
+---
+<main id="main" class="main">
+  <section aria-labelledby="contact" class="contact">
+    <div class="main-container">
+      <header class="section-header" data-animation="fade-in">
+        <span>
+          <a class="breadcrumb" href="/">Home</a> ›
+          <a class="breadcrumb" href="/error">Error</a>
+        </span>
+        <h1 id="contact" class="header-title">
+          <a class="header-link__access" href="#contact">
+            <span aria-hidden="true">#</span>
+            <span class="sr-only">Link to heading "Error"</span>
+          </a>
+          Page Not Found
+        </h1>
+      </header>
+      <div data-animation="fade-in" data-delay="2">
+        <p>The page that you are looking for is not exist, please check for any miss typed words or make sure you are accessing the right url.</p>
+        <a href="{{ link.website }}">Go Back</a>
+      </div>
+    </div>
+  </section>
+</main>
