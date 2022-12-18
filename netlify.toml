@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/*"
+  to = "/error"
+  status = 404
+#   query = {errorCode = ":status"}
