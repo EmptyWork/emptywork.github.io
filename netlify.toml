@@ -8,5 +8,5 @@
 
 [[redirects]]
   from = "/access"
-  to = "/show"
+  to = "/show/:id"
   query = {id = ":id"}
