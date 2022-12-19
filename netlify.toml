@@ -5,4 +5,8 @@
   from = "/*"
   to = "/error"
   status = 404
-#   query = {errorCode = ":status"}
+
+[[redirects]]
+  from = "/access"
+  to = "/error"
+  query = {id = "Testing01"}
