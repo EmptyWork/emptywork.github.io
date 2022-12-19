@@ -9,4 +9,4 @@
 [[redirects]]
   from = "/access"
   to = "/show"
-  query = {id = "Testing01"}
+  query = {id = ":id"}
