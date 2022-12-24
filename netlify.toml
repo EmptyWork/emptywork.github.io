@@ -5,8 +5,3 @@
   from = "/*"
   to = "/error"
   status = 404
-
-[[redirects]]
-  from = "/access"
-  to = "/show/:id"
-  query = {id = ":id"}
