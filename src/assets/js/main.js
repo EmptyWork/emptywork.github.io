@@ -11,7 +11,7 @@ const dataLoader = async (url) => {
   }
 }
 
-dataLoader("/settings.json")
+dataLoader('/settings.json')
 
 const schemeLoader = (scheme) => {
   localStorage.scheme = scheme
@@ -20,28 +20,28 @@ const schemeLoader = (scheme) => {
 /**
  * Mobile hamburger menu logic
  */
-const mobileButtons = document.querySelectorAll("[data-mobile-menu-button]")
-const mobileMenuSection = document.querySelector("[data-mobile-menu-section]")
-const mobileMenuLinks = document.querySelectorAll("body>ul>li")
+const mobileButtons = document.querySelectorAll('[data-mobile-menu-button]')
+const mobileMenuSection = document.querySelector('[data-mobile-menu-section]')
+const mobileMenuLinks = document.querySelectorAll('body>ul>li')
 const documentBody = document.body
 
 mobileButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    if (!mobileMenuSection.classList.contains("not-showing")) return setHidden()
+  button.addEventListener('click', () => {
+    if (!mobileMenuSection.classList.contains('not-showing')) return setHidden()
     return setShowing()
   })
 })
 
 const setShowing = () => {
-  mobileButtons[0].setAttribute("aria-label", "Close the mobile menu")
-  mobileMenuSection.classList.remove("not-showing")
-  setTimeout(() => documentBody.classList.add("no-scroll"), 300)
+  mobileButtons[0].setAttribute('aria-label', 'Close the mobile menu')
+  mobileMenuSection.classList.remove('not-showing')
+  setTimeout(() => documentBody.classList.add('no-scroll'), 300)
 }
 
 const setHidden = () => {
-  mobileButtons[0].setAttribute("aria-label", "Open the mobile menu")
-  mobileMenuSection.classList.add("not-showing")
-  documentBody.classList.remove("no-scroll")
+  mobileButtons[0].setAttribute('aria-label', 'Open the mobile menu')
+  mobileMenuSection.classList.add('not-showing')
+  documentBody.classList.remove('no-scroll')
 }
 
 /**
@@ -56,25 +56,25 @@ const toCapitalizeWord = (string) => {
 /**
  * Changing the theme based on user toggle
  */
-const themesButton = document.querySelector("[data-theme-button]")
+const themesButton = document.querySelector('[data-theme-button]')
 
 const themeHandler = () => {
-  if (!document.documentElement.classList.contains("dark")) return setDark()
+  if (!document.documentElement.classList.contains('dark')) return setDark()
   return setLight()
 }
 
-themesButton.addEventListener("click", themeHandler)
+themesButton.addEventListener('click', themeHandler)
 
 const setLight = () => {
-  document.documentElement.classList.remove("dark")
-  themesButton.setAttribute("aria-label", "Switch to dark mode")
-  localStorage.theme = "light"
+  document.documentElement.classList.remove('dark')
+  themesButton.setAttribute('aria-label', 'Switch to dark mode')
+  localStorage.theme = 'light'
 }
 
 const setDark = () => {
-  document.documentElement.classList.add("dark")
-  themesButton.setAttribute("aria-label", "Switch to light mode")
-  localStorage.theme = "dark"
+  document.documentElement.classList.add('dark')
+  themesButton.setAttribute('aria-label', 'Switch to light mode')
+  localStorage.theme = 'dark'
 }
 
 /**
@@ -83,45 +83,45 @@ const setDark = () => {
 
 console.log(
   "%cEmptywork Console%c\nemptywork dot github dot io%c\n emptywork dot github dot io%c\nEnd of Console%c\n NOTE %c DON'T COPY ANY CODE INTO HERE",
-  "background-color:#cecece; margin: 0.15em; padding: 0.1em; border-radius: 0.2em; color:transparent; font-size:1rem",
-  "background-color:rebeccapurple; margin: 0.15em; padding: 0.1em; border-radius: 0.2em; color:transparent; font-size:1rem",
-  "font-size:1.2rem",
-  "background-color:#cecece; margin: 0.15em; padding: 0.1em; border-radius: 0.2em; color:transparent; font-size:1rem",
-  "background-color:rebeccapurple; margin: 0.15em; padding: 0.1em; border-radius: 0.2em; font-size:1rem",
-  "color: rebeccapurple; font-size: 1.1rem"
+  'background-color:#cecece; margin: 0.15em; padding: 0.1em; border-radius: 0.2em; color:transparent; font-size:1rem',
+  'background-color:rebeccapurple; margin: 0.15em; padding: 0.1em; border-radius: 0.2em; color:transparent; font-size:1rem',
+  'font-size:1.2rem',
+  'background-color:#cecece; margin: 0.15em; padding: 0.1em; border-radius: 0.2em; color:transparent; font-size:1rem',
+  'background-color:rebeccapurple; margin: 0.15em; padding: 0.1em; border-radius: 0.2em; font-size:1rem',
+  'color: rebeccapurple; font-size: 1.1rem'
 )
 
 /**
  * Global Variables for Date related functions
  */
 const days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
 ]
 
 const months = [
-  "January",
-  "Febuary",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+  'January',
+  'Febuary',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
 ]
 
-const replaceStatus = document.querySelector("#activity")
-const replaceMonth = document.querySelector("#month")
-const replaceYear = document.querySelector("#year")
+const replaceStatus = document.querySelector('#activity')
+const replaceMonth = document.querySelector('#month')
+const replaceYear = document.querySelector('#year')
 
 const currentDate = new Date()
 const currentDay = currentDate.getDay()
@@ -141,7 +141,7 @@ const schedulerLoader = (schedules = {}) => {
   let currentTime = time.getUTCHours() + 9
   if (currentTime > 23) currentTime -= 23
 
-  if (replaceStatus) replaceStatus.textContent = "Idle"
+  if (replaceStatus) replaceStatus.textContent = 'Idle'
 
   setTimeout(() => {
     for (let i = 0; i < schedules.length; i++) {
@@ -150,26 +150,26 @@ const schedulerLoader = (schedules = {}) => {
 
       if (days[currentDay] === toCapitalizeWord(day)) {
         if (currentTime > startHour && currentTime < endHour) {
-          replaceStatus.textContent = "Studying"
+          replaceStatus.textContent = 'Studying'
         }
         break
       }
-      replaceStatus.textContent = "Idle"
+      replaceStatus.textContent = 'Idle'
     }
   }, 0)
 }
 
 // Injecting #main to main that doesn't have #main
 const mainElement =
-  document.querySelector("#main") ?? document.querySelector(".main")
-mainElement.id = "main"
+  document.querySelector('#main') ?? document.querySelector('.main')
+mainElement.id = 'main'
 
 /**
  * Preload
  */
 
-const preloadElement = document.querySelector(".preload")
-const delayElements = document.querySelectorAll("[data-delay]")
+const preloadElement = document.querySelector('.preload')
+const delayElements = document.querySelectorAll('[data-delay]')
 
 delayElements?.forEach(
   (el) => (el.style.transitionDelay = `${parseInt(el.dataset.delay) * 100}ms`)
@@ -178,17 +178,17 @@ delayElements?.forEach(
 const observer = new IntersectionObserver((entires) =>
   entires.forEach((entry) => {
     if (entry.isIntersecting)
-      return entry.target.classList.add("has-been-animated")
-    return entry.target.classList.remove("has-been-animated")
+      return entry.target.classList.add('has-been-animated')
+    return entry.target.classList.remove('has-been-animated')
   })
 )
 
-const toBeAnimateElements = document.querySelectorAll("[data-animation]")
+const toBeAnimateElements = document.querySelectorAll('[data-animation]')
 
 const removeElementAnimated = ({ timeout, targetElement }) => {
   const timeoutDelay = timeout + timeout * 1.5
-  setTimeout(() => targetElement?.classList.add("hidden"), timeout)
-  setTimeout(() => targetElement?.classList.add("disabled"), timeoutDelay)
+  setTimeout(() => targetElement?.classList.add('hidden'), timeout)
+  setTimeout(() => targetElement?.classList.add('disabled'), timeoutDelay)
   setTimeout(
     () => toBeAnimateElements?.forEach((el) => observer.observe(el)),
     timeout
@@ -196,25 +196,25 @@ const removeElementAnimated = ({ timeout, targetElement }) => {
 }
 
 const loadedDocumentBody = () => {
-  if (!documentBody.classList.contains("not-loaded")) return
+  if (!documentBody.classList.contains('not-loaded')) return
   removeElementAnimated({
     targetElement: preloadElement,
     timeout: 1000,
   })
-  documentBody.classList.remove("not-loaded")
+  documentBody.classList.remove('not-loaded')
 }
 
-window.addEventListener("load", loadedDocumentBody, false)
+window.addEventListener('load', loadedDocumentBody, false)
 
 const makeExternalWarningForExternalLink = (parentElement) => {
-  const warningElement = document.createElement("span")
-  warningElement.classList.add("new-tab-warning")
-  warningElement.textContent = "Open a new tab"
+  const warningElement = document.createElement('span')
+  warningElement.classList.add('new-tab-warning')
+  warningElement.textContent = 'Open a new tab'
   parentElement.appendChild(warningElement)
 }
 
 const makeA11yExternalLink = (externalLink) => {
-  const linkWarning = externalLink.querySelector(".new-tab-warning")
+  const linkWarning = externalLink.querySelector('.new-tab-warning')
   if (linkWarning) return
   return makeExternalWarningForExternalLink(externalLink)
 }
