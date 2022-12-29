@@ -1,17 +1,17 @@
-const canvas = document.querySelector("canvas")
-const ctx = canvas.getContext("2d")
+const canvas = document.querySelector('canvas')
+const ctx = canvas.getContext('2d')
 
-const currentScoreEl = document.querySelectorAll(".currentScore")
-const playButton = document.querySelector(".playButton")
-const playEl = document.querySelector(".play")
-const displayEl = document.querySelector(".pause")
+const currentScoreEl = document.querySelectorAll('.currentScore')
+const playButton = document.querySelector('.playButton')
+const playEl = document.querySelector('.play')
+const displayEl = document.querySelector('.pause')
 
 let currentScore = 0
 let animationId
 let isPause = false
 let isPlay = false
 
-const userColor = "white"
+const userColor = 'white'
 
 canvas.width = innerWidth
 canvas.height = innerHeight
@@ -132,7 +132,7 @@ const spawnEnemies = () => {
 
 const animate = () => {
   animationId = requestAnimationFrame(animate)
-  ctx.fillStyle = "rgba(0, 0, 0, 0.1)"
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'
   ctx.fillRect(0, 0, canvas.width, canvas.height)
   player.draw()
 
@@ -163,8 +163,8 @@ const animate = () => {
     const dist = Math.hypot(player.x - enemy.x, player.y - enemy.y)
 
     if (dist - player.radius - enemy.radius < 1) {
-      playEl.style.display = "flex"
-      playButton.innerHTML = "Play Again"
+      playEl.style.display = 'flex'
+      playButton.innerHTML = 'Play Again'
 
       currentScoreEl.forEach((score) => {
         score.innerHTML = currentScore
@@ -210,7 +210,7 @@ const animate = () => {
   })
 }
 
-canvas.addEventListener("click", (e) => {
+canvas.addEventListener('click', (e) => {
   const angle = Math.atan2(e.clientY - halfHeight, e.clientX - halfWidth)
   const velocity = {
     x: Math.cos(angle) * 6,
@@ -221,18 +221,18 @@ canvas.addEventListener("click", (e) => {
   )
 })
 
-playButton.addEventListener("click", () => {
+playButton.addEventListener('click', () => {
   init()
   animate()
   spawnEnemies()
   updateScore()
-  playEl.style.display = "none"
+  playEl.style.display = 'none'
 })
 
-window.addEventListener("keypress", (e) => {
+window.addEventListener('keypress', (e) => {
   e.preventDefault()
   if (e.shiftKey) {
-    if (e.key.toLocaleLowerCase() == "p") {
+    if (e.key.toLocaleLowerCase() == 'p') {
       pauseGame()
     }
   }
@@ -249,10 +249,10 @@ const pauseGame = () => {
   if (animationId && !isPause) {
     isPause = true
     cancelAnimationFrame(animationId)
-    displayEl.style.display = "flex"
+    displayEl.style.display = 'flex'
   } else {
     isPause = false
     requestAnimationFrame(animate)
-    displayEl.style.display = "none"
+    displayEl.style.display = 'none'
   }
 }
