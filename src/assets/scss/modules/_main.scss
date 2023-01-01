@@ -53,7 +53,7 @@
         letter-spacing: 0;
       }
 
-      @include breakpoint-down("large") {
+      @include breakpoint-down('large') {
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
@@ -72,7 +72,7 @@
         color: var(--clr-foreground-700);
 
         &::before {
-          content: "";
+          content: '';
           position: absolute;
           left: 0;
           border: 0.1875em solid var(--clr-foreground);
@@ -114,7 +114,7 @@
       resize: none;
     }
 
-    input[type="submit"] {
+    input[type='submit'] {
       border: none;
       color: var(--clr-white);
       background-color: var(--clr-accent);
