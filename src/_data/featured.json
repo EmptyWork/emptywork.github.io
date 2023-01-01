@@ -2,7 +2,7 @@
   "title": "BikeForRupiah",
   "subtitle": "Powered by ==BetaQRIS=={.highlight}",
   "tags": ["Laravel", "PHP", "Javascript", "HTML", "CSS"],
-  "demoLink": "https://betaqris.com/bfr",
+  "demoLink": "https://web.archive.org/web/20220909003819/https://betaqris.com/bfr",
   "date": "2022-05-07T04:05:25.911Z",
   "summary": "Simple registration system with QRCode Generator that will handle what happened with that QrCode based on the time and period of the event."
 }
