@@ -24,6 +24,21 @@
     padding-top: 3rem;
     font-size: 2rem;
     max-width: 35ch;
+    line-height: 1.2;
+    position: relative;
+    isolation: isolate;
+
+    &::before {
+      content: '"';
+      position: absolute;
+      font-size: 4em;
+      left: 0;
+      top: 0;
+      color: var(--clr-background-800);
+      font-weight: 600;
+      user-select: none;
+      z-index: -1;
+    }
   }
 
   &-bottom {
@@ -48,7 +63,7 @@
     max-width: max-content;
     padding: 0.2rem 2rem;
 
-    @include breakpoint-up("medium") {
+    @include breakpoint-up('medium') {
       flex-direction: row;
     }
   }
