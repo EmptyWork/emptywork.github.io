@@ -1,7 +1,7 @@
 <footer class="footer t-all">
   <div class="footer-container">
     <div class="footer-top">
-      <q>{{ footer.quote }}</q>
+      {{ footer.quote | renderMarkdown | safe }}
     </div>
     <div class="footer-bottom">
       <a class="brand" href="/">
