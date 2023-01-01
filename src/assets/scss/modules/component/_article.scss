@@ -118,7 +118,7 @@
   samp {
     border: 0.15em solid var(--clr-background-800);
     padding: 0 0.3em;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     // font-family: monospace, "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   }
 
@@ -264,15 +264,15 @@
       border-bottom: 0.0625em solid var(--clr-accent-dark);
     }
     a[href]:after {
-      content: " (" attr(href) ")";
+      content: ' (' attr(href) ')';
     }
     abbr[title]:after {
-      content: " (" attr(title) ")";
+      content: ' (' attr(title) ')';
     }
     .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-      content: "";
+    a[href^='javascript:']:after,
+    a[href^='#']:after {
+      content: '';
     }
     pre,
     blockquote {

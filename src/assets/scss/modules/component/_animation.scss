@@ -3,15 +3,15 @@
   transition: all 1s ease;
 }
 
-[data-animation="fade-in"] {
+[data-animation='fade-in'] {
   translate: 0 4em;
 }
 
-[data-animation="right-show"] {
+[data-animation='right-show'] {
   translate: -5em 0;
 }
 
-[data-animation="prototype-card"] {
+[data-animation='prototype-card'] {
   translate: -5em 0;
 
   &:nth-of-type(odd) {
@@ -19,7 +19,7 @@
   }
 }
 
-[data-animation="left-show"] {
+[data-animation='left-show'] {
   translate: 5em 0;
 }
 

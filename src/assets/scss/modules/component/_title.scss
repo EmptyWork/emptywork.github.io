@@ -7,7 +7,7 @@
     align-items: flex-start;
     z-index: 0;
 
-    @include breakpoint-up("large") {
+    @include breakpoint-up('large') {
       // background-color: var(--clr-background);
       border-radius: 0.3em;
     }
@@ -27,7 +27,7 @@
       }
     }
 
-    @include breakpoint-down("medium") {
+    @include breakpoint-down('medium') {
       flex-direction: column-reverse;
     }
   }
@@ -50,7 +50,7 @@
         text-transform: uppercase;
         letter-spacing: 0.1rem;
 
-        @include breakpoint-down("small") {
+        @include breakpoint-down('small') {
           font-size: 1.2rem;
         }
       }
@@ -191,7 +191,7 @@
         z-index: 0;
 
         &::before {
-          content: "";
+          content: '';
           position: absolute;
           width: 70%;
           height: 0.2rem;

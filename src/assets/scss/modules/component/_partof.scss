@@ -36,7 +36,7 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
 
-      @include breakpoint-down("medium") {
+      @include breakpoint-down('medium') {
         margin-bottom: 0.5em;
       }
     }
@@ -51,7 +51,7 @@
         svg {
           max-height: 8em;
 
-          @include breakpoint-down("medium") {
+          @include breakpoint-down('medium') {
             max-width: 100%;
             margin-top: 2em;
           }
@@ -80,7 +80,7 @@
             margin-top: 2em;
           }
 
-          @include breakpoint-down("medium") {
+          @include breakpoint-down('medium') {
             flex-direction: column;
           }
         }
@@ -147,11 +147,11 @@
       z-index: -1;
       color: var(--clr-accent);
 
-      @include breakpoint-up("medium") {
+      @include breakpoint-up('medium') {
         bottom: -4.0625em;
       }
 
-      @include breakpoint-up("large") {
+      @include breakpoint-up('large') {
         bottom: -8.0625em;
       }
     }
