@@ -46,7 +46,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: var(--clr-background-900);
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: var(--clr-foreground);
   line-height: 1.6;
   overflow-x: hidden;
@@ -106,7 +106,7 @@ a[href] {
 }
 
 .no-scroll {
-  @include breakpoint-down("small") {
+  @include breakpoint-down('small') {
     overflow: hidden !important;
 
     :is(header, main, footer) {

@@ -1,8 +1,8 @@
 {
-  "quote": "Belajar untuk menikmati sesuatu yang membuat diri-mu bosan",
-  "brand" : {
+  "quote": "Belajar untuk ==menikmati=={.highlight} sesuatu yang membuat diri-mu bosan",
+  "brand": {
     "title": "EmptyWork",
-    "svg" : "logo.njk"
+    "svg": "logo.njk"
   },
   "sublinks": [
     {

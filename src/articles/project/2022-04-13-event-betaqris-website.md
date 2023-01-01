@@ -8,6 +8,6 @@ endDate: 2022-04-06T03:41:29.825Z
 tags:
   - project
 image: /images/278038707_1063095627615778_2238829942384153761_n.jpg
-linkDemo: https://betaqris.com
+linkDemo: https://web.archive.org/web/20220909003651/https://betaqris.com/
 linkCode: https://www.instagram.com/p/CcAk3nbL3MX/
 ---
