@@ -36,7 +36,7 @@
     overflow: hidden;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       right: 0;
@@ -86,7 +86,7 @@
       }
     }
 
-    @include breakpoint-down("medium") {
+    @include breakpoint-down('medium') {
       &.cards-horizontal {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -187,7 +187,7 @@
         }
 
         &::before {
-          content: "";
+          content: '';
           position: absolute;
           width: 0%;
           left: 0;

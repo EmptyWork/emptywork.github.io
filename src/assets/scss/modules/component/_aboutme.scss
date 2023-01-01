@@ -148,7 +148,7 @@
         }
       }
 
-      @include breakpoint-down("medium") {
+      @include breakpoint-down('medium') {
         align-items: flex-start;
 
         .lists {
@@ -162,7 +162,7 @@
       }
     }
 
-    @include breakpoint-down("medium") {
+    @include breakpoint-down('medium') {
       flex-direction: column;
       align-items: center;
     }
@@ -173,7 +173,7 @@
     min-width: 25rem;
     height: 20rem;
 
-    @include breakpoint-down("medium") {
+    @include breakpoint-down('medium') {
       width: 100%;
       max-width: 25rem;
       min-width: unset;
@@ -186,7 +186,7 @@
     }
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       width: 100%;
       height: 100%;
@@ -219,7 +219,7 @@
     padding: 1rem;
     font-size: 1.2rem;
 
-    @include breakpoint-up("large") {
+    @include breakpoint-up('large') {
       padding-left: 3rem;
     }
   }

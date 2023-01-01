@@ -46,7 +46,7 @@
       "languages": [
         "[IBM Equal Access](https://github.com/IBMa/equal-access){target=_blank rel=\"noopener noreferrer\"}",
         "[W3 Accessibility (WAI-ARIA) 1.1](https://www.w3.org/TR/wai-aria/){target=_blank rel=\"noopener noreferrer\"}",
-        "[WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/){target=_blank rel=\"noopener noreferrer\"}"
+        "[WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/){target=_blank rel=\"noopener noreferrer\"} <sup>[2]</sup>"
       ]
     }
   ],

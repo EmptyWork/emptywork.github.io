@@ -24,7 +24,7 @@
     // box-shadow: 0 0.3125rem 0.625rem rgb(0 0 0 / 40%)
     box-shadow: 0 0.625rem 1.25rem hsla(0, 0%, 0%, 0.4);
 
-    @include breakpoint-down("medium") {
+    @include breakpoint-down('medium') {
       width: calc(100% - 2em);
     }
   }
@@ -38,7 +38,7 @@
     justify-content: center;
     align-items: center;
 
-    @include breakpoint-down("small") {
+    @include breakpoint-down('small') {
       min-height: 10em;
     }
 
@@ -110,7 +110,7 @@
     position: relative;
     flex: 1 1 auto;
 
-    @include breakpoint-down("small") {
+    @include breakpoint-down('small') {
       flex-direction: column-reverse;
     }
   }
@@ -144,7 +144,7 @@
         );
       }
 
-      @include breakpoint-down("small") {
+      @include breakpoint-down('small') {
         width: 100%;
       }
     }

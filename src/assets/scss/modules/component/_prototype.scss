@@ -11,11 +11,11 @@
     justify-content: center;
     gap: 7rem;
 
-    @include breakpoint-up("large") {
+    @include breakpoint-up('large') {
       margin: 3rem;
     }
 
-    @include breakpoint-down("medium") {
+    @include breakpoint-down('medium') {
       flex-direction: row;
     }
   }
@@ -31,12 +31,12 @@
     width: 100%;
 
     &:first-of-type {
-      @include breakpoint-down("medium") {
+      @include breakpoint-down('medium') {
         margin-top: 2em;
       }
     }
 
-    @include breakpoint-down("medium") {
+    @include breakpoint-down('medium') {
       flex-direction: column;
     }
 
@@ -49,7 +49,7 @@
           rotate: -6deg;
         }
 
-        @include breakpoint-down("medium") {
+        @include breakpoint-down('medium') {
           order: 0;
         }
       }
@@ -92,7 +92,7 @@
         font-size: 0.8rem;
       }
 
-      @include breakpoint-down("medium") {
+      @include breakpoint-down('medium') {
         padding-left: 0;
       }
 
@@ -184,7 +184,7 @@
     height: 20rem;
     color: var(--clr-white);
 
-    @include breakpoint-down("medium") {
+    @include breakpoint-down('medium') {
       width: 100%;
       max-width: 25rem;
     }
@@ -196,7 +196,7 @@
     }
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       width: 100%;
       height: 100%;
@@ -278,15 +278,15 @@
       z-index: -1;
       color: var(--clr-accent);
 
-      @include breakpoint-up("large") {
+      @include breakpoint-up('large') {
         top: -20.0625em;
       }
 
-      @include breakpoint-down("small") {
+      @include breakpoint-down('small') {
         top: -10em;
       }
 
-      @include breakpoint-up("xlarge") {
+      @include breakpoint-up('xlarge') {
         top: -25em;
       }
     }

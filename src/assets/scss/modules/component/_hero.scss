@@ -40,7 +40,7 @@
         width: calc(100% + 0.08125rem);
         height: 9.375rem;
 
-        @include breakpoint-down("small") {
+        @include breakpoint-down('small') {
           height: 3.125rem;
         }
       }
