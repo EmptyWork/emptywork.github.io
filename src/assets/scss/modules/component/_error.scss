@@ -30,7 +30,7 @@
       position: absolute;
       content: "";
       background-color: red;
-      background-image: linear-gradient(45deg, var(--clr-accent-dark), var(--clr-accent-light));
+      background-image: linear-gradient(90deg, var(--clr-background-900), var(--clr-accent-light));
       border-radius: 1em;
       width: calc(100% + 1em);
       height: calc(100% + 2em);
