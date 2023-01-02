@@ -2,5 +2,6 @@
   "layout": "article.njk",
   "tags": "post",
   "author": "EmptyWork",
-  "image": "/images/emptywork.png"
+  "image": "/images/emptywork.png",
+  "draft": true 
 }
