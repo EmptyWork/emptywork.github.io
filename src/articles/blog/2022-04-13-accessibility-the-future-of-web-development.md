@@ -4,7 +4,7 @@ description: While in recent years, many improvement to the website in general
   start to be better day by day, and now with the new Web 3.0, there's one front
   that seems to be forgotten by people.
 author: EmptyWork
-draft: true
+draft: false
 date: 2022-04-13T04:05:25.911Z
 tags:
   - post
