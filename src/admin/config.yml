@@ -16,13 +16,8 @@ collections:
       - {
           label: 'Draft',
           name: 'draft',
-          widget: 'select',
-          options:
-            [
-              { label: 'Publish', value: false },
-              { label: 'Draft', value: true },
-            ],
-          default: [label: 'Draft', value: true],
+          widget: "boolean", 
+          default: true,
         }
       - { label: 'Date', name: 'date', widget: 'datetime' }
       - { label: 'Tags', name: 'tags', widget: 'list', default: ['post'] }
