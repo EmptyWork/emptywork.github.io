@@ -4,10 +4,13 @@ description : "List of all articles that was written by me, its mostly contain t
 layout: 'layouts/secondary.njk'
 ---
 {% set posts = [] %}
-{% for post in collections.post | reverse %}{% set postDate = {
+{% for post in collections.post | reverse %}
+{% if post.data.draft == false %}
+{% set postDate = {
     year: post.data.date | postYear,
     fullDate: post.data.date
-  } %}{% set posts = (posts.push({
+  } %}
+  {% set posts = (posts.push({
     title: post.data.title,
     url: post.url,
     date: postDate,
@@ -15,8 +18,10 @@ layout: 'layouts/secondary.njk'
     author: post.data.author,
     slug: post.fileSlug
   }), posts) %}
+{% endif %}
 {% endfor %}{% set recentPosts = [] %}
 {% for post in collections.post | reverse %}
+{% if post.data.draft == false %}
   {% set recentPosts = (recentPosts.push({
     title: post.data.title,
     description: post.data.description,
@@ -26,6 +31,7 @@ layout: 'layouts/secondary.njk'
     date: post.data.date,
     image: post.data.image
   }), recentPosts) %}
+{% endif %}
 {% endfor %}{% set lengthRecentPosts = recentPosts | length %}
 {% if lengthRecentPosts > 3 %}{% set recentPosts = recentPosts | sliceRecent %}
 {% endif %}
