@@ -4,6 +4,26 @@
       "day": "monday",
       "startHour": 7,
       "endHour": 17
+    },
+    {
+      "day": "tuesday",
+      "startHour": 7,
+      "endHour": 17
+    },
+    {
+      "day": "wednesday",
+      "startHour": 7,
+      "endHour": 17
+    },
+    {
+      "day": "thursday",
+      "startHour": 7,
+      "endHour": 17
+    },
+    {
+      "day": "friday",
+      "startHour": 7,
+      "endHour": 17
     }
   ],
   "colorScheme": "default"
