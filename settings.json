@@ -1,4 +1,10 @@
 {
-  "schedules": [],
+  "schedules": [
+    {
+      "day": "monday",
+      "startHour": 7,
+      "endHour": 17
+    }
+  ],
   "colorScheme": "default"
 }
