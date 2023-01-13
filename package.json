@@ -10,7 +10,8 @@
     "watch:eleventy": "eleventy --serve",
     "watch:sass": "npm run sass:compressed -- --watch",
     "build": "npm run sass:compressed && eleventy",
-    "start": "npm-run-all sass:compressed --parallel watch:*"
+    "start": "npm-run-all sass:compressed --parallel watch:*",
+    "dev": "npm run watch"
   },
   "repository": {
     "type": "git",
