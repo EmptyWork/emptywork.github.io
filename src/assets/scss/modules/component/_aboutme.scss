@@ -43,12 +43,17 @@
 
     &-header {
       display: flex;
-      padding: 0 1rem;
+      padding: 0.5rem 1rem;
       width: 100%;
       justify-content: space-between;
       box-shadow: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
       flex: 0 0 auto;
-
+      
+      span[aria-hidden=true] {
+        display: block;
+        margin-top: 0.3rem;
+      }
+      
       div {
         display: flex;
         align-items: center;
