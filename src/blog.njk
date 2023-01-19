@@ -51,7 +51,7 @@ layout: 'layouts/secondary.njk'
           Recent Articles 
         </h1>
       </header>
-      <ul class="cards cards-horizontal {% if lengthRecentPosts == 3 %}cards-3-item{% endif %}">
+      <ul class="cards cards-horizontal{% if lengthRecentPosts == 3 %} cards-3-item{% endif %}">
         {%- for post in recentPosts -%}
           {% include 'components/snippets/article.njk' %}
         {% else %}
