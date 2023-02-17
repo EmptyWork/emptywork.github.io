@@ -5,7 +5,3 @@
   from = "/*"
   to = "/error"
   status = 404
-
-[[redirects]]
- from = "/articles/blog/*"
- to = "/blog/:splat"
