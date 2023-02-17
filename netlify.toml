@@ -1,7 +1,7 @@
 # Learn more about this
 # https://www.netlify.com/docs/netlify-toml-reference/
 
-[[redirects]]
-  from = "/*"
-  to = "/error"
-  status = 404
+# [[redirects]]
+#   from = "/*"
+#   to = "/error"
+#   status = 404
