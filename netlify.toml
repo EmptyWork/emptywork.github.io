@@ -2,7 +2,7 @@
 # https://www.netlify.com/docs/netlify-toml-reference/
 
 [[redirects]]
-  from = "/articles/blog/*"
+  from = "/articles/blog/:slug"
   to = "/blog/:slug"
 
 [[redirects]]
