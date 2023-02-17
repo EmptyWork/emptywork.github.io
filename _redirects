@@ -1,1 +1,1 @@
-/news/*  /blog/:splat
+/articles/blog/*  /blog/:splat
