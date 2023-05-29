@@ -1,6 +1,9 @@
 ---
 layout: 'layouts/secondary.njk'
 ---
+{% set previousPost = collections.post | getPreviousCollectionItem(page) %}
+{% set nextPost = collections.post | getNextCollectionItem(page) %}
+
 <header class="header header_article">
   <img width="1920" height="1080" loading="lazy" src="{{ image }}" alt="{{ title }}">
 </header>
