@@ -74,11 +74,15 @@
       justify-content: flex-start;
     }
 
+    &-more {
+      width: 100%;   
+    }
+
     &.cards-horizontal {
       padding: 2rem 2rem 4.5rem 2rem;
-      margin: 0 -2rem;
       scroll-snap-type: x proximity;
       overflow-y: hidden;
+
 
       &::-webkit-scrollbar {
         width: 0;
@@ -90,6 +94,14 @@
       &.cards-horizontal {
         flex-wrap: nowrap;
         overflow-x: auto;
+      }
+    }
+    
+    @include breakpoint-up('medium') {
+      &.cards-horizontal {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: space-evenly;
       }
     }
   }
