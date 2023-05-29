@@ -74,7 +74,8 @@
           position: relative;
           cursor: pointer;
 
-          &:is(:hover, :focus) {
+          &:is(:hover, :focus),
+          &:has(:is(:hover, :focus)) {
             .status-card {
               visibility: visible;
               user-select: text;
