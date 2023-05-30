@@ -13,7 +13,7 @@
       </span>
     </header>
     {% set lengthProjects = collections.project | length %}
-    {% if lengthProjects > 3 %}
+    {% if lengthProjects > 2 %}
       <ul class="cards cards-horizontal cards-more">
         {% set reverseProjects = collections.project | reverse %}
         {% set projects = reverseProjects | sliceRecent %}
