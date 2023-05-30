@@ -102,9 +102,10 @@
         flex-wrap: nowrap;
         overflow-x: auto;
 
-        &-more {
-          justify-content: space-evenly;
-        }
+      }
+      
+      &-more {
+        justify-content: space-evenly;
       }
     }
   }
