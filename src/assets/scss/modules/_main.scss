@@ -86,6 +86,17 @@
   }
 }
 
+.blog {
+  .main-container {
+    padding-inline: 0;
+
+    >*:not(ul) {
+      width: min(min(100vw - 4rem, 60rem), 58rem);
+      margin-inline: auto;
+    }
+  }
+}
+
 .work {
   position: relative;
   isolation: isolate;
@@ -101,7 +112,7 @@
   }
 
   .section-header {
-    width: min(min(100vw - 4rem,60rem),58rem);
+    width: min(min(100vw - 4rem, 60rem), 58rem);
     margin: auto;
   }
 
