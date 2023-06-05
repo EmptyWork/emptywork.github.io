@@ -48,7 +48,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('src/admin/*')
   eleventyConfig.addPassthroughCopy('settings.json')
-  eleventyConfig.addPassthroughCopy('src/robot.txt')
+  eleventyConfig.addPassthroughCopy('src/robots.txt')
 
   eleventyConfig.addFilter('postDate', (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED)
