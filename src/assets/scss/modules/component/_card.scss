@@ -69,6 +69,7 @@
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 2rem;
+    scrollbar-width: none;
 
     &.nocentered {
       justify-content: flex-start;
