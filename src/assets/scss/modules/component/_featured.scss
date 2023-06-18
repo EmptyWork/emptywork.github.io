@@ -42,6 +42,12 @@
       min-height: 10em;
     }
 
+    img {
+      all: unset;
+      width: min(100%, 26.1875rem);
+      aspect-ratio: 1/1;
+    }
+
     #svg {
       position: absolute;
       bottom: 0;
@@ -52,9 +58,10 @@
   &-left {
     color: var(--clr-white);
     padding: 2em;
+    width: min(90ch, 100%);
     background-color: var(--clr-variant-dark);
 
-    > .featured-header {
+    >.featured-header {
       display: flex;
       flex-direction: column;
       margin-bottom: 1em;
@@ -67,11 +74,9 @@
     &_project-name {
       border-radius: 0.3em;
       background-color: var(--clr-variant);
-      background-image: linear-gradient(
-        90deg,
-        var(--clr-variant-dark),
-        var(--clr-variant)
-      );
+      background-image: linear-gradient(90deg,
+          var(--clr-variant-dark),
+          var(--clr-variant));
       padding: 1em;
       width: 100%;
 
@@ -82,7 +87,7 @@
   }
 
   &-main {
-    & > * {
+    &>* {
       max-width: 45ch;
     }
 
@@ -137,11 +142,9 @@
         border: none;
         color: var(--clr-white);
         background: var(--clr-variant-dark);
-        background-image: linear-gradient(
-          -90deg,
-          var(--clr-variant),
-          var(--clr-variant-dark)
-        );
+        background-image: linear-gradient(-90deg,
+            var(--clr-variant),
+            var(--clr-variant-dark));
       }
 
       @include breakpoint-down('small') {
