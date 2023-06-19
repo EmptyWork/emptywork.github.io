@@ -3,116 +3,105 @@ title: 'Multimedia'
 ---
 <!DOCTYPE html>
 <html lang="en" class="dark">
-  <head>
 
-    {% include 'components/meta.njk' %}
+<head>
 
-    <title>Multimedia | EmptyWork</title>
+  {% include 'components/meta.njk' %}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <title>Multimedia | EmptyWork</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="/css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <script src="/js/redirect.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
 
-    <style>
-      .score {
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding: 1rem;
-        user-select: none;
-        z-index: 10;
-      }
+  <script src="/js/redirect.js"></script>
 
-      .play {
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem 1.5rem;
-        color: #000;
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        translate: x -50% y -50%;
-      }
+  <style>
+    .score {
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 1rem;
+      user-select: none;
+      z-index: 10;
+    }
 
-      .playButton {
-        margin-top: 1rem;
-        padding: 0.52rem 0.75rem;
-        border: none;
-        background-color: rebeccapurple;
-        color: #fff;
-      }
+    .play {
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 1.5rem;
+      color: #000;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      translate: x -50% y -50%;
+    }
 
-      .overlay.pause {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0,0,0,0.8);
-        display: none;
-        z-index: 2;
-        align-items: center;
-        justify-content: center;
-      }
+    .playButton {
+      margin-top: 1rem;
+      padding: 0.52rem 0.75rem;
+      border: none;
+      background-color: rebeccapurple;
+      color: #fff;
+    }
 
-      .pause {
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
-        cursor: pointer;
-        padding: 0.52rem 0.75rem;
-        border: none;
-        background-color: rebeccapurple;
-        color: #fff;
-        z-index: 10;
-      }
-    </style>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  </head>
-  <body class="t-all">
-    <main class="main">
-      <div class="overlay pause">
-        <p>PAUSE</p>
-      </div>
-      <div class="pause" onClick="pauseGame()">
+    .overlay.pause {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: none;
+      z-index: 2;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pause {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+      padding: 0.52rem 0.75rem;
+      border: none;
+      background-color: rebeccapurple;
+      color: #fff;
+      z-index: 10;
+    }
+  </style>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+
+<body class="t-all">
+  <main class="main">
+    <div class="overlay pause">
+      <p>PAUSE</p>
+    </div>
+    <div class="pause" onClick="pauseGame()">
       Pause
     </div>
-      <div class="score">
-        <span>Score:</span>
-        <span class="currentScore">0</span>
-      </div>
-      <div class="play">
-        <h1 class="currentScore">0</h1>
-        <p class="endScore">Score</p>
-        <button class="playButton">Start Game</button>
-      </div>
-      <canvas></canvas>
-    </main>
-    <script src="/js/gsap.min.js"></script>
-    <script src="/js/game.js"></script>
-    <script>
-      if (window.netlifyIdentity) {
-        window
-          .netlifyIdentity
-          .on("init", user => {
-            if (!user) {
-              window
-                .netlifyIdentity
-                .on("login", () => {
-                  document.location.href = "/admin/";
-                });
-            }
-          });
-      }
-    </script>
-  </body>
+    <div class="score">
+      <span>Score:</span>
+      <span class="currentScore">0</span>
+    </div>
+    <div class="play">
+      <h1 class="currentScore">0</h1>
+      <p class="endScore">Score</p>
+      <button class="playButton">Start Game</button>
+    </div>
+    <canvas></canvas>
+  </main>
+  <script src="/js/gsap.min.js"></script>
+  <script src="/js/game.js"></script>
+</body>
+
 </html>

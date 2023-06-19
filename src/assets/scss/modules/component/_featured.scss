@@ -44,6 +44,7 @@
 
     img {
       all: unset;
+      overflow: clip !important;
       width: min(100%, 26.1875rem);
       aspect-ratio: 1/1;
     }

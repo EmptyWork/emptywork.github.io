@@ -35,9 +35,9 @@ Honestly nothing much happens on the first day, but it's not as bad as what I th
 
 Due to the redundant of using long text on the paragraph itself I decided to shorten most of long text, and it will be list in here using number system.
 
-|id |   |
-|---|---|
-| 1 |Maluku Province Bank Indonesia Representative Office|
-| 2 |Eastern Indonesia Time (WIT)|
-| 3 |Memorandum of Understanding|
-| 4 |Older Brother/Sister|
+| id  |                                                      |
+| --- | ---------------------------------------------------- |
+| 1   | Maluku Province Bank Indonesia Representative Office |
+| 2   | Eastern Indonesia Time (WIT)                         |
+| 3   | Memorandum of Understanding                          |
+| 4   | Older Brother/Sister                                 |

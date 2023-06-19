@@ -141,9 +141,9 @@
 
     h2 {
       font-size: 1.2rem;
-      line-height: 1.2rem;
-      height: 1.2rem;
+      text-overflow: ellipsis;
       overflow: hidden;
+      white-space: nowrap;
     }
 
     .card-time {
