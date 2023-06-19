@@ -1,46 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
-  <head>
 
-    {% include 'components/meta.njk' %}
+<head>
 
-    <title>{{ title }}</title>
+  {% include 'components/meta.njk' %}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+  <title>{{ title }}</title>
 
-    <link rel="stylesheet" href="/css/style.css"/>
-    <script src="/js/loadTheme.js"></script>
-    <script src="/js/redirect.js"></script>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  </head>
-  <body class="t-all not-loaded">
-    {% include 'sections/preload.njk' %}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
+    rel="stylesheet" />
 
-    {% include 'components/nav.njk' %}
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="/js/loadTheme.js"></script>
+  <script src="/js/redirect.js"></script>
+</head>
 
-    {% include 'sections/hero.njk' %}
+<body class="t-all not-loaded">
+  {% include 'sections/preload.njk' %}
 
-    {{ content | safe }}
+  {% include 'components/nav.njk' %}
 
-    {% include 'sections/footer.njk' %}
+  {% include 'sections/hero.njk' %}
 
-    <script src="/js/main.js"></script>
-    <script>
-      if (window.netlifyIdentity) {
-        window
-          .netlifyIdentity
-          .on("init", user => {
-            if (!user) {
-              window
-                .netlifyIdentity
-                .on("login", () => {
-                  document.location.href = "/admin/";
-                });
-            }
-          });
-      }
-    </script>
-  </body>
+  {{ content | safe }}
+
+  {% include 'sections/footer.njk' %}
+
+  <script src="/js/main.js"></script>
+</body>
+
 </html>
