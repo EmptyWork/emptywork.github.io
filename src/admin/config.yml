@@ -13,12 +13,7 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Author', name: 'author', widget: 'string' }
-      - {
-          label: 'Draft',
-          name: 'draft',
-          widget: "boolean", 
-          default: true,
-        }
+      - { label: 'Draft', name: 'draft', widget: 'boolean', default: true }
       - { label: 'Date', name: 'date', widget: 'datetime' }
       - { label: 'Tags', name: 'tags', widget: 'list', default: ['post'] }
       - { label: 'Cover Images', name: 'image', widget: 'image' }

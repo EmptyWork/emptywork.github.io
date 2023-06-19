@@ -17,6 +17,7 @@ Right now, we are living in the future and at the crossroad of the _next-gen of 
 
 **Web 3.0 will probably dominate website development for the next decades**. Developer often _**neglects**_ one of the aspects of web development which is ==accessibility==.
 
+
 ## What is Accessibility?
 
 **Accessibility** can be explained to make applications more inclusive and easier to navigate for those with special needs. With that in mind, accessibility is significant in this time and age. More access to the internet across the globe also means more people with a wide range of special needs started to have access to the internet.
@@ -30,6 +31,7 @@ Right now, we are living in the future and at the crossroad of the _next-gen of 
 **Both projects** aim to help people make the web more accessible and easy to navigate. IBM is more focused on providing a tool to test and help develop a better experience for people with special needs. ==A11yProjects wants to give easy and concise steps== for developers to follow when creating a new system or website.
 
 ## The future of Accessibility
+
 
 Talking about the future of website development is quite a stretch in itself. I think the future state of accessibility is quite mixed. Because even with all initiatives launched by big companies and more developers caring about accessibility, however, ==the rise of Web 3.0 has accelerated the pace of development== and more people motivated to learn more about web development, but it also has become a distraction for newer developers who started learning web development and who are not familiar with accessibility could result in a long time for adoption by the masses.
 

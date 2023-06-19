@@ -1,7 +1,13 @@
 <section aria-labelledby="prototypes" class="prototype">
   <svg class="prototype-svg_top" id="svg-prototype-top" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg">
-    <path d="M 0,400 C 0,400 0,133 0,133 C 284.5,111.5 569,90 809,90 C 1049,90 1244.5,111.5 1440,133 C 1440,133 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="currentColor" fill-opacity="0.53" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path>
-    <path d="M 0,400 C 0,400 0,266 0,266 C 241.5,270 483,274 723,274 C 963,274 1201.5,270 1440,266 C 1440,266 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="currentColor" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-1" transform="rotate(-180 720 200)"></path>
+    <path
+      d="M 0,400 C 0,400 0,133 0,133 C 284.5,111.5 569,90 809,90 C 1049,90 1244.5,111.5 1440,133 C 1440,133 1440,400 1440,400 Z"
+      stroke="none" stroke-width="0" fill="currentColor" fill-opacity="0.53"
+      class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path>
+    <path
+      d="M 0,400 C 0,400 0,266 0,266 C 241.5,270 483,274 723,274 C 963,274 1201.5,270 1440,266 C 1440,266 1440,400 1440,400 Z"
+      stroke="none" stroke-width="0" fill="currentColor" fill-opacity="1"
+      class="transition-all duration-300 ease-in-out delay-150 path-1" transform="rotate(-180 720 200)"></path>
   </svg>
   <div class="main-container">
     <header class="section-header" data-animation="fade-in">
@@ -10,19 +16,22 @@
           <span aria-hidden="true">#</span>
           <span class="sr-only">Link to heading "prototype"</span>
         </a>
-          Prototype
-        </h2>
+        Prototype
+      </h2>
       <span class="header-desc">
-          Prototypes that I do while learning new thing.
-        </span>
+        Prototypes that I do while learning new thing.
+      </span>
     </header>
     <ul class="prototypes">
       {%- for post in collections.prototype | reverse -%}
-        {% include 'components/snippets/prototype.njk' %}
+      {% include 'components/snippets/prototype.njk' %}
       {%- endfor -%}
     </ul>
   </div>
   <svg class="prototype-svg_bottom" id="svg-prototype-bottom" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg">
-    <path d="M 0,400 C 0,400 0,200 0,200 C 257,219.5 514,239 754,239 C 994,239 1217,219.5 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="currentColor" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+    <path
+      d="M 0,400 C 0,400 0,200 0,200 C 257,219.5 514,239 754,239 C 994,239 1217,219.5 1440,200 C 1440,200 1440,400 1440,400 Z"
+      stroke="none" stroke-width="0" fill="currentColor" fill-opacity="1"
+      class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
   </svg>
 </section>
