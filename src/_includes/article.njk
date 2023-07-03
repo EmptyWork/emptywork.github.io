@@ -28,10 +28,20 @@ layout: 'layouts/secondary.njk'
       <main>
         {{ content | safe }}
       </main>
-      {% if previousPost %}Previous Blog Post: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
-      {% endif %}
-      {% if nextPost %}Next Blog Post: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
-      {% endif %}
+      <section class="more">
+        {% if previousPost %}
+        <div class="more-previous">
+          Previous Blog Post<br /> <a href="{{ previousPost.url }}">{{ previousPost.data.title }}
+          </a>
+        </div>
+        {% endif %}
+        {% if nextPost %}
+        <div class="more-next">
+          Next Blog Post<br /> <a href="{{ nextPost.url }}">{{ nextPost.data.title }}
+          </a>
+        </div>
+        {% endif %}
+      </section>
     </article>
   </div>
 </main>
