@@ -397,4 +397,24 @@
       }
     }
   }
+
+  .more {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(20em, 60ch), 29.5rem));
+    margin-top: 1em;
+    gap: 1em;
+
+    div {
+      padding: 1rem;
+      background: var(--clr-background);
+
+      a {
+        display: block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+
+  }
 }
