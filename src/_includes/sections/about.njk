@@ -47,11 +47,11 @@
         <div class="text-area">
           <header>
             <h3 class="extra">
-              {{ about.bioHeader | renderMarkdown | safe }}
+              {{ about.bioHeader | renderMarkdownInline | safe }}
             </h3>
           </header>
           {% for bio in about.bio %}
-            {{ bio | renderMarkdown | safe }}
+            {{ bio | renderMarkdownInline | safe }}
           {% endfor %}
         </div>
       </section>
@@ -74,7 +74,7 @@
             </li>
             {% for language in proficient.languages %}
               <li>
-                {{ language | renderMarkdown | safe}}
+                {{ language | renderMarkdownInline | safe}}
               </li>
             {% endfor %}
           </ul>
@@ -84,7 +84,7 @@
     <ul class="adds">
       {% for info in about.languagesExtraInfo %}
         <li{% if info.type == "info" %} class="new-line" {% endif %} data-animation="right-show" data-delay="{{ loop.index }}">
-          {{ info.details | renderMarkdown | safe }}
+          {{ info.details | renderMarkdownInline | safe }}
         </li>
       {% endfor %}
     </ul>
