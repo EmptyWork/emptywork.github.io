@@ -1,0 +1,54 @@
+{
+  "title": "Contacts",
+  "desc": "Get in touch with me",
+  "summary": "**Hi There! how is your day?** I hope you have ==a fantastic=={.highlight} one. **If you are a recruiter**, please check my resume [in here](/assets/Curriculum%20Vitae.pdf){lang=en target=_blank}<sup>[EN]</sup> / [or here](/assets/Curriculum%20Vitae%20-%20ID.pdf){lang=id target=_blank}<sup>[ID]</sup> otherwise you can contact me via these methods",
+  "mainSocials": [
+    {
+      "name": "via. e-mail",
+      "desc": "mailto:contact@emptywork.my.id",
+      "action": "mailto:contact@emptywork.my.id",
+      "target": "_blank",
+      "svg": "email.njk"
+    },
+    {
+      "name": "via. chat",
+      "target": "_blank",
+      "svg": "chat.njk"
+    }
+  ],
+  "socials": [
+    {
+      "name": "x / twitter",
+      "action": "",
+      "target": ""
+    },
+    {
+      "name": "linkedin",
+      "action": "https://linkedin.com/in/stevarth-hoke/",
+      "target": "_blank"
+    },
+    {
+      "name": "youtube",
+      "action": "",
+      "target": "",
+      "hidden": true
+    },
+    {
+      "name": "odysee",
+      "action": "",
+      "target": "",
+      "hidden": true
+    },
+    {
+      "name": "reddit",
+      "action": "",
+      "target": "",
+      "hidden": true
+    },
+    {
+      "name": "discord",
+      "action": "",
+      "target": ""
+    }
+  ]
+}
