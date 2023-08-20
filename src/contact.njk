@@ -9,19 +9,34 @@ layout: 'layouts/secondary.njk'
       <header class="section-header" data-animation="fade-in">
         <span>
           <a class="breadcrumb" href="/">Home</a> ›
-          <a class="breadcrumb" href="/contact">Contact</a>
+          <a class="breadcrumb" href="/contact">{{ contact.title }}</a>
         </span>
         <h1 id="contact" class="header-title">
           <a class="header-link__access" href="#contact">
             <span aria-hidden="true">#</span>
             <span class="sr-only">Link to heading "contact"</span>
           </a>
-          Get in touch with me
+          {{ contact.desc }}
         </h1>
       </header>
-      <div data-animation="fade-in" data-delay="2">
-        <p>This page is currently being re-develop</p>
-        <p>Check back on few weeks, or in the next couple of months</p>
+      <div class="contact-container" data-animation="fade-in" data-delay="2">
+        <p class="contact-summary">{{ contact.summary | renderMarkdownInline | safe }}</p>
+        <ul class=social-container>
+          {% for social in contact.mainSocials %}
+          <li data-animation="fade-in" data-delay="{{ loop.index }}">
+            {% include 'components/snippets/social-items.njk' %}
+          </li>
+          {% endfor %}
+        </ul>
+        <ul class="social-container social-container__small">
+          {% for social in contact.socials %}
+          {% if social.hidden !== true %}
+          <li data-animation="fade-in" data-delay="{{ loop.index }}">
+            {% include 'components/snippets/social-items.njk' %}
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
       </div>
     </div>
   </section>
