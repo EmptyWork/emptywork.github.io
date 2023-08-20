@@ -1,0 +1,14 @@
+<a class="social-item" {% if social.action %} {% if social.target %} target="{{ social.target }}" {% endif %}
+    href="{{ social.action }}" {% else %} disabled aria-disabled="true" {% endif %}>
+    <div class="social-item-text">
+        <h2>
+            {{ social.name }}
+        </h2>
+        {% if social.desc %}
+        <span>{{ social.desc }}</span>
+        {% endif %}
+    </div>
+    {% if social.svg %}
+    {% include 'components/svg/' + social.svg %}
+    {% endif %}
+</a>
