@@ -1,8 +1,7 @@
 ---
 title: Sai Go in The Rain - Website
 status: 1
-description: Preview dari implementasi routes pada CodeIgniter3, selain itu juga
-  merupakan contoh website yang dibuat untuk Tugas pertama pada perkuliahan PBP.
+description: Preview dari implementasi routes pada CodeIgniter3, selain itu juga merupakan contoh website yang dibuat untuk Tugas pertama pada perkuliahan PBP.
 date: 2021-01-26
 language: id
 tags:

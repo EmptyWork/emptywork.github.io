@@ -1,8 +1,7 @@
 ---
 title: Ew-Javascript
 status: 2
-description: Collection of JavaScript native based application, 
- way to approach the problem with ES6 and It's Implementation.
+description: Collection of JavaScript native based application, way to approach the problem with ES6 and It's Implementation.
 date: 2021-01-26
 language: en
 tags:
