@@ -12,7 +12,7 @@ module.exports = function (eleventyConfig) {
       if (lang && hljs.getLanguage(lang))
         try {
           return hljs.highlight(str, { language: lang }).value
-        } catch (__) {}
+        } catch (__) { }
 
       return ''
     },
@@ -77,6 +77,10 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter('renderMarkdown', (text) => {
     return markdownIt.render(text)
+  })
+
+  eleventyConfig.addFilter('renderMarkdownInline', (text) => {
+    return markdownIt.renderInline(text)
   })
 
   eleventyConfig.addFilter('featuredDate', (string) => {
