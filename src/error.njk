@@ -1,7 +1,8 @@
 ---
 title : 'Page not Found | EmptyWork'
-description: "The page that you are looking for is not exist, please check for any miss typed words or make sure you are accessing the right url."
+description: "The page that you are looking for does not exist"
 layout: 'layouts/secondary.njk'
+style: 'error.css'
 ---
 <main id="main" class="main">
   <section aria-labelledby="contact" class="contact">
@@ -11,7 +12,7 @@ layout: 'layouts/secondary.njk'
           <a class="breadcrumb" href="/">Home</a> ›
           <span class="breadcrumb">Page Not Found</span>
         </span>
-        <h1 id="contact" class="header-title">
+        <h1 id="error" class="header-title">
           <a class="header-link__access" href="#contact">
             <span aria-hidden="true">#</span>
             <span class="sr-only">Link to heading "Error"</span>
@@ -19,9 +20,33 @@ layout: 'layouts/secondary.njk'
           Page Not Found
         </h1>
       </header>
-      <div class="error-notice" data-animation="fade-in" data-delay="2">
-        <p>The page that you are looking for is not exist, please check for any miss typed words or make sure you are accessing the right url.</p>
-        <a class="title-action" href="{{ link.website }}">Go Back</a>
+      <div class="error-container">
+        <div class="error-summary" data-animation="fade-in">
+          <div class="error-decorative" data-animation="fade-in">
+            {% include "components/svg/logo.njk" %}
+            <div class="decorative-left">
+              <p class="decorative decorative-exclamation">!</p>
+              <p class="decorative decorative-question">?</p>
+            </div>
+          </div>
+          <h2 data-animation="fade-in" data-delay="1"><mark class="big-text highlight">404</mark> — The page that you
+            are looking for
+            does not exist</h2>
+          <p data-animation="fade-in" data-delay="2">Please <mark class="highlight">make sure that the URL</mark> you
+            typed are
+            correct, if you think that the
+            <mark class="highlight">URL is correct</mark> but you still cannot seems to access it please <a
+              href="mailto:contact@emptywork.my.id">contact me via email</a>
+          </p>
+        </div>
+        <ul class="error-button">
+          <li data-animation="fade-in" data-delay="4">
+            <a class="error-link" href="{{ link.website }}">Go to Home</a>
+          </li>
+          <li data-animation="fade-in" data-delay="5">
+            <a class="error-link" href="javascript:history.back()">Go Back</a>
+          </li>
+        </ul>
       </div>
     </div>
   </section>

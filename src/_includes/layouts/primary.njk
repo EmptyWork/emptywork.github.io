@@ -11,10 +11,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
     rel="stylesheet" />
-
+  {% if style %}
+  <link rel="stylesheet" href="/css/{{ style }}" />
+  {% else %}
   <link rel="stylesheet" href="/css/style.css" />
-  <script src="/js/loadTheme.js"></script>
-  <script src="/js/redirect.js"></script>
+  {% endif %}
+  <script src="/js/loadTheme.js" defer></script>
+  <script src="/js/redirect.js" defer></script>
 </head>
 
 <body class="t-all not-loaded">

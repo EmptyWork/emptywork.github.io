@@ -1,10 +1,11 @@
 html:root {
-  --clr-accent: hsl(270, 50%, 40%);
-  --clr-accent-light: hsl(270, 84%, 72%);
-  --clr-accent-dark: hsl(270, 71%, 22%);
+  --hsl-main: 270;
+  --clr-accent: hsl(var(--hsl-main), 50%, 40%);
+  --clr-accent-light: hsl(var(--hsl-main), 84%, 72%);
+  --clr-accent-dark: hsl(var(--hsl-main), 71%, 22%);
 
-  --clr-href: hsl(270, 80%, 50%);
-  --clr-href-visited: hsl(270, 70%, 22%);
+  --clr-href: hsl(var(--hsl-main), 80%, 50%);
+  --clr-href-visited: hsl(var(--hsl-main), 70%, 22%);
 
   --clr-background: hsl(0, 0%, 95%);
   --clr-background-900: hsl(0, 0%, 88%);
