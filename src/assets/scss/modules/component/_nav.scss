@@ -118,7 +118,25 @@
       }
 
       li {
+        width: 100%;
         list-style: none;
+
+        a {
+          display: block;
+          text-transform: uppercase;
+          height: 5em;
+
+          div {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            translate: -50% -50%;
+          }
+
+          &:is(:hover, :focus) {
+            font-weight: 700;
+          }
+        }
       }
     }
   }
@@ -142,6 +160,7 @@
       list-style: none;
       text-transform: uppercase;
       letter-spacing: 0rem;
+
       a {
         position: relative;
         z-index: 1;
