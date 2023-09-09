@@ -59,20 +59,20 @@ const toCapitalizeWord = (string) => {
 const themesButton = document.querySelector('[data-theme-button]')
 
 const themeHandler = () => {
-  if (!document.documentElement.classList.contains('dark')) return setDark()
+  if (document.documentElement.dataset.theme !== "dark") return setDark()
   return setLight()
 }
 
 themesButton.addEventListener('click', themeHandler)
 
 const setLight = () => {
-  document.documentElement.classList.remove('dark')
+  document.documentElement.dataset.theme = "light"
   themesButton.setAttribute('aria-label', 'Switch to dark mode')
   localStorage.theme = 'light'
 }
 
 const setDark = () => {
-  document.documentElement.classList.add('dark')
+  document.documentElement.dataset.theme = "dark"
   themesButton.setAttribute('aria-label', 'Switch to light mode')
   localStorage.theme = 'dark'
 }
