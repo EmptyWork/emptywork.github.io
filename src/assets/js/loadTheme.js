@@ -3,11 +3,11 @@ if (
   (!('theme' in localStorage) &&
     window.matchMedia('(prefers-color-scheme: dark)').matches)
 ) {
-  document.documentElement.classList.add('dark')
+  document.documentElement.dataset.theme = "dark"
 } else {
-  document.documentElement.classList.remove('dark')
+  document.documentElement.dataset.theme = "light"
 }
 
 if (localStorage.scheme) {
-  document.documentElement.classList.add(localStorage.scheme)
+  document.documentElement.dataset.theme = localStorage.scheme
 }
