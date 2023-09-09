@@ -27,7 +27,7 @@ html:root {
   --bx-shadow-two-side: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.2),
     -0.3125rem -0.3125rem 0.625rem hsla(0, 0%, 100%, 0.8);
 
-  &.sunglow {
+  &[data-theme=sunglow] {
     --clr-accent: hsl(40, 56%, 40%);
     --clr-accent-light: hsl(40, 56%, 72%);
     --clr-accent-dark: hsl(40, 56%, 22%);
@@ -44,13 +44,13 @@ html:root {
     --clr-foreground-800: hsl(40, 56%, 25%);
     --clr-foreground-700: hsl(40, 56%, 38%);
 
-    &.dark {
+    &[data-theme=dark] {
       --clr-href: hsl(40, 56%, 72%);
       --clr-href-visited: hsl(40, 56%, 40%);
     }
   }
 
-  &.dark {
+  &[data-theme=dark] {
     --clr-href: hsl(270, 84%, 72%);
     --clr-href-visited: hsl(270, 50%, 40%);
     --clr-background: hsl(0, 0%, 10%);
