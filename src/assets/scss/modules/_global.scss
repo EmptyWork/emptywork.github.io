@@ -18,7 +18,7 @@ html:root {
     display: block;
   }
 
-  &.dark {
+  &[data-theme="dark"] {
     .themes {
       background-color: var(--clr-accent);
       color: var(--clr-accent-dark);
@@ -117,6 +117,7 @@ a[href] {
 
 .not-loaded {
   overflow: hidden;
+
   :is(header, main, footer, nav) {
     visibility: hidden;
     user-select: none;
