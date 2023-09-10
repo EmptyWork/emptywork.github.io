@@ -15,7 +15,7 @@ image: https://1.bp.blogspot.com/-tRRG9NHocUs/Xjttr2aObxI/AAAAAAAAHnE/wo0QiGR1g3
 
 > The internship happens for the period _November 1st, 2022 until March 31st, 2023_
 
-==The day starts around 7:42 am==, and I prepare to go to campus to meet up with my head of program study, who is also my mentor for the internship before we prepare to go to the Office<sup>[[1]](#definition)</sup>. _(Representative Office)_ located at Pattimura Street, No. 7, Ambon, Maluku.
+==The day starts around 7:42 am==, and I prepare to go to campus to meet up with my head of program study, who is also my mentor for the internship before we prepare to go to the Office<sup>[[1]](#definition)</sup>. _(Representative Office)_ located at [Pattimura Street, No. 7, Ambon, Maluku](https://goo.gl/maps/BnmtRKDAzr4k2VvC7).
 
 ## The Meeting & Introduction
 
@@ -33,7 +33,7 @@ Nothing much happened on the first day, but it was not as bad and eventful as I 
 
 Due to the excessive use of long text in the paragraph, I decided to shorten most of the long text. It will be listed here using a number system.
 
-| id  |                                                      |
+| #   | Def                                                  |
 | --- | ---------------------------------------------------- |
 | 1   | Maluku Province Bank Indonesia Representative Office |
 | 2   | Eastern Indonesia Time (WIT)                         |
