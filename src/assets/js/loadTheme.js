@@ -8,6 +8,6 @@ if (
   document.documentElement.dataset.theme = "light"
 }
 
-if (localStorage.scheme) {
-  document.documentElement.dataset.theme = localStorage.scheme
+if (localStorage.theme) {
+  document.documentElement.dataset.theme = localStorage.theme
 }
