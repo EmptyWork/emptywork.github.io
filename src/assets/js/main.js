@@ -63,7 +63,7 @@ const themeHandler = () => {
   return setLight()
 }
 
-themesButton.addEventListener('click', themeHandler)
+themesButton?.addEventListener('click', themeHandler)
 
 const setLight = () => {
   document.documentElement.dataset.theme = "light"
