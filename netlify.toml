@@ -18,7 +18,7 @@
 
 [[redirects]]
   from = "/signatures/*"
-  to = "/images/signatures/*"
+  to = "/images/signatures/:splat"
   status = 200
 
 [[redirects]]
