@@ -44,7 +44,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('src/assets/*.pdf')
   eleventyConfig.addPassthroughCopy({ 'src/assets/js/*': 'js' })
-  eleventyConfig.addPassthroughCopy({ 'src/assets/images/*': 'images' })
+  eleventyConfig.addPassthroughCopy({ 'src/assets/images': 'images' })
 
   eleventyConfig.addPassthroughCopy('src/admin/*')
   eleventyConfig.addPassthroughCopy('settings.json')
