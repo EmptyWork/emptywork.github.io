@@ -224,10 +224,13 @@
       padding-left: 3rem;
     }
   }
+
+  .note {
+    rotate: -3deg;
+  }
 }
 
 .note {
-  rotate: -3deg;
   display: flex;
   flex: 0 0 auto;
   position: relative;
@@ -238,12 +241,11 @@
   height: 100%;
   transition: all 300ms ease-in-out;
 
-  &>svg {
+  & > svg {
     position: absolute;
     right: 0.1rem;
     bottom: 0.1rem;
     color: hsl(0, 0%, 11%);
-    z-index: -1;
   }
 
   &-heading {
