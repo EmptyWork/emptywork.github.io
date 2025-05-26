@@ -21,7 +21,7 @@ layout: 'layouts/secondary.njk'
       </header>
       <div class="contact-container" data-animation="fade-in" data-delay="2">
         <p class="contact-summary">{{ contact.summary | renderMarkdownInline | safe }}</p>
-        <ul class=social-container>
+        <ul class="social-container">
           {% for social in contact.mainSocials %}
           <li data-animation="fade-in" data-delay="{{ loop.index }}">
             {% include 'components/snippets/social-items.njk' %}
