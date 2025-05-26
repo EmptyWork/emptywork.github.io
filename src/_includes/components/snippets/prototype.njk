@@ -30,7 +30,7 @@
           <span aria-hidden="true">#</span>
           <span class="sr-only">Link to heading "{{ post.data.title }}"</span>
         </a>
-        <h3 id="{{ post.fileSlug }}-header">{{ post.data.title }}</h3>
+        <h3 id="{{ post.fileSlug }}-header">{{ post.data.title | breakLine | safe}}</h3>
       </header>
       <p lang="{{ post.data.language }}">
         {{  post.data.description }}
