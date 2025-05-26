@@ -4,7 +4,7 @@
       <header class="note-header">
         <div>
           {% include 'components/svg/logo.njk' %}
-          <h3 id="{{ post.fileSlug }}-code">{{ post.fileSlug | truncate(12) }}.dev</h3>
+          <h3 id="{{ post.fileSlug }}-code">dev#{{ post.fileSlug | serializeTitle }}</h3>
         </div>
         <div>
           <span class="dot"></span>
