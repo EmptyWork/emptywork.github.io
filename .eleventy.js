@@ -51,6 +51,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/robots.txt')
 
   eleventyConfig.addFilter('postDate', (dateObj) => {
+    if (typeof (dateObj) !== 'object') dateObj = new Date(dateObj)
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED)
   })
 
@@ -73,6 +74,19 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter('trimText', (string) => {
     return string.split(' ').splice(0, 12).join(' ')
+  })
+    
+  eleventyConfig.addFilter('cutText', (string, size) => {
+    return string.split('-').splice(0, size).join('-')
+  })
+
+  eleventyConfig.addFilter('serializeTitle', (string, yearSplice = 2) => {
+    const splitedTitle = string.split('-')
+    const [year, ...title] = splitedTitle
+    const titleAbbreviations = title.map(title => title.split("")[0]).join("")
+    const yearLength = year.length
+    const lastDigitsYear = year.split("").splice(yearLength - yearSplice , yearLength).join("")
+    return `${lastDigitsYear}-${titleAbbreviations}` 
   })
 
   eleventyConfig.addFilter('renderMarkdown', (text) => {
