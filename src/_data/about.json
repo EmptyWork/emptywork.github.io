@@ -2,8 +2,8 @@
   "title": "About Me",
   "bioHeader": "I am ==based in [Indonesia.](https://en.wikipedia.org/wiki/indonesia){target=_blank rel=\"noopener noreferrer\"}=={.highlight}",
   "bio": [
-    "I am currently Majoring in Computer Science at ==[Indonesian Christian University in the Moluccas](https://ukim.ac.id){target=_blank rel=\"noopener noreferrer\"}=={.highlight}",
-    " I am also a <i>Certified Fiber Optic Technician</i> since 2017 by ==[APJTEL](http://apjatel.id/){target=_blank rel=\"noopener noreferrer\"}=={.highlight}"
+    "I got my bachelor of Computer Science from ==[Indonesian Christian University in the Moluccas](https://ukim.ac.id){target=_blank rel=\"noopener noreferrer\"}=={.highlight};",
+    "Currently I am applying for a scholarship for ==master and p.hd=={.highlight};"
   ],
   "languagesProficient": [
     {
@@ -27,7 +27,8 @@
         "Laravel",
         "MongoDB",
         "NodeJs",
-        "Git"
+        "Git",
+        "Flutter"
       ]
     },
     {

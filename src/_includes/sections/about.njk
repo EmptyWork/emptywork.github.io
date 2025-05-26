@@ -53,7 +53,7 @@
             </h3>
           </header>
           {% for bio in about.bio %}
-            {{ bio | renderMarkdownInline | safe }}
+            <span>{{ bio | renderMarkdownInline | safe }}</span>
           {% endfor %}
         </div>
       </section>
