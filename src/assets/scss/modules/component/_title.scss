@@ -19,10 +19,48 @@
       }
 
       &-right {
-        flex: 0 1 auto;
+        position: relative;
+        width: 25rem;
+        height: 20rem;
 
-        img {
+        @include breakpoint-down('medium') {
           width: 100%;
+        }
+
+        &:hover {
+          .note.has-been-animated {
+            rotate: 0deg;
+            scale: 1.1;
+          }
+        }
+
+        .note.has-been-animated {
+          rotate: 3deg;
+          --_scale: 300ms;
+          --_rotate: 700ms;
+        }
+
+        .note {
+          rotate: -10deg;
+        }
+
+        &::before {
+          rotate: 9deg;
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: var(--clr-complementary);
+          left: -0.7rem;
+          border-radius: 40% 20% / 90%;
+          animation: rolling 3s infinite ease-in;
+        }
+
+        @keyframes rolling {
+          50% {
+            rotate: -9deg;
+            scale: 1.01;
+          }
         }
       }
     }
@@ -185,6 +223,7 @@
         font-weight: 600;
       }
 
+
       #activity {
         display: inline-block;
         position: relative;
@@ -200,6 +239,12 @@
           border-bottom: 0.1rem dashed var(--clr-accent);
         }
       }
+    }
+
+    #year,
+    svg,
+    #month {
+      color: var(--clr-foreground-900)
     }
 
     svg {
