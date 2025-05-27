@@ -1,0 +1,21 @@
+.header {
+  &_article {
+    all: unset;
+    position: relative;
+    width: 100vw;
+    aspect-ratio: 16/9;
+    height: fit-content;
+    max-height: 60vh;
+    overflow: hidden;
+    margin: 0 auto;
+
+    img {
+      top: 50%;
+      translate: 0 -50%;
+      position: absolute;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
