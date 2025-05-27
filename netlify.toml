@@ -16,13 +16,11 @@
   from = "/blog/*"
   to = "/error"
   status = 404
-  force = true
 
 [[redirects]]
   from = "/blog/*/*"
   to = "/error"
   status = 404
-  force = true
 
 [[redirects]]
   from = "/*"
