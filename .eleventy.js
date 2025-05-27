@@ -51,6 +51,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/robots.txt')
 
   eleventyConfig.addFilter('postDate', (dateObj) => {
+    if (typeof (dateObj) !== 'object') dateObj = new Date(dateObj)
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED)
   })
 
@@ -73,6 +74,32 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter('trimText', (string) => {
     return string.split(' ').splice(0, 12).join(' ')
+  })
+
+  eleventyConfig.addFilter('cutText', (string, size) => {
+    return string.split('-').splice(0, size).join('-')
+  })
+
+  eleventyConfig.addFilter('serializeTitle', (string, yearSplice = 2) => {
+    const titleParts = string.split('-')
+    const [year, ...title] = titleParts
+    const titleInitials = title.map(title => title.split('')[0]).join('')
+    const yearSuffix = year.slice(-yearSplice)
+    
+    return `${yearSuffix}-${titleInitials}`
+  })
+
+  eleventyConfig.addFilter('breakLine', (string, cutAt = 3, maxSize = 30) => {
+    const titleWords = string.split(' ')
+    const titleLength = string.length
+    const titlePreview = titleWords.slice(0, cutAt).join(" ")
+    const titleRemaining = titleWords.slice(cutAt).join(" ")
+
+    const hasTitleRemaining = !!titleRemaining
+    const formattedTitleWithBreak = hasTitleRemaining ? `${titlePreview}<br/>${titleRemaining}` : titlePreview
+    
+    const returnTitle = titleLength <= maxSize || !hasTitleRemaining ? string : formattedTitleWithBreak
+    return returnTitle
   })
 
   eleventyConfig.addFilter('renderMarkdown', (text) => {

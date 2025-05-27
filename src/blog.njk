@@ -3,37 +3,36 @@ title : 'Recent Articles - Blog | EmptyWork'
 description : "List of all articles that was written by me, its mostly contain topics about Accessibility, PHP, HTML, CSS and Fullstack development"
 layout: 'layouts/secondary.njk'
 ---
+
 {% set posts = [] %}
+{% set recentPosts = [] %}
 {% for post in collections.post | reverse %}
-{% if post.data.draft == false %}
-{% set postDate = {
-    year: post.data.date | postYear,
-    fullDate: post.data.date
-  } %}
-  {% set posts = (posts.push({
-    title: post.data.title,
-    url: post.url,
-    date: postDate,
-    desc: post.data.description,
-    author: post.data.author,
-    slug: post.fileSlug
-  }), posts) %}
-{% endif %}
-{% endfor %}{% set recentPosts = [] %}
-{% for post in collections.post | reverse %}
-{% if post.data.draft == false %}
-  {% set recentPosts = (recentPosts.push({
-    title: post.data.title,
-    description: post.data.description,
-    url: post.url,
-    slug: post.fileSlug,
-    author: post.data.author,
-    date: post.data.date,
-    image: post.data.image
-  }), recentPosts) %}
-{% endif %}
-{% endfor %}{% set lengthRecentPosts = recentPosts | length %}
-{% if lengthRecentPosts > 3 %}{% set recentPosts = recentPosts | sliceRecent %}
+  {% if not post.data.draft %}
+    {% set postDate = {
+          year: post.data.date | postYear,
+          fullDate: post.data.date
+        } %}
+    {% set _ = posts.push({
+          title: post.data.title,
+          url: post.url,
+          date: postDate,
+          desc: post.data.description,
+          author: post.data.author,
+          slug: post.fileSlug
+        }) %}
+    {% set _ = recentPosts.push({
+          title: post.data.title,
+          description: post.data.description,
+          url: post.url,
+          slug: post.fileSlug,
+          author: post.data.author,
+          date: post.data.date,
+          image: post.data.image
+        }) %}
+  {% endif %}
+{% endfor %}
+{% if recentPosts | length > 3 %}
+  {% set recentPosts = recentPosts | sliceRecent %}
 {% endif %}
 <main id="main" class="main  blog">
   <section aria-labelledby="article" class="articles">
@@ -48,38 +47,51 @@ layout: 'layouts/secondary.njk'
             <span aria-hidden="true">#</span>
             <span class="sr-only">Link to heading "recent articles"</span>
           </a>
-          Recent Articles 
+          Recent Articles
         </h1>
       </header>
       <ul class="cards cards-horizontal{% if lengthRecentPosts == 3 %} cards-3-item{% endif %}">
         {%- for post in recentPosts -%}
-          {% include 'components/snippets/article.njk' %}
+          {% include "components/snippets/article.njk" %}
         {% else %}
           <li class="card card-empty">
             <h2>You haven't post anything yet.</h2>
-              It seems like there is no article right now...
+            It seems like there is no article right now...
           </li>
         {%- endfor -%}
       </ul>
       {% set groupedPosts = posts | groupby("date.year") %}
       {% for year, posts in groupedPosts | reverseGroupedPosts %}
         <div class="posts">
-          <h2 class="posts-yeargroup" data-animation="fade-in" data-delay="{{ loop.index }}">{{ year }}</h2>
+          <h2 class="posts-yeargroup"
+              data-animation="fade-in"
+              data-delay="{{ loop.index }}">{{ year }}</h2>
           <ul class="posts-list">
             {% for post in posts %}
-              <li class="posts-detail" data-animation="prototype-card" data-delay="{{ loop.index + 0.5 | float }}">
+              <li class="posts-detail"
+                  data-animation="prototype-card"
+                  data-delay="{{ loop.index + 0.5 | float }}">
                 <p class="posts-detail_accent">
-                  <time class="posts-detail_accent-item posts-detail_accent-item_filled" datetime="{{ post.date.fullDate | htmlDateString }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="posts-detail_svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                  <time class="posts-detail_accent-item posts-detail_accent-item_filled"
+                        datetime="{{ post.date.fullDate | htmlDateString }}">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="posts-detail_svg"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke="currentColor"
+                         stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                     {{ post.date.fullDate | postDate }}
                   </time>
                   <span class="posts-detail_accent-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="article-detail_item_svg">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke-width="1.5"
+                         stroke="currentColor"
+                         class="article-detail_item_svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                     </svg>
                     {{ post.author }}
                   </span>
@@ -91,9 +103,7 @@ layout: 'layouts/secondary.njk'
                     <span id="{{ post.slug }}">{{ post.title }}</span>
                   </a>
                 </p>
-                <p>
-                  {{ post.desc | truncate(60) }}
-                </p>
+                <p>{{ post.desc | truncate(60) }}</p>
               </li>
             {% endfor %}
           </ul>
@@ -102,3 +112,12 @@ layout: 'layouts/secondary.njk'
     </div>
   </section>
 </main>
+<script>
+  let links = document.links
+  for (link of links) {
+    if (document.location.hostname == 'localhost') break
+    let regex = /\/articles\/blog/g
+    const currentHref = link.href
+    if (currentHref.includes("/articles/blog")) link.href = currentHref.replace(regex, "/blog")
+  }
+</script>

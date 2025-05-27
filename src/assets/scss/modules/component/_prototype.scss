@@ -136,6 +136,7 @@
       gap: 0.5em;
       font-weight: 700;
       align-items: center;
+      line-height: 1.2;
     }
   }
 
@@ -208,24 +209,6 @@
   }
 
   .note {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    background-color: hsl(0, 0%, 13%);
-    border-radius: 0.6rem;
-    box-shadow: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
-    height: 100%;
-    transition: all 300ms ease-in-out;
-    z-index: 0;
-
-    & > svg {
-      position: absolute;
-      right: 0.1rem;
-      bottom: 0.1rem;
-      color: hsl(0, 0%, 11%);
-      z-index: -1;
-    }
-
     article {
       padding: 1rem;
       height: 100%;
@@ -238,35 +221,10 @@
       }
     }
 
-    &-header {
-      display: flex;
-      height: 2.5rem;
-      padding: 0 1rem;
-      width: 100%;
-      justify-content: space-between;
-      box-shadow: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
-      flex: 0 0 auto;
-
-      div {
-        display: flex;
-        align-items: center;
-        font-weight: 600;
-        gap: 0.2rem;
-
-        .dot {
-          height: 0.9375rem;
-          width: 0.9375rem;
-          background-color: hsl(0, 100%, 43%);
-          border-radius: 50%;
-
-          &:first-of-type {
-            background-color: green;
-          }
-
-          &:nth-of-type(2) {
-            background-color: yellow;
-          }
-        }
+    pre {
+      overflow: scroll;
+      &::-webkit-scrollbar {
+        width: 0;
       }
     }
   }

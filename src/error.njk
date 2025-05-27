@@ -44,7 +44,7 @@ style: 'error.css'
             <a class="error-link" href="{{ link.website }}">Go to Home</a>
           </li>
           <li data-animation="fade-in" data-delay="5">
-            <a class="error-link" href="javascript:history.back()">Go Back</a>
+            <a class="error-link" onclick="history.back(); return false;">Go Back</a>
           </li>
         </ul>
       </div>
