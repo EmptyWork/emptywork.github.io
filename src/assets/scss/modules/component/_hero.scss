@@ -6,8 +6,13 @@
   justify-content: center;
   flex-direction: column;
   background-color: var(--clr-background);
+  height: 80dvh;
   z-index: 3;
   position: relative;
+
+  @include breakpoint-down('medium') {
+    height: 100%;
+  }
 
   &-decoration {
     --width: 95vmin;
@@ -57,6 +62,7 @@
       z-index: -1;
       position: absolute;
       bottom: 0;
+      margin-bottom: -.625rem;
       left: 0;
       width: 100%;
       overflow: hidden;
