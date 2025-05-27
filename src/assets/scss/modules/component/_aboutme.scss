@@ -197,22 +197,6 @@
     }
   }
 
-  article {
-    padding: 1rem;
-    height: 100%;
-    overflow-y: auto;
-
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      width: 0;
-    }
-
-    li {
-      padding-left: 0.6rem;
-    }
-  }
-
   .explain {
     display: flex;
     align-items: center;
@@ -231,21 +215,44 @@
 }
 
 .note {
+  color: var(--clr-white);
   display: flex;
   flex: 0 0 auto;
   position: relative;
+  width: min(25rem, 100%);
   flex-direction: column;
   background-color: hsl(0, 0%, 13%);
   border-radius: 0.6rem;
   box-shadow: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
-  height: 100%;
+  height: max(20rem, 100%);
   transition: all 300ms ease-in-out;
 
-  & > svg {
+  article {
+    padding: 1rem;
+    z-index: 80;
+  }
+
+  &>svg {
     position: absolute;
     right: 0.1rem;
     bottom: 0.1rem;
     color: hsl(0, 0%, 11%);
+  }
+
+  article {
+    padding: 1rem;
+    height: 100%;
+    overflow-y: auto;
+
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    li {
+      padding-left: 0.6rem;
+    }
   }
 
   &-heading {
@@ -253,6 +260,15 @@
     display: block;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    line-height: 1.2;
+  }
+
+  &-subheading {
+    font-style: italic;
+  }
+
+  li {
+    font-size: 0.85em;
   }
 
   &-header {
