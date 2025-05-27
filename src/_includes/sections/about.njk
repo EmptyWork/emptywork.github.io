@@ -53,7 +53,7 @@
             </h3>
           </header>
           {% for bio in about.bio %}
-            <span>{{ bio | renderMarkdownInline | safe }}</span>
+          <span>{{ bio | renderMarkdownInline | safe }}</span>
           {% endfor %}
         </div>
       </section>
@@ -70,23 +70,24 @@
       </header>
       <article class="lists">
         {% for proficient in about.languagesProficient %}
-          <ul>
-            <li>
-              {{ proficient.level | safe}}
-            </li>
-            {% for language in proficient.languages %}
-              <li>
-                {{ language | renderMarkdownInline | safe}}
-              </li>
-            {% endfor %}
-          </ul>
+        <ul>
+          <li>
+            {{ proficient.level | safe}}
+          </li>
+          {% for language in proficient.languages %}
+          <li>
+            {{ language | renderMarkdownInline | safe}}
+          </li>
+          {% endfor %}
+        </ul>
         {% endfor %}
       </article>
     </section>
     <ul class="adds">
       {% for info in about.languagesExtraInfo %}
-        <li{% if info.type == "info" %} class="new-line" {% endif %} data-animation="right-show" data-delay="{{ loop.index }}">
-          {{ info.details | renderMarkdownInline | safe }}
+      <li{% if info.type=="info" %} class="new-line" {% endif %} data-animation="right-show"
+        data-delay="{{ loop.index }}">
+        {{ info.details | renderMarkdownInline | safe }}
         </li>
         {% endfor %}
     </ul>
