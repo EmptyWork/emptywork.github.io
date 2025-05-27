@@ -5,22 +5,11 @@
   from = "/blog/*"
   to = "/articles/blog/:splat"
   status = 200
-  force = true
 
 [[redirects]]
   from = "/signatures/*"
   to = "/images/signatures/:splat"
   status = 200
-
-[[redirects]]
-  from = "/blog/*"
-  to = "/error"
-  status = 404
-
-[[redirects]]
-  from = "/blog/*/*"
-  to = "/error"
-  status = 404
 
 [[redirects]]
   from = "/*"
