@@ -1,7 +1,7 @@
 ---
 title: CosmosMC Custom Item Encyclopedia (CEI) - Website
 status: 1
-description: A encyclopedia for custom items on CosmosMC
+description: An encyclopedia of custom items on CosmosMC. The website's data is incomplete due to the sheer number of items currently available on the server.
 date: 2025-02-13
 language: en
 tags:
