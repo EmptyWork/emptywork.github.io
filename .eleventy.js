@@ -1,4 +1,5 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss')
+require('dotenv').config()
 
 module.exports = function (eleventyConfig) {
   const { DateTime } = require('luxon')
@@ -35,6 +36,9 @@ module.exports = function (eleventyConfig) {
     .use(require('markdown-it-mark'))
 
   eleventyConfig.setLibrary('md', markdownIt)
+
+  const isDevelopment = process.env.NODE_ENV === 'development';
+  eleventyConfig.addGlobalData("isDevelopment", isDevelopment);
 
   eleventyConfig.addPlugin(pluginRss, {
     posthtmlRenderOptions: {
@@ -85,9 +89,14 @@ module.exports = function (eleventyConfig) {
     const [year, ...title] = titleParts
     const titleInitials = title.map(title => title.split('')[0]).join('')
     const yearSuffix = year.slice(-yearSplice)
-    
+
     return `${yearSuffix}-${titleInitials}`
   })
+
+  eleventyConfig.addFilter("development", (link) => {
+    console.log(isDevelopment)
+    return isDevelopment ? "/" : link;
+  });
 
   eleventyConfig.addFilter('breakLine', (string, cutAt = 3, maxSize = 30) => {
     const titleWords = string.split(' ')
@@ -97,7 +106,7 @@ module.exports = function (eleventyConfig) {
 
     const hasTitleRemaining = !!titleRemaining
     const formattedTitleWithBreak = hasTitleRemaining ? `${titlePreview}<br/>${titleRemaining}` : titlePreview
-    
+
     const returnTitle = titleLength <= maxSize || !hasTitleRemaining ? string : formattedTitleWithBreak
     return returnTitle
   })
