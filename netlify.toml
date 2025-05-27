@@ -5,6 +5,7 @@
   from = "/blog/*"
   to = "/articles/blog/:splat"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/signatures/*"
@@ -15,11 +16,13 @@
   from = "/blog/*"
   to = "/error"
   status = 404
+  force = true
 
 [[redirects]]
   from = "/blog/*/*"
   to = "/error"
   status = 404
+  force = true
 
 [[redirects]]
   from = "/*"
