@@ -3,16 +3,6 @@
 
 [[redirects]]
   from = "/blog/*"
-  to = "/error"
-  status = 404
-
-[[redirects]]
-  from = "/blog/*/*"
-  to = "/error"
-  status = 404
-
-[[redirects]]
-  from = "/blog/*"
   to = "/articles/blog/:splat"
   status = 200
 
