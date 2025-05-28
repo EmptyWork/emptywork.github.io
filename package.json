@@ -29,6 +29,7 @@
     "@11ty/eleventy-plugin-rss": "^1.2.0"
   },
   "dependencies": {
+    "dotenv": "^16.5.0",
     "highlight.js": "^11.5.1",
     "markdown-it-anchor": "^8.6.2",
     "markdown-it-attrs": "^4.1.4",

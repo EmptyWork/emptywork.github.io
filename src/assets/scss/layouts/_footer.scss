@@ -1,0 +1,72 @@
+@use "../abstracts/mixin" as mix;
+
+.footer {
+  background-color: var(--clr-background);
+  color: var(--clr-foreground);
+  padding: 0.8rem;
+
+  .brand {
+    display: flex;
+    gap: 0.5rem;
+    width: max-content;
+
+    &-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    &-logo {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-top {
+    padding: 0.8rem;
+    padding-top: 3rem;
+    font-size: 2rem;
+    max-width: 35ch;
+    line-height: 1.2;
+    position: relative;
+    isolation: isolate;
+
+    &::before {
+      content: '"';
+      position: absolute;
+      font-size: 4em;
+      left: 0;
+      top: 0;
+      color: var(--clr-background-800);
+      font-weight: 600;
+      user-select: none;
+      z-index: -1;
+    }
+  }
+
+  &-bottom {
+    padding: 0.8rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+  }
+
+  &-container {
+    max-width: 64rem;
+    margin: 0 auto;
+  }
+
+  .copyright {
+    font-size: 0.9rem;
+    margin: 1rem auto;
+    text-align: left;
+    border: 0.0625rem solid var(--clr-foreground);
+    width: 100%;
+    max-width: max-content;
+    padding: 0.2rem 2rem;
+
+    @include mix.breakpoint-up('medium') {
+      flex-direction: row;
+    }
+  }
+}

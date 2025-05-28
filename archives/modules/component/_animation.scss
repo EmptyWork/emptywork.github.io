@@ -1,0 +1,59 @@
+[data-animation] {
+  opacity: 0;
+  transition: translate var(--_translate, 1s) ease-in-out, scale var(--_scale, 1s) ease-in-out, rotate var(--_rotate, 1s) ease-in-out, opacity var(--_opacity, 1s) ease-in-out;
+}
+
+[data-animation='fade-in'] {
+  translate: 0 4em;
+}
+
+[data-animation='right-show'] {
+  translate: -5em 0;
+}
+
+[data-animation='top-show'] {
+  translate: 0 -5em;
+}
+
+[data-animation='bottom-show'] {
+  translate: 0 5em;
+}
+
+[data-animation='left-show'] {
+  translate: 5em 0;
+}
+
+[data-animation='prototype-card'] {
+  translate: -5em 0;
+
+  &:nth-of-type(odd) {
+    translate: 5em 0;
+  }
+}
+
+.has-been-animated {
+  opacity: unset;
+  scale: unset;
+  rotate: unset;
+  translate: unset !important;
+}
+
+@media (prefers-reduced-motion) {
+  .prototype-reader,
+  .data {
+    transform: unset !important;
+  }
+
+  *,
+  *::after,
+  *::before {
+    animation: unset !important;
+    rotate: 0deg !important;
+    translate: 0em 0em !important;
+  }
+
+  [data-animation] {
+    translate: unset !important;
+    opacity: 1 !important;
+  }
+}

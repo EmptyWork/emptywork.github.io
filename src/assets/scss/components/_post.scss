@@ -1,0 +1,81 @@
+@use "../abstracts/mixin" as mix;
+
+.post {
+  &s {
+    margin-top: 2.5rem;
+
+    &-yeargroup {
+      margin-bottom: 0.5em;
+    }
+
+    &-detail {
+      margin-top: 1rem;
+      margin-left: 2rem;
+      background-color: var(--clr-background);
+      color: var(--clr-foreground-700);
+      border: 0.0625em solid var(--clr-background-900);
+      padding: 1rem;
+      border-radius: 0.3rem;
+
+      @include mix.breakpoint-down('small') {
+        margin-inline: 0;
+      }
+
+      &_header {
+        font-size: 1.6rem;
+        line-height: 1.1;
+        margin-bottom: 0.5em;
+        display: block;
+        font-weight: 600;
+        color: var(--clr-foreground);
+      }
+
+      &_accent {
+        color: var(--clr-white);
+        margin-bottom: 1em;
+        width: fit-content;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        display: flex;
+
+        &-item {
+          font-size: 0.9rem;
+          gap: 0.5em;
+          border-radius: 0.3em;
+          padding: 0.4em;
+          display: flex;
+          color: var(--clr-foreground);
+          border: 0.0625em solid var(--clr-foreground);
+          align-items: center;
+
+          &_filled {
+            border: none;
+            color: var(--clr-white);
+            box-shadow: 0 0.3125rem 0.625rem hsla(0, 0%, 0%, 0.4);
+            background-color: var(--clr-accent-light);
+            background-image: linear-gradient(45deg,
+                var(--clr-accent-dark),
+                var(--clr-accent));
+          }
+        }
+      }
+
+      &_svg {
+        width: 1.5em;
+        height: fit-content;
+      }
+    }
+
+    &-list {
+      margin: 0;
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 1.5rem;
+    }
+
+    &:is(:last-of-type) {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
