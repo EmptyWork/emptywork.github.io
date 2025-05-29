@@ -14,7 +14,7 @@
     </header>
     <section class="clients-list">
       {% for nameClient in client.clients %}
-      {% include 'components/svg/' + nameClient.svg %}
+      {{ nameClient.svg | svg(loop.index) | safe }}
       {% endfor %}
     </section>
   </div>

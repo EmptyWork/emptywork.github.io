@@ -23,7 +23,7 @@ style: 'error.css'
       <div class="error-container">
         <div class="error-summary" data-animation="fade-in">
           <div class="error-decorative" data-animation="fade-in">
-            {% include "components/svg/logo.njk" %}
+            {{ footer.brand.svg | svg | safe }}
             <div class="decorative-left">
               <p class="decorative decorative-exclamation">!</p>
               <p class="decorative decorative-question">?</p>
@@ -36,7 +36,7 @@ style: 'error.css'
             typed are
             correct, if you think that the
             <mark class="highlight">URL is correct</mark> but you still cannot seems to access it please <a
-              href="mailto:contact@emptywork.my.id">contact me via email</a>
+              href="mailto:contact@emptywork.my.id">contact me via email</a>.
           </p>
         </div>
         <ul class="error-button">

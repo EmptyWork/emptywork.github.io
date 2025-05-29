@@ -9,6 +9,6 @@
         {% endif %}
     </div>
     {% if social.svg %}
-    {% include 'components/svg/' + social.svg %}
+    {{ social.svg | svg | safe }}
     {% endif %}
 </a>

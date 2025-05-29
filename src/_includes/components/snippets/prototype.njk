@@ -3,7 +3,7 @@
     <section aria-labelledby="{{ post.fileSlug }}-code" class="note">
       <header class="note-header">
         <div>
-          {% include 'components/svg/logo.njk' %}
+          {{ footer.brand.svg | svg | safe }}
           <h3 id="{{ post.fileSlug }}-code">dev#{{ post.fileSlug | serializeTitle }}</h3>
         </div>
         <div>

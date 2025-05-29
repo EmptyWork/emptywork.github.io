@@ -4,32 +4,32 @@
   "clients": [
     {
       "name": "Bank Indonesia",
-      "svg": "bank-indonesia.njk",
+      "svg": "bank-indonesia.svg",
       "absolutePath": true
     },
     {
       "name": "Student Coding Club",
-      "svg": "scc.njk",
+      "svg": "scc.svg",
       "absolutePath": true
     },
     {
       "name": "Generasi Baru Indonesia",
-      "svg": "genbi.njk",
+      "svg": "genbi.svg",
       "absolutePath": true
     },
     {
       "name": "Sekolah Luar Biasa",
-      "svg": "slbnania.njk",
+      "svg": "slbnania.svg",
       "absolutePath": true
     },
     {
       "name": "Komite Olahraga National Indonesia Kota Ambon",
-      "svg": "koni.njk",
+      "svg": "koni.svg",
       "absolutePath": true
     },
     {
       "name": "7Mu - 7Mysteries",
-      "svg": "7mu.njk",
+      "svg": "7mu.svg",
       "absolutePath": true
     }
   ]
