@@ -14,7 +14,7 @@
         <div class="note">
           <header class="note-header">
             <div>
-              {% include 'components/svg/logo.njk' %}
+              {{ footer.brand.svg | svg | safe }}
               <p>ew.dev</p>
             </div>
             <div>
@@ -36,25 +36,23 @@
               <li>cook?</li>
             </ul>
           </article>
-          <svg width="100" height="100" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M11.65 8.42634L14.8715 5.20767L18.1667 8.50567V14.2517L14.7667 17.6517V10.1178L11.65 13.2345V15.1017L8.24998 18.5017V16.6345L7.39998 17.4845V12.6763L8.24998 11.8263V7.00117L11.65 3.60117V8.42634Z" />
+          <svg width="100"
+               height="100"
+               viewBox="0 0 24 24"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.65 8.42634L14.8715 5.20767L18.1667 8.50567V14.2517L14.7667 17.6517V10.1178L11.65 13.2345V15.1017L8.24998 18.5017V16.6345L7.39998 17.4845V12.6763L8.24998 11.8263V7.00117L11.65 3.60117V8.42634Z" />
             <path d="M7.23 17.6573L7.4 17.4845V19.3517L4 22.7517V5.18501H7.4V12.6763L4.82733 15.2518L7.23 17.6573Z" />
-            <path
-              d="M14.472 0L21 6.52801V11.3362L18.1667 8.50284V5.18501H14.8913L14.8715 5.20484L12.0665 2.40267L14.472 0Z" />
+            <path d="M14.472 0L21 6.52801V11.3362L18.1667 8.50284V5.18501H14.8913L14.8715 5.20484L12.0665 2.40267L14.472 0Z" />
           </svg>
         </div>
       </section>
       <section class="explain" data-animation="fade-in">
         <div class="text-area">
           <header>
-            <h3 class="extra">
-              {{ about.bioHeader | renderMarkdownInline | safe }}
-            </h3>
+            <h3 class="extra">{{ about.bioHeader | renderMarkdownInline | safe }}</h3>
           </header>
-          {% for bio in about.bio %}
-          <span>{{ bio | renderMarkdownInline | safe }}</span>
-          {% endfor %}
+          {% for bio in about.bio %}<span>{{ bio | renderMarkdownInline | safe }}</span>{% endfor %}
         </div>
       </section>
     </section>
@@ -70,34 +68,29 @@
       </header>
       <article class="lists">
         {% for proficient in about.languagesProficient %}
-        <ul>
-          <li>
-            {{ proficient.level | safe}}
-          </li>
-          {% for language in proficient.languages %}
-          <li>
-            {{ language | renderMarkdownInline | safe}}
-          </li>
-          {% endfor %}
-        </ul>
+          <ul>
+            <li>{{ proficient.level | safe }}</li>
+            {% for language in proficient.languages %}<li>{{ language | renderMarkdownInline | safe }}</li>{% endfor %}
+          </ul>
         {% endfor %}
       </article>
     </section>
     <ul class="adds">
       {% for info in about.languagesExtraInfo %}
-      <li{% if info.type=="info" %} class="new-line" {% endif %} data-animation="right-show"
-        data-delay="{{ loop.index }}">
-        {{ info.details | renderMarkdownInline | safe }}
-        </li>
-        {% endfor %}
+        <li {% if info.type=="info" %}class="new-line"{% endif %}
+            data-animation="right-show"
+            data-delay="{{ loop.index }}">{{ info.details | renderMarkdownInline | safe }}</li>
+      {% endfor %}
     </ul>
     <section class="flex tools" data-animation="right-show">
       <header class="flex-header">
-        <h3 id="tools" style="display: flex; align-items: center; gap: .2em;" class="header-title">
+        <h3 id="tools"
+            style="display: flex;
+                   align-items: center;
+                   gap: .2em"
+            class="header-title">
           <a class="header-link__access" href="#tools">
-            <span aria-hidden="true">
-              {% include 'components/svg/logo.njk' %}
-            </span>
+            <span aria-hidden="true">{{ footer.brand.svg | svg | safe }}</span>
             <span class="sr-only">Link to heading "tools"</span>
           </a>
           Tools
@@ -110,16 +103,10 @@
       </header>
       <article class="lists">
         {% for proficient in about.toolsProficient %}
-        <ul>
-          <li>
-            {{ proficient.level | safe}}
-          </li>
-          {% for tool in proficient.tools %}
-          <li>
-            {{ tool | safe}}
-          </li>
-          {% endfor %}
-        </ul>
+          <ul>
+            <li>{{ proficient.level | safe }}</li>
+            {% for tool in proficient.tools %}<li>{{ tool | safe }}</li>{% endfor %}
+          </ul>
         {% endfor %}
       </article>
     </section>

@@ -6,7 +6,7 @@
     <div class="footer-bottom">
       <a class="brand" href="/">
         <div class="brand-logo">
-          {% include 'components/svg/' + footer.brand.svg %}
+          {{ footer.brand.svg | svg | safe}}
         </div>
         <h2 class="brand-title">{{ footer.brand.title }}</h2>
       </a>

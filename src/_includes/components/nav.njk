@@ -4,10 +4,9 @@
       <a class="nav-skipto" href="#main">Skip to Main</a>
       <a class="brand" aria-labelledby="emptywork-logo-text" href="{{ link.website | development }}">
         <div class="brand-logo">
-          {% include 'components/svg/logo.njk' %}
+          {{ footer.brand.svg | svg | safe }}
           <span aria-hidden="true" id="emptywork-logo-text" class="sr-only">Logo of EmptyWork</span>
         </div>
-        {# <p class="brand-title">Ew.</p> #}
       </a>
     </div>
     <ul class="menubar" role="menubar" onkeypress="">
