@@ -8,12 +8,12 @@
       "desc": "mailto:contact@emptywork.my.id",
       "action": "mailto:contact@emptywork.my.id",
       "target": "_blank",
-      "svg": "email.njk"
+      "svg": "email.svg"
     },
     {
       "name": "via. chat",
       "target": "_blank",
-      "svg": "chat.njk"
+      "svg": "chat.svg"
     }
   ],
   "socials": [
