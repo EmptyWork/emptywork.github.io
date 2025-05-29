@@ -1,5 +1,7 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 require('dotenv').config()
+const fs = require("fs");
+const path = require("path");
 
 module.exports = function (eleventyConfig) {
   const { DateTime } = require('luxon')
@@ -94,7 +96,6 @@ module.exports = function (eleventyConfig) {
   })
 
   eleventyConfig.addFilter("development", (link) => {
-    console.log(isDevelopment)
     return isDevelopment ? "/" : link;
   });
 
@@ -110,6 +111,19 @@ module.exports = function (eleventyConfig) {
     const returnTitle = titleLength <= maxSize || !hasTitleRemaining ? string : formattedTitleWithBreak
     return returnTitle
   })
+
+  eleventyConfig.addFilter('svg', (fileName, index) => {
+    const filePath = path.join(__dirname, "src/assets/svg", fileName);
+    try {
+      let svgContent = fs.readFileSync(filePath, "utf8");
+      if (index) {
+        svgContent = svgContent.replace("<svg", `<svg data-animation="fade-in" data-delay=${index}`);
+      }
+      return svgContent;
+    } catch (error) {
+      return `<!-- SVG ${fileName} not found -->`;
+    }
+  });
 
   eleventyConfig.addFilter('renderMarkdown', (text) => {
     return markdownIt.render(text)
