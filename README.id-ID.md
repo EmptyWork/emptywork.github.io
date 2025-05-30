@@ -1,5 +1,11 @@
 ![EmptyWork's Personal Website](src/assets/images/emptywork.github.io-header.jpg)
 
+```
+id: Dokumen ini belum di perbaharui ke versi terbaru. Silahkan baca versi Bahasa Inggris dari dokuemn ini.
+abs-id: Ni dokumen akang balom dapa biking jadi baru. babaca akang pung versi bahasa Inggris jua. 
+en: This documents is not updated to the latest version. please read the english version of it. 
+```
+
 [![Repository Stars](https://img.shields.io/github/stars/EmptyWork/emptywork.github.io?style=for-the-badge)]()
 [![Repository Forks](https://img.shields.io/github/forks/EmptyWork/emptywork.github.io?style=for-the-badge)]()
 [![License](https://img.shields.io/github/license/EmptyWork/emptywork.github.io?style=for-the-badge)](https://github.com/EmptyWork/emptywork.github.io/blob/master/LICENSE)
