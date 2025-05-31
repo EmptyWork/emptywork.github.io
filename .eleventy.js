@@ -35,7 +35,7 @@ module.exports = function (eleventyConfig) {
       allowedAttributes: [],
     })
     .use(require('markdown-it-table-of-contents'), {
-      includeLevel: [1, 2, 3, 4, 5, 6],
+      includeLevel: [1, 2, 3],
       containerHeaderHtml: `<div class="toc-container-header">Table of Contents</div>`,
     })
     .use(require('markdown-it-mark'))

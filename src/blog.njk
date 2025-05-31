@@ -31,6 +31,29 @@ style: 'blog.css'
           image: post.data.image
         }) %}
   {% endif %}
+  {% if isDevelopment and post.data.draft %}
+    {% set postDate = {
+          year: post.data.date | postYear,
+          fullDate: post.data.date
+        } %}
+    {% set _ = posts.push({
+          title: post.data.title,
+          url: post.url,
+          date: postDate,
+          desc: post.data.description,
+          author: post.data.author,
+          slug: post.fileSlug
+        }) %}
+    {% set _ = recentPosts.push({
+          title: post.data.title,
+          description: post.data.description,
+          url: post.url,
+          slug: post.fileSlug,
+          author: post.data.author,
+          date: post.data.date,
+          image: post.data.image
+        }) %}
+  {% endif %}
 {% endfor %}
 {% if recentPosts | length > 3 %}
   {% set recentPosts = recentPosts | sliceRecent %}
