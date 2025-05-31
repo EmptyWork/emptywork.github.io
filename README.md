@@ -32,7 +32,7 @@ You can `fork` or `clone` this repo to _modify_ and make changes of your own, an
 #### Dawnfall / theme
 ![EmptyWork's Personal Website Dawnfall](assets/emptywork.github.io-dawnfall.jpg)
 
-**ps:** the website also `support custom color schemes`, you can access _[_vars.scss](src\assets\scss\modules\_vars.scss) to adjust it_.
+**ps:** the website also `support custom color schemes`, you can access _[_vars.scss](src/assets/scss/abstracts/_vars.scss) to adjust it_.
 
 ### Installation
 ![EmptyWork's Personal Website Installation](assets/emptywork.github.io-installation.jpg)

@@ -1,6 +1,7 @@
 html:root {
   --_h: 270;
-  --_hs: var(--_h) 20%;
+  --_s: 20%;
+  --_hs: var(--_h) var(--_s);
   --clr-accent: hsl(var(--_h), 50%, 40%);
   --clr-accent-light: hsl(var(--_h), 84%, 72%);
   --clr-accent-dark: hsl(var(--_h), 71%, 22%);
@@ -28,29 +29,16 @@ html:root {
 
   --bx-shadow-two-side: 0 0.3125rem 0.625rem hsla(var(--_hs) 0%, 0.2),
     -0.3125rem -0.3125rem 0.625rem hsla(var(--_hs) 100%, 0.8);
-  --table-header: hsl(270, 80%, 30%);
+  --table-header: hsl(var(--_hs) 30%);
 
-  &[data-theme=sunglow] {
-    --clr-accent: hsl(40, 56%, 40%);
-    --clr-accent-light: hsl(40, 56%, 72%);
-    --clr-accent-dark: hsl(40, 56%, 22%);
-
-    --clr-href: hsl(40, 56%, 72%);
-    --clr-href-visited: hsl(40, 56%, 22%);
-
-    --clr-background: hsl(40, 56%, 95%);
-    --clr-background-900: hsl(40, 56%, 88%);
-    --clr-background-800: hsl(40, 56%, 75%);
-    --clr-background-700: hsl(40, 56%, 63%);
-    --clr-foreground: hsl(40, 56%, 10%);
-    --clr-foreground-900: hsl(40, 56%, 13%);
-    --clr-foreground-800: hsl(40, 56%, 25%);
-    --clr-foreground-700: hsl(40, 56%, 38%);
-
-    &[data-theme=dark] {
-      --clr-href: hsl(40, 56%, 72%);
-      --clr-href-visited: hsl(40, 56%, 40%);
-    }
+  &[data-color-scheme=sunglow] {
+    --_h: 34;
+    --_s: 10%;
+  }
+  
+  &[data-color-scheme=navyocean] {
+    --_h: 207;
+    --_s: 10%;
   }
 
   &[data-theme=dark] {

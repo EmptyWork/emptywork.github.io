@@ -21,8 +21,11 @@ module.exports = function (eleventyConfig) {
     },
   })
     .use(anchor, {
-      permalink: anchor.permalink.ariaHidden({
-        placement: 'before',
+      permalink: anchor.permalink.linkAfterHeader({
+        style: 'visually-hidden',
+        assistiveText: title => `Permalink to “${title}”`,
+        visuallyHiddenClass: 'sr-only',
+        wrapper: ['<div class="header-wrapper">', '</div>']
       }),
     })
     .use(require('markdown-it-bracketed-spans'))
@@ -32,7 +35,7 @@ module.exports = function (eleventyConfig) {
       allowedAttributes: [],
     })
     .use(require('markdown-it-table-of-contents'), {
-      includeLevel: [1, 2, 3, 4, 5, 6],
+      includeLevel: [1, 2, 3],
       containerHeaderHtml: `<div class="toc-container-header">Table of Contents</div>`,
     })
     .use(require('markdown-it-mark'))
