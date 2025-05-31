@@ -2,8 +2,8 @@
   "title": "About Me",
   "bioHeader": "I am ==based in [Indonesia.](https://en.wikipedia.org/wiki/indonesia){target=_blank rel=\"noopener noreferrer\"}=={.highlight}",
   "bio": [
-    "I got my bachelor of Computer Science from ==[Indonesian Christian University in the Moluccas](https://ukim.ac.id){target=_blank rel=\"noopener noreferrer\"}=={.highlight};",
-    " Currently I am applying for a scholarship for ==master and p.hd=={.highlight};"
+    "I earned my Bachelor's degree in Computer Science from the ==[Indonesian Christian University in the Moluccas](https://ukim.ac.id){target=_blank rel=\"noopener noreferrer\"}=={.highlight};",
+    " Currently, I am applying for scholarships to pursue my ==Master's and Ph.D=={.highlight};"
   ],
   "languagesProficient": [
     {
@@ -54,15 +54,15 @@
   "languagesExtraInfo": [
     {
       "type": "info",
-      "details": "[1] As of now, I think the knowledge about [==ARIA (Accessibility — Rich Internet Application)=={.highlight}](https://en.wikipedia.org/wiki/WAI-ARIA){target=_blank rel=\"noopener noreferrer\"} is essential; so I spend my free time researching, watching, and reading articles related to it."
+      "details": "[1] As of now, I think the knowledge about [==ARIA (Accessibility — Rich Internet Application)=={.highlight}](https://en.wikipedia.org/wiki/WAI-ARIA){target=_blank rel=\"noopener noreferrer\"} is essential; so I spend my free time researching, watching videos, and reading articles related to it."
     },
     {
       "type": "continuous",
-      "details": "— If you also want to learn how to make the web accessable for everyone, visit [==https://www.accessibility-developer-guide.com/=={.highlight}](https://www.accessibility-developer-guide.com/){target=_blank rel=\"noopener noreferrer\"} they provided amazing list on things you can do to improve your website accessibility."
+      "details": "— If you also want to learn how to make the web accessable for everyone, visit [==https://www.accessibility-developer-guide.com/=={.highlight}](https://www.accessibility-developer-guide.com/){target=_blank rel=\"noopener noreferrer\"}; They provide an amazing list of actionable steps to improve your website's accessibility."
     },
     {
       "type": "info",
-      "details": "[2] One of the best tools that ==provided comprehensive checks and details information=={.highlight} about how to fix accessibility problems with your website."
+      "details": "[2] One of the best tools for ==conducting comprehensive accessibility checks=={.highlight} and ==providing detailed information=={.highlight} on how to fix issues with your website."
     }
   ],
   "toolsProficient": [
