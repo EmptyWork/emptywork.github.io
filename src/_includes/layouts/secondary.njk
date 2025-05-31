@@ -1,37 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
-
-<head>
-  {% include 'components/meta.njk' %}
-
-  <title>{{ title }}</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet" />
-
-  {% if style %}
-  <link rel="stylesheet" href="/css/{{ style }}" />
-  {% else %}
-  <link rel="stylesheet" href="/css/style.css" />
-  {% endif %}
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
-
-  <script src="/js/loadTheme.js" defer></script>
-  <script src="/js/redirect.js" defer></script>
-</head>
-
-<body class="t-all not-loaded">
-  {% include 'sections/preload.njk' %}
-
-  {% include 'components/nav.njk' %}
-
-  {{ content | safe }}
-
-  {% include 'sections/footer.njk' %}
-
-  <script src="/js/main.js"></script>
-</body>
-
+  <head>
+    {% include "components/meta.njk" %}
+    <title>{{ title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet" />
+    {% if style %}
+      <link rel="stylesheet" href="/css/{{ style }}" />
+    {% else %}
+      <link rel="stylesheet" href="/css/style.css" />
+    {% endif %}
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/night-owl.min.css">
+    <script src="/js/loadTheme.js" defer></script>
+    <script src="/js/redirect.js" defer></script>
+  </head>
+  <body class="t-all not-loaded">
+    {% include "sections/preload.njk" %}
+    {% include "components/nav.njk" %}
+    {{ content | safe }}
+    {% include "sections/footer.njk" %}
+    <script src="/js/main.js"></script>
+  </body>
 </html>
