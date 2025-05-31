@@ -21,8 +21,11 @@ module.exports = function (eleventyConfig) {
     },
   })
     .use(anchor, {
-      permalink: anchor.permalink.ariaHidden({
-        placement: 'before',
+      permalink: anchor.permalink.linkAfterHeader({
+        style: 'visually-hidden',
+        assistiveText: title => `Permalink to “${title}”`,
+        visuallyHiddenClass: 'sr-only',
+        wrapper: ['<div class="header-wrapper">', '</div>']
       }),
     })
     .use(require('markdown-it-bracketed-spans'))
