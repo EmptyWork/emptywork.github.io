@@ -147,6 +147,9 @@
 
           &:nth-child(2) {
             margin-top: 0.5rem;
+            @include mix.breakpoint-down('medium') {
+             margin-top: 0;
+            }
           }
         }
       }
@@ -156,6 +159,12 @@
 
         .lists {
           flex-direction: column;
+        }
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0 0.5rem;
         }
 
         ul>li {

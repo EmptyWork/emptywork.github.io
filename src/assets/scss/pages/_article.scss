@@ -1,7 +1,8 @@
 @use "../abstracts/mixin" as mix;
 
 .article {
-  --_article-color: hsla(270, 50%, 40%, 0.5);
+  --_l: 20%;
+  --_article-color: hsla(var(--_hs), var(--_l), 0.5);
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   color: var(--clr-foreground-900);
@@ -89,26 +90,52 @@
     color: var(--clr-foreground-900);
     padding: 1rem 0;
     line-height: 1.1em;
+    flex: 1;
+  }
+
+  .header-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 0.5em;
+    width: min(60ch, 100%);
+    flex-wrap: wrap;
   }
 
   h4,
   h5,
   h6 {
     font-weight: bold;
+
+    +.header-anchor {
+      font-size: 1rem;
+    }
   }
 
   h1 {
     font-size: 2.5rem;
+
+    +.header-anchor {
+      font-size: 2.5rem;
+    }
   }
 
   h2 {
     font-size: 2rem;
+
+    +.header-anchor {
+      font-size: 1.8rem;
+    }
   }
 
   h3 {
     font-size: 1.5rem;
-  }
 
+    +.header-anchor {
+      font-size: 1.2rem;
+    }
+  }
+  
   h4 {
     font-size: 1.2rem;
   }
@@ -150,7 +177,7 @@
 
   pre {
     border: 0.1rem solid var(--_article-color);
-    // background-color: var(--_article-color);
+    background-color: hsl(0, 3%, 12%);
     border-radius: 0.5rem;
     padding: 1rem;
     white-space: pre;
