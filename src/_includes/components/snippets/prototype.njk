@@ -44,7 +44,7 @@
         <li class="prototype-more">
           <span class="status">Tags</span>
           {% for tag in post.data.tags %}
-            {% if tag not "prototype" %}<i>{{ tag }}</i>{% endif %}
+            {% if tag != "prototype" %}<i>{{ tag }}</i>{% endif %}
           {% endfor %}
         </li>
       </ul>
