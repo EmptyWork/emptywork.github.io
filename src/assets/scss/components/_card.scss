@@ -1,6 +1,7 @@
 @use "../abstracts/mixin" as mix;
 
 .card {
+  --_scale: 300ms;
   background-color: #333333;
   background-image: linear-gradient(transparent, var(--clr-accent-dark));
   background-position: center;
@@ -82,20 +83,26 @@
     }
 
     &.cards-horizontal {
-      padding: 2rem 2rem 4.5rem 2rem;
+      padding-bottom: 4.5rem;
+      padding-top: 2rem;
       scroll-snap-type: x proximity;
-      overflow-y: hidden;
-
-
+      
       &::-webkit-scrollbar {
         width: 0;
         height: 0;
       }
     }
-
+    
     @include mix.breakpoint-down('medium') {
       &.cards-horizontal {
+        padding: 2rem 2rem 4.5rem 2rem;
         flex-wrap: nowrap;
+        overflow-y: hidden;
+      }
+    }
+
+    @include mix.breakpoint-down('small') {
+      &.cards-horizontal {
         overflow-x: auto;
       }
     }
@@ -103,10 +110,8 @@
     @include mix.breakpoint-up('medium') {
       &.cards-horizontal {
         flex-wrap: nowrap;
-        overflow-x: auto;
-
       }
-      
+
       &-more {
         justify-content: space-evenly;
       }
