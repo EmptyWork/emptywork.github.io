@@ -86,18 +86,18 @@
       padding-bottom: 4.5rem;
       padding-top: 2rem;
       scroll-snap-type: x proximity;
-      overflow-y: hidden;
-
+      
       &::-webkit-scrollbar {
         width: 0;
         height: 0;
       }
     }
-
+    
     @include mix.breakpoint-down('medium') {
       &.cards-horizontal {
         padding: 2rem 2rem 4.5rem 2rem;
         flex-wrap: nowrap;
+        overflow-y: hidden;
       }
     }
 
