@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "These are the template used by [Emptywork](https://emptywork.github.io)",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "sass": "sass --no-source-map src/assets/scss/:public/css/",
     "sass:compressed": "sass --style=compressed --no-source-map src/assets/scss:public/css/",
@@ -25,8 +26,8 @@
   },
   "homepage": "https://github.com/EmptyWork/emptywork.github.io#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0",
-    "@11ty/eleventy-plugin-rss": "^1.2.0"
+    "@11ty/eleventy": "^3.1.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.4"
   },
   "dependencies": {
     "dotenv": "^16.5.0",
