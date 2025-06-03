@@ -34,11 +34,25 @@ html:root {
   &[data-color-scheme=sunglow] {
     --_h: 34;
     --_s: 10%;
+    --clr-complementary: hsl(214, 50%, 40%);
   }
-  
+
   &[data-color-scheme=navyocean] {
     --_h: 207;
     --_s: 10%;
+    --clr-complementary: hsl(27, 50%, 40%);
+  }
+
+  &[data-color-scheme=embershadow] {
+    --_h: 5;
+    --_s: 10%;
+    --clr-complementary: hsl(210, 40%, 25%);
+  }
+
+  &[data-color-scheme=olivedepths] {
+    --_h: 140;
+    --_s: 10%;
+    --clr-complementary: hsl(20, 50%, 40%);
   }
 
   &[data-theme=dark] {
