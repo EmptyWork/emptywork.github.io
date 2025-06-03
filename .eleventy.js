@@ -1,126 +1,139 @@
-const pluginRss = require('@11ty/eleventy-plugin-rss')
-require('dotenv').config()
-const fs = require("fs");
-const path = require("path");
+import dotenv from "dotenv";
+import fs from "fs";
+import path from "path";
+import { DateTime } from "luxon";
+import hljs from "highlight.js";
+import markdownIt from "markdown-it";
+import anchor from "markdown-it-anchor";
+import bracketedSpans from "markdown-it-bracketed-spans";
+import attrs from "markdown-it-attrs";
+import toc from "markdown-it-table-of-contents";
+import mark from "markdown-it-mark";
+import rssPlugin from "@11ty/eleventy-plugin-rss";
 
-module.exports = function (eleventyConfig) {
-  const { DateTime } = require('luxon')
-  const hljs = require('highlight.js')
-  const anchor = require('markdown-it-anchor')
-  const markdownIt = require('markdown-it')({
+dotenv.config();
+
+export default function (eleventyConfig) {
+  const markdownItConfig = markdownIt({
     html: true,
     linkify: true,
     typographer: true,
     highlight: function (str, lang) {
-      if (lang && hljs.getLanguage(lang))
+      if (lang && hljs.getLanguage(lang)) {
         try {
-          return hljs.highlight(str, { language: lang }).value
+          return hljs.highlight(str, { language: lang }).value;
         } catch (__) { }
-
-      return ''
+      }
+      return "";
     },
   })
     .use(anchor, {
       permalink: anchor.permalink.linkAfterHeader({
-        style: 'visually-hidden',
-        assistiveText: title => `Permalink to “${title}”`,
-        visuallyHiddenClass: 'sr-only',
-        wrapper: ['<div class="header-wrapper">', '</div>']
+        style: "visually-hidden",
+        assistiveText: (title) => `Permalink to “${title}”`,
+        visuallyHiddenClass: "sr-only",
+        wrapper: ['<div class="header-wrapper">', '</div>'],
       }),
     })
-    .use(require('markdown-it-bracketed-spans'))
-    .use(require('markdown-it-attrs'), {
-      leftDelimiter: '{',
-      rightDelimiter: '}',
+    .use(bracketedSpans)
+    .use(attrs, {
+      leftDelimiter: "{",
+      rightDelimiter: "}",
       allowedAttributes: [],
     })
-    .use(require('markdown-it-table-of-contents'), {
+    .use(toc, {
       includeLevel: [1, 2, 3],
       containerHeaderHtml: `<div class="toc-container-header">Table of Contents</div>`,
     })
-    .use(require('markdown-it-mark'))
+    .use(mark);
 
-  eleventyConfig.setLibrary('md', markdownIt)
+  eleventyConfig.setLibrary("md", markdownItConfig);
 
-  const isDevelopment = process.env.NODE_ENV === 'development';
+  const isDevelopment = process.env.NODE_ENV === "development";
   eleventyConfig.addGlobalData("isDevelopment", isDevelopment);
 
-  eleventyConfig.addPlugin(pluginRss, {
+  eleventyConfig.addPlugin(rssPlugin, {
     posthtmlRenderOptions: {
-      closingSingleTag: 'default',
+      closingSingleTag: "default",
     },
-  })
+  });
 
-  eleventyConfig.addPassthroughCopy('src/assets/*.pdf')
-  eleventyConfig.addPassthroughCopy({ 'src/assets/js/*': 'js' })
-  eleventyConfig.addPassthroughCopy({ 'src/assets/images': 'images' })
+  eleventyConfig.addPassthroughCopy("src/assets/*.pdf");
+  eleventyConfig.addPassthroughCopy({ "src/assets/js/*": "js" });
+  eleventyConfig.addPassthroughCopy({ "src/assets/images": "images" });
 
-  eleventyConfig.addPassthroughCopy('src/admin/*')
-  eleventyConfig.addPassthroughCopy('settings.json')
-  eleventyConfig.addPassthroughCopy('src/robots.txt')
+  eleventyConfig.addPassthroughCopy("src/admin/*");
+  eleventyConfig.addPassthroughCopy("settings.json");
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
 
-  eleventyConfig.addFilter('postDate', (dateObj) => {
-    if (typeof (dateObj) !== 'object') dateObj = new Date(dateObj)
-    return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED)
-  })
+  eleventyConfig.addFilter("postDate", (dateObj) => {
+    if (typeof dateObj !== "object") dateObj = new Date(dateObj);
+    return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+  });
 
-  eleventyConfig.addFilter('reverseGroupedPosts', (object) => {
-    return Object.entries(object).sort((a, b) => b[0] - a[0])
-  })
+  eleventyConfig.addFilter("reverseGroupedPosts", (object) =>
+    Object.entries(object).sort((a, b) => b[0] - a[0])
+  );
 
-  eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-    let date = new Date(dateObj)
-    return date.toISOString()
-  })
+  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+    let date = new Date(dateObj);
+    return date.toISOString();
+  });
 
-  eleventyConfig.addFilter('postYear', (dateObj) => {
-    return DateTime.fromJSDate(dateObj).toLocaleString({ year: 'numeric' })
-  })
+  eleventyConfig.addFilter("postYear", (dateObj) => {
+    return DateTime.fromJSDate(dateObj).toLocaleString({ year: "numeric" });
+  });
 
-  eleventyConfig.addFilter('sliceRecent', (array) => {
-    return array.slice(0, 3)
-  })
+  eleventyConfig.addFilter("sliceRecent", (array) => {
+    return array.slice(0, 3);
+  });
 
-  eleventyConfig.addFilter('trimText', (string) => {
-    return string.split(' ').splice(0, 12).join(' ')
-  })
+  eleventyConfig.addFilter("trimText", (string) => {
+    return string.split(" ").splice(0, 12).join(" ");
+  });
 
-  eleventyConfig.addFilter('cutText', (string, size) => {
-    return string.split('-').splice(0, size).join('-')
-  })
+  eleventyConfig.addFilter("cutText", (string, size) => {
+    return string.split("-").splice(0, size).join("-");
+  });
 
-  eleventyConfig.addFilter('serializeTitle', (string, yearSplice = 2) => {
-    const titleParts = string.split('-')
-    const [year, ...title] = titleParts
-    const titleInitials = title.map(title => title.split('')[0]).join('')
-    const yearSuffix = year.slice(-yearSplice)
+  eleventyConfig.addFilter("serializeTitle", (string, yearSplice = 2) => {
+    const titleParts = string.split("-");
+    const [year, ...title] = titleParts;
+    const titleInitials = title.map((title) => title.split("")[0]).join("");
+    const yearSuffix = year.slice(-yearSplice);
 
-    return `${yearSuffix}-${titleInitials}`
-  })
+    return `${yearSuffix}-${titleInitials}`;
+  });
 
   eleventyConfig.addFilter("development", (link) => {
     return isDevelopment ? "/" : link;
   });
 
-  eleventyConfig.addFilter('breakLine', (string, cutAt = 3, maxSize = 30) => {
-    const titleWords = string.split(' ')
-    const titleLength = string.length
-    const titlePreview = titleWords.slice(0, cutAt).join(" ")
-    const titleRemaining = titleWords.slice(cutAt).join(" ")
+  eleventyConfig.addFilter("breakLine", (string, cutAt = 3, maxSize = 30) => {
+    const titleWords = string.split(" ");
+    const titleLength = string.length;
+    const titlePreview = titleWords.slice(0, cutAt).join(" ");
+    const titleRemaining = titleWords.slice(cutAt).join(" ");
 
-    const hasTitleRemaining = !!titleRemaining
-    const formattedTitleWithBreak = hasTitleRemaining ? `${titlePreview}<br/>${titleRemaining}` : titlePreview
+    const hasTitleRemaining = !!titleRemaining;
+    const formattedTitleWithBreak = hasTitleRemaining
+      ? `${titlePreview}<br/>${titleRemaining}`
+      : titlePreview;
 
-    const returnTitle = titleLength <= maxSize || !hasTitleRemaining ? string : formattedTitleWithBreak
-    return returnTitle
-  })
+    return titleLength <= maxSize || !hasTitleRemaining
+      ? string
+      : formattedTitleWithBreak;
+  });
 
-  eleventyConfig.addFilter('svg', (fileName, index) => {
-    const filePath = path.join(__dirname, "src/assets/svg", fileName);
+  eleventyConfig.addFilter("svg", (fileName, index) => {
+    const filePath = path.join(process.cwd(), "src/assets/svg", fileName);
     try {
       let svgContent = fs.readFileSync(filePath, "utf8");
       if (index) {
-        svgContent = svgContent.replace("<svg", `<svg data-animation="fade-in" data-delay=${index}`);
+        svgContent = svgContent.replace(
+          "<svg",
+          `<svg data-animation="fade-in" data-delay=${index}`
+        );
       }
       return svgContent;
     } catch (error) {
@@ -128,33 +141,32 @@ module.exports = function (eleventyConfig) {
     }
   });
 
-  eleventyConfig.addFilter('renderMarkdown', (text) => {
-    return markdownIt.render(text)
-  })
+  eleventyConfig.addFilter("renderMarkdown", (text) => {
+    return markdownItConfig.render(text);
+  });
 
-  eleventyConfig.addFilter('renderMarkdownInline', (text) => {
-    return markdownIt.renderInline(text)
-  })
+  eleventyConfig.addFilter("renderMarkdownInline", (text) => {
+    return markdownItConfig.renderInline(text);
+  });
 
-  eleventyConfig.addFilter('featuredDate', (string) => {
-    let date = new Date(string)
-    return date.toLocaleDateString('en-us', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-    })
-  })
+  eleventyConfig.addFilter("featuredDate", (string) => {
+    let date = new Date(string);
+    return date.toLocaleDateString("en-us", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  });
 
   return {
-    templateFormats: ['md', 'njk', 'html', 'liquid'],
-
-    markdownTemplateEngine: 'liquid',
-    htmlTemplateEngine: 'njk',
-    dataTemplateEngine: 'njk',
+    templateFormats: ["md", "njk", "html", "liquid"],
+    markdownTemplateEngine: "liquid",
+    htmlTemplateEngine: "njk",
+    dataTemplateEngine: "njk",
     dir: {
-      data: '_data',
-      input: 'src',
-      output: 'public',
+      data: "_data",
+      input: "src",
+      output: "public",
     },
-  }
+  };
 }
