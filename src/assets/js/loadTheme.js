@@ -1,13 +1,20 @@
+const isDarkThemeStored = localStorage.theme === 'dark'
+const isDarkThemePreferred = !localStorage.theme &&
+  window.matchMedia('(prefers-color-scheme: dark)').matches
+const dataset = document.documentElement.dataset
+
 if (
-  localStorage.theme === 'dark' ||
-  (!('theme' in localStorage) &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches)
+  isDarkThemeStored || isDarkThemePreferred
 ) {
-  document.documentElement.dataset.theme = "dark"
+  dataset.theme = "dark"
 } else {
-  document.documentElement.dataset.theme = "light"
+  dataset.theme = "light"
 }
 
 if (localStorage.theme) {
-  document.documentElement.dataset.theme = localStorage.theme
+  dataset.theme = localStorage.theme
+}
+
+if (localStorage.colorScheme) {
+  dataset.colorScheme = localStorage.colorScheme
 }

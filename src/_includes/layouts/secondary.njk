@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en"
+      {% if theme.defaultMode == "dark" %}class="dark"{% endif %}
+      {% if theme.colorScheme != "default" %}data-color-scheme={{ theme.colorScheme }}{% endif %}>
   <head>
     {% include "components/meta.njk" %}
     <title>{{ title }}</title>

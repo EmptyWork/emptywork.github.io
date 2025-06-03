@@ -1,37 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
-
-<head>
-
-  {% include 'components/meta.njk' %}
-
-  <title>{{ title }}</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
-    rel="stylesheet" />
-  {% if style %}
-  <link rel="stylesheet" href="/css/{{ style }}" />
-  {% else %}
-  <link rel="stylesheet" href="/css/style.css" />
-  {% endif %}
-  <script src="/js/loadTheme.js" defer></script>
-  <script src="/js/redirect.js" defer></script>
-</head>
-
-<body class="t-all not-loaded">
-  {% include 'sections/preload.njk' %}
-
-  {% include 'components/nav.njk' %}
-
-  {% include 'sections/hero.njk' %}
-
-  {{ content | safe }}
-
-  {% include 'sections/footer.njk' %}
-
-  <script src="/js/main.js"></script>
-</body>
-
+<html lang="en"
+      {% if theme.defaultMode == "dark" %}class="dark"{% endif %}
+      {% if theme.colorScheme != "default" %}data-color-scheme={{ theme.colorScheme }}{% endif %}>
+  <head>
+    {% include "components/meta.njk" %}
+    <title>{{ title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
+          rel="stylesheet" />
+    {% if style %}
+      <link rel="stylesheet" href="/css/{{ style }}" />
+    {% else %}
+      <link rel="stylesheet" href="/css/style.css" />
+    {% endif %}
+    <script src="/js/loadTheme.js" defer></script>
+    <script src="/js/redirect.js" defer></script>
+  </head>
+  <body class="t-all not-loaded">
+    {% include "sections/preload.njk" %}
+    {% include "components/nav.njk" %}
+    {% include "sections/hero.njk" %}
+    {{ content | safe }}
+    {% include "sections/footer.njk" %}
+    <script src="/js/main.js"></script>
+  </body>
 </html>
