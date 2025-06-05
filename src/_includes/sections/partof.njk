@@ -6,8 +6,8 @@
           <span aria-hidden="true">#</span>
           <span class="sr-only">Link to heading "part-of"</span>
         </a>
-        <h2 id="part-of-header">{{ organization.title | renderMarkdownInline | safe }}</h2>
-      </div>
+        {{ organization.title | renderMarkdownInline | safe }}
+      </h2>
       <span class="header-desc">{{ organization.desc }}</span>
     </header>
     <section class="organization-container" aria-label="Organizations">
