@@ -1,0 +1,28 @@
+{
+  "title": "I'm **==Part of=={.highlight}**",
+  "desc": "Where I'm actively contributing or being registered member of the organization",
+  "organizations": [
+    {
+      "name": "Generasi Baru Indonesia",
+      "desc": "**GenBI** merupakan komunitas yang terdiri dari mahasiswa/i penerima beasiswa _Bank Indonesia_ yang berada di bawah naungan Bank Indonesia.",
+      "svg": "genbi.svg",
+      "year": "2022",
+      "mode": "full",
+      "positions": ["Division Secretary", "Member"]
+    },
+    {
+      "name": "7Mu - 7Mysteries",
+      "desc": "**7Mu** aims on developing an easier and comperhensive CMS for School Management System.",
+      "svg": "7mu.svg",
+      "year": "2022",
+      "positions": ["UI/UX Developer", "Maintainer"]
+    },
+    {
+      "name": "SCC - Student Coding Club",
+      "desc": "**SCC** committed to assisting the development and helping to introduce the ==#A11y=={.highlight} movement to a wider audience in Moluccas.",
+      "svg": "scc.svg",
+      "year": "2022",
+      "positions": ["Leader", "Lead of Web Dev. Team"]
+    }
+  ]
+}
