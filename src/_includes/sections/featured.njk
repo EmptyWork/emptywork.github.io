@@ -6,13 +6,13 @@
       </time>
       <div class="featured-left">
         <header class="section-header featured-header">
-          <h2 id="featured" class="header-title">
-            <a class="header-link__access" href="#featured">
+          <div class="header-title">
+            <a class="header-title__link" href="#featured">
               <span aria-hidden="true">#</span>
               <span class="sr-only">Link to heading "featured"</span>
             </a>
-            Featured Project
-          </h2>
+            <h2 id="featured">Featured Project</h2>
+          </div>
           <span class="featured-header_project-name">
             <h3>{{ featured.title }}</h3>
             {{ featured.subtitle | renderMarkdown | safe }}
@@ -21,21 +21,20 @@
         <main class="featured-main">
           <p>{{ featured.summary }}</p>
           <p class="featured-main_tag-area">
-            {% for tag in featured.tags %}
-            <span class="featured-main_tag">
-              {{ tag }}
-            </span>
-            {% endfor %}
+            {% for tag in featured.tags %}<span class="featured-main_tag">{{ tag }}</span>{% endfor %}
           </p>
         </main>
         <footer class="featured-external">
-          <a href="{{ featured.demoLink }}" target="_blank" aria-label="View featured project BikeForRupiah"
-            rel="noopener noreferrer" class="featured-external_link">
-            <svg fill="currentColor" aria-label="Icon for demo link" viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z">
-              </path>
+          <a href="{{ featured.demoLink }}"
+             target="_blank"
+             aria-label="View featured project BikeForRupiah"
+             rel="noopener noreferrer"
+             class="featured-external_link">
+            <svg fill="currentColor"
+                 aria-label="Icon for demo link"
+                 viewBox="0 0 20 20"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
               <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
             </svg>
             <span aria-hidden="true">View Project</span>
@@ -43,7 +42,11 @@
         </footer>
       </div>
       <div class="featured-right">
-        <img src="./images/bikeforrupiah.png" width="100" height="100" alt="" srcset="">
+        <img src="./images/bikeforrupiah.png"
+             width="100"
+             height="100"
+             alt=""
+             srcset="">
       </div>
     </div>
     <footer class="featured-footer">

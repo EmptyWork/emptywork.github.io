@@ -4,6 +4,7 @@ description: "The page that you are looking for does not exist"
 layout: 'layouts/secondary.njk'
 style: 'error.css'
 ---
+
 <main id="main" class="main">
   <section aria-labelledby="contact" class="contact">
     <div class="main-container">
@@ -12,13 +13,13 @@ style: 'error.css'
           <a class="breadcrumb" href="/">Home</a> ›
           <span class="breadcrumb">Page Not Found</span>
         </span>
-        <h1 id="error" class="header-title">
-          <a class="header-link__access" href="#contact">
+        <div class="header-title">
+          <a class="header-title__link" href="#contact">
             <span aria-hidden="true">#</span>
             <span class="sr-only">Link to heading "Error"</span>
           </a>
-          Page Not Found
-        </h1>
+          <h1 id="error">Page Not Found</h1>
+        </div>
       </header>
       <div class="error-container">
         <div class="error-summary" data-animation="fade-in">
@@ -29,14 +30,16 @@ style: 'error.css'
               <p class="decorative decorative-question">?</p>
             </div>
           </div>
-          <h2 data-animation="fade-in" data-delay="1"><mark class="big-text highlight">404</mark> — The page that you
+          <h2 data-animation="fade-in" data-delay="1">
+            <mark class="big-text highlight">404</mark> — The page that you
             are looking for
-            does not exist</h2>
-          <p data-animation="fade-in" data-delay="2">Please <mark class="highlight">make sure that the URL</mark> you
+            does not exist
+          </h2>
+          <p data-animation="fade-in" data-delay="2">
+            Please <mark class="highlight">make sure that the URL</mark> you
             typed are
             correct, if you think that the
-            <mark class="highlight">URL is correct</mark> but you still cannot seems to access it please <a
-              href="mailto:contact@emptywork.my.id">contact me via email</a>.
+            <mark class="highlight">URL is correct</mark> but you still cannot seems to access it please <a href="mailto:contact@emptywork.my.id">contact me via email</a>.
           </p>
         </div>
         <ul class="error-button">

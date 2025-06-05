@@ -44,9 +44,13 @@
       .header-title {
         display: flex;
         line-height: 1;
+        align-items: center;
         gap: 0.6em;
 
-        a {
+        &__link {
+          font-size: 1.3em;
+          font-weight: bold;
+          text-decoration: none;
           height: max-content;
         }
       }
@@ -56,7 +60,7 @@
         letter-spacing: 0;
       }
 
-      @include mix.breakpoint-down('large') {
+      @include mix.breakpoint-down('medium') {
         flex-direction: column;
         align-items: flex-start;
         gap: 0;

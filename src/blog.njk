@@ -66,13 +66,13 @@ style: 'blog.css'
           <a class="breadcrumb" href="/">Home</a> ›
           <a class="breadcrumb" href="/blog">Blog</a>
         </span>
-        <h1 id="article" class="header-title">
-          <a class="header-link__access" href="#article">
+        <div class="header-title">
+          <a class="header-title__link" href="#article">
             <span aria-hidden="true">#</span>
             <span class="sr-only">Link to heading "recent articles"</span>
           </a>
-          Recent Articles
-        </h1>
+          <h1 id="article">Recent Articles</h1>
+        </div>
       </header>
       <ul class="cards cards-horizontal{% if lengthRecentPosts == 3 %} cards-3-item{% endif %}">
         {%- for post in recentPosts -%}

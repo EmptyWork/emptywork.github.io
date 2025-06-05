@@ -4,6 +4,7 @@ description: "Leave me a message or any feedback, or ask me anything you want."
 layout: 'layouts/secondary.njk'
 style: 'contact.css'
 ---
+
 <main id="main" class="main">
   <section aria-labelledby="contact" class="contact">
     <div class="main-container">
@@ -12,30 +13,26 @@ style: 'contact.css'
           <a class="breadcrumb" href="/">Home</a> ›
           <a class="breadcrumb" href="/contact">{{ contact.title }}</a>
         </span>
-        <h1 id="contact" class="header-title">
-          <a class="header-link__access" href="#contact">
+        <div class="header-title">
+          <a class="header-title__link" href="#contact">
             <span aria-hidden="true">#</span>
             <span class="sr-only">Link to heading "contact"</span>
           </a>
-          {{ contact.desc }}
-        </h1>
+          <h1 id="contact">{{ contact.desc }}</h1>
+        </div>
       </header>
       <div class="contact-container" data-animation="fade-in" data-delay="2">
         <p class="contact-summary">{{ contact.summary | renderMarkdownInline | safe }}</p>
         <ul class="social-container">
           {% for social in contact.mainSocials %}
-          <li data-animation="fade-in" data-delay="{{ loop.index }}">
-            {% include 'components/snippets/social-items.njk' %}
-          </li>
+            <li data-animation="fade-in" data-delay="{{ loop.index }}">{% include "components/snippets/social-items.njk" %}</li>
           {% endfor %}
         </ul>
         <ul class="social-container social-container__small">
           {% for social in contact.socials %}
-          {% if social.hidden !== true %}
-          <li data-animation="fade-in" data-delay="{{ loop.index }}">
-            {% include 'components/snippets/social-items.njk' %}
-          </li>
-          {% endif %}
+            {% if social.hidden !== true %}
+              <li data-animation="fade-in" data-delay="{{ loop.index }}">{% include "components/snippets/social-items.njk" %}</li>
+            {% endif %}
           {% endfor %}
         </ul>
       </div>
