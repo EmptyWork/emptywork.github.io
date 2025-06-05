@@ -1,21 +1,17 @@
 <section aria-labelledby="clients" class="clients">
   <div class="main-container">
     <header class="section-header" data-animation="right-show">
-      <h2 id="clients" class="header-title">
-        <a class="header-link__access" href="#clients">
+      <div class="header-title">
+        <a class="header-title__link" href="#clients">
           <span aria-hidden="true">#</span>
           <span class="sr-only">Link to heading "clients"</span>
         </a>
-        {{ client.title }}
-      </h2>
-      <span class="header-desc">
-        {{ client.desc }}
-      </span>
+        <h2 id="clients">{{ client.title }}</h2>
+      </div>
+      <span class="header-desc">{{ client.desc }}</span>
     </header>
     <section class="clients-list">
-      {% for nameClient in client.clients %}
-      {{ nameClient.svg | svg(loop.index) | safe }}
-      {% endfor %}
+      {% for nameClient in client.clients %}{{ nameClient.svg | svg(loop.index) | safe }}{% endfor %}
     </section>
   </div>
 </section>
