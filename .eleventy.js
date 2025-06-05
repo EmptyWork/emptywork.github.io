@@ -88,12 +88,8 @@ export default function (eleventyConfig) {
     return array.slice(0, 3)
   })
 
-  eleventyConfig.addFilter("trimText", (string) => {
-    return string.split(" ").splice(0, 12).join(" ")
-  })
-
-  eleventyConfig.addFilter("cutText", (string, size) => {
-    return string.split("-").splice(0, size).join("-")
+  eleventyConfig.addFilter("clipText", (string, size, seperator = "-") => {
+    return string.split(seperator).splice(0, size).join(seperator)
   })
 
   eleventyConfig.addFilter("serializeTitle", (string, yearSplice = 2) => {
