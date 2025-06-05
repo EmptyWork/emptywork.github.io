@@ -68,7 +68,7 @@
     color: var(--clr-white);
   }
 
-  :is(p:not(:first-of-type), table, blockquote) {
+  :is(p, table, blockquote) {
     max-width: 60ch;
   }
 
@@ -135,7 +135,7 @@
       font-size: 1.2rem;
     }
   }
-  
+
   h4 {
     font-size: 1.2rem;
   }
@@ -301,6 +301,12 @@
   }
 
   .table-of-contents {
+    display: none;
+
+    &:has(ul>li) {
+      display: block;
+    }
+
     .toc-container-header {
       font-weight: 700;
     }
