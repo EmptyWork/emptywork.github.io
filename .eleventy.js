@@ -31,7 +31,7 @@ export default function (eleventyConfig) {
     .use(anchor, {
       permalink: anchor.permalink.linkAfterHeader({
         style: "visually-hidden",
-        assistiveText: (title) => `Permalink to “${title}”`,
+        assistiveText: (title) => `Link to heading “${title}”`,
         visuallyHiddenClass: "sr-only",
         wrapper: ['<div class="header-wrapper">', '</div>'],
       }),
