@@ -64,29 +64,31 @@ style: 'blog.css'
       <header class="section-header" data-animation="fade-in">
         <span>
           <a class="breadcrumb" href="/">Home</a> ›
-          <a class="breadcrumb" href="/blog">Blog</a>
+          <a class="breadcrumb" aria-current="page" href="/blog">Blog</a>
         </span>
         <div class="header-title">
           <a class="header-title__link" href="#article">
             <span aria-hidden="true">#</span>
             <span class="sr-only">Link to heading "recent articles"</span>
           </a>
-          <h1 id="article">Recent Articles</h1>
+          <h1 id="article">Articles</h1>
         </div>
       </header>
-      <ul class="cards cards-horizontal{% if lengthRecentPosts == 3 %} cards-3-item{% endif %}">
-        {%- for post in recentPosts -%}
-          {% include "components/snippets/article.njk" %}
-        {% else %}
-          <li class="card card-empty">
-            <h2>You haven't post anything yet.</h2>
-            It seems like there is no article right now...
-          </li>
-        {%- endfor -%}
-      </ul>
+      <section aria-label="Recent Articles">
+        <ul class="cards cards-horizontal{% if lengthRecentPosts == 3 %} cards-3-item{% endif %}">
+          {%- for post in recentPosts -%}
+            {% include "components/snippets/article.njk" %}
+          {% else %}
+            <li class="card card-empty" role="card">
+              <h2>You haven't post anything yet.</h2>
+              It seems like there is no article right now...
+            </li>
+          {%- endfor -%}
+        </ul>
+      </section>
       {% set groupedPosts = posts | groupby("date.year") %}
       {% for year, posts in groupedPosts | reverseGroupedPosts %}
-        <div class="posts">
+        <section class="posts" aria-label="Posts from {{ year }}">
           <h2 class="posts-yeargroup"
               data-animation="fade-in"
               data-delay="{{ loop.index }}">{{ year }}</h2>
@@ -94,7 +96,8 @@ style: 'blog.css'
             {% for post in posts %}
               <li class="posts-detail"
                   data-animation="prototype-card"
-                  data-delay="{{ loop.index + 0.5 | float }}">
+                  data-delay="{{ loop.index + 0.5 | float }}"
+                  aria-label="Summary from {{ post.title }}">
                 <p class="posts-detail_accent">
                   <time class="posts-detail_accent-item posts-detail_accent-item_filled"
                         datetime="{{ post.date.fullDate | htmlDateString }}">
@@ -131,7 +134,7 @@ style: 'blog.css'
               </li>
             {% endfor %}
           </ul>
-        </div>
+        </section>
       {% endfor %}
     </div>
   </section>
