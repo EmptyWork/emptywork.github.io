@@ -21,7 +21,7 @@
     </header>
     <ul class="prototypes">
       {%- for post in collections.prototype | reverse -%}
-        {% include "components/snippets/prototype.njk" %}
+        {% include "components/snippets/prototype-card.njk" %}
       {%- endfor -%}
     </ul>
   </div>
