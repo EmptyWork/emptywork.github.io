@@ -1,5 +1,5 @@
 {
-  "layout": "article.njk",
+  "layout": "layouts/article.njk",
   "tags": "post",
   "author": "EmptyWork",
   "image": "/images/emptywork.my.id-default-post.jpg",
