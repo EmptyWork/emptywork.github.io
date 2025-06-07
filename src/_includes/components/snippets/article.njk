@@ -1,7 +1,7 @@
-<li class="card t-all" data-animation="fade-in" data-delay="{{ loop.index }}">
+<li class="card t-all" aria-label="Recent article: {{ post.title }}" data-animation="fade-in" data-delay="{{ loop.index }}">
   {% if post.image %}
     <div class="card-image">
-      <img class="card-background" width="1920" height="1080" src="{{ post.image }}" alt="Image of {{ post.title }}">
+      <img class="card-background" width="1920" height="1080" src="{{ post.image }}" alt="">
     </div>
   {% endif %}
   <article class="card-body">
