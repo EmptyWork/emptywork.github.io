@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "sass": "sass --no-source-map src/assets/scss/:public/css/",
-    "sass:compressed": "sass --style=compressed --no-source-map src/assets/scss:public/css/",
-    "postcss": "postcss public/css/*.css --use autoprefixer postcss-import postcss-nested --dir public/css",
+    "sass:compressed": "sass --no-source-map --style=compressed src/assets/scss:public/css/",
+    "postcss": "postcss public/css/*.css --use postcss-import autoprefixer postcss-nested --no-map --dir public/css",
     "watch": "npm-run-all --parallel watch:*",
     "watch:eleventy": "eleventy --serve",
     "watch:sass": "npm run sass:compressed -- --watch",
