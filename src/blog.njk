@@ -77,7 +77,7 @@ style: 'blog.css'
       <section aria-label="Recent Articles">
         <ul class="cards cards-horizontal{% if lengthRecentPosts == 3 %} cards-3-item{% endif %}">
           {%- for post in recentPosts -%}
-            {% include "components/snippets/article.njk" %}
+            {% include "components/snippets/post-card.njk" %}
           {% else %}
             <li class="card card-empty" role="card">
               <h2>You haven't post anything yet.</h2>
@@ -125,8 +125,7 @@ style: 'blog.css'
                 </p>
                 <p class="posts-detail_header">
                   <a href="{{ post.url }}">
-                    <span aria-labelledby="{{ post.slug }}" aria-hidden="true">#</span>
-                    {# <span class="sr-only" id="{{ post.slug }}-sr-only">{{ post.title }}</span> #}
+                    <span aria-hidden="true">#</span>
                     <span id="{{ post.slug }}">{{ post.title }}</span>
                   </a>
                 </p>
