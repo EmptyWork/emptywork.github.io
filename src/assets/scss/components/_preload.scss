@@ -17,7 +17,8 @@
 
   svg {
     rotate: 0deg;
-    max-width: 10em;
+    width: min(10em, 100%);
+    height: min(10em, 100%);
     animation: preload 2s infinite;
   }
 
