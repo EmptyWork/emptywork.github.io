@@ -1,4 +1,5 @@
 @use "../abstracts/_mixin" as mix;
+@use "../abstracts/typography";
 
 html {
   scroll-behavior: smooth;
@@ -44,11 +45,12 @@ html:root {
 }
 
 body {
+  @extend .font-montserrat;
+
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-color: var(--clr-background-900);
-  font-family: 'Montserrat', sans-serif;
   color: var(--clr-foreground);
   line-height: 1.6;
   overflow-x: hidden;
@@ -155,7 +157,7 @@ li {
 
 .sr-only {
   border: 0;
-  clip: rect(0 0 0 0);
+  clip-path: rect(0 0 0 0);
   height: 0.0625rem;
   margin: -0.0625rem;
   overflow: hidden;
