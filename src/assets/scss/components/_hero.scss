@@ -17,32 +17,32 @@
   }
 
   &-decoration {
-    --width: 95vmin;
-    --increase: 1.2;
-    --duration: 12s;
-    --delay: calc((var(--duration) * 0.1));
+    --_width: 95vmin;
+    --_increase: 1.2;
+    --_duration: 12s;
+    --_delay: calc((var(--_duration) * 0.1));
     position: absolute;
-    right: calc(var(--width) / -2);
-    bottom: calc(var(--width) / -2);
+    right: calc(var(--_width) / -2);
+    bottom: calc(var(--_width) / -2);
     z-index: -1;
-    width: var(--width);
+    width: var(--_width);
     aspect-ratio: 1/1;
     border-radius: 50%;
     background-color: var(--clr-accent);
-    animation: twiching var(--duration) var(--delay) infinite;
+    animation: twiching var(--_duration) var(--_delay) infinite;
   }
 
   @keyframes twiching {
     50% {
-      width: calc(var(--width) * var(--increase));
+      width: calc(var(--_width) * var(--_increase));
     }
   }
 
   &-bigger {
-    --width: 120vmin;
-    --increase: 2;
-    --duration: 10s;
-    --delay: calc((var(--duration) * 0.2));
+    --_width: 120vmin;
+    --_increase: 2;
+    --_duration: 10s;
+    --_delay: calc((var(--_duration) * 0.2));
     background-color: transparent;
     border: max(0.5vmin, 0.125rem) solid var(--clr-accent);
   }
