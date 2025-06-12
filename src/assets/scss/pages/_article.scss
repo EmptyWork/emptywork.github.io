@@ -1,4 +1,5 @@
 @use "../abstracts/mixin" as mix;
+@use "../abstracts/typography";
 
 .article {
   --_l: 20%;
@@ -169,8 +170,8 @@
   code,
   kbd,
   samp {
+    @extend .font-monospace;
     padding: 0 0.3em;
-    font-family: monospace, "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
     // font-size: 0.8rem;
     line-height: 1.4;
   }
