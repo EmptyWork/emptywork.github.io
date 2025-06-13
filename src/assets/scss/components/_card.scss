@@ -38,6 +38,13 @@
     border-radius: 0.3rem;
     overflow: hidden;
 
+    picture {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 0.3rem;
+    }
+
     &::after {
       content: '';
       position: absolute;
