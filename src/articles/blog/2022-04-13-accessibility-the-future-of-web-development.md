@@ -8,7 +8,7 @@ draft: false
 date: 2022-04-13T04:05:25.911Z
 tags:
   - post
-image: /images/accessibility.png
+image: /assets/images/accessibility.png
 ---
 
 [[toc]]
