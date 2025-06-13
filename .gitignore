@@ -7,3 +7,5 @@
 .vscode
 
 # /src/blog/example/*
+
+.cache

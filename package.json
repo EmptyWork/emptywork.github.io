@@ -30,13 +30,14 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.1",
     "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "autoprefixer": "^10.4.21",
     "postcss": "^8.4.31",
     "postcss-cli": "^11.0.1",
-    "autoprefixer": "^10.4.21",
     "postcss-import": "^16.1.0",
     "postcss-nested": "^7.0.2"
   },
   "dependencies": {
+    "@11ty/eleventy-img": "^6.0.4",
     "dotenv": "^16.5.0",
     "highlight.js": "^11.5.1",
     "markdown-it-anchor": "^9.2.0",
