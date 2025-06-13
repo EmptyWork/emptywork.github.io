@@ -1,14 +1,16 @@
 ---
 title: Handling file from PHP to Javascript
-description: One of the problem with using PHP and Javascript, is that handling file(s) by both of the language(s) at the same time.
+description: One of the problem with using PHP and Javascript, is that handling
+  file(s) by both of the language(s) at the same time.
 author: EmptyWork
-draft: false
+draft: true
 date: 2023-09-16T10:11:37.394Z
 tags:
   - post
   - thesis
   - javascript
   - php
+image: /assets/images/sunlight-landscape-forest-sunset-hill-nature-5912-wallhere.com.jpg
 ---
 
 [[toc]]
