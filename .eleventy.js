@@ -1,6 +1,6 @@
-import dotenv from "dotenv"
 import fs from "fs"
 import path from "path"
+import dotenv from "dotenv"
 import { DateTime } from "luxon"
 import hljs from "highlight.js"
 import markdownIt from "markdown-it"
@@ -9,6 +9,7 @@ import bracketedSpans from "markdown-it-bracketed-spans"
 import attrs from "markdown-it-attrs"
 import toc from "markdown-it-table-of-contents"
 import mark from "markdown-it-mark"
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img"
 import rssPlugin from "@11ty/eleventy-plugin-rss"
 
 dotenv.config()
@@ -56,6 +57,8 @@ export default function (eleventyConfig) {
       closingSingleTag: "default",
     },
   })
+
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin);
 
   eleventyConfig.addPassthroughCopy({
     "src/assets/*.pdf": "assets",
