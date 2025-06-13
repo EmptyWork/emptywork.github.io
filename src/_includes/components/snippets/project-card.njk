@@ -4,9 +4,11 @@
   {% if project.data.image %}
     <div class="card-image">
       <img class="card-background"
-           width="100"
-           height="100"
+           eleventy:output="/images/"
+           width="400"
+           height="400"
            loading="lazy"
+           decoding="async"
            src="{{ project.data.image }}"
            alt="Image of {{ project.data.title }}">
     </div>
