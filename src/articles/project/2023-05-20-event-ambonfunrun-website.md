@@ -8,6 +8,6 @@ endDate: 2023-05-20T09:41:29.825Z
 tags:
   - project
 image: /assets/images/345349877_1186703082083563_922805273957392018_n.jpg
-linkDemo: https://ambonfunrun.com
+linkDemo: https://web.archive.org/web/20230804130617/https://ambonfunrun.com/
 linkCode: https://www.instagram.com/p/CsBBHTardh9/
 ---
