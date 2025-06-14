@@ -156,7 +156,7 @@
       background-color: var(--_item-color);
       background-image: linear-gradient(90deg, var(--_item-color), var(--clr-accent) var(--_range));
       border-radius: 0.3rem;
-      
+
       &:is(.error, .active) {
         --_range: 400%;
         color: var(--clr-white);
@@ -165,18 +165,16 @@
       &.error {
         --_item-color: hsl(0, 70%, 43%);
       }
-      
+
       &.active {
         --_item-color: hsl(120, 70%, 26%);
       }
     }
 
     .status {
-      background-image: linear-gradient(
-        -90deg,
-        var(--clr-accent),
-        var(--clr-accent-dark)
-      );
+      background-image: linear-gradient(-90deg,
+          var(--clr-accent),
+          var(--clr-accent-dark));
       padding: 0 0.7rem;
       display: flex;
       align-items: center;
@@ -224,14 +222,18 @@
       scrollbar-width: none;
       position: relative;
 
-      &::-webkit-scrollbar {
+      &::-webkit-scrollbar,
+      &::-webkit-scrollbar:vertical {
         width: 0;
       }
     }
 
     pre {
       overflow: scroll;
-      &::-webkit-scrollbar {
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar,
+      &::-webkit-scrollbar:vertical {
         width: 0;
       }
     }
