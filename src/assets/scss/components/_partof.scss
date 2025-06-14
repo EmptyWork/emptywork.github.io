@@ -34,7 +34,7 @@
     padding: 3em 2em 2em 2em;
     width: 100%;
 
-    h2 {
+    .header-title {
       text-transform: uppercase;
       letter-spacing: 0.1em;
 
@@ -112,11 +112,9 @@
             border: none;
             color: var(--clr-white);
             background: var(--clr-accent-dark);
-            background-image: linear-gradient(
-              -90deg,
-              var(--clr-accent),
-              var(--clr-accent-dark)
-            );
+            background-image: linear-gradient(-90deg,
+                var(--clr-accent),
+                var(--clr-accent-dark));
             background-size: 400%;
             animation: positionanimate 1s infinite alternate;
           }
@@ -164,6 +162,7 @@
   0% {
     background-position: left;
   }
+
   100% {
     background-position: right;
   }
