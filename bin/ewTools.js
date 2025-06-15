@@ -10,7 +10,12 @@ const LoggerType = Object.freeze({
     ERROR: "Error",
     EMPTY: ""
 })
-const Logger = (text, type = LoggerType.EMPTY) => {
+
+const getAllActionTypes = () => Object.values(ActionTypes).map((action, index, arr) => (index === arr.length - 1 ? ` and \`${action}\`` : ` \`${action}\`,`)).join("")
+
+const getAllEntityTypes = () => Object.values(EntityTypes).map((entity, index, arr) => (index === arr.length - 1 ? ` and \`${entity}\`` : ` \`${entity}\`,`)).join("")
+
+function Logger(text, type = LoggerType.EMPTY) {
     const typeFormatted = (type === LoggerType.EMPTY) ? `${type}` : `${type}:`
     if (isDevelopment) console.log(`${typeFormatted}`, text)
 }
@@ -147,7 +152,7 @@ const handleMake = (type, title) => {
             generatePrototypeFile(title)
             break
         default:
-            console.log("Invalid Type")
+            console.log(`Invalid Type, Valid Types: ${getAllEntityTypes()}`)
     }
 }
 
@@ -163,7 +168,7 @@ const handleDelete = (type, title) => {
             removeFile(title, EntityTypes.PROTOTYPE)
             break
         default:
-            console.log("Invalid Type")
+            console.log(`Invalid Type, Valid Types: ${getAllEntityTypes()}`)
     }
 }
 
@@ -176,5 +181,5 @@ switch (action) {
         handleDelete(type, title)
         break
     default:
-        console.log("Invalid Action")
+        console.log(`Invalid Action. Valid Actions: ${getAllActionTypes()}`)
 }
