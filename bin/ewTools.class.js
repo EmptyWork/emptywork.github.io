@@ -8,6 +8,7 @@ class Configuration {
     }
 
     static get(key) {
+        Configuration.load()
         return process.env[key]
     }
 }
@@ -31,18 +32,33 @@ class Logger {
 class FlagsProcessor {
     static formatFlagsString(args) {
         if (!Array.isArray(args) || args.length === 0) return ""
+        let lastIsAttr = false
+        let isPreviousDump = false
 
-        return args.map((token, index) =>
-            index === args.length - 1 ? token : index % 2 === 0 ? `${token}` : `${token}+`
-        ).join("")
+        return args.map((token, index) => {
+            if (index === 0) return token
+            if (token.startsWith("-") || isPreviousDump) {
+                lastIsAttr = true
+                if (token.includes("dump")) { isPreviousDump = true } else { isPreviousDump = false }
+                return "+" + token
+            }
+
+            lastIsAttr = false
+            return ";" + token
+        }).join("")
     }
 
     static parseFlags(flags) {
         const paramWithValue = flags.split("+")
         const flagsObject = {}
         paramWithValue.forEach(token => {
-            const [attr, value] = token.split("")
-            flagsObject[attr] = value
+            let [attr, value] = token.split(";")
+            if (!value) value = true
+            if (attr.startsWith("--")) {
+                flagsObject[attr.slice(2)] = value
+            } else {
+                flagsObject[attr.slice(1)] = value
+            }
         })
         return flagsObject
     }
@@ -160,8 +176,9 @@ class Ewtools {
         this.validateArgs()
         Logger.log(this.args, Logger.Types.INFO)
         Logger.log(this.flags, Logger.Types.INFO)
+        Logger.log(FlagsProcessor.formatFlagsString(this.restArgs), Logger.Types.INFO)
 
-        switch (this.action) {
+        if (!this.flags.dump && !this.flags.dp) switch (this.action) {
             case FileHandler.ActionTypes.MAKE:
                 this.handleMake()
                 break
@@ -201,7 +218,6 @@ class Ewtools {
     }
 }
 
-Configuration.load()
 const args = process.argv.slice(2)
 
 if (args.length <= 0) {

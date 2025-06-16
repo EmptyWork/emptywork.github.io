@@ -22,10 +22,19 @@ const Logger = (text, type = LoggerType.EMPTY) => {
 
 const formatFlagsString = (args) => {
     if (!Array.isArray(args) || args.length === 0) return "";
+    let lastIsAttr = false
+    let isPreviousDump = false
 
     return args.map((token, index) => {
-        if (index === args.length - 1) return token;
-        return (index % 2 == 0) ? `${token};` : `${token}+`
+        if (index === 0) return token
+        if (token.startsWith("-") || isPreviousDump) {
+            lastIsAttr = true
+            if (token.includes("dump")) { isPreviousDump = true } else { isPreviousDump = false }
+            return "+" + token
+        }
+
+        lastIsAttr = false
+        return ";" + token
     }).join("")
 }
 
@@ -33,8 +42,13 @@ const flagsHandler = (flags) => {
     const paramWithValue = flags.split("+")
     const flagsObject = new Object();
     paramWithValue.forEach(token => {
-        const [attr, value] = token.split(";")
-        flagsObject[attr[1]] = value
+        let [attr, value] = token.split(";")
+        if (!value) value = true
+        if (attr.startsWith("--")) {
+            flagsObject[attr.slice(2)] = value
+        } else {
+            flagsObject[attr.slice(1)] = value
+        }
     })
     return flagsObject
 }
@@ -50,6 +64,7 @@ const formattedFlags = formatFlagsString(restArgs)
 const flagsObject = flagsHandler(formattedFlags)
 Logger(args, LoggerType.INFO)
 Logger(flagsObject, LoggerType.INFO)
+Logger(formattedFlags, LoggerType.INFO)
 
 const ActionTypes = Object.freeze({
     MAKE: "make",
@@ -172,7 +187,7 @@ const handleDelete = (type, title) => {
     }
 }
 
-switch (action) {
+if (!flagsObject.dump && !flagsObject.dp) switch (action) {
     case ActionTypes.MAKE:
         handleMake(type, title)
         break
