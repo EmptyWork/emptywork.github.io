@@ -8,11 +8,13 @@
     "sass": "sass --no-source-map src/assets/scss/:public/css/",
     "sass:compressed": "sass --no-source-map --style=compressed src/assets/scss:public/css/",
     "postcss": "postcss public/css/*.css --use postcss-import autoprefixer postcss-nested --no-map --dir public/css",
+    "minify:js": "node bin/minify.js",
     "watch": "npm-run-all --parallel watch:*",
+    "watch:js": "npm run minify:js -- --watch",
     "watch:eleventy": "eleventy --serve",
     "watch:sass": "npm run sass:compressed -- --watch",
     "watch:postcss": "npm run postcss -- --watch",
-    "build": "npm run sass:compressed && npm run postcss && eleventy",
+    "build": "npm run sass:compressed && npm run postcss && npm run minify:js && eleventy",
     "start": "npm-run-all sass:compressed postcss --parallel watch:*",
     "dev": "npm run watch"
   },
@@ -39,6 +41,7 @@
   "dependencies": {
     "@11ty/eleventy-img": "^6.0.4",
     "dotenv": "^16.5.0",
+    "glob": "^11.0.3",
     "highlight.js": "^11.5.1",
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-attrs": "^4.1.4",
@@ -46,6 +49,7 @@
     "markdown-it-mark": "^4.0.0",
     "markdown-it-table-of-contents": "^0.9.0",
     "npm-run-all": "^4.1.5",
-    "sass": "^1.49.8"
+    "sass": "1.89.2",
+    "terser": "^5.42.0"
   }
 }
