@@ -68,6 +68,12 @@ export default function (eleventyConfig) {
     "src/robots.txt": "robots.txt"
   })
 
+  if (isDevelopment) {
+    eleventyConfig.addPassthroughCopy({
+      "src/assets/js": "js",
+    })
+  }
+
   eleventyConfig.addFilter("postDate", (dateObj) => {
     if (typeof dateObj !== "object") dateObj = new Date(dateObj)
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED)
