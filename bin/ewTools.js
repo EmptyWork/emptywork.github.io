@@ -15,7 +15,7 @@ const getAllActionTypes = () => Object.values(ActionTypes).map((action, index, a
 
 const getAllEntityTypes = () => Object.values(EntityTypes).map((entity, index, arr) => (index === arr.length - 1 ? ` and \`${entity}\`` : ` \`${entity}\`,`)).join("")
 
-function Logger(text, type = LoggerType.EMPTY) {
+const Logger = (text, type = LoggerType.EMPTY) => {
     const typeFormatted = (type === LoggerType.EMPTY) ? `${type}` : `${type}:`
     if (isDevelopment) console.log(`${typeFormatted}`, text)
 }
