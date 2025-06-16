@@ -63,7 +63,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "src/assets/*.pdf": "assets",
     "src/assets/images": "images",
-    "src/assets/js/*": "js",
     "src/admin/*": "admin",
     "settings.json": "settings.json",
     "src/robots.txt": "robots.txt"
