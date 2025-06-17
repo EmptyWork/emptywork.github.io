@@ -1,8 +1,11 @@
 import fs from "fs"
 import path from "path"
 import dotenv from "dotenv"
+import chalk from "chalk"
 
 dotenv.config()
+const programSuffix = `${chalk.gray(`[`)}${chalk.green(`EwT`)}${chalk.gray(`/bin]`)}`
+const debugModeSuffix = chalk.gray(`[debug]`)
 const isDevelopment = process.env.TOOLS_ENV === "development"
 const LoggerType = Object.freeze({
     INFO: "Info",
@@ -17,30 +20,27 @@ const getAllEntityTypes = () => Object.values(EntityTypes).map((entity, index, a
 
 const Logger = (text, type = LoggerType.EMPTY) => {
     const typeFormatted = (type === LoggerType.EMPTY) ? `${type}` : `${type}:`
-    if (isDevelopment) console.log(`${typeFormatted}`, text)
+    if (isDevelopment) console.log(`${programSuffix}${debugModeSuffix} ${typeFormatted}`, text)
 }
 
 const formatFlagsString = (args) => {
     if (!Array.isArray(args) || args.length === 0) return "";
-    let lastIsAttr = false
     let isPreviousDump = false
 
     return args.map((token, index) => {
         if (index === 0) return token
         if (token.startsWith("-") || isPreviousDump) {
-            lastIsAttr = true
             if (token.includes("dump")) { isPreviousDump = true } else { isPreviousDump = false }
             return "+" + token
         }
 
-        lastIsAttr = false
         return ";" + token
     }).join("")
 }
 
 const flagsHandler = (flags) => {
     const paramWithValue = flags.split("+")
-    const flagsObject = new Object();
+    const flagsObject = {}
     paramWithValue.forEach(token => {
         let [attr, value] = token.split(";")
         if (!value) value = true
@@ -55,7 +55,7 @@ const flagsHandler = (flags) => {
 
 const args = process.argv.slice(2)
 if (args.length <= 0) {
-    console.log("Usage: ./ewtools.bat make:blog \"title\"")
+    console.log(`${programSuffix} Usage: ${chalk.green(`./ewtools.bat make:blog "title"`)}`)
     process.exit()
 }
 const [command, title, ...restArgs] = args
@@ -79,21 +79,21 @@ const EntityTypes = Object.freeze({
 })
 
 if (args.length < 2) {
-    console.log("Usage: ./ewtools.bat make:blog \"title\"")
+    console.log(`${programSuffix} Usage: ${chalk.green(`./ewtools.bat make:blog "title"`)}`)
     process.exit(1)
 }
 
-const handleError = (error, filename, action = ActionTypes.MAKE) => {
-    if (error) return console.error(`Error creating file: ${error.message}`)
+const handleError = (error, filename, { type, action = ActionTypes.MAKE } = {}) => {
+    if (error) return console.error(`${programSuffix} Error creating file: ${error.message}`)
     const currentAction = (action === ActionTypes.MAKE) ? "created" : "removed"
-    console.log(`File "${filename}" ${currentAction} successfully.`)
+    console.log(`${programSuffix} File "${type}/${filename}" ${currentAction} successfully.`)
 }
 
 const generateFile = (title, entityType, getContent) => {
-    const { filename, filepath } = generateFilePath(title, entityType);
-    const content = getContent(title, flagsObject);
-    fs.writeFile(filepath, content, error => handleError(error, filename));
-};
+    const { filename, filepath } = generateFilePath(title, entityType)
+    const content = getContent(title, flagsObject)
+    fs.writeFile(filepath, content, error => handleError(error, filename, { type: entityType }))
+}
 
 const generateBlogFile = (title) => generateFile(title, EntityTypes.BLOG, getDefaultBlogContent)
 
@@ -101,16 +101,16 @@ const generateProjectFile = (title) => generateFile(title, EntityTypes.PROJECT, 
 
 const generatePrototypeFile = (title) => generateFile(title, EntityTypes.PROTOTYPE, getDefaultPrototypeContent)
 
-const removeFile = (title, type) => {
-    const { filename, filepath } = generateFilePath(title, type)
-    fs.rm(filepath, (error) => handleError(error, filename, ActionTypes.DELETE))
+const removeFile = (title, entityType) => {
+    const { filename, filepath } = generateFilePath(title, entityType)
+    fs.rm(filepath, (error) => handleError(error, filename, { action: ActionTypes.DELETE, type: entityType }))
 }
 
 const generateFilePath = (title, type) => {
     let date = flagsObject.d || new Date().toISOString()
     const [year, month, day] = date.split("T")[0].split("-")
     if (!(year && month && day)) {
-        console.log("Invalid date format. Please provide -d yyyy-mm-dd")
+        console.log(`${programSuffix} Invalid date format. Please provide -d yyyy-mm-dd`)
         process.exit(1)
     }
     const formattedDate = type === EntityTypes.PROTOTYPE ? year : `${year}-${month}-${day}`
@@ -120,6 +120,8 @@ const generateFilePath = (title, type) => {
     return { filename, filepath }
 }
 
+const tagsHandler = (tags) => typeof tags === "string" ? tags.split(",").map(tag => `\n  - ${tag}`).join("") : ""
+
 const getDefaultBlogContent = (title, flags = {}) => `---
 title: ${title}
 description: 
@@ -127,10 +129,8 @@ author:
 draft: true
 date: ${new Date().toISOString()}
 tags:
-  - post
-${typeof flags.t === "string" ? flags.t.split(",").map(tag => `  - ${tag}`).join("\n") : ""}---
-
-`
+  - post${tagsHandler(flags.t)}
+---\n`
 const getDefaultProjectContent = (title, flags = {}) => `---
 title: ${title}
 description:
@@ -140,8 +140,8 @@ image:
 linkDemo:
 linkCode:
 tags:
-  - project
-${typeof flags.t === "string" ? flags.t.split(",").map(tag => `  - ${tag}`).join("\n") : ""}---`;
+  - project${tagsHandler(flags.t)}
+---\n`
 const getDefaultPrototypeContent = (title, flags = {}) => `---
 title: ${title}
 status: 1
@@ -151,9 +151,8 @@ linkDemo:
 language: 
 code: |-
 tags:
-  - prototype
-${typeof flags.t === "string" ? flags.t.split(",").map(tag => `  - ${tag}`).join("\n") : ""}---
-`
+  - prototype${tagsHandler(flags.t)}
+---\n`
 
 const handleMake = (type, title) => {
     switch (type) {
@@ -167,7 +166,7 @@ const handleMake = (type, title) => {
             generatePrototypeFile(title)
             break
         default:
-            console.log(`Invalid Type, Valid Types: ${getAllEntityTypes()}`)
+            console.log(`${programSuffix} Invalid Type, Valid Types: ${getAllEntityTypes()}`)
     }
 }
 
@@ -183,7 +182,7 @@ const handleDelete = (type, title) => {
             removeFile(title, EntityTypes.PROTOTYPE)
             break
         default:
-            console.log(`Invalid Type, Valid Types: ${getAllEntityTypes()}`)
+            console.log(`${programSuffix} Invalid Type, Valid Types: ${getAllEntityTypes()}`)
     }
 }
 
@@ -196,5 +195,5 @@ if (!flagsObject.dump && !flagsObject.dp) switch (action) {
         handleDelete(type, title)
         break
     default:
-        console.log(`Invalid Action. Valid Actions: ${getAllActionTypes()}`)
+        console.log(`${programSuffix} Invalid Action. Valid Actions: ${getAllActionTypes()}`)
 }

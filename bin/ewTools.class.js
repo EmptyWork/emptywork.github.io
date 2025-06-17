@@ -1,6 +1,7 @@
 import fs from "fs"
 import path from "path"
 import dotenv from "dotenv"
+import chalk from "chalk"
 
 class Configuration {
     static load() {
@@ -15,7 +16,7 @@ class Configuration {
 
 class Logger {
     static isDevelopment = Configuration.get("TOOLS_ENV") === "development"
-
+    static debugModeSuffix = chalk.gray(`[debug]`)
     static Types = Object.freeze({
         INFO: "Info",
         WARN: "Warning",
@@ -25,25 +26,22 @@ class Logger {
 
     static log(text, type = Logger.Types.EMPTY) {
         const typeFormatted = type ? `${type}:` : ""
-        if (this.isDevelopment) console.log(`${typeFormatted}`, text)
+        if (this.isDevelopment) console.log(`${Ewtools.programSuffix}${this.debugModeSuffix} ${typeFormatted}`, text)
     }
 }
 
 class FlagsProcessor {
     static formatFlagsString(args) {
         if (!Array.isArray(args) || args.length === 0) return ""
-        let lastIsAttr = false
         let isPreviousDump = false
 
         return args.map((token, index) => {
             if (index === 0) return token
             if (token.startsWith("-") || isPreviousDump) {
-                lastIsAttr = true
                 if (token.includes("dump")) { isPreviousDump = true } else { isPreviousDump = false }
                 return "+" + token
             }
 
-            lastIsAttr = false
             return ";" + token
         }).join("")
     }
@@ -84,20 +82,20 @@ class FileHandler {
         return { filename, filepath }
     }
 
-    static handleError(error, filename, action = this.ActionTypes.MAKE) {
-        if (error) return console.error(`Error creating file: ${error.message}`)
-        console.log(`File "${filename}" ${action === this.ActionTypes.MAKE ? "created" : "removed"} successfully.`)
+    static handleError(error, filename, { type, action = this.ActionTypes.MAKE }) {
+        if (error) return console.error(`${Ewtools.programSuffix} Error creating file: ${error.message}`)
+        console.log(`${Ewtools.programSuffix} File "${type}/${filename}" ${action === this.ActionTypes.MAKE ? "created" : "removed"} successfully.`)
     }
 
-    static generateFile(title, type, flags, getContentFunction) {
-        const { filename, filepath } = this.generateFilePath(title, type, flags)
+    static generateFile(title, entityType, flags, getContentFunction) {
+        const { filename, filepath } = this.generateFilePath(title, entityType, flags)
         const content = getContentFunction(title, flags)
-        fs.writeFile(filepath, content, (error) => this.handleError(error, filename))
+        fs.writeFile(filepath, content, (error) => this.handleError(error, filename, { type: entityType }))
     }
 
-    static removeFile(title, type, flags) {
-        const { filename, filepath } = this.generateFilePath(title, type, flags)
-        fs.rm(filepath, (error) => this.handleError(error, filename, this.ActionTypes.DELETE))
+    static removeFile(title, entityType, flags) {
+        const { filename, filepath } = this.generateFilePath(title, entityType, flags)
+        fs.rm(filepath, (error) => this.handleError(error, filename, { type: entityType, action: this.ActionTypes.DELETE }))
     }
 
     static getAllActionTypes() {
@@ -110,6 +108,10 @@ class FileHandler {
 }
 
 class ContentGenerator {
+    static tagsHandler(tags) {
+        return typeof tags === "string" ? tags.split(",").map(tag => `\n  - ${tag}`).join("") : ""
+    }
+
     static getDefaultBlogContent(title, flags = {}) {
         return `---
 title: ${title}
@@ -118,8 +120,7 @@ author:
 draft: true
 date: ${new Date().toISOString()}
 tags:
-  - post
-${typeof flags.t === "string" ? flags.t.split(",").map(tag => `  - ${tag}`).join("\n") : ""}
+  - post${ContentGenerator.tagsHandler(flags.t)}
 ---\n`
     }
 
@@ -133,8 +134,7 @@ image:
 linkDemo:
 linkCode:
 tags:
-  - project
-${typeof flags.t === "string" ? flags.t.split(",").map(tag => `  - ${tag}`).join("\n") : ""}
+  - project${ContentGenerator.tagsHandler(flags.t)}
 ---\n`
     }
 
@@ -148,13 +148,14 @@ linkDemo:
 language: 
 code: |-
 tags:
-  - prototype
-${typeof flags.t === "string" ? flags.t.split(",").map(tag => `  - ${tag}`).join("\n") : ""}
+  - prototype${ContentGenerator.tagsHandler(flags.t)}
 ---\n`
     }
 }
 
 class Ewtools {
+    static programSuffix = `${chalk.gray(`[`)}${chalk.green(`EwT`)}${chalk.gray(`/bin]`)}`
+
     constructor(args) {
         this.args = args
         this.command = args[0]
@@ -167,7 +168,7 @@ class Ewtools {
 
     validateArgs() {
         if (this.args.length < 2) {
-            console.log("Usage: ./ewtools.bat make:blog \"title\"")
+            console.log(`${Ewtools.programSuffix} Usage: ${chalk.green(`./ewtools.bat make:blog "title"`)}`)
             process.exit(1)
         }
     }
@@ -189,7 +190,7 @@ class Ewtools {
                 break
 
             default:
-                console.log(`Invalid Action. Valid Actions: ${FileHandler.getAllActionTypes()}`)
+                console.log(`${Ewtools.programSuffix} Invalid Action. Valid Actions: ${chalk.green(FileHandler.getAllActionTypes())}`)
         }
     }
 
@@ -208,12 +209,12 @@ class Ewtools {
                 break
 
             default:
-                console.log(`Invalid Type, Valid Types: ${FileHandler.getAllEntityTypes()}`)
+                console.log(`${Ewtools.programSuffix} Invalid Type, Valid Types: ${chalk.green(FileHandler.getAllEntityTypes())}`)
         }
     }
 
     handleDelete() {
-        if (this.type === "" || this.type === undefined) return console.log(`Invalid Type, Valid Types: ${FileHandler.getAllEntityTypes()}`)
+        if (this.type === "" || this.type === undefined) return console.log(`${Ewtools.programSuffix} Invalid Type, Valid Types: ${chalk.green(FileHandler.getAllEntityTypes())}`)
         FileHandler.removeFile(this.title, this.type, this.flags)
     }
 }
@@ -221,7 +222,7 @@ class Ewtools {
 const args = process.argv.slice(2)
 
 if (args.length <= 0) {
-    console.log("Usage: ./ewtools.bat make:blog \"title\"")
+    console.log(`${Ewtools.programSuffix} Usage: ${chalk.green(`./ewtools.bat make:blog "title"`)}`)
 } else {
     new Ewtools(args).execute()
 }
