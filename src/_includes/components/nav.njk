@@ -1,8 +1,12 @@
 <nav class="nav t-all">
+  <div class="nav-skip">
+    <a class="nav-skipto" href="#main">Skip to Main</a>
+  </div>
   <div class="nav-container">
     <div class="leftside">
-      <a class="nav-skipto" href="#main">Skip to Main</a>
-      <a class="brand" aria-labelledby="emptywork-logo-text" href="{{ link.website | development }}">
+      <a class="brand"
+         aria-labelledby="emptywork-logo-text"
+         href="{{ link.website | development }}">
         <div class="brand-logo">
           {{ footer.brand.svg | svg | safe }}
           <span aria-hidden="true" id="emptywork-logo-text" class="sr-only">Logo of EmptyWork</span>
@@ -22,41 +26,59 @@
     </ul>
     <div class="rightside">
       <button class="themes" aria-label="Switch the theme" data-theme-button>
-        <svg data-sun fill="none" style="margin-bottom: -0.0625rem" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Icon of sun">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+        <svg data-sun
+             fill="none"
+             style="margin-bottom: -0.0625rem"
+             stroke="currentColor"
+             viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg"
+             aria-label="Icon of sun">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+          </path>
         </svg>
-        <svg data-moon fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-label="Icon of moon">
+        <svg data-moon
+             fill="currentColor"
+             viewBox="0 0 20 20"
+             xmlns="http://www.w3.org/2000/svg"
+             aria-label="Icon of moon">
           <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
         </svg>
       </button>
-      <button aria-label="Open the mobile menu" aria-haspopup="true" aria-controls="mobile-menu-list" class="nav-mobile nav-mobile__tick" data-mobile-menu-button>
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="Icon for menu hamburger">
+      <button aria-label="Open the mobile menu"
+              aria-haspopup="true"
+              aria-controls="mobile-menu-list"
+              class="nav-mobile nav-mobile__tick"
+              data-mobile-menu-button>
+        <svg fill="none"
+             stroke="currentColor"
+             viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg"
+             aria-label="Icon for menu hamburger">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </div>
   </div>
 </nav>
-<ul id="mobile-menu-list" class="not-showing nav-mobile__section t-all" data-mobile-menu-section aria-label="List of mobile menu" role="menu">
+<ul id="mobile-menu-list"
+    class="not-showing nav-mobile__section t-all"
+    data-mobile-menu-section
+    aria-label="List of mobile menu"
+    aria-hidden="true"
+    role="menu">
   <li data-mobile-menu-button role="menuitem">
     <a href="/">
-      <div>
-        Home
-      </div>
+      <div>Home</div>
     </a>
   </li>
   <li data-mobile-menu-button role="menuitem">
     <a href="/blog">
-      <div>
-        Blog
-      </div>
+      <div>Blog</div>
     </a>
   </li>
   <li data-mobile-menu-button role="menuitem">
     <a href="/contact">
-      <div>
-        Contact
-      </div>
+      <div>Contact</div>
     </a>
   </li>
 </ul>
