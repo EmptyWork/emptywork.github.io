@@ -23,18 +23,18 @@ style: 'contact.css'
       </header>
       <div class="contact-container" data-animation="fade-in" data-delay="2">
         <p class="contact-summary">{{ contact.summary | renderMarkdownInline | safe }}</p>
-        <ul class="social-container">
-          {% for social in contact.mainSocials %}
-            <li data-animation="fade-in" data-delay="{{ loop.index }}">{% include "components/snippets/social-items.njk" %}</li>
-          {% endfor %}
-        </ul>
-        <ul class="social-container social-container__small">
-          {% for social in contact.socials %}
-            {% if social.hidden !== true %}
-              <li data-animation="fade-in" data-delay="{{ loop.index }}">{% include "components/snippets/social-items.njk" %}</li>
-            {% endif %}
-          {% endfor %}
-        </ul>
+        {% for socials, containerClass in [
+          [contact.mainSocials, "social-container"],
+          [contact.socials, "social-container social-container__small"]
+          ] %}
+          <ul class="{{ containerClass }}">
+            {% for social in socials %}
+              {% if containerClass == "social-container" or social.hidden !== true %}
+                <li data-animation="fade-in" data-delay="{{ loop.index }}">{% include "components/snippets/social-items.njk" %}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endfor %}
       </div>
     </div>
   </section>
