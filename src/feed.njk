@@ -13,6 +13,7 @@
   }
 }
 ---
+
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="pretty-atom-feed.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ link.website }}">
@@ -29,16 +30,18 @@
 <email>{{ metadata.author.email }}</email>
 </author>
 {%- for post in collections.post | reverse %}
-  {%- set absolutePostUrl = post.url | absoluteUrl(link.website) %}
-  <entry>
-  <title>{{ post.data.title }}</title>
-  <link href="{{ absolutePostUrl }}" />
-  <updated>{{ post.date | dateToRfc3339 }}</updated>
-  <id>{{ absolutePostUrl }}</id>
-  <content xml:lang="{{ metadata.language }}" type="html">
-    {%- set templateContent = post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) %}
-    {{ templateContent }}
-  </content>
-  </entry>
+  {% if not post.data.draft %}
+    {%- set absolutePostUrl = post.url | absoluteUrl(link.website) %}
+    <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}" />
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content xml:lang="{{ metadata.language }}" type="html">
+      {%- set templateContent = post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) %}
+      {{ templateContent }}
+    </content>
+    </entry>
+  {% endif %}
 {%- endfor %}
 </feed>
