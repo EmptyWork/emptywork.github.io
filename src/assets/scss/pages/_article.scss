@@ -3,6 +3,10 @@
 
 .article {
   --_l: 20%;
+  --_bh: calc(var(--_h) - 8);
+  --_background: hsla(var(--_h), 20%, 20%, 0.5);
+  --_blockquote-color: hsla(var(--_h), 90%, 20%, 0.8);
+  --_drop-shadow-color: hsla(var(--_bh), 71%, 22%, 40%);
   --_article-color: hsla(var(--_hs), var(--_l), 0.5);
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -12,6 +16,7 @@
   margin: auto;
 
   main {
+    margin-top: 1em;
     position: relative;
 
     .table-of-contents {
@@ -47,6 +52,10 @@
     &:active {
       outline: 0;
     }
+  }
+
+  pre+pre {
+    margin-top: 0.5em;
   }
 
   span {
@@ -150,10 +159,49 @@
   }
 
   blockquote {
-    color: var(--clr-foreground-900);
+    padding: .5em;
+    background-color: var(--_blockquote-color);
+    color: var(--clr-white);
     margin: 0;
     padding-left: 2em;
     border-left: 0.5em var(--clr-accent) solid;
+    border-radius: 0.5em;
+    box-shadow: 0px 3px 10px 0px var(--_drop-shadow-color);
+
+    .tools-container {
+      kbd {
+        color: var(--clr-white);
+        background-color: var(--clr-accent);
+      }
+
+      #expand-option {
+        display: none;
+      }
+    }
+
+    pre,
+    code,
+    kbd,
+    samp {
+      display: inline-block;
+      align-items: center;
+      background-color: var(--clr-black);
+      color: var(--clr-white);
+      padding: 0.2em 0.4em;
+      border-radius: 0.3em;
+    }
+
+    a {
+      --_normal-color: var(--clr-accent-light);
+      --_hover-color: var(--clr-white);
+      color: var(--_normal-color);
+      text-decoration-color: var(--_normal-color);
+
+      &:hover {
+        color: var(--_hover-color);
+        text-decoration-color: var(--_hover-color);
+      }
+    }
   }
 
   hr {
@@ -171,23 +219,112 @@
   kbd,
   samp {
     @extend .font-monospace;
-    padding: 0 0.3em;
-    // font-size: 0.8rem;
+    position: relative;
     line-height: 1.4;
   }
 
+  kbd {
+    display: inline-block;
+    align-items: center;
+    width: max-content;
+    font-size: 0.8rem;
+    color: var(--clr-white);
+    background-color: var(--clr-accent);
+    padding: 0.2em 0.4em;
+    border-radius: 0.3em;
+  }
+
   pre {
-    border: 0.1rem solid var(--_article-color);
+    border: 0.1rem solid var(--_background);
     background-color: hsl(0, 3%, 12%);
     border-radius: 0.5rem;
     padding: 1rem;
     white-space: pre;
     white-space: pre-wrap;
     word-wrap: break-word;
+    overflow: hidden;
+    width: min(80ch, 100%);
+    transition: width 0.3s ease-in-out;
+
+    &.expanded {
+      width: 100%;
+    }
+
+    .tools-container {
+      display: flex;
+      position: absolute;
+      z-index: 10;
+      padding-left: 0.5em;
+      opacity: 0;
+      top: 0;
+      backdrop-filter: blur(0.125rem);
+      right: 0;
+      margin-top: -2rem;
+      flex-direction: row;
+      align-items: center;
+      background-color: var(--_background);
+      color: var(--clr-white);
+      transition: margin-top 0.2s ease, opacity 0.3s ease;
+
+      .code-type {
+        margin-right: 0.5em;
+      }
+
+      .keyboard-shortcut {
+        display: flex;
+        gap: 0.2em;
+      }
+
+      @include mix.breakpoint-down('medium') {
+        #expand-option {
+          display: none;
+        }
+      }
+
+      button {
+        gap: 0.5em;
+        align-items: center;
+        display: flex;
+        padding: 0.5em;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        background-color: var(--_background);
+        color: var(--clr-accent-light);
+
+        &:is(:hover, :focus, :active) {
+          color: var(--clr-accent);
+        }
+      }
+    }
+
+    &:hover {
+      outline: 0.125rem solid var(--clr-accent-dark);
+    }
+
+    &:hover,
+    &:focus,
+    &:has(:hover, :focus) {
+      .tools-container {
+        margin-top: 0;
+        opacity: 1;
+
+        @starting-style {
+          opacity: 0;
+          margin-top: -2rem;
+        }
+      }
+    }
 
     code {
+      color: var(--clr-white);
       box-shadow: none;
       background-color: transparent;
+
+      .hljs-comment,
+      .hljs-meta {
+        color: hsl(230, 100%, 89%, 0.9)
+      }
     }
   }
 
@@ -268,7 +405,8 @@
     overflow-x: scroll;
     border-spacing: 0;
     width: 100%;
-    background-color: var(--clr-background);
+    background-color: hsl(var(--_hs) 10%);
+    color: var(--clr-white);
     border-radius: 0.5rem;
     overflow: hidden;
 
