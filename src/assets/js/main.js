@@ -34,12 +34,16 @@ mobileButtons.forEach((button) => {
 
 const setShowing = () => {
   mobileButtons[0].setAttribute('aria-label', 'Close the mobile menu')
+  mobileButtons[0].setAttribute('aria-expanded', 'true')
+  mobileMenuSection.setAttribute('aria-hidden', 'false')
   mobileMenuSection.classList.remove('not-showing')
   setTimeout(() => documentBody.classList.add('no-scroll'), 300)
 }
 
 const setHidden = () => {
   mobileButtons[0].setAttribute('aria-label', 'Open the mobile menu')
+  mobileButtons[0].setAttribute('aria-expanded', 'false')
+  mobileMenuSection.setAttribute('aria-hidden', 'true')
   mobileMenuSection.classList.add('not-showing')
   documentBody.classList.remove('no-scroll')
 }
