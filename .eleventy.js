@@ -66,7 +66,7 @@ export default function (eleventyConfig) {
     "src/admin/*": "admin",
     "settings.json": "settings.json",
     "src/robots.txt": "robots.txt",
-    "src/pretty-atom-feed.xsl": "pretty-atom-feed.xsl"
+    "src/*.xsl": "/"
   })
 
   if (isDevelopment) {
