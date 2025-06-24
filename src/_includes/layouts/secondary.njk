@@ -11,11 +11,13 @@
           rel="stylesheet" />
     {% if style %}
       <link rel="stylesheet" href="/css/{{ style }}" />
+    {% elif styles %}
+      {% for style in styles %}
+      <link rel="stylesheet" href="/css/{{ style }}" />
+      {% endfor %}
     {% else %}
       <link rel="stylesheet" href="/css/style.css" />
     {% endif %}
-    <link rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/tokyo-night-dark.min.css">
     <script src="/js/loadTheme.js" defer></script>
     <script src="/js/redirect.js" defer></script>
   </head>
