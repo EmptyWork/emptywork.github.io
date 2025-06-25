@@ -1,6 +1,7 @@
 [data-animation] {
   opacity: 0;
   transition: translate var(--_translate, 1s) ease-in-out, scale var(--_scale, 1s) ease-in-out, rotate var(--_rotate, 1s) ease-in-out, opacity var(--_opacity, 1s) ease-in-out;
+  transition-delay: attr(data-transition-delay, 0ms);
 }
 
 [data-animation='fade-in'] {
@@ -31,7 +32,7 @@
   }
 }
 
-.has-been-animated {
+.has-been-animated, [data-has-been-animated] {
   opacity: unset;
   scale: unset;
   rotate: unset;
