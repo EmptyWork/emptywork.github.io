@@ -30,13 +30,13 @@
         }
 
         &:hover {
-          .note.has-been-animated {
+          .note:is([data-has-been-animated], .has-been-animated) {
             rotate: 0deg;
             scale: 1.1;
           }
         }
 
-        .note.has-been-animated {
+        .note:is([data-has-been-animated], .has-been-animated) {
           rotate: 3deg;
           --_scale: 300ms;
           --_rotate: 700ms;
