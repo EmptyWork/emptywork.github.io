@@ -176,14 +176,22 @@ const preloadElement = document.querySelector('.preload')
 const delayElements = document.querySelectorAll('[data-delay]')
 
 delayElements?.forEach(
-  (el) => (el.style.transitionDelay = `${parseInt(el.dataset.delay) * 100}ms`)
+  (el) => {
+    let delayModifier = 0
+    const parentElement = el.parentElement
+    const getAmountOfDelayElems = parentElement.querySelectorAll('[data-delay]').length
+    if (!parentElement.hasAttribute("data-delay-parent")) parentElement.setAttribute('data-delay-parent', true)
+    delayModifier = getAmountOfDelayElems
+
+    el.setAttribute("data-transition-delay", `${parseInt(el.dataset.delay) * 50 * (delayModifier / 2)}ms`)
+  }
 )
 
 const observer = new IntersectionObserver((entires) =>
   entires.forEach((entry) => {
     if (entry.isIntersecting)
-      return entry.target.classList.add('has-been-animated')
-    return entry.target.classList.remove('has-been-animated')
+      return entry.target.setAttribute('data-has-been-animated', true)
+    return entry.target.removeAttribute('data-has-been-animated')
   })
 )
 
