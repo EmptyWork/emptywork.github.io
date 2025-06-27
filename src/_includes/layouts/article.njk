@@ -1,6 +1,8 @@
 ---
 layout: 'layouts/secondary.njk'
-style: 'article.css'
+styles: 
+  - 'article.css'
+  - 'highlight.css'
 ---
 
 {% set previousPost = collections.post | getPreviousCollectionItem(page) %}
