@@ -148,18 +148,17 @@ const schedulerLoader = (schedules = {}) => {
   if (replaceStatus) replaceStatus.textContent = 'Idle'
 
   setTimeout(() => {
-    for (let i = 0; i < schedules.length; i++) {
-      let { day, endHour, startHour } = schedules[i]
+    schedules.forEach(schedule => {
+      let { day, endHour, startHour } = schedule
       if (!replaceStatus) return
-
       if (days[currentDay] === toCapitalizeWord(day)) {
         if (currentTime > startHour && currentTime < endHour) {
           replaceStatus.textContent = 'Studying'
         }
-        break
+        return
       }
       replaceStatus.textContent = 'Idle'
-    }
+    })
   }, 0)
 }
 
