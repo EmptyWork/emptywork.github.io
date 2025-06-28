@@ -23,7 +23,7 @@ tags:
 >
 > > `this is an inline-quote` does it works? click here to [jump to code-snippet-2](#code-snippet-2), or you can just scroll down, also you can hover on the code blocks.
 > >
-> > ```npm
+> > ```bash
 > > npm run install && npm run update
 > > ```
 > >
@@ -43,6 +43,7 @@ The markdown is being handle by the markdown-it and eleventy, while some extra w
 ```sql
 SELECT * FROM `ikan`;
 ```
+
 ```sql
 DROP table `ikan`;
 ```
@@ -70,7 +71,7 @@ console.log(add(2, 3)) // Output: 5
 
 Here is a simple JavaScript function that adds two numbers and logs the result.
 
-```javascript
+```js
 const schedulerLoader = (schedules = {}) => {
   let time = new Date()
   let currentTime = time.getUTCHours() + 9
@@ -95,6 +96,37 @@ const schedulerLoader = (schedules = {}) => {
 }
 ```
 
+```diff:js
+const schedulerLoader = (schedules = {}) => {
+  let time = new Date()
+  let currentTime = time.getUTCHours() + 9
+  if (currentTime > 23) currentTime -= 23
+
+  if (replaceStatus) replaceStatus.textContent = 'Idle'
+-  setTimeout(() => throw new Error(),0)
++  setTimeout(() => {
++    for (let i = 0; i < schedules.length; i++) {
++      let { day, endHour, startHour } = schedules[i]
++      if (!replaceStatus) return
++
++      if (days[currentDay] === toCapitalizeWord(day)) {
++        if (currentTime > startHour && currentTime < endHour) {
++          replaceStatus.textContent = 'Studying'
++        }
++        break
++      }
++      replaceStatus.textContent = 'Idle'
++    }
++  }, 0)
+```
+
+```md
+├─ docs
+│  ├─ .vuepress
+│  │  └─ config.js
+│  └─ README.md
+└─ package.json
+```
 And this is an example of markdown list:
 
 ```md
@@ -114,7 +146,6 @@ And this is an example of markdown list:
   1. stop it
   2. what
   3. don't worry
-
 
 #### Code snippet 3
 
