@@ -45,6 +45,7 @@
     "dotenv": "^16.5.0",
     "glob": "^11.0.3",
     "highlight.js": "^11.5.1",
+    "highlightjs-code-diff": "^1.0.0",
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-attrs": "^4.1.4",
     "markdown-it-bracketed-spans": "^1.0.1",

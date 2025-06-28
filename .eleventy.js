@@ -2,7 +2,8 @@ import fs from "fs"
 import path from "path"
 import dotenv from "dotenv"
 import { DateTime } from "luxon"
-import hljs from "highlight.js"
+import highlight from "highlight.js"
+import highlightDiff from "highlightjs-code-diff"
 import markdownIt from "markdown-it"
 import anchor from "markdown-it-anchor"
 import bracketedSpans from "markdown-it-bracketed-spans"
@@ -16,14 +17,17 @@ dotenv.config()
 
 export default function (eleventyConfig) {
   const isDevelopment = process.env.NODE_ENV === "development"
+  const hljs = highlightDiff(highlight)
   const markdownItConfig = markdownIt({
     html: true,
     linkify: true,
     typographer: true,
     highlight: function (str, lang) {
-      if (lang && hljs.getLanguage(lang)) {
+      const processLang = lang.replace("diff:", "")
+      if (lang && hljs.getLanguage(processLang)) {
         try {
-          return hljs.highlight(str, { language: lang }).value
+          const returnValue = hljs.highlight(str, { language: lang }).value
+          return returnValue
         } catch (__) { }
       }
       return ""
