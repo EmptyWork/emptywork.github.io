@@ -4,6 +4,7 @@ import dotenv from "dotenv"
 import { DateTime } from "luxon"
 import highlight from "highlight.js"
 import highlightDiff from "highlightjs-code-diff"
+import highlightjsLines from "./lib/highlightjs-lines.js"
 import markdownIt from "markdown-it"
 import anchor from "markdown-it-anchor"
 import bracketedSpans from "markdown-it-bracketed-spans"
@@ -17,7 +18,7 @@ dotenv.config()
 
 export default function (eleventyConfig) {
   const isDevelopment = process.env.NODE_ENV === "development"
-  const hljs = highlightDiff(highlight)
+  const hljs = highlightjsLines(highlightDiff(highlight))
   const markdownItConfig = markdownIt({
     html: true,
     linkify: true,
