@@ -109,6 +109,7 @@ code.hljs {
   Additional styling for diff support
 */
 
+.hljs-line,
 .hljs-addition,
 .hljs-deletion {
     --_distance: 1em;
