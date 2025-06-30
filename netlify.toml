@@ -7,6 +7,11 @@
   status = 200
 
 [[redirects]]
+  from = "/articles/blog/*"
+  to = "/error"
+  status = 404
+
+[[redirects]]
   from = "/signatures/*"
   to = "/images/signatures/:splat"
   status = 200
