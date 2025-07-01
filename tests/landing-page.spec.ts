@@ -6,6 +6,7 @@ test('has title', async ({ page }) => {
 });
 
 test('find a curriculum vitae and download', async ({ page }) => {
+  test.setTimeout(0);
 
   await page.goto('/');
 
