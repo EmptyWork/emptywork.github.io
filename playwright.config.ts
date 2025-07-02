@@ -20,7 +20,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npm run dev',
+    command: 'npm start',
     url: localhost,
     reuseExistingServer: !process.env.CI,
   },
