@@ -15,7 +15,7 @@
     "watch:sass": "npm run sass:compressed -- --watch",
     "watch:postcss": "npm run postcss -- --watch",
     "build": "npm run sass:compressed && npm run postcss && npm run minify:js && eleventy && npm run prettify:html",
-    "start": "npm-run-all sass:compressed postcss --parallel watch:*",
+    "start": "npm-run-all --parallel watch:eleventy",
     "dev": "npm run watch",
     "test:highlightjs-lines": "node ./lib/highlightjs-lines.test.js",
     "test": "node --test"
@@ -34,6 +34,8 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.1",
     "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "@playwright/test": "^1.53.1",
+    "@types/node": "^24.0.7",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.5",
     "postcss-cli": "^11.0.1",
