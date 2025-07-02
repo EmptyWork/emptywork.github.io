@@ -15,7 +15,7 @@
     "watch:sass": "npm run sass:compressed -- --watch",
     "watch:postcss": "npm run postcss -- --watch",
     "build": "npm run sass:compressed && npm run postcss && npm run minify:js && eleventy && npm run prettify:html",
-    "start": "npm-run-all sass:compressed postcss --parallel watch:*",
+    "start": "npm-run-all --parallel watch:eleventy",
     "dev": "npm run watch",
     "test:highlightjs-lines": "node ./lib/highlightjs-lines.test.js",
     "test": "node --test"
