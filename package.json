@@ -9,7 +9,7 @@
     "sass:compressed": "sass --no-source-map --style=compressed src/assets/scss:public/css/",
     "postcss": "postcss public/css/*.css --use postcss-import autoprefixer postcss-nested --no-map --dir public/css",
     "minify:js": "node bin/minify.js",
-    "prettify:html": "prettier --write public/**/*.html --ignore-path .prettierignore",
+    "prettify:html": "prettier --write public/*.html --ignore-path .prettierignore",
     "watch": "npm-run-all --parallel watch:*",
     "watch:eleventy": "eleventy --serve",
     "watch:sass": "npm run sass:compressed -- --watch",
