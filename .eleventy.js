@@ -63,7 +63,9 @@ export default function (eleventyConfig) {
     },
   })
 
-  eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    outputDir: "./images"
+  });
 
   eleventyConfig.addPassthroughCopy({
     "src/assets/*.pdf": "assets",
