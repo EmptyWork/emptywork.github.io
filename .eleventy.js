@@ -13,7 +13,7 @@ import toc from "markdown-it-table-of-contents"
 import mark from "markdown-it-mark"
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img"
 import rssPlugin from "@11ty/eleventy-plugin-rss"
-
+import link from "./src/_data/link.json" with {type: 'json'}
 dotenv.config()
 
 export default function (eleventyConfig) {
@@ -63,7 +63,9 @@ export default function (eleventyConfig) {
     },
   })
 
-  eleventyConfig.addPlugin(eleventyImageTransformPlugin);
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    outputDir: "./images"
+  });
 
   eleventyConfig.addPassthroughCopy({
     "src/assets/*.pdf": "assets",
@@ -92,6 +94,12 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
     let date = new Date(dateObj)
     return date.toISOString()
+  })
+
+  eleventyConfig.addFilter("convertToValidURL", (url) => {
+    if (url.startsWith('http')) return url
+    const validURL = new URL(url.replace("\/assets\/",""), (isDevelopment) ? "http://localhost" : link.website)
+    return validURL
   })
 
   eleventyConfig.addFilter("postYear", (dateObj) => {
