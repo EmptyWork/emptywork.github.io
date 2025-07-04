@@ -31,16 +31,16 @@
 <meta property="og:url" content="https://emptywork.my.id" />
 <meta property="og:site_name" content="EmptyWork" />
 {% if image %}
-      <meta property="og:image" content="{{ image }}" />
-      <meta itemprop="image" content="{{ image }}" />
-      <meta name="twitter:image" content="{{ image }}" />
+      <meta property="og:image" content="{{ image | convertToValidURL }}" />
+      <meta itemprop="image" content="{{ image | convertToValidURL }}" />
+      <meta name="twitter:image" content="{{ image | convertToValidURL }}" />
 {% else %}
       <meta itemprop="image"
-            content="/images/emptywork.my.id-secondary-banner.png" />
+            content="{{ link.website | development }}/images/emptywork.my.id-secondary-banner.png" />
       <meta property="og:image"
-            content="/images/emptywork.my.id-secondary-banner.png" />
+            content="{{ link.website | development }}/images/emptywork.my.id-secondary-banner.png" />
       <meta name="twitter:image"
-            content="/images/emptywork.my.id-secondary-banner.png" />
+            content="{{ link.website | development }}/images/emptywork.my.id-secondary-banner.png" />
 {% endif %}
 <meta name="twitter:card" content="summary_large_image" />
 {% if title %}
