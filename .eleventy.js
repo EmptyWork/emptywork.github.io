@@ -98,7 +98,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("convertToValidURL", (url) => {
     if (url.startsWith('http')) return url
-    const validURL = new URL(url, (isDevelopment) ? "http://localhost" : link.website)
+    const validURL = new URL(url.replace("\/assets\/",""), (isDevelopment) ? "http://localhost" : link.website)
     return validURL
   })
 
