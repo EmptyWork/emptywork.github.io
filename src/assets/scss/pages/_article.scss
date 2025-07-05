@@ -185,10 +185,24 @@
     samp {
       display: inline-block;
       align-items: center;
-      background-color: var(--clr-black);
+      background-color: hsl(var(--_hs) 10%);
       color: var(--clr-white);
       padding: 0.2em 0.4em;
       border-radius: 0.3em;
+    }
+
+    pre {
+      @include mix.breakpoint-down("small") {
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background: linear-gradient(90deg, transparent, hsl(var(--_hs) 6%));
+          width: 2em;
+        }
+      }
     }
 
     a {
@@ -236,7 +250,7 @@
 
   pre {
     border: 0.1rem solid var(--_background);
-    background-color: hsl(0, 3%, 12%);
+    background-color: hsl(var(--_hs) 10%);
     border-radius: 0.5rem;
     padding: 1rem;
     white-space: pre;
@@ -319,11 +333,15 @@
     code {
       color: var(--clr-white);
       box-shadow: none;
-      background-color: transparent;
+      width: 100%;
 
       .hljs-comment,
       .hljs-meta {
         color: hsl(230, 100%, 89%, 0.9)
+      }
+
+      @include mix.breakpoint-down('small') {
+        overflow-x: auto;
       }
     }
   }
