@@ -4,6 +4,11 @@
 [![Repository Forks](https://img.shields.io/github/forks/EmptyWork/emptywork.github.io?style=for-the-badge)]()
 [![License](https://img.shields.io/github/license/EmptyWork/emptywork.github.io?style=for-the-badge)](https://github.com/EmptyWork/emptywork.github.io/blob/master/LICENSE)
 [![Netlify Status](https://img.shields.io/netlify/08d2d578-7470-4e65-8067-93ab5e09f671?style=for-the-badge)](https://app.netlify.com/sites/emptywork/deploys)
+![Playwright Test](https://img.shields.io/github/actions/workflow/status/emptywork/emptywork.github.io/playwright.yml?style=for-the-badge&label=Playwright%20Test)
+
+---
+
+![Highlightjs-lines Test](https://img.shields.io/github/actions/workflow/status/emptywork/emptywork.github.io/highlightjs-lines.yml?style=for-the-badge&label=Highlightjs-lines%20Test)
 
 [**⚠ Report Bug**](https://github.com/EmptyWork/emptywork.github.io/issues/new) — [**📧 Request Feature**](https://github.com/EmptyWork/emptywork.github.io/issues/new)
 
