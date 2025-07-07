@@ -1,2 +1,3 @@
 @echo off
-node ./bin/ewTools.js %*
+set SCRIPT_DIR=%~dp0
+node %SCRIPT_DIR%/bin/ewTools.js %*
