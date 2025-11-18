@@ -47,7 +47,7 @@
     "@11ty/eleventy-img": "^6.0.4",
     "chalk": "^5.4.1",
     "dotenv": "^16.5.0",
-    "glob": "^11.0.3",
+    "glob": "^11.1.0",
     "highlight.js": "^11.5.1",
     "highlightjs-code-diff": "^1.0.0",
     "markdown-it-anchor": "^9.2.0",
